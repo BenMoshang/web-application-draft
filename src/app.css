@@ -228,6 +228,12 @@ h6 {
   3. Add accessible line-height
   4. Improve text rendering
 */
+
+body {
+  height: 100svh;
+  overflow: hidden;
+}
+
 html,
 body {
   -webkit-font-smoothing: antialiased;
@@ -313,8 +319,39 @@ h6 {
 Global Classes
 -------------------------------------------------- */
 
-:global(.global__container) {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+:global(.global__flex--center) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > * {
+    flex: 1;
+  }
+}
+
+:global(.global__flex-column--center) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > * {
+    flex: 1;
+  }
+}
+
+:global(.global__font-weight--bold) {
+  font-weight: 700;
+}
+
+:global(.global__font-weight--semibold) {
+  font-weight: 600;
+}
+
+:global(.global__font-weight--medium) {
+  font-weight: 500;
+}
+
+:global(.global__font-weight--regular) {
+  font-weight: 400;
 }
