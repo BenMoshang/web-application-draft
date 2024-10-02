@@ -178,6 +178,7 @@ p {
 /* line heights | font-sizes */
 h1 {
   font-size: var(--h1);
+  font-weight: 700;
 }
 h2 {
   font-size: var(--h2);
@@ -253,10 +254,6 @@ svg {
 }
 
 /*
-  6. Remove built-in form typography styles
-*/
-
-/*
   7. Avoid text overflows
 */
 p,
@@ -271,14 +268,16 @@ h6 {
 
 @font-face {
   font-family: "Instrument Sans";
-  src: url("../src/lib/fonts/InstrumentSans-VariableFont.ttf") format("truetype-variations");
+  src: url("../src/lib/fonts/InstrumentSans-VariableFont.ttf")
+    format("truetype-variations");
   font-weight: 100 900; /* Adjust the range based on the font's capabilities */
   font-stretch: 75% 100%; /* Adjust the range based on the font's capabilities */
 }
 
 @font-face {
   font-family: "Inter Tight";
-  src: url("../src/lib/fonts/InterTight-VariableFont.ttf") format("truetype-variations");
+  src: url("../src/lib/fonts/InterTight-VariableFont.ttf")
+    format("truetype-variations");
   font-weight: 100 900; /* Adjust the range based on the font's capabilities */
   font-stretch: 75% 100%; /* Adjust the range based on the font's capabilities */
 }
