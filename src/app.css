@@ -253,10 +253,6 @@ svg {
 }
 
 /*
-  6. Remove built-in form typography styles
-*/
-
-/*
   7. Avoid text overflows
 */
 p,
@@ -273,14 +269,14 @@ h6 {
   font-family: "Instrument Sans";
   src: url("/MyModernSite/src/lib/fonts/InstrumentSans-VariableFont.ttf")
     format("ttf");
-  font-weight: 700;
+  font-weight: bold;
 }
 
 @font-face {
   font-family: "Inter Tight";
   src: url("/MyModernSite/src/lib/fonts/InterTight-VariableFont.ttf")
     format("ttf");
-  font-weight: 400;
+  font-weight: normal;
 }
 
 /* --------------------------------------------------
