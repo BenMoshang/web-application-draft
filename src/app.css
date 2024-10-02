@@ -178,6 +178,7 @@ p {
 /* line heights | font-sizes */
 h1 {
   font-size: var(--h1);
+  font-weight: 700;
 }
 h2 {
   font-size: var(--h2);
@@ -269,7 +270,6 @@ h6 {
   font-family: "Instrument Sans";
   src: url("/MyModernSite/src/lib/fonts/InstrumentSans-VariableFont.ttf")
     format("ttf");
-  font-weight: bold;
 }
 
 @font-face {
