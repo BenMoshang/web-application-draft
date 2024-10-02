@@ -15,16 +15,16 @@
 
   --border-radius: 0.625rem;
   /* --------------------------------------------------
-                    FONT SIZEs
+                    FONT SIZES (MIN VIEWPORT: 475px | MAX VIEWPORT: 1200px)
 -------------------------------------------------- */
-  --h1: clamp(2.25rem, 0.94rem + 4.41vw, 4.25rem);
-  --h2: clamp(2.125rem, 1.142rem + 3.31vw, 3.625rem);
-  --h3: clamp(1.75rem, 1.095rem + 2.21vw, 2.75rem);
-  --h4: clamp(1.375rem, 0.884rem + 1.66vw, 2.125rem);
-  --h5: clamp(1.25rem, 1.086rem + 0.55vw, 1.5rem);
-  --h6: clamp(1.0625rem, 0.94rem + 0.41vw, 1.25rem);
-  --p: clamp(1.0625rem, 1.022rem + 0.14vw, 1.125rem);
-  --label-p: clamp(0.9375rem, 0.897rem + 0.14vw, 1rem);
+
+  --h1: clamp(3.125rem, -2.198rem + 17.93vw, 11.25rem);
+  --h2: clamp(2.5rem, -0.366rem + 9.66vw, 6.875rem);
+  --h3: clamp(2.5rem, 0.453rem + 6.90vw, 5.625rem);
+  --h4: clamp(2.5rem, 33.456px + 1.38vw, 3.125rem);
+  --p-large: 1.5rem;
+  --p-medium: 1.375rem;
+  --p: 1.25rem;
 
   /* --------------------------------------------------
 Custom Line height
@@ -63,7 +63,7 @@ FONTS
   --font-family-regular: "Inter Tight", system-ui;
   --font-family-bold: "Instrument Sans", system-ui;
   /* --------------------------------------------------
-ACKGROUND SHADOWS | with elevations
+BACKGROUND SHADOWS | with elevations
 -------------------------------------------------- */
   --shadow-color: 0deg 0% 63%;
   --shadow-elevation-low: 0.2px 0.5px 0.5px hsl(var(--shadow-color) / 0.52),
