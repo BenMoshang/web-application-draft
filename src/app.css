@@ -20,7 +20,7 @@
 
   --h1: clamp(3.125rem, -2.198rem + 17.93vw, 11.25rem);
   --h2: clamp(2.5rem, -0.366rem + 9.66vw, 6.875rem);
-  --h3: clamp(2.5rem, 0.453rem + 6.90vw, 5.625rem);
+  --h3: clamp(2.5rem, 0.453rem + 6.9vw, 5.625rem);
   --h4: clamp(2.5rem, 33.456px + 1.38vw, 3.125rem);
   --p-large: 1.5rem;
   --p-medium: 1.375rem;
@@ -141,6 +141,8 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: var(--font-family-bold);
+
   color: var(--color-dark);
   text-wrap: balance;
 }
