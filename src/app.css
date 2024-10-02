@@ -11,10 +11,8 @@
   /* --------------------------------------------------
                 PADDING / border-radius
 -------------------------------------------------- */
-  --page-inline-padding: clamp(1.25rem, 0.431rem + 2.76vw, 2.5rem);
-  --page-block-padding: clamp(2.5rem, 1.517rem + 3.31vw, 4rem);
-  --padding-section: clamp(2.5rem, 1.517rem + 3.31vw, 4rem)
-    clamp(1.25rem, 0.431rem + 2.76vw, 2.5rem);
+  --page-inline-padding: clamp(1.25rem, 16.72px + 0.69vw, 1.5625rem);
+
   --border-radius: 0.625rem;
   /* --------------------------------------------------
                     FONT SIZEs
@@ -180,7 +178,6 @@ p {
 /* line heights | font-sizes */
 h1 {
   font-size: var(--h1);
-  font-weight: 600;
 }
 h2 {
   font-size: var(--h2);
