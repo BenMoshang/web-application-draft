@@ -76,5 +76,6 @@
 
   .test1 {
     font-family: var(--font-family-bold);
+    font-weight: 700;
   }
 </style>
