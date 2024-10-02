@@ -55,8 +55,8 @@ MAIN COLORS
   /* --------------------------------------------------
 FONTS
 -------------------------------------------------- */
-  --font-family-regular: "Manrope", system-ui;
-  --font-family-bold: "Poppins", system-ui;
+  --font-family-regular: "Inter Tight", system-ui;
+  --font-family-bold: "Instrument Sans", system-ui;
   /* --------------------------------------------------
 FOR LIGHT BACKGROUND SHADOWS | with elevations
 -------------------------------------------------- */
@@ -202,7 +202,7 @@ ol,
 ul,
 li,
 p {
-  font-family: "Manrope", system-ui;
+  font-family: "Inter Tight", system-ui;
   color: var(--color-p);
   font-size: var(--p);
   line-height: var(--line-height-p);
@@ -309,10 +309,17 @@ h6 {
 }
 
 @font-face {
-  font-family: "Manrope";
-  src: url("../src/assets/fonts/Manrope-VariableFont_wght.ttf") format("ttf");
+  font-family: "Instrument Sans";
+  src: url("/MyModernSite/src/lib/fonts/InstrumentSans-VariableFont.ttf")
+    format("ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Inter Tight";
+  src: url("/MyModernSite/src/lib/fonts/InterTight-VariableFont.ttf")
+    format("ttf");
   font-weight: 400;
-  font-style: normal;
 }
 
 /* --------------------------------------------------
