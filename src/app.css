@@ -271,16 +271,16 @@ h6 {
 
 @font-face {
   font-family: "Instrument Sans";
-  src: url("/MyModernSite/src/lib/fonts/InstrumentSans-VariableFont.ttf")
-    format("ttf");
-  font-weight: 700;
+  src: url("../src/lib/fonts/InstrumentSans-VariableFont.ttf") format("truetype-variations");
+  font-weight: 100 900; /* Adjust the range based on the font's capabilities */
+  font-stretch: 75% 100%; /* Adjust the range based on the font's capabilities */
 }
 
 @font-face {
   font-family: "Inter Tight";
-  src: url("/MyModernSite/src/lib/fonts/InterTight-VariableFont.ttf")
-    format("ttf");
-  font-weight: 400;
+  src: url("../src/lib/fonts/InterTight-VariableFont.ttf") format("truetype-variations");
+  font-weight: 100 900; /* Adjust the range based on the font's capabilities */
+  font-stretch: 75% 100%; /* Adjust the range based on the font's capabilities */
 }
 
 /* --------------------------------------------------
