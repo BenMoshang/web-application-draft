@@ -17,8 +17,6 @@ body {
   /* --------------------------------------------------
     !import global utility classes
   -------------------------------------------------- */
-@import "./lib/global/utils.css"; /* !Global Utility Classes */
-@import "./lib/global/gobal.classes.css"; /* !Global: Write custom classes here */
 
 :root {
   /* --------------------------------------------------
