@@ -1,23 +1,23 @@
 <script>
 import '../../global-css/utils.css';
 
+export let imageSrc = '';
 export let title = '';
+export let useCase = '';
 export let description = '';
-export let counter = '';
-export let label = '';
 title = title.toUpperCase();
-label = label.toUpperCase();
+useCase = useCase.toUpperCase();
 </script>
 
-<article class="card br p-xl bg-white-200 shadow-md">
-    {#if counter}
-    <p class="card__counter  ff-bold fw-bold fsz-3xs  text-800 lh-3xs ">({counter})</p>
-    {/if}
-    <h4 class="card__title  ff-bold fw-bold fsz-lg text-black-800 lh-lg">{title}
-        {#if label} <span  class="label">{label}</span>{/if}
-    </h4>
-    <p class="card__description ff-bold fw-medium fsz-xs text-600 lh-md">{description}</p>
-</article>
+<figure class="card br p-xl bg-white-200 shadow-md">
+    <img src={imageSrc} alt={title} class="card__image" />
+
+    <figcaption class="card__caption">
+        <h4 class="card__title  ff-bold fw-bold fsz-lg text-black-800 lh-lg">{title}</h4>
+        <h5 class="caption__useCase  ff-bold fw-bold fsz-3xs  text-800 lh-3xs ">({useCase})</h5>
+        <p class="card__description ff-bold fw-medium fsz-xs text-600 lh-md">{description}</p>
+    </figcaption>
+</figure>
 
 <style>
 *,
@@ -36,7 +36,7 @@ label = label.toUpperCase();
     height: 100%;
     overflow: hidden;
     max-width: 28.125rem;
-  
+
     gap: var(--fsz-md);
 
     & .card__counter {

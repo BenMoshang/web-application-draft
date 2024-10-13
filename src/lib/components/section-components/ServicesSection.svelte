@@ -2,7 +2,7 @@
 import ServicesCard  from '../reusable-components/ServicesCard.svelte';
 </script>
 
-<section class="projects">
+<section class="services">
 
 
 <ServicesCard   

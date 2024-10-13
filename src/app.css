@@ -371,7 +371,7 @@ body {
   --text-black-600: hsl(0, 0%, 32%); /* (#525252) */
   /* Utility Classes: .text-600,  */
 
-  --text-black-700: #1d1d1fb3; /* (#1d1d1fb3) */
+  --text-black-700: hsla(240, 3%, 12%, 0.702); /* (#1d1d1fb3) */
   /* Utility Classes: .text-700, */
 
   --text-black-800: var(--color-black-200); /* (#1d1d1f) */
