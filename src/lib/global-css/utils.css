@@ -1,51 +1,76 @@
 /* ===============================================
-  !THIS PAGE CONTAINS ALL THE UTILITY CLASSES
-  =============================================== */
+  !UTILITIES CSS FILE
 
-/* ===============================================
-                      !INDEX
+  *This page contains all the utility classes used throughout the project.
+  *Utilize these classes for styling purposes only. Do not create structural utility classes.
 
-!use utility classes for styling only. dont use create structural utility classes.
+  ===============================================
+  !INDEX
 
+  !1. Shadow Utilities
+  !2. Color Utilities
+    * - Text Colors
+    * - Background Colors
+  !3. Font Utilities
+    * - Font Family
+    * - Font Weight
+    * - Font Size
+    * - Line Height
+ !4. Border Utilities
+    * - Border Radius
+    * - Border Colors
+ !5. Spacing Utilities
+    * - Margin
+    * - Padding
 
-!shadow-utility classes
-*.shadow-[shadosize] - shadow size
+  ===============================================
 
-!color-utility classes
-*.text-[color]-[weight] - text colors
-*.bg-[color]-[weight] - background colors
-!font-utility classes
-*.ff-[font-family] - font family
-*.fw-[font-weight] - font weight
-*.fsz-[font-size] - font size
-*.lh-[line-height] - line height
+  !USAGE GUIDELINES:
 
-!border-utility classes
-*.br || .br-rounded - border radius
+  ! - **Shadow Utilities**
+    *  .shadow-[size] : Applies the specified shadow size.
+      * Sizes:  sm ,  md ,  lg 
 
-!spacing-utility classes
-*.m[direction]-[size] - margin 
-*.p[direction]-[size] - padding [direction] is block, inline, top, right, bottom, left.
+  !- **Color Utilities**
+  *  - **Text Colors**
+   *   -  .text-[color]-[weight] : Sets the text color.
+     * - Colors:  white ,  black ,  red 
+    *  - Weights:  base ,  100 ,  200 , ...,  900 
+    !- **Background Colors**
+     * -  .bg-[color]-[weight] : Sets the background color.
+     * - Colors:  white ,  black ,  red 
+     * - Weights: As above.
 
-!for spacing classes: have a m-base class that is the base margin and padding value.
-!then have all the other margin and padding classes extend from that.
+ ! - **Font Utilities**
+  !  - **Font Family**
+    *  -  .ff-[font-family] : Sets the font family.
+    *  - Options:  regular ,  bold 
+  !  - **Font Weight**
+    *  -  .fw-[weight] : Sets the font weight.
+     * - Options:  thin ,  light ,  regular ,  medium ,  bold ,  black 
+   ! - **Font Size**
+      * -  .fsz-[size] : Sets the font size.
+     * - Sizes:  3xs ,  2xs ,  xs ,  sm ,  md ,  lg ,  xl ,  2xl , ...,  11xl 
+   ! - **Line Height**
+     * -  .lh-[size] : Sets the line height.
+     * - Sizes:  xs ,  sm ,  md , ...,  11xl 
 
+ ! - **Border Utilities**
+   * -  .br : Applies the base border radius.
+     * -  .br-rounded : Applies a rounded border radius.
+     * -  .border-[color]-[weight] : Sets the border color.
+     * - Colors:  white ,  black ,  red 
+     * - Weights:  0 ,  100 , ...,  900 
 
-!attributes
-*[shadow] - (sm, md, lg)
-
-*[color] - (text, red)
-*[weight] - (0, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900) 
-
-*[font-family] - (regular, bold)
-*[font-weight] - (thin, light, regular, medium, bold, black)
-*[font-size] - (3xs, 2xs, xs, sm, md, lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl, 7xl, 8xl, 9xl, 10xl, 11xl)
-this section does not apply to our website atm
- //4xl, 5xl, 6xl, 7xl, 8xl, 9xl, 10xl, 11xl
-*[line-height] - (xs, sm, md, lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl, 7xl, 8xl, 9xl, 10xl, 11xl)
-
-*[direction] - (block, inline, top, right, bottom, left.)
-*[size] - (xs, sm, md, base, lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl, 7xl, 8xl, 9xl, 10xl, 11xl)
+ ! - **Spacing Utilities**
+    !- **Margin**
+     * -  .m[size] : Applies margin.
+     * - Directions:  top ,  right ,  bottom ,  left ,  inline ,  block 
+     * - Sizes:  xs ,  sm ,  md ,  base ,  lg , ...,  11xl 
+   ! - **Padding**
+     * -  .p[size] : Applies padding.
+     * - Directions: As above.
+     * - Sizes: As above.
 
   =============================================== */
 
@@ -74,49 +99,57 @@ this section does not apply to our website atm
 }
 
 /* --------------------------------------------------
+!BORDER COLORS
+-------------------------------------------------- */
+.border-white {
+  border-color: var(--border-white);
+}
+
+.border-black {
+  border-color: var(--border-black);
+}
+
+.border-black-200 {
+  border-color: var(--border-black-200);
+}
+
+.border-black-300 {
+  border-color: var(--border-black-300);
+}
+
+.border-black-400 {
+  border-color: var(--border-black-400);
+}
+
+/* --------------------------------------------------
 !TEXT COLORS
 -------------------------------------------------- */
-
-.text-900 {
-  color: var(--color-text-900);
+.text-white {
+  color: var(--color-white);
 }
 
-.text-800 {
-  color: var(--color-text-800);
+.text-black {
+  color: var(--text-black);
 }
 
-.text-700 {
-  color: var(--color-text-700);
+.text-black-500 {
+  color: var(--text-black-500);
 }
 
-.text-600 {
-  color: var(--color-text-600);
+.text-black-600 {
+  color: var(--text-black-600);
 }
 
-.text-500 {
-  color: var(--color-text-500);
+.text-black-700 {
+  color: var(--text-black-700);
 }
 
-.text-400 {
-  color: var(--color-text-400);
+.text-black-800 {
+  color: var(--text-black-800);
 }
 
-.text-300 {
-  color: var(--color-text-300);
-}
-
-.text-200 {
-  color: var(--color-text-200);
-}
-
-.text-100 {
-  color: var(--color-text-100);
-}
-.text-50 {
-  color: var(--color-text-50);
-}
-.text-0 {
-  color: var(--color-text-0);
+.text-black-900 {
+  color: var(--text-black-900);
 }
 
 .text-red-100 {
@@ -158,87 +191,38 @@ this section does not apply to our website atm
 /* --------------------------------------------------
 !BACKGROUND COLORS
 -------------------------------------------------- */
-
-.bg-text-900 {
-  background-color: var(--color-text-900);
+.bg-white {
+  background-color: var(--color-white);
 }
 
-.bg-text-800 {
-  background-color: var(--color-text-800);
+.bg-white-100 {
+  background-color: var(--color-white-100);
 }
 
-.bg-text-700 {
-  background-color: var(--color-text-700);
+.bg-white-200 {
+  background-color: var(--color-white-200);
+}
+.bg-black {
+  background-color: var(--color-black);
 }
 
-.bg-text-600 {
-  background-color: var(--color-text-600);
+.bg-black-0 {
+  background-color: var(--color-black-0);
 }
 
-.bg-text-500 {
-  background-color: var(--color-text-500);
+.bg-black-100 {
+  background-color: var(--color-black-100);
+}
+.bg-black-200 {
+  background-color: var(--color-black-200);
 }
 
-.bg-text-400 {
-  background-color: var(--color-text-400);
+.bg-black-300 {
+  background-color: var(--color-black-300);
 }
 
-.bg-text-300 {
-  background-color: var(--color-text-300);
-}
-
-.bg-text-200 {
-  background-color: var(--color-text-200);
-}
-
-.bg-text-100 {
-  background-color: var(--color-text-100);
-}
-
-.bg-text-50 {
-  background-color: var(--color-text-50);
-}
-
-.bg-text-0 {
-  background-color: var(--color-text-0);
-}
-
-/* red */
-
-.bg-red-100 {
-  background-color: var(--color-red-100);
-}
-
-.bg-red-200 {
-  background-color: var(--color-red-200);
-}
-
-.bg-red-300 {
-  background-color: var(--color-red-300);
-}
-
-.bg-red-400 {
-  background-color: var(--color-red-400);
-}
-
-.bg-red-500 {
-  background-color: var(--color-red-500);
-}
-
-.bg-red-600 {
-  background-color: var(--color-red-600);
-}
-
-.bg-red-700 {
-  background-color: var(--color-red-700);
-}
-
-.bg-red-800 {
-  background-color: var(--color-red-800);
-}
-
-.bg-red-900 {
-  background-color: var(--color-red-900);
+.bg-black-400 {
+  background-color: var(--color-black-400);
 }
 
 /* --------------------------------------------------
@@ -286,27 +270,6 @@ this section does not apply to our website atm
 .fsz-4xl {
   font-size: var(--fsz-4xl);
 }
-.fsz-5xl {
-  font-size: var(--fsz-5xl);
-}
-.fsz-6xl {
-  font-size: var(--fsz-6xl);
-}
-.fsz-7xl {
-  font-size: var(--fsz-7xl);
-}
-.fsz-8xl {
-  font-size: var(--fsz-8xl);
-}
-.fsz-9xl {
-  font-size: var(--fsz-9xl);
-}
-.fsz-10xl {
-  font-size: var(--fsz-10xl);
-}
-.fsz-11xl {
-  font-size: var(--fsz-11xl);
-}
 
 /* FONT WEIGHT */
 .fw-thin {
@@ -329,6 +292,17 @@ this section does not apply to our website atm
 }
 
 /* Line Height Utility Classes */
+.lh-4xs {
+  line-height: var(--lh-4xs);
+}
+
+.lh-3xs {
+  line-height: var(--lh-3xs);
+}
+
+.lh-2xs {
+  line-height: var(--lh-2xs);
+}
 .lh-xs {
   line-height: var(--lh-xs);
 }
@@ -358,21 +332,6 @@ this section does not apply to our website atm
 }
 .lh-6xl {
   line-height: var(--lh-6xl);
-}
-.lh-7xl {
-  line-height: var(--lh-7xl);
-}
-.lh-8xl {
-  line-height: var(--lh-8xl);
-}
-.lh-9xl {
-  line-height: var(--lh-9xl);
-}
-.lh-10xl {
-  line-height: var(--lh-10xl);
-}
-.lh-11xl {
-  line-height: var(--lh-11xl);
 }
 
 /* Margin Utility Classes */

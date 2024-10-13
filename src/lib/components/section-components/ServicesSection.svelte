@@ -6,10 +6,10 @@ import ServicesCard  from '../reusable-components/ServicesCard.svelte';
 
 
 <ServicesCard   
+  counter="01"
   title="Business"
-  description="Business"
-
-  label="2024"/>
+  description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+  label="PRO"/>
 
 </section>
 <style>

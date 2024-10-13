@@ -9,16 +9,15 @@ title = title.toUpperCase();
 label = label.toUpperCase();
 </script>
 
-<article class="card shadow-md br bg-text-200">
-    <i class="fa-solid fa-xmark"></i>
+<article class="card p-xl shadow-md br ">
 
     {#if counter}
-    <p class="card__counter ">{counter}</p>
+    <p class="card__counter  ff-bold fw-bold fsz-3xs lh-none text-900 ">({counter})</p>
     {/if}
-    <h4 class="header__title  ff-bold fw-semibold fsz-sm text-900 lh-2xl">{title}
-    {#if label} <span  class="label">{label}</span>{/if}
+    <h4 class="card__title  ff-bold fw-bold fsz-lg lh-lg text-900 ">{title}
+        {#if label} <span  class="label">{label}</span>{/if}
     </h4>
-    <p class="header__description ff-bold fw-medium fsz-xs text-700 lh-xs">{description}</p>
+    <p class="card__description ff-bold fw-medium fsz-xs text-700 lh-md">{description}</p>
 </article>
 
 <style>
@@ -32,36 +31,33 @@ label = label.toUpperCase();
 .card {
     display: flex;
     flex-direction: column;
-    border: 0.625rem solid var(--color-text-0);
+    border: 0.625rem solid var(--color-text-400);
     justify-content: center;
     width: 100%;
     height: 100%;
     overflow: hidden;
     max-width: 28.125rem;
-    background-color: hsl(240, 11%, 96%);
-    border-color: hsla(0, 0%, 0%, 0.04);
+  
+    gap: var(--fsz-md);
 
-}
+    & .card__counter {
 
-.card__counter{
+        letter-spacing: 0.15rem;
+        line-height: 1;
+        margin-bottom: -0.125rem;
 
+    }
 
+    & .card__title {
 
+        display: flex;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+        gap: var(--spacing-sm);
+        letter-spacing: -0.0125em;
+        text-transform: capitalize;
+    }
 
-}
-
-
-
-.header__title {
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-
-    width: 100%;
-    border-style: solid;
-    border-top-width: 1px;
-    text-transform: capitalize;
 }
 </style>

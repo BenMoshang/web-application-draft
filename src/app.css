@@ -1,111 +1,149 @@
 /* ===============================================
-  !THIS PAGE CONTAINS ALL THE VARIABLES FOR THE PROJECT AND THE GLOBAL RESET
-  
-  !~download the extension "better comments"
-  =============================================== */
-
+  PROJECT VARIABLES AND GLOBAL RESET
+ 
+  ! IMPORTANT:
+  *- This file contains all the CSS variables used throughout the project.
+  *- It also includes a global reset to ensure consistent styling across different browsers.
+  *- For better comment management, consider using the "Better Comments" extension.
+=============================================== */
 
 /* --------------------------------------------------
-    TODO: UNCOMMENT THIS FOR PRODUCTION
-!~~~DEV USE ONLY~~~
-     -------------------------------------------------- */
+    ENVIRONMENT CONFIGURATION
+    ----------------------------------------------
+    ! TODO: Uncomment the following styles for production builds.
+    !These styles are currently disabled for development purposes.
+  -------------------------------------------------- */
 body {
-  /* font-family: system-ui; */
-  /* line-height: 1.5; */
+  /* font-family: system-ui; */ /* Sets the default font to the system's UI font */
+  /* line-height: 1.5; */ /* Establishes a base line height for text */
 }
 
-  /* --------------------------------------------------
-    !import global utility classes
-  -------------------------------------------------- */
+/* --------------------------------------------------
+    !IMPORT GLOBAL UTILITY CLASSES
+    -------------------------------------------------- */
 
+/* Root Variables for Global Styling */
 :root {
   /* --------------------------------------------------
-    !Z Variables 
-    Use Case: Control stacking order of elements
-  -------------------------------------------------- */
+     ! Z-Index Variables
+      ----------------------------------------------
+      *Use Case: Control the stacking order of elements.
+      *Higher values place elements above lower ones.
+    -------------------------------------------------- */
   --z-1: 1;
   --z-2: 2;
   --z-3: 3;
   --z-4: 4;
   --z-5: 5;
-  /* --------------------------------------------------
-    !Spacing Variables 
-    Use Case: Define consistent spacing for margins, padding, and gaps
-  -------------------------------------------------- */
-  --spacing-xs: clamp(0.25rem, 0.127rem + 0.41vw, 0.5rem); /* 4px - 8px */
-  --spacing-sm: clamp(0.5rem, 0.377rem + 0.41vw, 0.75rem); /* 8px - 12px */
-  --spacing-md: clamp(0.75rem, 0.627rem + 0.41vw, 1rem); /* 12px - 16px */
-  --spacing-base: clamp(1rem, 0.754rem + 0.83vw, 1.5rem); /* 16px - 24px */
-  --spacing-lg: clamp(1.5rem, 1.254rem + 0.83vw, 2rem); /* 24px - 32px */
-  --spacing-xl: clamp(2rem, 1.508rem + 1.66vw, 3rem); /* 32px - 48px */
-  --spacing-2xl: clamp(3rem, 2.508rem + 1.66vw, 4rem); /* 48px - 64px */
-  --spacing-3xl: clamp(4rem, 3.016rem + 3.32vw, 6rem); /* 64px - 96px */
-  --spacing-4xl: clamp(6rem, 5.016rem + 3.32vw, 8rem); /* 96px - 128px */
-  --spacing-5xl: clamp(8rem, 6.031rem + 6.63vw, 12rem); /* 128px - 192px */
-  --spacing-6xl: clamp(12rem, 10.031rem + 6.63vw, 16rem); /* 192px - 256px */
-  --spacing-7xl: clamp(16rem, 12.062rem + 13.26vw, 24rem); /* 256px - 384px */
-  --spacing-8xl: clamp(24rem, 20.062rem + 13.26vw, 32rem); /* 384px - 512px */
-  --spacing-9xl: clamp(32rem, 28.062rem + 13.26vw, 40rem); /* 512px - 640px */
-  --spacing-10xl: clamp(40rem, 36.062rem + 13.26vw, 48rem); /* 640px - 768px */
-  --spacing-11xl: clamp(48rem, 46.031rem + 6.63vw, 52rem); /* 768px - 832px */
 
   /* --------------------------------------------------
-    !Font Size Variables 
-    Use Case: Define responsive font sizes for typography
-    (MIN VIEWPORT: 475px | MAX VIEWPORT: 1200px)
-  -------------------------------------------------- */
+      !Spacing Variables
+      ----------------------------------------------
+      *Use Case: Define consistent spacing for margins, padding, and gaps across the project.
+      *Utilizes the `clamp` function for responsive spacing.
+    -------------------------------------------------- */
+  --spacing-xs: clamp(0.25rem, 0.127rem + 0.41vw, 0.5rem); /*  4px and 8px */
+  --spacing-sm: clamp(0.5rem, 0.377rem + 0.41vw, 0.75rem); /*  8px and 12px */
+  --spacing-md: clamp(0.75rem, 0.627rem + 0.41vw, 1rem); /*  12px and 16px */
+  --spacing-base: clamp(
+    1rem,
+    0.754rem + 0.83vw,
+    1.5rem
+  ); /* Base  16px and 24px */
+  --spacing-lg: clamp(1.5rem, 1.254rem + 0.83vw, 2rem); /*  24px and 32px */
+  --spacing-xl: clamp(2rem, 1.508rem + 1.66vw, 3rem); /*  32px and 48px */
+  --spacing-2xl: clamp(3rem, 2.508rem + 1.66vw, 4rem); /*  48px and 64px */
+  --spacing-3xl: clamp(4rem, 3.016rem + 3.32vw, 6rem); /*  64px and 96px */
+  --spacing-4xl: clamp(6rem, 5.016rem + 3.32vw, 8rem); /*  96px and 128px */
+  --spacing-5xl: clamp(8rem, 6.031rem + 6.63vw, 12rem); /*  128px and 192px */
+  --spacing-6xl: clamp(12rem, 10.031rem + 6.63vw, 16rem); /*  192px and 256px */
+  --spacing-7xl: clamp(
+    16rem,
+    12.062rem + 13.26vw,
+    24rem
+  ); /*  256px and 384px */
+  --spacing-8xl: clamp(
+    24rem,
+    20.062rem + 13.26vw,
+    32rem
+  ); /*  384px and 512px */
+  --spacing-9xl: clamp(
+    32rem,
+    28.062rem + 13.26vw,
+    40rem
+  ); /*  512px and 640px */
+  --spacing-10xl: clamp(
+    40rem,
+    36.062rem + 13.26vw,
+    48rem
+  ); /*  640px and 768px */
+  --spacing-11xl: clamp(
+    48rem,
+    46.031rem + 6.63vw,
+    52rem
+  ); /*  768px and 832px */
+
+  /* --------------------------------------------------
+      !Font Size Variables
+      ----------------------------------------------
+      *Use Case: Define responsive font sizes for typography.
+      *The `clamp` function ensures font sizes scale between defined minimum and maximum viewport widths.
+      *Range: Minimum viewport width of 475px to a maximum of 1200px.
+    -------------------------------------------------- */
   /*
+    ! THE FOLLOWING FONT SIZES ARE COMMENTED OUT FOR THIS PROJECT.
+    ! Choose font sizes based on your design approach:
+      *- Mobile-first: Use the smallest value in the clamp range.
+      *- Desktop-first: Use the largest value in the clamp range.
+    */
+  --fsz-2xs: clamp(0.625rem, 0.563rem + 0.21vw, 0.75rem); /* 10px - 12px */
+  --fsz-xs: clamp(0.75rem, 0.688rem + 0.21vw, 0.875rem); /* 12px - 14px */
+  --fsz-sm: clamp(0.875rem, 0.813rem + 0.21vw, 1rem); /* 14px - 16px */
+  --fsz-md: clamp(1rem, 0.938rem + 0.21vw, 1.125rem); /* 16px - 18px */
+  --fsz-lg: clamp(1.125rem, 1.063rem + 0.21vw, 1.25rem); /* 18px - 20px */
+  --fsz-xl: clamp(1.25rem, -0.596rem + 6.22vw, 5rem); /* 20px - 80px */
+  --fsz-2xl: clamp(1.5rem, 1.315rem + 0.62vw, 1.875rem); /* 24px - 30px */
+  --fsz-3xl: clamp(1.875rem, 1.69rem + 0.62vw, 2.25rem); /* 30px - 36px */
+  --fsz-4xl: clamp(2.25rem, 1.881rem + 1.24vw, 3rem); /* 36px - 48px */
+  --fsz-5xl: clamp(3rem, 2.631rem + 1.24vw, 3.75rem); /* 48px - 60px */
+  --fsz-6xl: clamp(3.75rem, 3.381rem + 1.24vw, 4.5rem); /* 60px - 72px */
+  --fsz-7xl: clamp(4.5rem, 3.762rem + 2.49vw, 6rem); /* 72px - 96px */
 
-  !COMMENTED OUT FOR THIS PROJECT
-  * HOW TO PICK YOUR FONT SIZES:
-  *If Mobile first approach.... LOOK AT SMALLEST NUMBER IN THE RANGE = THE FONT YOU ARE PICKING TO USE
-  *If Desktop first approach.... LOOK AT LARGEST NUMBER IN THE RANGE = THE FONT YOU ARE PICKING TO USE
-  */
-  /*--fsz-2xs: clamp(
-    0.625rem,
-    0.563rem + 0.21vw,
-    0.75rem
-  ); */ /* 10px - 12px */ /* !Should Hardly be used... only for <small> text */
- /* --fsz-xs: clamp(0.75rem, 0.688rem + 0.21vw, 0.875rem); *//* 12px - 14px */
-  /*--fsz-sm: clamp(0.875rem, 0.813rem + 0.21vw, 1rem);*/ /* 14px - 16px */
- /* --fsz-md: clamp(1rem, 0.938rem + 0.21vw, 1.125rem);*//* !Base | 16px - 18px */
-  /*--fsz-lg: clamp(1.125rem, 1.063rem + 0.21vw, 1.25rem);*/ /* 18px - 20px */
-  /*--fsz-xl: clamp(1.25rem, -0.596rem + 6.22vw, 5rem);*/ /* 20px - 80px */
-  /*--fsz-2xl: clamp(1.5rem, 1.315rem + 0.62vw, 1.875rem);*/ /* 24px - 30px */
- /* --fsz-3xl: clamp(1.875rem, 1.69rem + 0.62vw, 2.25rem);*/ /* 30px - 36px */
-  /*--fsz-4xl: clamp(2.25rem, 1.881rem + 1.24vw, 3rem);*/ /* 36px - 48px */
-  /*--fsz-5xl: clamp(3rem, 2.631rem + 1.24vw, 3.75rem);*/ /* 48px - 60px */
-  /*--fsz-6xl: clamp(3.75rem, 3.381rem + 1.24vw, 4.5rem);*/ /* 60px - 72px */
-  /*--fsz-7xl: clamp(4.5rem, 3.762rem + 2.49vw, 6rem); *//* 72px - 96px */
-  --fsz-3xs: 1rem;
-  --fsz-2xs: 1.125rem;
-    --fsz-xs: 1.25rem;
-  --fsz-sm: 1.375rem;
-  --fsz-md: 1.5rem;
-  --fsz-lg: 1.875rem;
-  --fsz-xl: clamp(2.5rem, 33.456px + 1.38vw, 3.125rem);
-  --fsz-2xl: clamp(2.5rem, 0.453rem + 6.90vw, 5.625rem);
-  --fsz-3xl: clamp(2.5rem, -0.366rem + 9.66vw, 6.875rem);
-  --fsz-4xl: clamp(3.125rem, -2.198rem + 17.93vw, 11.25rem);
+  --fsz-3xs: 1rem; /* 16px */
+  --fsz-2xs: 1.125rem; /*  18px */
+  --fsz-xs: 1.25rem; /* 20px */
+  --fsz-sm: 1.375rem; /* 22px */
+  --fsz-md: 1.5rem; /*  24px */
+  --fsz-lg: 1.875rem; /* 30px */
+  --fsz-xl: clamp(2.5rem, 33.456px + 1.38vw, 3.125rem); /*  40px - 50px */
+  --fsz-2xl: clamp(2.5rem, 0.453rem + 6.9vw, 5.625rem); /*  40px - 90px */
+  --fsz-3xl: clamp(2.5rem, -0.366rem + 9.66vw, 6.875rem); /*  40px - 110px */
+  --fsz-4xl: clamp(3.125rem, -2.198rem + 17.93vw, 11.25rem); /*  50px - 180px */
 
   /* --------------------------------------------------
-   !line-height Variables 
-  -------------------------------------------------- */
-  --lh-xs: 1.25; /* Extra Small */
-  --lh-sm: 1.35; /* Small */
-  --lh-md: 1.5; /* !BASE  */
-  --lh-lg: 1.6; /* Large */
-  --lh-xl: 1.75; /* Extra Large */
-  --lh-2xl: 1.8; /* 2x Extra Large */
-  --lh-3xl: 2; /* 3x Extra Large */
-  --lh-4xl: 2.2; /* 4x Extra Large */
-  --lh-5xl: 2.5; /* 5x Extra Large */
-  --lh-6xl: 2.8; /* 6x Extra Large */
-  --lh-7xl: 3; /* 7x Extra Large */
+      !Line-Height Variables
+      ----------------------------------------------
+      *Use Case: Define standardized line heights for typography.
+    -------------------------------------------------- */
+  --lh-4xs: 0.63; /*  10px text */
+  --lh-3xs: 1; /*  16px text */
+  --lh-2xs: 1.13; /*  18px text */
+  --lh-xs: 1.25; /*  20px text */
+  --lh-sm: 1.38; /*  22px text */
+  --lh-md: 1.5; /* Base  24px text */
+  --lh-lg: 1.625; /*  26px text */
+  --lh-xl: 1.75; /*  28px text */
+  --lh-2xl: 1.875; /*  30px text */
+  --lh-3xl: 2; /*  32px text */
+  --lh-4xl: 2.5; /*  40px text */
+  --lh-5xl: 2.81; /*  45px text */
+  --lh-6xl: 3.31; /*  53px text */
 
   /* --------------------------------------------------
-    !Font Weight 
-  -------------------------------------------------- */
+      !Font Weight Variables
+      ----------------------------------------------
+      *Use Case: Define standardized font weights for typography.
+    -------------------------------------------------- */
   --fw-thin: 100;
   --fw-extralight: 200;
   --fw-light: 300;
@@ -117,68 +155,106 @@ body {
   --fw-black: 900;
 
   /* --------------------------------------------------
-    !Breakpoints for Media Queries
-  -------------------------------------------------- */
+      !Breakpoints for Media Queries
+      ----------------------------------------------
+      *Use Case: Define breakpoints for responsive designs using media queries.
+    -------------------------------------------------- */
   --mq-breakpoint-md: 30rem; /* 480px */
   --mq-breakpoint-lg: 80rem; /* 1280px */
 
   /* --------------------------------------------------
-    !Breakpoints for Container Queries
-  -------------------------------------------------- */
-
-  --cq-breakpoint-sm: 29.6875rem; /* 475px */
+      !Breakpoints for Container Queries
+      ----------------------------------------------
+      *Use Case: Define breakpoints for container-based designs.
+    -------------------------------------------------- */
+  --cq-breakpoint-sm: 29.6875rem; /*  475px */
   --cq-breakpoint-md: 48rem; /* 768px */
-  --cq-breakpoint-lg: 64rem; /* 1024px */
+  --cq-breakpoint-lg: 64rem; /*1024px */
 
   /* --------------------------------------------------
-!max-width
--------------------------------------------------- */
-  --max-width-1440px: 90rem;
-  /* --------------------------------------------------
- !border-radius
--------------------------------------------------- */
-  --border-radius: 0.75rem;
-  --rounded-border-radius: 5.625rem;
+      !Maximum Width Variables
+      ----------------------------------------------
+      *Use Case: Define maximum widths for containers to constrain content.
+    -------------------------------------------------- */
+  --max-width-1440px: 90rem; /*  1440px */
 
   /* --------------------------------------------------
-!Neurophimisim background gradients
--------------------------------------------------- */
-  --convex-primary-red: linear-gradient(
-    145deg,
-    hsl(0, 100%, 64%),
-    hsl(0, 77%, 57%)
-  );
-  --convex-background-yellow: linear-gradient(
-    145deg,
-    hsl(60, 100%, 95%),
-    hsl(45, 81%, 92%)
-  );
-  --convex-background: linear-gradient(
-    145deg,
-    hsl(180, 100%, 99%),
-    hsl(215, 63%, 95%)
-  );
-  --convex-primary: linear-gradient(
-    145deg,
-    hsl(202, 100%, 51%),
-    hsl(205, 97%, 46%)
-  );
+      !Border Radius Variables
+      ----------------------------------------------
+      *Use Case: Define standardized border radii for elements.
+    -------------------------------------------------- */
+  --border-radius: 0.75rem; /* 12px */
+  --rounded-border-radius: 5.625rem; /*  90px */
 
-  --color-text-900: hsl(240, 3%, 12%); /* Default or base black */
-  --color-text-800: hsl(240, 2%, 25%); /* Dark gray */
-  --color-text-700: hsl(240, 2%, 37%); /* Medium-dark gray */
-  --color-text-600: hsl(240, 1%, 44%); /* Medium gray */
-  --color-text-500: hsl(240, 1%, 60%); /* Medium-light gray (default gray) */
-  --color-text-400: hsl(240, 2%, 73%);
-  --color-text-300: hsl(240, 3%, 87%);
-  --color-text-200: hsl(240, 5%, 93%);
-  --color-text-100: hsl(240, 14%, 96%);
-  --color-text-50: hsl(240, 40%, 98%)
-  --color-text-0: hsl(240, 100%, 100%);
+  /* --------------------------------------------------
+      !Neurophimism Background Gradients
+      ----------------------------------------------
+      *Use Case: Define specific background gradients for various elements.
+      *Currently commented out; uncomment if needed.
+    -------------------------------------------------- */
 
+  --bg-convex: #;
+
+  /* --------------------------------------------------
+     !Base Color Variables
+      ----------------------------------------------
+      * Use Case: Define base colors used throughout the project.
+    -------------------------------------------------- */
+  --color-white: hsl(0, 0%, 100%); /* (#ffffff */
+  --color-white-100: hsl(0, 0%, 98%); /* (#fafafa) */
+  --color-white-200: hsl(240, 11%, 96%); /*  (#f5f5f7) */
+  --color-white-300: hsl(240, 5%, 92%); /* (#eaeaec) */
+
+  --color-black: hsl(0, 0%, 0%); /* (#000000)*/
+  --color-black-0: hsla(0, 0%, 0%, 0.07); /* (#00000012) */
+  --color-black-100: hsla(0, 0%, 0%, 0.16); /* (#00000029) */
+  --color-black-200: hsl(240, 3%, 12%); /* (#1d1d1f) */
+  --color-black-300: hsla(0, 0%, 15%, 0.16); /*  (#26262629) */
+  --color-black-400: hsl(0, 0%, 18%); /* (#2e2e2e) */
+
+  /* --------------------------------------------------
+      !Text Color Variables
+      ----------------------------------------------
+      *Use Case: Define text colors for various UI elements.
+    -------------------------------------------------- */
+  --text-white: var(--color-white); /* White text */
+
+  --text-black-500: hsl(0, 0%, 22%); /* (#383838) */
+  --text-black-600: hsl(0, 0%, 32%); /*  (#525252) */
+  --text-black-700: hsla(240, 3%, 12%, 0.7); /* (#1d1d1fb3) */
+  --text-black-800: var(--color-black-200); /* (#1d1d1f) */
+  --text-black-900: hsla(0, 0%, 0%, 0.6); /* (#00000099) */
+  --text-black: var(--color-black-500); /* (#383838) */
+
+  /* --------------------------------------------------
+     !Fill Color Variables
+      ----------------------------------------------
+      *Use Case: Define fill colors for icons and other filled elements.
+    -------------------------------------------------- */
+  --fill-800: var(--text-black-600); /* (#525252) */
+  --fill-900: var(--color-black-200); /* (#1d1d1f) */
+
+  /* --------------------------------------------------
+      !Border Color Variables
+      ----------------------------------------------
+      *Use Case: Define border colors for various UI elements.
+    -------------------------------------------------- */
+  --border-white: var(--color-white-300); /*  (#eaeaec) */
+  --border-black: var(--color-black-200); /* (#1d1d1f) */
+
+  --border-black-0: var(--color-black-400); /*  (#2e2e2e) */
+  --border-black-200: hsla(0, 0%, 0%, 0.039); /* (#0000000a) */
+  --border-black-300: hsla(0, 0%, 0%, 0.078); /* (#00000014) */
+  --border-black-400: hsla(0, 0%, 0%, 0.071); /* (#00000012) */
+
+  /* --------------------------------------------------
+      !Red Color Scale
+      ----------------------------------------------
+      *Use Case: Define various shades of red for alerts, errors, and highlights.
+    -------------------------------------------------- */
   --color-red-100: hsl(0, 100%, 95%); /* Very light red */
   --color-red-200: hsl(0, 100%, 85%); /* Light red */
-  --color-red-300: hsl(0, 100%, 74%); /* Slightly lighter than 400 */
+  --color-red-300: hsl(0, 100%, 74%); /* Slightly lighter red */
   --color-red-400: hsl(0, 100%, 63%); /* Base red */
   --color-red-500: hsl(0, 100%, 53%); /* Slightly darker red */
   --color-red-600: hsl(0, 100%, 43%); /* Dark red */
@@ -187,22 +263,31 @@ body {
   --color-red-900: hsl(0, 100%, 13%); /* Darkest red */
 
   /* --------------------------------------------------
-!FONT FAMILIES
--------------------------------------------------- */
-  --ff-regular: "Inter Tight", system-ui;
-  --ff-bold: "Instrument Sans", system-ui;
+     ! Font Family Variables
+      ----------------------------------------------
+     * Use Case: Define font families for various text elements.
+    -------------------------------------------------- */
+  --ff-regular: "Inter Tight", system-ui; /* Regular font family */
+  --ff-bold: "Instrument Sans", system-ui; /* Bold font family */
+
   /* --------------------------------------------------
- !BACKGROUND SHADOWS  with elevations
--------------------------------------------------- */
-  --shadow-color: 0deg 0% 63%;
+      !Background Shadow Variables
+      ----------------------------------------------
+      *Use Case: Define standardized shadow effects for UI elements.
+      *Shadows are layered to create depth and elevation.
+    -------------------------------------------------- */
+  --shadow-color: 0deg 0% 63%; /* Base color for shadows */
+
   --shadow-sm: 0.0187rem 0.0313rem 0.0313rem hsl(var(--shadow-color) / 0.52),
     0.025rem 0.05rem 0.05rem -0.1187rem hsl(var(--shadow-color) / 0.4),
     0.0625rem 0.125rem 0.1313rem -0.2313rem hsl(var(--shadow-color) / 0.29);
+
   --shadow-md: 0.0187rem 0.0313rem 0.0313rem hsl(var(--shadow-color) / 0.43),
     0.0313rem 0.0625rem 0.0625rem -0.0563rem hsl(var(--shadow-color) / 0.38),
     0.0688rem 0.1313rem 0.1375rem -0.1187rem hsl(var(--shadow-color) / 0.32),
     0.15rem 0.3rem 0.3125rem -0.175rem hsl(var(--shadow-color) / 0.26),
     0.3125rem 0.625rem 0.6563rem -0.2313rem hsl(var(--shadow-color) / 0.2);
+
   --shadow-lg: 0.0187rem 0.0313rem 0.0313rem hsl(var(--shadow-color) / 0.4),
     0.0437rem 0.0938rem 0.1rem -0.025rem hsl(var(--shadow-color) / 0.38),
     0.0813rem 0.1625rem 0.1688rem -0.05rem hsl(var(--shadow-color) / 0.35),
@@ -215,21 +300,28 @@ body {
     1.5625rem 3.125rem 3.275rem -0.2313rem hsl(var(--shadow-color) / 0.16);
 }
 
-/*
-  1. Apply a more intuitive box-sizing model to all elements and pseudo-elements.
-*/
+/* --------------------------------------------------
+      !GLOBAL BOX-SIZING
+      ----------------------------------------------
+      *Apply a consistent box-sizing model to all elements and pseudo-elements.
+      *This ensures that padding and borders are included in the element's total width and height.
+  -------------------------------------------------- */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-
-
 }
-  /* -webkit-font-smoothing: antialiased; */
-  /* -moz-osx-font-smoothing: grayscale; */
-/*
-  7. Prevent text overflow issues for paragraph and heading elements.
-*/
+
+/* Font Smoothing */
+/* Uncomment the following lines for better font rendering across browsers */
+/* -webkit-font-smoothing: antialiased; */
+/* -moz-osx-font-smoothing: grayscale; */
+
+/* --------------------------------------------------
+    TEXT OVERFLOW PREVENTION
+    ----------------------------------------------
+    Ensure that text within paragraphs and headings wraps appropriately to prevent overflow.
+  -------------------------------------------------- */
 p,
 h1,
 h2,
@@ -239,54 +331,78 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+
 p {
-  text-wrap: pretty;
+  text-wrap: pretty; /* Custom text wrapping for paragraphs */
 }
 
-
-
+/* --------------------------------------------------
+    SMALL TEXT STYLING
+    ----------------------------------------------
+    Define styles for small text elements.
+  -------------------------------------------------- */
 small {
-  text-transform: uppercase;
-  color: red;
-  font-weight: var(--fw-regular);
-  font-size: var(--fsz-2xs);
+  text-transform: uppercase; /* Convert text to uppercase */
+  color: red; /* Set text color to red */
+  font-weight: var(--fw-regular); /* Apply regular font weight */
+  font-size: var(--fsz-2xs); /* Set font size to 18px */
 }
 
+/* --------------------------------------------------
+    HTML AND BODY STYLES
+    ----------------------------------------------
+    Set base styles for the html and body elements.
+  -------------------------------------------------- */
 html,
 body {
   width: 100%;
   height: 100%;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  overflow-x: hidden;
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+  text-rendering: optimizeSpeed; /* Optimize text rendering for speed */
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
-
-
-
+/* --------------------------------------------------
+    MEDIA ELEMENTS STYLING
+    ----------------------------------------------
+    Ensure media elements are responsive and scale correctly.
+  -------------------------------------------------- */
 img,
 picture,
 video,
 canvas,
 svg {
   display: block;
-  max-width: 100%;
-  height: auto;
+  max-width: 100%; /* Prevent media from exceeding container width */
+  height: auto; /* Maintain aspect ratio */
 }
 
-/* 4. Remove default list styles */
+/* --------------------------------------------------
+    LIST STYLING RESET
+    ----------------------------------------------
+    Remove default list styles for ordered and unordered lists.
+  -------------------------------------------------- */
 ol,
 ul {
   list-style: none;
 }
-/* 9. Set cursor pointer for buttons and clickable elements */
+
+/* --------------------------------------------------
+    INTERACTIVE ELEMENTS CURSOR
+    ----------------------------------------------
+    Set the cursor to pointer for buttons and other interactive elements to indicate clickability.
+  -------------------------------------------------- */
 button,
 [role="button"],
 select {
   cursor: pointer;
 }
 
-/* 8. Inherit fonts for form elements */
+/* --------------------------------------------------
+    FORM ELEMENTS FONT INHERITANCE
+    ----------------------------------------------
+    Ensure form elements inherit the font styles from their parent elements.
+  -------------------------------------------------- */
 input,
 button,
 textarea,
@@ -294,13 +410,21 @@ select {
   font: inherit;
 }
 
-/* 11. Reset table styles */
+/* --------------------------------------------------
+    TABLE STYLES RESET
+    ----------------------------------------------
+    Remove default table styles for a clean slate.
+  -------------------------------------------------- */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* 12. Remove quotes from blockquotes and q elements */
+/* --------------------------------------------------
+    QUOTE STYLES RESET
+    ----------------------------------------------
+    Remove default quotes from blockquote and q elements.
+  -------------------------------------------------- */
 blockquote,
 q {
   quotes: none;
@@ -313,26 +437,40 @@ q::after {
   content: "";
 }
 
-/* 15. Avoid text overflows */
+/* --------------------------------------------------
+    HYPHENATION FOR TEXT OVERFLOW
+    ----------------------------------------------
+    Enable hyphenation to improve text flow and prevent overflow issues.
+  -------------------------------------------------- */
 * {
   hyphens: auto;
 }
 
+/* --------------------------------------------------
+    FONT FACE DEFINITIONS
+    ----------------------------------------------
+    Define custom font faces for the project.
+  -------------------------------------------------- */
 @font-face {
   font-family: "Instrument Sans";
   src: url("../src/lib/fonts/InstrumentSans-VariableFont.ttf")
     format("truetype-variations");
-  font-weight: 100 900; /* Adjust the range based on the font's capabilities */
+  font-weight: 100 900; /* Supports weights from 100 to 900 */
 }
 
 @font-face {
   font-family: "Inter Tight";
   src: url("../src/lib/fonts/InterTight-VariableFont.ttf")
     format("truetype-variations");
-  font-weight: 100 900; /* Adjust the range based on the font's capabilities */
+  font-weight: 100 900; /* Supports weights from 100 to 900 */
 }
 
-/* 2. Remove default margins and paddings */
+/* --------------------------------------------------
+    GLOBAL MARGIN, PADDING, AND BORDER RESET
+    ----------------------------------------------
+    Remove default margins, paddings, and borders from a wide range of HTML elements.
+    This creates a consistent baseline for styling.
+  -------------------------------------------------- */
 html,
 body,
 div,
@@ -412,43 +550,41 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  border: 0; /* Remove default border */
+  vertical-align: baseline; /* Set vertical alignment to baseline */
 }
 
 /* --------------------------------------------------
-   Scroll Bar Styles
--------------------------------------------------- */
-/* Scrollbar Track */
-::-webkit-scrollbar {
-  width: 0.5rem; /* Adjust the width of the scrollbar */
-}
+    SCROLLBAR STYLES
+    ----------------------------------------------
+    Customize the appearance of scrollbars for a more consistent look across browsers.
+  -------------------------------------------------- */
 
 /* Scrollbar Track */
+::-webkit-scrollbar {
+  width: 0.5rem; /* Set scrollbar width */
+}
+
+/* Scrollbar Track Background */
 ::-webkit-scrollbar-track {
-  background: hsl(0, 0%, 100%); /* Background color of the scrollbar track */
+  background: hsl(0, 0%, 100%); /* White background for the scrollbar track */
 }
 
 /* Scrollbar Thumb */
 ::-webkit-scrollbar-thumb {
-  background-color: hsl(0, 0%, 53%); /* Color of the scrollbar thumb */
-  border-radius: 0.625rem; /* Rounded corners on the scrollbar thumb */
-  border: 0.125rem solid hsl(0, 0%, 100%); /* Optional: Add a border around the scrollbar thumb */
+  background-color: hsl(0, 0%, 53%); /* Gray color for the scrollbar thumb */
+  border-radius: 0.625rem; /* Rounded corners for the scrollbar thumb */
+  border: 0.125rem solid hsl(0, 0%, 100%); /* White border around the scrollbar thumb */
 }
 
-/* Scrollbar Thumb Hover */
+/* Scrollbar Thumb Hover Effect */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: hsl(
-    0,
-    0%,
-    33%
-  ); /* Darker color when hovering over the scrollbar thumb */
+  background-color: hsl(0, 0%, 33%); /* Darker gray on hover */
 }
 
-/* Scrollbar Button (optional, to style the up/down buttons on the scrollbar) */
+/* Scrollbar Buttons (Optional) */
 ::-webkit-scrollbar-button {
-  display: none; /* Hide the up/down buttons on the scrollbar */
+  display: none; /* Hide scrollbar buttons */
 }
-

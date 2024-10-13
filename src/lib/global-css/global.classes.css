@@ -16,7 +16,6 @@
   border-radius: var(--rounded-border-radius);
   padding-block: 0.625rem;
   padding-inline: 1.25rem;
-  opacity: 0.75;
   box-shadow: inset var(--shadow-sm);
 }
 
@@ -58,7 +57,7 @@
   text-decoration: none;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
     filter 0.2s ease-in-out;
-  gap: var(--space-xs);
+  gap: var(--fsz-xs);
 
   & > * {
     flex: 1;

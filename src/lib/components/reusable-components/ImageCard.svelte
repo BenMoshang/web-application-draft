@@ -9,7 +9,7 @@ title = title.toUpperCase();
 label = label.toUpperCase();
 </script>
 
-<figure class="card shadow-md br bg-text-200">
+<figure class="card shadow-md br bg-text-200 ">
     {#if imageSrc}
     <img src={imageSrc} alt={title} class="card__image" />
     {/if}
@@ -73,7 +73,7 @@ label = label.toUpperCase();
 background-color: hsl(240, 11%, 96%);
 
 flex-wrap: nowrap;
-border-color: hsla(0, 0%, 0%, 0.04);
+border-color: #0000000a;
 border-style: solid;
 border-top-width: 1px;
 z-index: var(--z-2);
