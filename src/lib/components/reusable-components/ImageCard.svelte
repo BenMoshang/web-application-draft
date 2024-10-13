@@ -9,15 +9,15 @@ title = title.toUpperCase();
 label = label.toUpperCase();
 </script>
 
-<figure class="card shadow-md br bg-text-200 ">
+<figure class="card shadow-md br bg-white-200 border-black-100">
     {#if imageSrc}
     <img src={imageSrc} alt={title} class="card__image" />
     {/if}
-    <figcaption class="card__content pblock-base pinline-lg">
+    <figcaption class="card__content pblock-base pinline-lg  bg-white-200 ">
         <header class="content__header">
             <h4
-                class="header__title  ff-bold fw-semibold fsz-sm text-900 lh-2xl">{title}</h4>
-            <p class="header__description ff-bold fw-medium fsz-xs text-700 lh-xs">{description}</p>
+                class="header__title  ff-bold fw-semibold fsz-sm text-200 lh-xl">{title}</h4>
+            <p class="header__description ff-bold fw-medium fsz-xs text-600 lh-2xs">{description}</p>
         </header>
         {#if label}
         <p  class="label">{label}</p>
@@ -36,14 +36,11 @@ label = label.toUpperCase();
 .card {
     display: flex;
     flex-direction: column;
-   border: 0.625rem solid var(--color-text-0);
     justify-content: center;
     width: 100%;
     height: auto;
     overflow: hidden;
-    max-width:28.125rem;
-
-    
+    max-width: 28.125rem;
 
     & .card__image {
 
@@ -51,14 +48,13 @@ label = label.toUpperCase();
         height: 100%;
         object-fit: fill;
 
-        box-shadow: var(--shadow-sm);
         transition: transform 0.3s ease-in-out;
         isolation: isolate;
-     z-index: var(--z-1);
+        z-index: var(--z-1);
 
         &:hover {
-     transform: scale(1.1);
-}
+            transform: scale(1.1);
+        }
     }
 }
 
@@ -70,27 +66,23 @@ label = label.toUpperCase();
 
     width: 100%;
 
-background-color: hsl(240, 11%, 96%);
-
-flex-wrap: nowrap;
-border-color: #0000000a;
-border-style: solid;
-border-top-width: 1px;
-z-index: var(--z-2);
-
+    flex-wrap: nowrap;
+    border-color: #0000000a;
+    border-style: solid;
+    border-top-width: 1px;
+    z-index: var(--z-2);
 
 }
 
-.content__header{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: var(--space-xs);
+.content__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-xs);
 
+}
 
-    }
 .header__title {
-text-transform: capitalize;
+    text-transform: capitalize;
 }
-
 </style>

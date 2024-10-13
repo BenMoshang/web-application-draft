@@ -9,15 +9,14 @@ title = title.toUpperCase();
 label = label.toUpperCase();
 </script>
 
-<article class="card p-xl shadow-md br ">
-
+<article class="card br p-xl bg-white-200 shadow-md">
     {#if counter}
-    <p class="card__counter  ff-bold fw-bold fsz-3xs lh-none text-900 ">({counter})</p>
+    <p class="card__counter  ff-bold fw-bold fsz-3xs  text-800 lh-3xs ">({counter})</p>
     {/if}
-    <h4 class="card__title  ff-bold fw-bold fsz-lg lh-lg text-900 ">{title}
+    <h4 class="card__title  ff-bold fw-bold fsz-lg text-black-800, lh-lg">{title}
         {#if label} <span  class="label">{label}</span>{/if}
     </h4>
-    <p class="card__description ff-bold fw-medium fsz-xs text-700 lh-md">{description}</p>
+    <p class="card__description ff-bold fw-medium fsz-xs text-600 lh-md">{description}</p>
 </article>
 
 <style>

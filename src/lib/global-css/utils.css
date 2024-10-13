@@ -109,6 +109,10 @@
   border-color: var(--border-black);
 }
 
+.border-black-100 {
+  border-color: var(--border-black-100);
+}
+
 .border-black-200 {
   border-color: var(--border-black-200);
 }
@@ -124,7 +128,14 @@
 /* --------------------------------------------------
 !TEXT COLORS
 -------------------------------------------------- */
-.text-white {
+
+/* Text color variations defined in app.css
+   --text-black-500: hsl(0, 0%, 22%); /* (#383838) */
+--text-black-600: hsl(0, 0%, 32%); /* (#525252) */
+--text-black-700: #1d1d1fb3; /* (#1d1d1fb3) */
+--text-black-800: var(--color-black-200); /* (#1d1d1f) */
+--text-black-900: hsla(0, 0%, 0%, 0.6); /* (#00000099) */
+*/ .text-white {
   color: var(--color-white);
 }
 
@@ -132,23 +143,23 @@
   color: var(--text-black);
 }
 
-.text-black-500 {
+.text-500 {
   color: var(--text-black-500);
 }
 
-.text-black-600 {
+.text-600 {
   color: var(--text-black-600);
 }
 
-.text-black-700 {
+.text-700 {
   color: var(--text-black-700);
 }
 
-.text-black-800 {
+.text-800 {
   color: var(--text-black-800);
 }
 
-.text-black-900 {
+.text-900 {
   color: var(--text-black-900);
 }
 
