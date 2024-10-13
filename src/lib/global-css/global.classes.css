@@ -17,7 +17,7 @@
   padding-block: 0.625rem;
   padding-inline: 1.25rem;
   opacity: 0.75;
-  box-shadow: var(--shadow-sm);
+  box-shadow: inset var(--shadow-sm);
 }
 
 /*

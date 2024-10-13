@@ -39,7 +39,7 @@ label = label.toUpperCase();
    border: 0.625rem solid var(--color-text-0);
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: auto;
     overflow: hidden;
     max-width:28.125rem;
 

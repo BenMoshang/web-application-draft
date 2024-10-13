@@ -1,4 +1,5 @@
 <script>
+  import ServicesSection from '../lib/components/section-components/ServicesSection.svelte';
   import ProjectsSection from '../lib/components/section-components/ProjectsSection.svelte';
   import HeroSection from '../lib/components/section-components/HeroSection.svelte';
   import ImageCard from '../lib/components/reusable-components/ImageCard.svelte';
@@ -10,8 +11,9 @@
 
 </svelte:head>
 <!-- <HeroSection /> -->
-<ProjectsSection />
+<!-- <ProjectsSection /> -->
 <!-- <ImageCard /> -->
+<ServicesSection />
 
 <style>
   
