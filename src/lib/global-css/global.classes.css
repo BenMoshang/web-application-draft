@@ -1,14 +1,31 @@
-
-
 /* --------------------------------------------------
   Global Class Styles
 -------------------------------------------------- */
+
+/* Card Label */
+.label {
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+  font-family: var(--ff-bold);
+  font-size: var(--fsz-3xs);
+  font-weight: var(--fw-semibold);
+  line-height: 1;
+  color: var(--color-text-700);
+  background-color: var(--color-text-300);
+  border: 0.0625rem solid var(--color-text-100);
+  border-radius: var(--rounded-border-radius);
+  padding-block: 0.625rem;
+  padding-inline: 1.25rem;
+  opacity: 0.75;
+  box-shadow: var(--shadow-sm);
+}
+
 /*
 * HOW TO USE GLASS EFFECT
 * 1. Add the class "bg-glass" to the element you want to apply the glass effect to.
 * 2. to change the glass color, add the "bg-glass-{weight}" to whereever you are declaring the element you want to apply the glass effect to.
 */
-:global(.bg-glass) {
+.bg-glass {
   backdrop-filter: blur(1.25rem);
   -webkit-backdrop-filter: blur(1.25rem);
   border: 0.125rem solid hsla(0, 0%, 100%, 0.125);

@@ -1,9 +1,9 @@
 <script>
-	import Header from "./Header.svelte";
-	import Footer from "./Footer.svelte";
+	import Header from "../lib/layout/Header.svelte";
+	import Footer from "../lib/layout/Footer.svelte";
 	import '../app.css';
-	import '../lib/global/global.classes.css';
-	import '../lib/global/utils.css';
+	import '../lib/global-css/global.classes.css';
+	import '../lib/global-css/utils.css';
 </script>
 
 <section class="layout">
@@ -11,8 +11,6 @@
 
 	<main class="layout__main">
 		<slot />
-
-		<h1 class="text-red-500">layout</h1>
 	</main>
 
 	<Footer />
@@ -22,19 +20,18 @@
 	.layout{
 		display: flex;
 		flex-direction: column;
-		min-height: 100dvh;
+		height: 100dvh;
+		width: 100%;
 
 		& .layout__main {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		max-width: var(--max-width);
+		max-width: 120rem;
 		margin: 0 auto;
 		box-sizing: border-box;
 		padding-inline: .5rem;
-
-
 	}
 	}
 

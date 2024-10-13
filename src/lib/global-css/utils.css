@@ -1,26 +1,29 @@
-
 /* ===============================================
   !THIS PAGE CONTAINS ALL THE UTILITY CLASSES
   =============================================== */
-
-
 
 /* ===============================================
                       !INDEX
 
 !use utility classes for styling only. dont use create structural utility classes.
 
-!styling classes
+
+!shadow-utility classes
+*.shadow-[shadosize] - shadow size
+
+!color-utility classes
 *.text-[color]-[weight] - text colors
 *.bg-[color]-[weight] - background colors
-
+!font-utility classes
 *.ff-[font-family] - font family
 *.fw-[font-weight] - font weight
 *.fsz-[font-size] - font size
 *.lh-[line-height] - line height
 
+!border-utility classes
 *.br || .br-rounded - border radius
 
+!spacing-utility classes
 *.m[direction]-[size] - margin 
 *.p[direction]-[size] - padding [direction] is block, inline, top, right, bottom, left.
 
@@ -29,12 +32,16 @@
 
 
 !attributes
+*[shadow] - (sm, md, lg)
+
 *[color] - (text, red)
 *[weight] - (0, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900) 
 
 *[font-family] - (regular, bold)
 *[font-weight] - (thin, light, regular, medium, bold, black)
-*[font-size] - (2xs, xs, sm, md, lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl, 7xl, 8xl, 9xl, 10xl, 11xl)
+*[font-size] - (3xs, 2xs, xs, sm, md, lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl, 7xl, 8xl, 9xl, 10xl, 11xl)
+this section does not apply to our website atm
+ //4xl, 5xl, 6xl, 7xl, 8xl, 9xl, 10xl, 11xl
 *[line-height] - (xs, sm, md, lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl, 7xl, 8xl, 9xl, 10xl, 11xl)
 
 *[direction] - (block, inline, top, right, bottom, left.)
@@ -42,17 +49,28 @@
 
   =============================================== */
 
-
+/* --------------------------------------------------
+!Shadows
+-------------------------------------------------- */
+.shadow-sm {
+  box-shadow: var(--shadow-sm);
+}
+.shadow-md {
+  box-shadow: var(--shadow-md);
+}
+.shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
 
 /* --------------------------------------------------
 !BORDER RADIUS
 -------------------------------------------------- */
-.br{
-border-radius: var(--border-radius);
+.br {
+  border-radius: var(--border-radius);
 }
 
-.br-rounded{
-border-radius: var(--rounded-border-radius);
+.br-rounded {
+  border-radius: var(--rounded-border-radius);
 }
 
 /* --------------------------------------------------
@@ -137,7 +155,6 @@ border-radius: var(--rounded-border-radius);
   color: var(--color-red-900);
 }
 
-
 /* --------------------------------------------------
 !BACKGROUND COLORS
 -------------------------------------------------- */
@@ -186,7 +203,6 @@ border-radius: var(--rounded-border-radius);
   background-color: var(--color-text-0);
 }
 
-
 /* red */
 
 .bg-red-100 {
@@ -225,7 +241,6 @@ border-radius: var(--rounded-border-radius);
   background-color: var(--color-red-900);
 }
 
-
 /* --------------------------------------------------
 !FONT FAMILY
 -------------------------------------------------- */
@@ -237,11 +252,12 @@ border-radius: var(--rounded-border-radius);
   font-family: var(--ff-bold);
 }
 
-
-
 /* --------------------------------------------------
 !FONT SIZE
 -------------------------------------------------- */
+.fsz-3xs {
+  font-size: var(--fsz-3xs);
+}
 .fsz-2xs {
   font-size: var(--fsz-2xs);
 }
