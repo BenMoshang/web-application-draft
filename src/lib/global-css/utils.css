@@ -130,12 +130,13 @@
 -------------------------------------------------- */
 
 /* Text color variations defined in app.css
-   --text-black-500: hsl(0, 0%, 22%); /* (#383838) */
---text-black-600: hsl(0, 0%, 32%); /* (#525252) */
---text-black-700: #1d1d1fb3; /* (#1d1d1fb3) */
---text-black-800: var(--color-black-200); /* (#1d1d1f) */
---text-black-900: hsla(0, 0%, 0%, 0.6); /* (#00000099) */
-*/ .text-white {
+   --text-black-500: hsl(0, 0%, 22%); (#383838)
+--text-black-600: hsl(0, 0%, 32%); (#525252)
+--text-black-700: #1d1d1fb3; (#1d1d1fb3)
+--text-black-800: var(--color-black-200); (#1d1d1f)
+--text-black-900: hsla(0, 0%, 0%, 0.6); (#00000099)
+*/
+.text-white {
   color: var(--color-white);
 }
 
