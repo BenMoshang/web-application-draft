@@ -13,9 +13,9 @@ useCase = useCase.toUpperCase();
     <img src={imageSrc} alt={title} class="card__image" />
 
     <figcaption class="card__caption">
-        <h4 class="card__title  ff-bold fw-bold fsz-lg text-black-800 lh-lg">{title}</h4>
-        <h5 class="caption__useCase  ff-bold fw-bold fsz-3xs  text-800 lh-3xs ">({useCase})</h5>
-        <p class="card__description ff-bold fw-medium fsz-xs text-600 lh-md">{description}</p>
+        <h4 class="card__title  ff-bold fw-bold fsz-lg lh-lg text-800 ">{title}</h4>
+        <h5 class="caption__useCase  ff-bold fw-bold fsz-3xs lh-3xs text-800  ">({useCase})</h5>
+        <p class="card__description ff-bold fw-medium fsz-xs lh-md text-600 ">{description}</p>
     </figcaption>
 </figure>
 
