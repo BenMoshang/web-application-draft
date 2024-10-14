@@ -237,6 +237,12 @@
   background-color: var(--color-black-400);
 }
 
+.bg-black-500 {
+  background-color: var(--color-black-500);
+}
+
+
+
 /* --------------------------------------------------
 !FONT FAMILY
 -------------------------------------------------- */
