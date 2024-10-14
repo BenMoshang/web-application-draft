@@ -22,7 +22,6 @@ body {
     !IMPORT GLOBAL UTILITY CLASSES
     -------------------------------------------------- */
 
-/* Root Variables for Global Styling */
 :root {
   /* --------------------------------------------------
      ! Z-Index Variables
@@ -357,6 +356,8 @@ body {
   --color-black-400: hsl(0, 0%, 18%); /* (#2e2e2e) */
   /* Utility Classes: .bg-black-400 */
 
+  --color-black-500: hsl(240, 3%, 21%); /* (#333336) */
+  /* Utility Classes: .bg-black-500 */
   /* --------------------------------------------------
         !Text Color Variables
         ----------------------------------------------
@@ -365,7 +366,7 @@ body {
   --text-white: var(--color-white); /* White text */
   /* Utility Classes: .text-white */
 
-  --text-black-500: hsl(0, 0%, 22%); /* (#383838) */
+  --text-black-500: #383838; /* (#383838) */
   /* Utility Classes: .text-500 */
 
   --text-black-600: hsl(0, 0%, 32%); /* (#525252) */
