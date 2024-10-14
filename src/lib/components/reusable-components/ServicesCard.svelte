@@ -10,12 +10,14 @@ label = label.toUpperCase();
 </script>
 
 <article class="card br p-xl bg-white-200 shadow-md">
+    <div >
     {#if counter}
     <p class="card__counter  ff-bold fw-bold fsz-3xs  text-800 lh-3xs ">({counter})</p>
     {/if}
     <h4 class="card__title  ff-bold fw-bold fsz-lg text-black-800 lh-lg">{title}
         {#if label} <span  class="label">{label}</span>{/if}
     </h4>
+</div>
     <p class="card__description ff-bold fw-medium fsz-xs text-600 lh-md">{description}</p>
 </article>
 
@@ -43,7 +45,7 @@ label = label.toUpperCase();
 
         letter-spacing: 0.15rem;
         line-height: 1;
-        margin-bottom: -0.125rem;
+        margin-bottom: 1.125rem;
 
     }
 
