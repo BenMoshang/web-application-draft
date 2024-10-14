@@ -10,16 +10,19 @@ label = label.toUpperCase();
 </script>
 
 <article class="card br p-xl bg-white-200 shadow-md">
-    <div >
-    {#if counter}
-    <p class="card__counter  ff-bold fw-bold fsz-3xs  text-800 lh-3xs ">({counter})</p>
-    {/if}
-    <h4 class="card__title  ff-bold fw-bold fsz-lg text-black-800 lh-lg">{title}
-        {#if label} <span  class="label">{label}</span>{/if}
-    </h4>
-</div>
-    <p class="card__description ff-bold fw-medium fsz-xs text-600 lh-md">{description}</p>
-</article>
+    <div class="icon--wrapper">
+        <svg class="card__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#d6d6d7" d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg>
+            </div>
+            <div >
+                {#if counter}
+                <p class="card__counter  ff-bold fw-bold fsz-3xs  text-800 lh-3xs ">({counter})</p>
+                {/if}
+                <h4 class="card__title  ff-bold fw-bold fsz-lg text-black-800 lh-lg">{title}
+                    {#if label} <span  class="label">{label}</span>{/if}
+                </h4>
+            </div>
+            <p class="card__description ff-bold fw-medium fsz-xs text-600 lh-md">{description}</p>
+            </article>
 
 <style>
 *,
@@ -38,7 +41,7 @@ label = label.toUpperCase();
     height: 100%;
     overflow: hidden;
     max-width: 28.125rem;
-  
+
     gap: var(--fsz-md);
 
     & .card__counter {
@@ -58,6 +61,38 @@ label = label.toUpperCase();
         gap: var(--spacing-sm);
         letter-spacing: -0.0125em;
         text-transform: capitalize;
+    }
+
+}
+
+.icon--wrapper {
+    margin-left: auto;
+cursor:pointer;
+    --size: 2.25rem;
+    --bg-size: 3.125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: var(--bg-size);
+    height: var(--bg-size);
+    background: var(--color-black-500);
+    border-radius: 50%;
+    border: 0.0625rem solid var(--color-black-200);
+    box-shadow: var(--shadow-sm), inset var(--shadow-sm);
+
+    &:hover{
+    & svg{
+        transform: rotate(90deg);
+    }
+}
+
+    & svg {
+        transition: transform 0.2s ease-in-out;
+        width: var(--size);
+        height: var(--size);
+        position: relative;
+
     }
 
 }
