@@ -5,8 +5,10 @@ import StackCard from '../reusable-components/StackCard.svelte';
 <section class="stack">
 
 <StackCard
-
-
+imageSrc="https://placehold.co/56x56"
+title="Framer"
+useCase="Web Design Platform"
+description="The internet is your canvas. Framer is where design and code meet."
 />
 
 
