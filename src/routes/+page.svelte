@@ -4,6 +4,7 @@
   import HeroSection from "../lib/components/section-components/HeroSection.svelte";
   import ImageCard from "../lib/components/reusable-components/ImageCard.svelte";
   import StackSection from "../lib/components/section-components/StackSection.svelte";
+  import TestimonialSection from "../lib/components/section-components/TestimonialSection.svelte";
 </script>
 
 <svelte:head>
@@ -15,8 +16,8 @@
 </svelte:head>
 <!-- <HeroSection /> -->
 <!-- <ProjectsSection /> -->
-<ServicesSection />
+<!-- <ServicesSection /> -->
 <!-- <StackSection /> -->
-
+<TestimonialSection />
 <style>
 </style>
