@@ -19,15 +19,16 @@ body {
 }
 
 /* --------------------------------------------------
-    !IMPORT GLOBAL UTILITY CLASSES
-    -------------------------------------------------- */
+      !IMPORT GLOBAL UTILITY CLASSES
+      -------------------------------------------------- */
 
+/* Root Variables for Global Styling */
 :root {
   /* --------------------------------------------------
-         ! Z-Index Variables
-         ----------------------------------------------
-         * Use Case: Control the stacking order of elements.
-         * Higher values place elements above lower ones.
+       ! Z-Index Variables
+        ----------------------------------------------
+        *Use Case: Control the stacking order of elements.
+        *Higher values place elements above lower ones.
       -------------------------------------------------- */
   --z-1: 1; /* Utility Classes: N/A */
   --z-2: 2; /* Utility Classes: N/A */
@@ -36,66 +37,133 @@ body {
   --z-5: 5; /* Utility Classes: N/A */
 
   /* --------------------------------------------------
-         ! Spacing Variables
-         ----------------------------------------------
-         * Use Case: Define consistent spacing for margins, padding, and gaps across the project.
-         * Utilizes the `clamp` function for responsive spacing.
-      -------------------------------------------------- */
-  --spacing-xs: clamp(0.25rem, 0.127rem + 0.41vw, 0.5rem); /* 4px to 8px */
-  /* Utility Classes: .m-xs, .p-xs, .mtop-xs, .mbottom-xs, .mleft-xs, .mright-xs, .mblock-xs, .minline-xs, .ptop-xs, .pbottom-xs, .pleft-xs, .pright-xs, .pblock-xs, .pinline-xs */
+          !Spacing Variables
+          ----------------------------------------------
+          *Use Case: Define consistent spacing for margins, padding, and gaps across the project.
+          *Utilizes the `clamp` function for responsive spacing.
+        -------------------------------------------------- */
+  --spacing-xs: clamp(0.25rem, 0.127rem + 0.41vw, 0.5rem); /*  4px and 8px */
+  /* Utility Classes: .m-xs, .p-xs, .mtop-xs, .mbottom-xs, .minline-xs, .mblock-xs, .mleft-xs, .mright-xs, .ptop-xs, .pbottom-xs, .pleft-xs, .pright-xs, .pinline-xs, .pblock-xs */
 
-  --spacing-sm: clamp(0.5rem, 0.377rem + 0.41vw, 0.75rem); /* 8px to 12px */
-  /* Utility Classes: .m-sm, .p-sm, .mtop-sm, .mbottom-sm, .mleft-sm, .mright-sm, .mblock-sm, .minline-sm, .ptop-sm, .pbottom-sm, .pleft-sm, .pright-sm, .pblock-sm, .pinline-sm */
+  --spacing-sm: clamp(0.5rem, 0.377rem + 0.41vw, 0.75rem); /*  8px and 12px */
+  /* Utility Classes: .m-sm, .p-sm, .mtop-sm, .mbottom-sm, .minline-sm, .mblock-sm, .mleft-sm, .mright-sm, .ptop-sm, .pbottom-sm, .pleft-sm, .pright-sm, .pinline-sm, .pblock-sm */
 
-  --spacing-md: clamp(0.75rem, 0.627rem + 0.41vw, 1rem); /* 12px to 16px */
-  /* Utility Classes: .m-md, .p-md, .mtop-md, .mbottom-md, .mleft-md, .mright-md, .mblock-md, .minline-md, .ptop-md, .pbottom-md, .pleft-md, .pright-md, .pblock-md, .pinline-md */
+  --spacing-md: clamp(0.75rem, 0.627rem + 0.41vw, 1rem); /*  12px and 16px */
+  /* Utility Classes: .m-md, .p-md, .mtop-md, .mbottom-md, .minline-md, .mblock-md, .mleft-md, .mright-md, .ptop-md, .pbottom-md, .pleft-md, .pright-md, .pinline-md, .pblock-md */
 
-  --spacing-base: clamp(1rem, 0.754rem + 0.83vw, 1.5rem); /* 16px to 24px */
-  /* Utility Classes: .m-base, .p-base, .mtop-base, .mbottom-base, .mleft-base, .mright-base, .mblock-base, .minline-base, .ptop-base, .pbottom-base, .pleft-base, .pright-base, .pblock-base, .pinline-base */
+  --spacing-base: clamp(
+    1rem,
+    0.754rem + 0.83vw,
+    1.5rem
+  ); /* Base  16px and 24px */
+  /* Utility Classes: .m-base, .p-base, .mtop-base, .mbottom-base, .minline-base, .mblock-base, .mleft-base, .mright-base, .ptop-base, .pbottom-base, .pleft-base, .pright-base, .pinline-base, .pblock-base */
 
-  --spacing-lg: clamp(1.5rem, 1.254rem + 0.83vw, 2rem); /* 24px to 32px */
-  /* Utility Classes: .m-lg, .p-lg, .mtop-lg, .mbottom-lg, .mleft-lg, .mright-lg, .mblock-lg, .minline-lg, .ptop-lg, .pbottom-lg, .pleft-lg, .pright-lg, .pblock-lg, .pinline-lg */
+  --spacing-lg: clamp(1.5rem, 1.254rem + 0.83vw, 2rem); /*  24px and 32px */
+  /* Utility Classes: .m-lg, .p-lg, .mtop-lg, .mbottom-lg, .minline-lg, .mblock-lg, .mleft-lg, .mright-lg, .ptop-lg, .pbottom-lg, .pleft-lg, .pright-lg, .pinline-lg, .pblock-lg */
 
-  --spacing-xl: clamp(2rem, 1.508rem + 1.66vw, 3rem); /* 32px to 48px */
-  /* Utility Classes: .m-xl, .p-xl, .mtop-xl, .mbottom-xl, .mleft-xl, .mright-xl, .mblock-xl, .minline-xl, .ptop-xl, .pbottom-xl, .pleft-xl, .pright-xl, .pblock-xl, .pinline-xl */
+  --spacing-xl: clamp(2rem, 1.508rem + 1.66vw, 3rem); /*  32px and 48px */
+  /* Utility Classes: .m-xl, .p-xl, .mtop-xl, .mbottom-xl, .minline-xl, .mblock-xl, .mleft-xl, .mright-xl, .ptop-xl, .pbottom-xl, .pleft-xl, .pright-xl, .pinline-xl, .pblock-xl */
 
-  --spacing-2xl: clamp(3rem, 2.508rem + 1.66vw, 4rem); /* 48px to 64px */
-  /* Utility Classes: .m-2xl, .p-2xl, .mtop-2xl, .mbottom-2xl, .mleft-2xl, .mright-2xl, .mblock-2xl, .minline-2xl, .ptop-2xl, .pbottom-2xl, .pleft-2xl, .pright-2xl, .pblock-2xl, .pinline-2xl */
+  --spacing-2xl: clamp(3rem, 2.508rem + 1.66vw, 4rem); /*  48px and 64px */
+  /* Utility Classes: .m-2xl, .p-2xl, .mtop-2xl, .mbottom-2xl, .minline-2xl, .mblock-2xl, .mleft-2xl, .mright-2xl, .ptop-2xl, .pbottom-2xl, .pleft-2xl, .pright-2xl, .pinline-2xl, .pblock-2xl */
 
-  --spacing-3xl: clamp(4rem, 3.016rem + 3.32vw, 6rem); /* 64px to 96px */
-  /* Utility Classes: .m-3xl, .p-3xl, .mtop-3xl, .mbottom-3xl, .mleft-3xl, .mright-3xl, .mblock-3xl, .minline-3xl, .ptop-3xl, .pbottom-3xl, .pleft-3xl, .pright-3xl, .pblock-3xl, .pinline-3xl */
+  --spacing-3xl: clamp(4rem, 3.016rem + 3.32vw, 6rem); /*  64px and 96px */
+  /* Utility Classes: .m-3xl, .p-3xl, .mtop-3xl, .mbottom-3xl, .minline-3xl, .mblock-3xl, .mleft-3xl, .mright-3xl, .ptop-3xl, .pbottom-3xl, .pleft-3xl, .pright-3xl, .pinline-3xl, .pblock-3xl */
 
-  --spacing-4xl: clamp(6rem, 5.016rem + 3.32vw, 8rem); /* 96px to 128px */
-  /* Utility Classes: .m-4xl, .p-4xl, .mtop-4xl, .mbottom-4xl, .mleft-4xl, .mright-4xl, .mblock-4xl, .minline-4xl, .ptop-4xl, .pbottom-4xl, .pleft-4xl, .pright-4xl, .pblock-4xl, .pinline-4xl */
+  --spacing-4xl: clamp(6rem, 5.016rem + 3.32vw, 8rem); /*  96px and 128px */
+  /* Utility Classes: .m-4xl, .p-4xl, .mtop-4xl, .mbottom-4xl, .minline-4xl, .mblock-4xl, .mleft-4xl, .mright-4xl, .ptop-4xl, .pbottom-4xl, .pleft-4xl, .pright-4xl, .pinline-4xl, .pblock-4xl */
 
-  --spacing-5xl: clamp(8rem, 6.031rem + 6.63vw, 12rem); /* 128px to 192px */
-  /* Utility Classes: .m-5xl, .p-5xl, .mtop-5xl, .mbottom-5xl, .mleft-5xl, .mright-5xl, .mblock-5xl, .minline-5xl, .ptop-5xl, .pbottom-5xl, .pleft-5xl, .pright-5xl, .pblock-5xl, .pinline-5xl */
+  --spacing-5xl: clamp(8rem, 6.031rem + 6.63vw, 12rem); /*  128px and 192px */
+  /* Utility Classes: .m-5xl, .p-5xl, .mtop-5xl, .mbottom-5xl, .minline-5xl, .mblock-5xl, .mleft-5xl, .mright-5xl, .ptop-5xl, .pbottom-5xl, .pleft-5xl, .pright-5xl, .pinline-5xl, .pblock-5xl */
 
-  --spacing-6xl: clamp(12rem, 10.031rem + 6.63vw, 16rem); /* 192px to 256px */
-  /* Utility Classes: .m-6xl, .p-6xl, .mtop-6xl, .mbottom-6xl, .mleft-6xl, .mright-6xl, .mblock-6xl, .minline-6xl, .ptop-6xl, .pbottom-6xl, .pleft-6xl, .pright-6xl, .pblock-6xl, .pinline-6xl */
+  --spacing-6xl: clamp(12rem, 10.031rem + 6.63vw, 16rem); /*  192px and 256px */
+  /* Utility Classes: .m-6xl, .p-6xl, .mtop-6xl, .mbottom-6xl, .minline-6xl, .mblock-6xl, .mleft-6xl, .mright-6xl, .ptop-6xl, .pbottom-6xl, .pleft-6xl, .pright-6xl, .pinline-6xl, .pblock-6xl */
 
-  --spacing-7xl: clamp(16rem, 12.062rem + 13.26vw, 24rem); /* 256px to 384px */
-  /* Utility Classes: .m-7xl, .p-7xl, .mtop-7xl, .mbottom-7xl, .mleft-7xl, .mright-7xl, .mblock-7xl, .minline-7xl, .ptop-7xl, .pbottom-7xl, .pleft-7xl, .pright-7xl, .pblock-7xl, .pinline-7xl */
+  --spacing-7xl: clamp(
+    16rem,
+    12.062rem + 13.26vw,
+    24rem
+  ); /*  256px and 384px */
+  /* Utility Classes: .m-7xl, .p-7xl, .mtop-7xl, .mbottom-7xl, .minline-7xl, .mblock-7xl, .mleft-7xl, .mright-7xl, .ptop-7xl, .pbottom-7xl, .pleft-7xl, .pright-7xl, .pinline-7xl, .pblock-7xl */
 
-  --spacing-8xl: clamp(24rem, 20.062rem + 13.26vw, 32rem); /* 384px to 512px */
-  /* Utility Classes: .m-8xl, .p-8xl, .mtop-8xl, .mbottom-8xl, .mleft-8xl, .mright-8xl, .mblock-8xl, .minline-8xl, .ptop-8xl, .pbottom-8xl, .pleft-8xl, .pright-8xl, .pblock-8xl, .pinline-8xl */
+  --spacing-8xl: clamp(
+    24rem,
+    20.062rem + 13.26vw,
+    32rem
+  ); /*  384px and 512px */
+  /* Utility Classes: .m-8xl, .p-8xl, .mtop-8xl, .mbottom-8xl, .minline-8xl, .mblock-8xl, .mleft-8xl, .mright-8xl, .ptop-8xl, .pbottom-8xl, .pleft-8xl, .pright-8xl, .pinline-8xl, .pblock-8xl */
 
-  --spacing-9xl: clamp(32rem, 28.062rem + 13.26vw, 40rem); /* 512px to 640px */
-  /* Utility Classes: .m-9xl, .p-9xl, .mtop-9xl, .mbottom-9xl, .mleft-9xl, .mright-9xl, .mblock-9xl, .minline-9xl, .ptop-9xl, .pbottom-9xl, .pleft-9xl, .pright-9xl, .pblock-9xl, .pinline-9xl */
+  --spacing-9xl: clamp(
+    32rem,
+    28.062rem + 13.26vw,
+    40rem
+  ); /*  512px and 640px */
+  /* Utility Classes: .m-9xl, .p-9xl, .mtop-9xl, .mbottom-9xl, .minline-9xl, .mblock-9xl, .mleft-9xl, .mright-9xl, .ptop-9xl, .pbottom-9xl, .pleft-9xl, .pright-9xl, .pinline-9xl, .pblock-9xl */
 
-  --spacing-10xl: clamp(40rem, 36.062rem + 13.26vw, 48rem); /* 640px to 768px */
-  /* Utility Classes: .m-10xl, .p-10xl, .mtop-10xl, .mbottom-10xl, .mleft-10xl, .mright-10xl, .mblock-10xl, .minline-10xl, .ptop-10xl, .pbottom-10xl, .pleft-10xl, .pright-10xl, .pblock-10xl, .pinline-10xl */
+  --spacing-10xl: clamp(
+    40rem,
+    36.062rem + 13.26vw,
+    48rem
+  ); /*  640px and 768px */
+  /* Utility Classes: .m-10xl, .p-10xl, .mtop-10xl, .mbottom-10xl, .minline-10xl, .mblock-10xl, .mleft-10xl, .mright-10xl, .ptop-10xl, .pbottom-10xl, .pleft-10xl, .pright-10xl, .pinline-10xl, .pblock-10xl */
 
-  --spacing-11xl: clamp(48rem, 46.031rem + 6.63vw, 52rem); /* 768px to 832px */
-  /* Utility Classes: .m-11xl, .p-11xl, .mtop-11xl, .mbottom-11xl, .mleft-11xl, .mright-11xl, .mblock-11xl, .minline-11xl, .ptop-11xl, .pbottom-11xl, .pleft-11xl, .pright-11xl, .pblock-11xl, .pinline-11xl */
+  --spacing-11xl: clamp(
+    48rem,
+    46.031rem + 6.63vw,
+    52rem
+  ); /*  768px and 832px */
+  /* Utility Classes: .m-11xl, .p-11xl, .mtop-11xl, .mbottom-11xl, .minline-11xl, .mblock-11xl, .mleft-11xl, .mright-11xl, .ptop-11xl, .pbottom-11xl, .pleft-11xl, .pright-11xl, .pinline-11xl, .pblock-11xl */
 
   /* --------------------------------------------------
-         ! Font Size Variables
-         ----------------------------------------------
-         * Use Case: Define responsive font sizes for typography.
-         * The `clamp` function ensures font sizes scale between defined minimum and maximum viewport widths.
-         * Range: Minimum viewport width of 475px to a maximum of 1200px.
-      -------------------------------------------------- */
+          !Font Size Variables
+          ----------------------------------------------
+          *Use Case: Define responsive font sizes for typography.
+          *The `clamp` function ensures font sizes scale between defined minimum and maximum viewport widths.
+          *Range: Minimum viewport width of 475px to a maximum of 1200px.
+        -------------------------------------------------- */
+  /*
+        ! THE FOLLOWING FONT SIZES ARE COMMENTED OUT FOR THIS PROJECT.
+        ! Choose font sizes based on your design approach:
+          *- Mobile-first: Use the smallest value in the clamp range.
+          *- Desktop-first: Use the largest value in the clamp range.
+      */
+  /*--fsz-2xs: clamp(0.625rem, 0.563rem + 0.21vw, 0.75rem);*/ /* 10px - 12px */
+  /* Utility Classes: .fsz-2xs */
+
+  /*--fsz-xs: clamp(0.75rem, 0.688rem + 0.21vw, 0.875rem);*/ /* 12px - 14px */
+  /* Utility Classes: .fsz-xs */
+
+  /*--fsz-sm: clamp(0.875rem, 0.813rem + 0.21vw, 1rem);*/ /* 14px - 16px */
+  /* Utility Classes: .fsz-sm */
+
+  /*--fsz-md: clamp(1rem, 0.938rem + 0.21vw, 1.125rem);*/ /* 16px - 18px */
+  /* Utility Classes: .fsz-md */
+
+  /*--fsz-lg: clamp(1.125rem, 1.063rem + 0.21vw, 1.25rem);*/ /* 18px - 20px */
+  /* Utility Classes: .fsz-lg */
+
+  /*--fsz-xl: clamp(1.25rem, -0.596rem + 6.22vw, 5rem);*/ /* 20px - 80px */
+  /* Utility Classes: .fsz-xl */
+
+  /*--fsz-2xl: clamp(1.5rem, 1.315rem + 0.62vw, 1.875rem);*/ /* 24px - 30px */
+  /* Utility Classes: .fsz-2xl */
+
+  /*--fsz-3xl: clamp(1.875rem, 1.69rem + 0.62vw, 2.25rem);*/ /* 30px - 36px */
+  /* Utility Classes: .fsz-3xl */
+
+  /*--fsz-4xl: clamp(2.25rem, 1.881rem + 1.24vw, 3rem);*/ /* 36px - 48px */
+  /* Utility Classes: .fsz-4xl */
+
+  /*--fsz-5xl: clamp(3rem, 2.631rem + 1.24vw, 3.75rem);*/ /* 48px - 60px */
+  /* Utility Classes: .fsz-5xl */
+
+  /*--fsz-6xl: clamp(3.75rem, 3.381rem + 1.24vw, 4.5rem);*/ /* 60px - 72px */
+  /* Utility Classes: .fsz-6xl */
+
+  /*--fsz-7xl: clamp(4.5rem, 3.762rem + 2.49vw, 6rem);*/ /* 72px - 96px */
+  /* Utility Classes: .fsz-7xl */
+
+  /* Additional Font Sizes */
   --fsz-3xs: 1rem; /* 16px */
   /* Utility Classes: .fsz-3xs */
 
@@ -114,67 +182,67 @@ body {
   --fsz-lg: 1.875rem; /* 30px */
   /* Utility Classes: .fsz-lg */
 
-  --fsz-xl: clamp(2.5rem, 33.456px + 1.38vw, 3.125rem); /* 40px to 50px */
+  --fsz-xl: clamp(2.5rem, 33.456px + 1.38vw, 3.125rem); /* 40px - 50px */
   /* Utility Classes: .fsz-xl */
 
-  --fsz-2xl: clamp(2.5rem, 0.453rem + 6.9vw, 5.625rem); /* 40px to 90px */
+  --fsz-2xl: clamp(2.5rem, 0.453rem + 6.9vw, 5.625rem); /* 40px - 90px */
   /* Utility Classes: .fsz-2xl */
 
-  --fsz-3xl: clamp(2.5rem, -0.366rem + 9.66vw, 6.875rem); /* 40px to 110px */
+  --fsz-3xl: clamp(2.5rem, -0.366rem + 9.66vw, 6.875rem); /* 40px - 110px */
   /* Utility Classes: .fsz-3xl */
 
-  --fsz-4xl: clamp(3.125rem, -2.198rem + 17.93vw, 11.25rem); /* 50px to 180px */
+  --fsz-4xl: clamp(3.125rem, -2.198rem + 17.93vw, 11.25rem); /* 50px - 180px */
   /* Utility Classes: .fsz-4xl */
 
   /* --------------------------------------------------
-         ! Line-Height Variables
-         ----------------------------------------------
-         * Use Case: Define standardized line heights for typography.
-      -------------------------------------------------- */
-  --lh-4xs: 0.63;
+          !Line-Height Variables
+          ----------------------------------------------
+          *Use Case: Define standardized line heights for typography.
+        -------------------------------------------------- */
+  --lh-4xs: 0.63; /*  10px text */
   /* Utility Classes: .lh-4xs */
 
-  --lh-3xs: 1;
+  --lh-3xs: 1; /*  16px text */
   /* Utility Classes: .lh-3xs */
 
-  --lh-2xs: 1.13;
+  --lh-2xs: 1.13; /*  18px text */
   /* Utility Classes: .lh-2xs */
 
-  --lh-xs: 1.25;
+  --lh-xs: 1.25; /*  20px text */
   /* Utility Classes: .lh-xs */
 
-  --lh-sm: 1.38;
+  --lh-sm: 1.38; /*  22px text */
   /* Utility Classes: .lh-sm */
 
-  --lh-md: 1.5;
+  --lh-md: 1.5; /* Base  24px text */
   /* Utility Classes: .lh-md */
 
-  --lh-lg: 1.625;
+  --lh-lg: 1.625; /*  26px text */
   /* Utility Classes: .lh-lg */
 
-  --lh-xl: 1.75;
+  --lh-xl: 1.75; /*  28px text */
   /* Utility Classes: .lh-xl */
 
-  --lh-2xl: 1.875;
+  --lh-2xl: 1.875; /*  30px text */
   /* Utility Classes: .lh-2xl */
 
-  --lh-3xl: 2;
+  --lh-3xl: 2; /*  32px text */
   /* Utility Classes: .lh-3xl */
 
-  --lh-4xl: 2.5;
+  --lh-4xl: 2.5; /*  40px text */
   /* Utility Classes: .lh-4xl */
 
-  --lh-5xl: 2.81;
+  --lh-5xl: 2.81; /*  45px text */
   /* Utility Classes: .lh-5xl */
 
-  --lh-6xl: 3.31;
+  --lh-6xl: 3.31; /*  53px text */
   /* Utility Classes: .lh-6xl */
 
   /* --------------------------------------------------
-         ! Font Weight Variables
-         ----------------------------------------------
-         * Use Case: Define standardized font weights for typography.
-      -------------------------------------------------- */
+          !Font Weight Variables
+          ----------------------------------------------
+          *Use Case: Define standardized font weights for typography.
+        -------------------------------------------------- */
   --fw-thin: 100;
   /* Utility Classes: .fw-thin */
 
@@ -203,10 +271,10 @@ body {
   /* Utility Classes: .fw-black */
 
   /* --------------------------------------------------
-         ! Breakpoints for Media Queries
-         ----------------------------------------------
-         * Use Case: Define breakpoints for responsive designs using media queries.
-      -------------------------------------------------- */
+          !Breakpoints for Media Queries
+          ----------------------------------------------
+          *Use Case: Define breakpoints for responsive designs using media queries.
+        -------------------------------------------------- */
   --mq-breakpoint-md: 30rem; /* 480px */
   /* Utility Classes: N/A */
 
@@ -214,141 +282,146 @@ body {
   /* Utility Classes: N/A */
 
   /* --------------------------------------------------
-         ! Breakpoints for Container Queries
-         ----------------------------------------------
-         * Use Case: Define breakpoints for container-based designs.
-      -------------------------------------------------- */
-  --cq-breakpoint-sm: 29.6875rem; /* 475px */
+          !Breakpoints for Container Queries
+          ----------------------------------------------
+          *Use Case: Define breakpoints for container-based designs.
+        -------------------------------------------------- */
+  --cq-breakpoint-sm: 29.6875rem; /*  475px */
   /* Utility Classes: N/A */
 
   --cq-breakpoint-md: 48rem; /* 768px */
   /* Utility Classes: N/A */
 
-  --cq-breakpoint-lg: 64rem; /* 1024px */
+  --cq-breakpoint-lg: 64rem; /*1024px */
   /* Utility Classes: N/A */
 
   /* --------------------------------------------------
-         ! Maximum Width Variables
-         ----------------------------------------------
-         * Use Case: Define maximum widths for containers to constrain content.
-      -------------------------------------------------- */
-  --max-width-1440px: 90rem; /* 1440px */
+          !Maximum Width Variables
+          ----------------------------------------------
+          *Use Case: Define maximum widths for containers to constrain content.
+        -------------------------------------------------- */
+  --max-width-1440px: 90rem; /*  1440px */
   /* Utility Classes: N/A */
 
   /* --------------------------------------------------
-         ! Border Radius Variables
-         ----------------------------------------------
-         * Use Case: Define standardized border radii for elements.
-      -------------------------------------------------- */
+          !Border Radius Variables
+          ----------------------------------------------
+          *Use Case: Define standardized border radii for elements.
+        -------------------------------------------------- */
   --border-radius: 0.75rem; /* 12px */
   /* Utility Classes: .br */
 
-  --rounded-border-radius: 5.625rem; /* 90px */
+  --rounded-border-radius: 5.625rem; /*  90px */
   /* Utility Classes: .br-rounded */
 
   /* --------------------------------------------------
-         ! Base Color Variables
-         ----------------------------------------------
-         * Use Case: Define base colors used throughout the project.
-      -------------------------------------------------- */
-  --color-white: hsl(0, 0%, 100%); /* #ffffff */
+          !Neurophimism Background Gradients
+          ----------------------------------------------
+          *Use Case: Define specific background gradients for various elements.
+          *Currently commented out; uncomment if needed.
+        -------------------------------------------------- */
+  --bg-convex: #; /* Utility Classes: N/A */
+
+  /* --------------------------------------------------
+         !Base Color Variables
+          ----------------------------------------------
+          * Use Case: Define base colors used throughout the project.
+        -------------------------------------------------- */
+  --color-white: hsl(0, 0%, 100%); /* (#ffffff */
   /* Utility Classes: .text-white, .bg-white */
 
-  --color-white-100: hsl(0, 0%, 98%); /* #fafafa */
+  --color-white-100: hsl(0, 0%, 98%); /* (#fafafa) */
   /* Utility Classes: .bg-white-100 */
 
-  --color-white-200: hsl(240, 11%, 96%); /* #f5f5f7 */
+  --color-white-200: hsl(240, 11%, 96%); /*  (#f5f5f7) */
   /* Utility Classes: .bg-white-200 */
 
-  --color-white-300: hsl(240, 5%, 92%); /* #eaeaec */
+  --color-white-300: hsl(240, 5%, 92%); /* (#eaeaec) */
   /* Utility Classes: .border-white */
 
-  --color-black: hsl(0, 0%, 0%); /* #000000 */
-  /* Utility Classes: .text-black, .bg-black */
+  --color-black: hsl(0, 0%, 0%); /* (#000000)*/
+  /* Utility Classes: .bg-black, .text-black */
 
-  --color-black-0: hsla(0, 0%, 0%, 0.07); /* #00000012 */
+  --color-black-0: hsla(0, 0%, 0%, 0.07); /* (#00000012) */
   /* Utility Classes: .bg-black-0 */
 
-  --color-black-100: hsla(0, 0%, 0%, 0.16); /* #00000029 */
+  --color-black-100: hsla(0, 0%, 0%, 0.16); /* (#00000029) */
   /* Utility Classes: .bg-black-100 */
 
-  --color-black-200: hsl(240, 3%, 12%); /* #1d1d1f */
-  /* Utility Classes: .bg-black-200, .text-black-800, .border-black */
+  --color-black-200: hsl(240, 3%, 12%); /* (#1d1d1f) */
+  /* Utility Classes: .bg-black-200, .text-black-800, .border-black-200 */
 
-  --color-black-300: hsla(0, 0%, 15%, 0.16); /* #26262629 */
+  --color-black-300: hsla(0, 0%, 15%, 0.16); /*  (#26262629) */
   /* Utility Classes: .bg-black-300 */
 
-  --color-black-400: hsl(0, 0%, 18%); /* #2e2e2e */
-  /* Utility Classes: .bg-black-400, .border-black-400 */
-
-  --color-black-500: hsl(240, 3%, 21%); /* #333336 */
-  /* Utility Classes: .bg-black-500 */
+  --color-black-400: hsl(0, 0%, 18%); /* (#2e2e2e) */
+  /* Utility Classes: .bg-black-400 */
 
   /* --------------------------------------------------
-         ! Text Color Variables
-         ----------------------------------------------
-         * Use Case: Define text colors for various UI elements.
-      -------------------------------------------------- */
-  --text-white: var(--color-white); /* #ffffff */
+          !Text Color Variables
+          ----------------------------------------------
+          *Use Case: Define text colors for various UI elements.
+        -------------------------------------------------- */
+  --text-white: var(--color-white); /* White text */
   /* Utility Classes: .text-white */
 
-  --text-black-500: #383838; /* #383838 */
-  /* Utility Classes: .text-black */
+  --text-black-500: hsl(0, 0%, 22%); /* (#383838) */
+  /* Utility Classes: .text-500 */
 
-  --text-black-600: hsl(0, 0%, 32%); /* #525252 */
-  /* Utility Classes: N/A (Could be .text-600) */
+  --text-black-600: hsl(0, 0%, 32%); /* (#525252) */
+  /* Utility Classes: .text-600,  */
 
-  --text-black-700: hsla(240, 3%, 12%, 0.702); /* #1d1d1fb3 */
-  /* Utility Classes: N/A (Could be .text-700) */
+  --text-black-700: hsla(240, 3%, 12%, 0.702); /* (#1d1d1fb3) */
+  /* Utility Classes: .text-700, */
 
-  --text-black-800: var(--color-black-200); /* #1d1d1f */
-  /* Utility Classes: .text-black-800 */
+  --text-black-800: var(--color-black-200); /* (#1d1d1f) */
+  /* Utility Classes: .text-800,  */
 
-  --text-black-900: hsla(0, 0%, 0%, 0.6); /* #00000099 */
-  /* Utility Classes: N/A (Could be .text-900) */
+  --text-black-900: hsla(0, 0%, 0%, 0.6); /* (#00000099) */
+  /* Utility Classes: .text-900 */
 
-  --text-black: var(--text-black-500); /* #383838 */
+  --text-black: var(--color-black-500); /* (#383838) */
   /* Utility Classes: .text-black */
 
   /* --------------------------------------------------
-         ! Border Color Variables
-         ----------------------------------------------
-         * Use Case: Define border colors for various UI elements.
-      -------------------------------------------------- */
-  --border-white: var(--color-white-300); /* #eaeaec */
+          !Border Color Variables
+          ----------------------------------------------
+          *Use Case: Define border colors for various UI elements.
+        -------------------------------------------------- */
+  --border-white: var(--color-white-300); /*  (#eaeaec) */
   /* Utility Classes: .border-white */
 
-  --border-black: var(--color-black-200); /* #1d1d1f */
+  --border-black: var(--color-black-200); /* (#1d1d1f) */
   /* Utility Classes: .border-black */
 
-  --border-black-100: hsla(0, 0%, 0%, 0.04); /* #0000000a */
+  --border-black-100: hsla(0, 0%, 0%, 0.04); /* (#0000000a) */
   /* Utility Classes: .border-black-100 */
 
-  --border-black-200: hsla(0, 0%, 0%, 0.078); /* #00000014 */
+  --border-black-200: hsla(0, 0%, 0%, 0.078); /* (#00000014) */
   /* Utility Classes: .border-black-200 */
 
-  --border-black-300: hsla(0, 0%, 0%, 0.071); /* #00000012 */
+  --border-black-300: hsla(0, 0%, 0%, 0.071); /* (#00000012) */
   /* Utility Classes: .border-black-300 */
 
-  --border-black-400: var(--color-black-400); /* #2e2e2e */
+  --border-black-400: var(--color-black-400); /*  (#2e2e2e) */
   /* Utility Classes: .border-black-400 */
 
   /* --------------------------------------------------
-         ! Fill Color Variables
-         ----------------------------------------------
-         * Use Case: Define fill colors for icons and other filled elements.
-      -------------------------------------------------- */
-  --fill-800: var(--text-black-600); /* #525252 */
-  /* Utility Classes: N/A */
+         !Fill Color Variables
+          ----------------------------------------------
+          *Use Case: Define fill colors for icons and other filled elements.
+        -------------------------------------------------- */
+  --fill-800: var(--text-black-600); /* (#525252) */
+  /* Utility Classes: .fill-800 */
 
-  --fill-900: var(--color-black-200); /* #1d1d1f */
-  /* Utility Classes: N/A */
+  --fill-900: var(--color-black-200); /* (#1d1d1f) */
+  /* Utility Classes: .fill-900 */
 
   /* --------------------------------------------------
-         ! Red Color Scale
-         ----------------------------------------------
-         * Use Case: Define various shades of red for alerts, errors, and highlights.
-      -------------------------------------------------- */
+          !Red Color Scale
+          ----------------------------------------------
+          *Use Case: Define various shades of red for alerts, errors, and highlights.
+        -------------------------------------------------- */
   --color-red-100: hsl(0, 100%, 95%); /* Very light red */
   /* Utility Classes: .text-red-100, .bg-red-100 */
 
@@ -378,9 +451,9 @@ body {
 
   /* --------------------------------------------------
          ! Font Family Variables
-         ----------------------------------------------
+          ----------------------------------------------
          * Use Case: Define font families for various text elements.
-      -------------------------------------------------- */
+        -------------------------------------------------- */
   --ff-regular: "Inter Tight", system-ui; /* Regular font family */
   /* Utility Classes: .ff-regular */
 
@@ -388,11 +461,11 @@ body {
   /* Utility Classes: .ff-bold */
 
   /* --------------------------------------------------
-         ! Background Shadow Variables
-         ----------------------------------------------
-         * Use Case: Define standardized shadow effects for UI elements.
-         * Shadows are layered to create depth and elevation.
-      -------------------------------------------------- */
+          !Background Shadow Variables
+          ----------------------------------------------
+          *Use Case: Define standardized shadow effects for UI elements.
+          *Shadows are layered to create depth and elevation.
+        -------------------------------------------------- */
   --shadow-color: 0deg 0% 63%; /* Base color for shadows */
   /* Utility Classes: N/A */
 
@@ -422,11 +495,11 @@ body {
 }
 
 /* --------------------------------------------------
-      !GLOBAL BOX-SIZING
-      ----------------------------------------------
-      *Apply a consistent box-sizing model to all elements and pseudo-elements.
-      *This ensures that padding and borders are included in the element's total width and height.
-  -------------------------------------------------- */
+        !GLOBAL BOX-SIZING
+        ----------------------------------------------
+        *Apply a consistent box-sizing model to all elements and pseudo-elements.
+        *This ensures that padding and borders are included in the element's total width and height.
+    -------------------------------------------------- */
 *,
 *::before,
 *::after {
@@ -439,10 +512,10 @@ body {
 /* -moz-osx-font-smoothing: grayscale; */
 
 /* --------------------------------------------------
-    TEXT OVERFLOW PREVENTION
-    ----------------------------------------------
-    Ensure that text within paragraphs and headings wraps appropriately to prevent overflow.
-  -------------------------------------------------- */
+      TEXT OVERFLOW PREVENTION
+      ----------------------------------------------
+      Ensure that text within paragraphs and headings wraps appropriately to prevent overflow.
+    -------------------------------------------------- */
 p,
 h1,
 h2,
@@ -458,10 +531,10 @@ p {
 }
 
 /* --------------------------------------------------
-    SMALL TEXT STYLING
-    ----------------------------------------------
-    Define styles for small text elements.
-  -------------------------------------------------- */
+      SMALL TEXT STYLING
+      ----------------------------------------------
+      Define styles for small text elements.
+    -------------------------------------------------- */
 small {
   text-transform: uppercase; /* Convert text to uppercase */
   color: red; /* Set text color to red */
@@ -470,10 +543,10 @@ small {
 }
 
 /* --------------------------------------------------
-    HTML AND BODY STYLES
-    ----------------------------------------------
-    Set base styles for the html and body elements.
-  -------------------------------------------------- */
+      HTML AND BODY STYLES
+      ----------------------------------------------
+      Set base styles for the html and body elements.
+    -------------------------------------------------- */
 html,
 body {
   width: 100%;
@@ -484,35 +557,35 @@ body {
 }
 
 /* --------------------------------------------------
-    MEDIA ELEMENTS STYLING
-    ----------------------------------------------
-    Ensure media elements are responsive and scale correctly.
-  -------------------------------------------------- */
+      MEDIA ELEMENTS STYLING
+      ----------------------------------------------
+      Ensure media elements are responsive and scale correctly.
+    -------------------------------------------------- */
 img,
 picture,
 video,
 canvas,
 svg {
   display: block;
-  max-inline-size: 100%; /* Prevent media from exceeding container width */
-  block-size: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Prevent media from exceeding container width */
+  height: auto; /* Maintain aspect ratio */
 }
 
 /* --------------------------------------------------
-    LIST STYLING RESET
-    ----------------------------------------------
-    Remove default list styles for ordered and unordered lists.
-  -------------------------------------------------- */
+      LIST STYLING RESET
+      ----------------------------------------------
+      Remove default list styles for ordered and unordered lists.
+    -------------------------------------------------- */
 ol,
 ul {
   list-style: none;
 }
 
 /* --------------------------------------------------
-    INTERACTIVE ELEMENTS CURSOR
-    ----------------------------------------------
-    Set the cursor to pointer for buttons and other interactive elements to indicate clickability.
-  -------------------------------------------------- */
+      INTERACTIVE ELEMENTS CURSOR
+      ----------------------------------------------
+      Set the cursor to pointer for buttons and other interactive elements to indicate clickability.
+    -------------------------------------------------- */
 button,
 [role="button"],
 select {
@@ -520,10 +593,10 @@ select {
 }
 
 /* --------------------------------------------------
-    FORM ELEMENTS FONT INHERITANCE
-    ----------------------------------------------
-    Ensure form elements inherit the font styles from their parent elements.
-  -------------------------------------------------- */
+      FORM ELEMENTS FONT INHERITANCE
+      ----------------------------------------------
+      Ensure form elements inherit the font styles from their parent elements.
+    -------------------------------------------------- */
 input,
 button,
 textarea,
@@ -532,20 +605,20 @@ select {
 }
 
 /* --------------------------------------------------
-    TABLE STYLES RESET
-    ----------------------------------------------
-    Remove default table styles for a clean slate.
-  -------------------------------------------------- */
+      TABLE STYLES RESET
+      ----------------------------------------------
+      Remove default table styles for a clean slate.
+    -------------------------------------------------- */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
 /* --------------------------------------------------
-    QUOTE STYLES RESET
-    ----------------------------------------------
-    Remove default quotes from blockquote and q elements.
-  -------------------------------------------------- */
+      QUOTE STYLES RESET
+      ----------------------------------------------
+      Remove default quotes from blockquote and q elements.
+    -------------------------------------------------- */
 blockquote,
 q {
   quotes: none;
@@ -559,19 +632,19 @@ q::after {
 }
 
 /* --------------------------------------------------
-    HYPHENATION FOR TEXT OVERFLOW
-    ----------------------------------------------
-    Enable hyphenation to improve text flow and prevent overflow issues.
-  -------------------------------------------------- */
+      HYPHENATION FOR TEXT OVERFLOW
+      ----------------------------------------------
+      Enable hyphenation to improve text flow and prevent overflow issues.
+    -------------------------------------------------- */
 * {
   hyphens: auto;
 }
 
 /* --------------------------------------------------
-    FONT FACE DEFINITIONS
-    ----------------------------------------------
-    Define custom font faces for the project.
-  -------------------------------------------------- */
+      FONT FACE DEFINITIONS
+      ----------------------------------------------
+      Define custom font faces for the project.
+    -------------------------------------------------- */
 @font-face {
   font-family: "Instrument Sans";
   src: url("../src/lib/fonts/InstrumentSans-VariableFont.ttf")
@@ -587,11 +660,11 @@ q::after {
 }
 
 /* --------------------------------------------------
-    GLOBAL MARGIN, PADDING, AND BORDER RESET
-    ----------------------------------------------
-    Remove default margins, paddings, and borders from a wide range of HTML elements.
-    This creates a consistent baseline for styling.
-  -------------------------------------------------- */
+      GLOBAL MARGIN, PADDING, AND BORDER RESET
+      ----------------------------------------------
+      Remove default margins, paddings, and borders from a wide range of HTML elements.
+      This creates a consistent baseline for styling.
+    -------------------------------------------------- */
 html,
 body,
 div,
@@ -678,10 +751,10 @@ video {
 }
 
 /* --------------------------------------------------
-    SCROLLBAR STYLES
-    ----------------------------------------------
-    Customize the appearance of scrollbars for a more consistent look across browsers.
-  -------------------------------------------------- */
+      SCROLLBAR STYLES
+      ----------------------------------------------
+      Customize the appearance of scrollbars for a more consistent look across browsers.
+    -------------------------------------------------- */
 
 /* Scrollbar Track */
 ::-webkit-scrollbar {
