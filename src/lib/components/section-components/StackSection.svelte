@@ -10,6 +10,30 @@ title="Framer"
 useCase="Web Design Platform"
 description="The internet is your canvas. Framer is where design and code meet."
 />
+<StackCard
+imageSrc="https://placehold.co/56x56"
+title="Framer"
+useCase="Web Design Platform"
+description="The internet is your canvas. Framer is where design and code meet."
+/>
+<StackCard
+imageSrc="https://placehold.co/56x56"
+title="Framer"
+useCase="Web Design Platform"
+description="The internet is your canvas. Framer is where design and code meet."
+/>
+<StackCard
+imageSrc="https://placehold.co/56x56"
+title="Framer"
+useCase="Web Design Platform"
+description="The internet is your canvas. Framer is where design and code meet."
+/>
+<StackCard
+imageSrc="https://placehold.co/56x56"
+title="Framer"
+useCase="Web Design Platform"
+description="The internet is your canvas. Framer is where design and code meet."
+/>
 
 
 </section>
@@ -18,6 +42,11 @@ description="The internet is your canvas. Framer is where design and code meet."
 *::before,
 *::after {
     box-sizing: border-box;
+}
 
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-base);
 }
 </style>
