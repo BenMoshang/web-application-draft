@@ -15,9 +15,8 @@
 </svelte:head>
 <!-- <HeroSection /> -->
 <!-- <ProjectsSection /> -->
-<!-- <ImageCard /> -->
-<!-- <ServicesSection /> -->
-<StackSection />
+<ServicesSection />
+<!-- <StackSection /> -->
 
 <style>
 </style>
