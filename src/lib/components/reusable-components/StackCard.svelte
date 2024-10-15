@@ -56,7 +56,7 @@
       align-items: center;
       width: 100%;
       gap: var(--spacing-sm);
-      letter-spacing: -0.0125em;
+      letter-spacing: -0.2px;
       text-transform: capitalize;
     }
 
