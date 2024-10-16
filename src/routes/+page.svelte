@@ -18,7 +18,7 @@
 <main class="layout__main">
   <!-- <HeroSection /> -->
   <!-- <ProjectsSection /> -->
-  <!-- <ServicesSection /> -->
+  <ServicesSection />
   <FaqSection />
 </main>
 
