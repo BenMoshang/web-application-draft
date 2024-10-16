@@ -1,24 +1,37 @@
 <script>
   import "../../global-css/utils.css";
+  import { slide } from "svelte/transition";
 
   export let question = "";
   export let answer = "";
   question = question.toUpperCase();
+
+  let isOpen = false;
+
+  function toggle() {
+    isOpen = !isOpen;
+  }
 </script>
 
-<label class="card bg-white-100 br p-base border-gray">
-  <input type="checkbox" name="tab" id={question} />
-
-  <section class="card__header" for={question}>
+<section class="card bg-white-100 br p-base border-gray" on:click={toggle}>
+  <section class="card__header">
     <h2 class="question global__paragraph--xsb">{question}</h2>
-    <img src="/chevron-arrow.svg" alt="Chevron Arrow" width="48" height="48" />
+    <img
+      src="/chevron-arrow.svg"
+      alt="Chevron Arrow"
+      width="48"
+      height="48"
+      class:open={isOpen}
+    />
   </section>
 
-  <section class="card__content">
-    <hr />
-    <p class="global__paragraph--xs">{answer}</p>
-  </section>
-</label>
+  {#if isOpen}
+    <section class="card__content" in:slide={{ duration: 200 }}>
+      <hr />
+      <p class="global__paragraph--xs">{answer}</p>
+    </section>
+  {/if}
+</section>
 
 <style>
   *,
@@ -30,7 +43,6 @@
   .card {
     display: flex;
     flex-direction: column;
-    user-select: none;
     overflow: hidden;
 
     & .card__header {
@@ -44,47 +56,27 @@
     }
   }
 
-  .card:has(input:checked) .card__content {
-    max-height: 50rem;
-  }
-
   .card:has(input:checked) {
     background-color: #fafafa;
   }
 
-  .card:has(input:checked) .card__header img {
+  img.open {
     transform: rotate(45deg) scale(1.1);
     filter: brightness(0);
-    stroke-width: 2px;
   }
 
   .card__content {
-    max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
   }
-
-  label {
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-  }
-
-  input {
-    position: absolute;
-    opacity: 0;
-    z-index: -1;
-  }
-
   hr {
     border: none;
     height: 1px;
     width: 100%;
-    margin-block: 1rem 1.5rem;
+    margin-block: 0.5rem 0.8rem;
     background-color: var(--color-black-100);
   }
-
-  img {
-    transition: all 0.3s ease-out;
+  .open {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-out;
   }
 </style>
