@@ -58,7 +58,6 @@
   font-family: var(--ff-regular);
   font-weight: var(--fw-medium);
   font-size: clamp(1.5rem, 1.315rem + 0.62vw, 1.875rem);
-
   line-height: 2rem;
   color: var(--color-black-200);
   text-align: center;
@@ -97,29 +96,28 @@
 
 /* Button Styling */
 .global__button--solid {
+  text-transform: capitalize;
   will-change: transform, box-shadow, background-color;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
-  border-radius: var(--rounded-border-radius);
-  background: linear-gradient(135deg, #000000, #434343);
+  overflow: hidden;
+  text-wrap: nowrap;
+
   font-family: var(--ff-regular);
   font-weight: var(--fw-bold);
-  font-size: 1.125rem;
-  line-height: 1.25rem;
+  font-size: clamp(0.75rem, 0.688rem + 0.21vw, 0.875rem);
+  line-height: 1rem;
   color: white;
-  padding-block: 0.875em;
-  padding-inline: 1.5em;
-  box-shadow: var(--small-box-shadow),
-    inset 0 0.0625rem 0 hsla(0, 0%, 100%, 0.2);
-  text-wrap: nowrap;
+
+  border: 0.0625rem solid white;
+  border-radius: var(--rounded-border-radius);
+  padding-block: 0.75rem;
+  padding-inline: clamp(0.875rem, 0.69rem + 0.62vw, 1.25rem);
+  background: linear-gradient(135deg, #000000, #434343);
+  box-shadow: var(--shadow-sm), inset 0 0.0625rem 0 hsla(0, 0%, 100%, 0.2);
   position: relative;
-  overflow: hidden;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  text-transform: capitalize;
 
   &::before {
     content: "";
@@ -150,7 +148,7 @@
   &:active {
     transform: scale(0.95);
     background-color: #1a1a1a;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.3);
 
     &::before {
       transform: translate(-50%, -50%) scale(1);
