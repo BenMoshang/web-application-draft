@@ -140,6 +140,10 @@
   box-shadow: inset var(--shadow-sm);
 }
 
+.border-gray {
+  border: 2px solid #00000008;
+}
+
 /*
 * HOW TO USE GLASS EFFECT
 * 1. Add the class "bg-glass" to the element you want to apply the glass effect to.
