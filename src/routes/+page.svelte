@@ -34,6 +34,7 @@
     box-sizing: border-box;
     padding: 0 0.5rem;
     margin: 0 auto;
+    gap: 1.875rem;
 
     & > *:not(:first-child) {
       flex: 1;
