@@ -1,52 +1,94 @@
 <script>
-import StackCard from '../reusable-components/StackCard.svelte';
+  import StackCard from "../reusable-components/StackCard.svelte";
+
+  let title = `Favorite Stack`;
+  title = title.toUpperCase();
+
+  const stackData = [
+    {
+      imageSrc: "https://placehold.co/56x56",
+      title: "Framer",
+      useCase: "Web Design Platform",
+      description:
+        "The internet is your canvas. Framer is where design and code meet.",
+    },
+    {
+      imageSrc: "https://placehold.co/56x56",
+      title: "Framer",
+      useCase: "Web Design Platform",
+      description:
+        "The internet is your canvas. Framer is where design and code meet.",
+    },
+    {
+      imageSrc: "https://placehold.co/56x56",
+      title: "Framer",
+      useCase: "Web Design Platform",
+      description:
+        "The internet is your canvas. Framer is where design and code meet.",
+    },
+    {
+      imageSrc: "https://placehold.co/56x56",
+      title: "Framer",
+      useCase: "Web Design Platform",
+      description:
+        "The internet is your canvas. Framer is where design and code meet.",
+    },
+  ];
 </script>
 
-<section class="stack">
-
-<StackCard
-imageSrc="https://placehold.co/56x56"
-title="Framer"
-useCase="Web Design Platform"
-description="The internet is your canvas. Framer is where design and code meet."
-/>
-<StackCard
-imageSrc="https://placehold.co/56x56"
-title="Framer"
-useCase="Web Design Platform"
-description="The internet is your canvas. Framer is where design and code meet."
-/>
-<StackCard
-imageSrc="https://placehold.co/56x56"
-title="Framer"
-useCase="Web Design Platform"
-description="The internet is your canvas. Framer is where design and code meet."
-/>
-<StackCard
-imageSrc="https://placehold.co/56x56"
-title="Framer"
-useCase="Web Design Platform"
-description="The internet is your canvas. Framer is where design and code meet."
-/>
-<StackCard
-imageSrc="https://placehold.co/56x56"
-title="Framer"
-useCase="Web Design Platform"
-description="The internet is your canvas. Framer is where design and code meet."
-/>
-
-
+<section class="stack__container">
+  <article class="stack__content">
+    <h2 class="stack__title global__title--md">
+      {title}
+    </h2>
+    <div class="content__cards-container">
+      {#each stackData as { imageSrc, title, useCase, description }}
+        <StackCard {imageSrc} {title} {useCase} {description} />
+      {/each}
+    </div>
+  </article>
 </section>
-<style>
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
 
-.stack {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-base);
-}
+<style>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  .stack__container {
+    width: 100%;
+    padding-inline: var(--pinline-section);
+    container: stack-section / inline-size;
+  }
+  .stack__content {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "cards";
+    gap: var(--spacing-2xl);
+
+    & .stack__title {
+      grid-area: title;
+    }
+
+    & .content__cards-container {
+      grid-area: cards;
+    }
+  }
+  /* this is 45px */
+  @container stack-section (min-width: 24.3125rem) {
+    .stack__content {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "title cards";
+    }
+
+    .stack__title {
+      position: sticky;
+      top: 2.5rem;
+    }
+  }
 </style>

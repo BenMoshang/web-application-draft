@@ -72,7 +72,6 @@
   font-size: 1.5rem;
   line-height: 2rem;
   color: var(--color-black-200);
-  text-align: center;
   text-wrap: pretty;
 }
 
@@ -98,7 +97,6 @@
   font-size: var(--fsz-xs);
   line-height: 1.5rem;
   color: var(--color-black-200);
-  text-align: center;
   text-wrap: pretty;
 }
 /* this is used in ImageCard.svelte */

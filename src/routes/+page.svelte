@@ -2,6 +2,7 @@
   import ImageCard from "../lib/components/reusable-components/ImageCard.svelte";
   import FaqSection from "../lib/components/section-components/FaqSection.svelte";
   import HeroSection from "../lib/components/section-components/HeroSection.svelte";
+  import MotivationSection from "../lib/components/section-components/MotivationSection.svelte";
   import ProjectsSection from "../lib/components/section-components/ProjectsSection.svelte";
   import ServicesSection from "../lib/components/section-components/ServicesSection.svelte";
   import StackSection from "../lib/components/section-components/StackSection.svelte";
@@ -16,20 +17,22 @@
   />
 </svelte:head>
 <main class="layout__main">
-  <!-- <HeroSection /> -->
-  <!-- <ProjectsSection /> -->
+  <HeroSection />
+  <MotivationSection />
+
+  <ProjectsSection />
   <ServicesSection />
+  <StackSection />
+  <TestimonialSection />
   <FaqSection />
 </main>
 
-<!-- <StackSection /> -->
-<!-- <TestimonialSection /> -->
 <style>
   .layout__main {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 100dvh;
     max-width: 120rem;
     box-sizing: border-box;
     padding: 0 0.5rem;
