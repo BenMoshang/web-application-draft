@@ -78,6 +78,24 @@
 
 .global__paragraph--xs {
   font-family: var(--ff-regular);
+  font-weight: var(--fw-medium);
+  font-size: 1.25rem;
+  line-height: 2rem;
+  color: rgba(29, 29, 31, 0.7);
+  text-align: center;
+}
+
+.global__paragraph--xsb {
+  font-family: var(--ff-bold);
+  font-weight: var(--fw-semibold);
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: var(--color-black-200);
+  text-align: center;
+}
+
+.global__paragraph--2xs {
+  font-family: var(--ff-regular);
   font-weight: var(--fw-bold);
   font-size: var(--fsz-xs);
   line-height: 1.5rem;
@@ -195,4 +213,8 @@
       transform: translate(-50%, -50%) scale(1);
     }
   }
+}
+
+.border-gray {
+  border: 2px solid #00000008;
 }
