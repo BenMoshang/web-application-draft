@@ -58,7 +58,15 @@
   font-family: var(--ff-regular);
   font-weight: var(--fw-medium);
   font-size: clamp(1.5rem, 1.315rem + 0.62vw, 1.875rem);
+  line-height: 2rem;
+  color: var(--color-black-200);
+  text-align: center;
+}
 
+.global__paragraph--sm {
+  font-family: var(--ff-regular);
+  font-weight: var(--fw-medium);
+  font-size: 1.5rem;
   line-height: 2rem;
   color: var(--color-black-200);
   text-align: center;
