@@ -43,7 +43,7 @@
 </script>
 
 <section class="services pinline-lg">
-  <h1 class="services__title ff-bold fw-bold fsz-2xl lh-3xs text-800">
+  <h1 class="services__title global__title--md">
     {@html title}
   </h1>
   <section class="services__container">
@@ -60,15 +60,13 @@
     box-sizing: border-box;
   }
   .services {
-    padding-top: 1.875rem;
+    padding-top: var(--fsz-lg);
     display: flex;
     flex-direction: column;
     gap: var(--spacing-2xl);
 
     & .services__title {
       text-transform: capitalize;
-
-      letter-spacing: -2.3px;
     }
 
     & .services__container {
@@ -80,7 +78,7 @@
 
       & > * {
         flex: 1;
-        flex-basis: 450px;
+        flex-basis: 350px;
       }
     }
   }
