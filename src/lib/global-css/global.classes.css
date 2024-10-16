@@ -72,6 +72,15 @@
   text-align: center;
 }
 
+.global__paragraph--xs {
+  font-family: var(--ff-regular);
+  font-weight: var(--fw-bold);
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: var(--color-black-200);
+  text-align: center;
+}
+
 /* --------------------------------------------------
   Global Class Styles
 -------------------------------------------------- */
