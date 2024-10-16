@@ -1,11 +1,11 @@
 <script>
   import ImageCard from "../lib/components/reusable-components/ImageCard.svelte";
+  import FaqSection from "../lib/components/section-components/FaqSection.svelte";
   import HeroSection from "../lib/components/section-components/HeroSection.svelte";
   import ProjectsSection from "../lib/components/section-components/ProjectsSection.svelte";
   import ServicesSection from "../lib/components/section-components/ServicesSection.svelte";
   import StackSection from "../lib/components/section-components/StackSection.svelte";
   import TestimonialSection from "../lib/components/section-components/TestimonialSection.svelte";
-  import FaqSection from "../lib/components/section-components/FaqSection.svelte";
 </script>
 
 <svelte:head>
@@ -19,11 +19,11 @@
   <HeroSection />
   <ProjectsSection />
   <ServicesSection />
+  <FaqSection />
 </main>
 
 <!-- <StackSection /> -->
 <!-- <TestimonialSection /> -->
-<FaqSection />
 <style>
   .layout__main {
     display: flex;
