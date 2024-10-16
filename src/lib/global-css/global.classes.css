@@ -82,7 +82,6 @@
   font-size: 1.25rem;
   line-height: 2rem;
   color: rgba(29, 29, 31, 0.7);
-  text-align: center;
 }
 
 .global__paragraph--xsb {
@@ -91,7 +90,6 @@
   font-size: 1.25rem;
   line-height: 1.75rem;
   color: var(--color-black-200);
-  text-align: center;
 }
 
 .global__paragraph--2xs {
