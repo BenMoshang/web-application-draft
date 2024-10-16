@@ -4,12 +4,13 @@
 .global__title--xl2 {
   font-family: var(--ff-bold);
   font-weight: var(--fw-bold);
-  font-size: clamp(50px, -0.874rem + 13.47vw, 180px);
-  line-height: 0.7857;
+  font-size: clamp(3.125rem, 0.454rem + 9vw, 11.25rem);
+  line-height: clamp(2.5rem, -0.884rem + 11.4vw, 9.375rem);
   color: var(--color-black-200);
-  letter-spacing: -5px;
+  letter-spacing: -2px;
   text-transform: capitalize;
   text-align: center;
+  text-wrap: nowrap;
 }
 .global__title--xl {
   font-family: var(--ff-bold);
