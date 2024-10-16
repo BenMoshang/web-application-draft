@@ -16,9 +16,9 @@
   />
 </svelte:head>
 <main class="layout__main">
-  <HeroSection />
-  <ProjectsSection />
-  <ServicesSection />
+  <!-- <HeroSection /> -->
+  <!-- <ProjectsSection /> -->
+  <!-- <ServicesSection /> -->
   <FaqSection />
 </main>
 
