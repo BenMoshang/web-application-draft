@@ -5,6 +5,7 @@
   import ServicesSection from "../lib/components/section-components/ServicesSection.svelte";
   import StackSection from "../lib/components/section-components/StackSection.svelte";
   import TestimonialSection from "../lib/components/section-components/TestimonialSection.svelte";
+  import FaqSection from "../lib/components/section-components/FaqSection.svelte";
 </script>
 
 <svelte:head>
@@ -14,11 +15,12 @@
     content="Refresh your web presence with our expert web development services tailored for B2B enterprises. Our agency specializes in creating modern, scalable, and innovative digital solutions to drive your business forward. Partner with us for expert web design, development, and digital marketing strategies that deliver measurable results."
   />
 </svelte:head>
-<HeroSection />
+<!-- <HeroSection /> -->
 
 <!-- <ProjectsSection /> -->
 <!-- <ServicesSection /> -->
 <!-- <StackSection /> -->
 <!-- <TestimonialSection /> -->
+<FaqSection />
 <style>
 </style>
