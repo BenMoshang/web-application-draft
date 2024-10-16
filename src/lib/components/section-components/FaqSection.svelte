@@ -12,11 +12,18 @@ answer="I have experience working across various industries including but not li
 
 
 
+
 </section>
 <style>
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+}
+
+.faqs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 </style>
