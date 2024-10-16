@@ -51,14 +51,13 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    height: 100%;
     overflow: hidden;
+    max-width: 28.125rem;
 
     & .card__image {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-
+      object-fit: fill;
       transition: transform 0.25s ease-in-out;
       isolation: isolate;
       z-index: var(--z-1);

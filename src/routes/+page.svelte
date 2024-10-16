@@ -35,7 +35,7 @@
     padding: 0 0.5rem;
     margin: 0 auto;
 
-    & > * {
+    & > *:not(:first-child) {
       flex: 1;
     }
   }

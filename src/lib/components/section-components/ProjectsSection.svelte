@@ -25,11 +25,18 @@
   ];
 </script>
 
+<!-- TODO: NEED TO FIX GRID AND RESPONSIVENESS
+ TODO: MAKE THE P TAG APPEAR FOR TABLETS AND DESKTOPS -->
 <section class="projects pinline-lg">
   <h1 class="projects__title global__title--md">
     {@html title}
   </h1>
-
+  <p class="projects__description global__paragraph--sm">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, vitae
+    consequatur est eligendi repellat ducimus quod at eaque. Fugit voluptates
+    recusandae veniam autem quia molestiae quidem nobis similique dolores
+    laborum.
+  </p>
   <section class="projects__container">
     {#each projectsData as { imageSrc, title, description, label }}
       <ImageCard {title} {description} {imageSrc} {label} />
@@ -49,19 +56,25 @@
     padding-top: var(--fsz-lg);
     display: flex;
     flex-direction: column;
-
     gap: var(--spacing-2xl);
 
     & .projects__title {
       text-transform: capitalize;
-      margin-right: auto;
+      text-align: center;
+    }
+
+    & .projects__description {
+      display: none;
     }
 
     & .projects__container {
       width: 100%;
       height: fit-content;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      place-items: center;
+
       gap: var(--fsz-md);
     }
   }
