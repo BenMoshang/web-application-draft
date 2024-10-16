@@ -14,11 +14,27 @@
     content="Refresh your web presence with our expert web development services tailored for B2B enterprises. Our agency specializes in creating modern, scalable, and innovative digital solutions to drive your business forward. Partner with us for expert web design, development, and digital marketing strategies that deliver measurable results."
   />
 </svelte:head>
-<HeroSection />
+<main class="layout__main">
+  <HeroSection />
+  <ProjectsSection />
+  <ServicesSection />
+</main>
 
-<!-- <ProjectsSection /> -->
-<!-- <ServicesSection /> -->
 <!-- <StackSection /> -->
 <!-- <TestimonialSection /> -->
 <style>
+  .layout__main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-width: 120rem;
+    box-sizing: border-box;
+    padding: 0 0.5rem;
+    margin: 0 auto;
+
+    & > * {
+      flex: 1;
+    }
+  }
 </style>

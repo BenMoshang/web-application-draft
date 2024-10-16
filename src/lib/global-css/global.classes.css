@@ -53,6 +53,7 @@
   color: var(--color-black-200);
   letter-spacing: 0.4px;
   text-align: center;
+  text-wrap: pretty;
 }
 
 .global__paragraph--md {
@@ -62,6 +63,7 @@
   line-height: 2rem;
   color: var(--color-black-200);
   text-align: center;
+  text-wrap: pretty;
 }
 
 .global__paragraph--sm {
@@ -71,15 +73,35 @@
   line-height: 2rem;
   color: var(--color-black-200);
   text-align: center;
+  text-wrap: pretty;
 }
 
 .global__paragraph--xs {
   font-family: var(--ff-regular);
   font-weight: var(--fw-bold);
-  font-size: 1.125rem;
+  font-size: var(--fsz-xs);
   line-height: 1.5rem;
   color: var(--color-black-200);
   text-align: center;
+  text-wrap: pretty;
+}
+/* this is used in ImageCard.svelte */
+
+.global__card-title--sm {
+  font-family: var(--ff-bold);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fsz-sm);
+  line-height: 1.75rem;
+  color: var(--color-black-200);
+}
+
+.global__description--xs {
+  font-family: var(--ff-bold);
+  font-weight: var(--fw-medium);
+  font-size: var(--fsz-xs);
+  line-height: 1.25rem;
+  color: var(--text-black-600);
+  text-wrap: pretty;
 }
 
 /* --------------------------------------------------
