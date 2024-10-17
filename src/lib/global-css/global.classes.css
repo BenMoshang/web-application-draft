@@ -1,122 +1,122 @@
 /* --------------------------------------------------
   Global Title Styles
 -------------------------------------------------- */
-.global__title--xl2 {
+
+/* combined title styles */
+:is(
+    .global__title--xl2,
+    .global__title--xl,
+    .global__title--lg,
+    .global__title--md
+  ) {
   font-family: var(--ff-bold);
   font-weight: var(--fw-bold);
-  font-size: clamp(3.125rem, 0.454rem + 9vw, 11.25rem);
-  line-height: clamp(2.5rem, -0.884rem + 11.4vw, 9.375rem);
-  color: var(--color-black-200);
-  letter-spacing: -2px;
+  color: var(--text-primary);
+  letter-spacing: var(--ls-tight);
   text-transform: capitalize;
+  text-wrap: balance;
+}
+
+/* This is used in the Hero Section */
+.global__title--4xl {
+  font-size: var(--fsz-4xl);
+  line-height: var(--lh-xl);
   text-align: center;
   text-wrap: nowrap;
 }
-.global__title--xl {
-  font-family: var(--ff-bold);
-  font-weight: var(--fw-bold);
-  font-size: clamp(2.5rem, 0.347rem + 7.25vw, 6.875rem);
-  line-height: clamp(1.875rem, -0.278rem + 7.25vw, 6.25rem);
-  color: var(--color-black-200);
-  letter-spacing: -3px;
-  text-transform: capitalize;
-  text-align: left;
+
+/* ABOUT HEADER TITLE */
+.global__title--3xl {
+  font-size: var(--fsz-3xl);
+  line-height: var(--lh-xl);
+}
+/* This is used in the services Section */
+
+.global__title--2xl {
+  font-size: var(--fsz-2xl);
+  line-height: var(--lh-lg);
 }
 
-.global__title--lg {
-  font-family: var(--ff-bold);
-  font-weight: var(--fw-bold);
-  font-size: clamp(2.5rem, 0.962rem + 5.18vw, 5.625rem);
-  line-height: clamp(1.875rem, 0.337rem + 5.18vw, 5rem);
-  color: var(--color-black-200);
-  letter-spacing: -2px;
-  text-transform: capitalize;
-  text-align: left;
-}
-
+/* This is used in the motivation Section */
 .global__title--md {
-  font-family: var(--ff-bold);
-  font-weight: var(--fw-bold);
-  font-size: clamp(2.5rem, 2.192rem + 1.04vw, 3.125rem);
-  line-height: clamp(2.5rem, 1.946rem + 1.87vw, 3.625rem);
-  color: var(--color-black-200);
-  letter-spacing: -2px;
+  font-size: var(--fsz-xl);
+  line-height: var(--lh-lg);
+}
+:is(.global__title--md, .global__title--sm) {
   text-transform: capitalize;
-  text-align: left;
 }
 
+/* This is used in the about Section */
 .global__paragraph--lg {
   font-family: var(--ff-bold);
   font-weight: var(--fw-bold);
-  font-size: clamp(1.5rem, 1.315rem + 0.62vw, 1.875rem);
-  line-height: 2rem;
-  color: var(--color-black-200);
-  letter-spacing: 0.4px;
-  text-align: center;
+  font-size: var(--fsz-lg);
+  line-height: var(--lh-lg);
+  color: var(--text-primary);
+  letter-spacing: var(--ls-tight);
   text-wrap: pretty;
+}
+
+:is(
+    .global__paragraph--md,
+    .global__paragraph--sm,
+    .global__paragraph--xs,
+    .global__paragraph--xs-semibold,
+    .global__paragraph--2xs
+  ) {
+  font-family: var(--ff-regular);
+  letter-spacing: var(--ls-loose);
+  text-wrap: pretty;
+}
+:is(
+    .global__paragraph--md,
+    .global__paragraph--sm,
+    .global__paragraph--xs-semibold,
+    .global__paragraph--2xs
+  ) {
+  color: var(--text-primary);
+}
+
+:is(
+    .global__paragraph--xs,
+    .global__paragraph--xs-semibold,
+    .global__paragraph--2xs
+  ) {
+  line-height: var(--lh-xs);
+}
+
+:is(.global__paragraph--md, .global__paragraph--sm) {
+  line-height: var(--lh-md);
 }
 
 .global__paragraph--md {
-  font-family: var(--ff-regular);
   font-weight: var(--fw-medium);
-  font-size: clamp(1.5rem, 1.315rem + 0.62vw, 1.875rem);
-  line-height: 2rem;
-  color: var(--color-black-200);
-  text-align: center;
-  text-wrap: pretty;
+  font-size: var(--fsz-md);
 }
 
 .global__paragraph--sm {
-  font-family: var(--ff-regular);
   font-weight: var(--fw-medium);
-  font-size: 1.5rem;
-  line-height: 2rem;
-  color: var(--color-black-200);
-  text-wrap: pretty;
+  font-size: var(--fsz-md);
 }
 
 .global__paragraph--xs {
-  font-family: var(--ff-regular);
   font-weight: var(--fw-medium);
-  font-size: 1.25rem;
-  line-height: 2rem;
-  color: rgba(29, 29, 31, 0.7);
+  font-size: var(--fsz-sm);
+  color: var(--text-trans-md);
 }
 
-.global__paragraph--xsb {
+.global__paragraph--xs-semibold {
   font-family: var(--ff-bold);
   font-weight: var(--fw-semibold);
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  color: var(--color-black-200);
+  font-size: var(--fsz-sm);
 }
 
 .global__paragraph--2xs {
   font-family: var(--ff-regular);
   font-weight: var(--fw-bold);
   font-size: var(--fsz-xs);
-  line-height: 1.5rem;
-  color: var(--color-black-200);
-  text-wrap: pretty;
 }
 /* this is used in ImageCard.svelte */
-
-.global__card-title--sm {
-  font-family: var(--ff-bold);
-  font-weight: var(--fw-semibold);
-  font-size: var(--fsz-sm);
-  line-height: 1.75rem;
-  color: var(--color-black-200);
-}
-
-.global__description--xs {
-  font-family: var(--ff-bold);
-  font-weight: var(--fw-medium);
-  font-size: var(--fsz-xs);
-  line-height: 1.25rem;
-  color: var(--text-black-600);
-  text-wrap: pretty;
-}
 
 /* --------------------------------------------------
   Global Class Styles
@@ -126,12 +126,12 @@
   letter-spacing: 0.05em;
   text-transform: capitalize;
   font-family: var(--ff-bold);
-  font-size: var(--fsz-3xs);
+  font-size: var(--fsz-2xs);
   font-weight: var(--fw-semibold);
   line-height: var(--lh-xs);
-  color: var(--text-black-900);
-  background-color: var(--color-black-0);
-  border: 0.0625rem solid var(--border-black-100);
+  color: var(--text-trans-dark);
+  background-color: var(--gray-trans-md);
+  border: 0.0625rem solid var(--border-light);
   border-radius: var(--rounded-border-radius);
   padding-block: 0.625rem;
   padding-inline: 1.25rem;
@@ -147,11 +147,6 @@
 * 1. Add the class "bg-glass" to the element you want to apply the glass effect to.
 * 2. to change the glass color, add the "bg-glass-{weight}" to whereever you are declaring the element you want to apply the glass effect to.
 */
-.bg-glass {
-  backdrop-filter: blur(1.25rem);
-  -webkit-backdrop-filter: blur(1.25rem);
-  border: 0.125rem solid hsla(0, 0%, 100%, 0.125);
-}
 
 /* Button Styling */
 .global__button--solid {
