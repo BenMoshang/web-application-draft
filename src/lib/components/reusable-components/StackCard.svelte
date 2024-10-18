@@ -12,11 +12,7 @@
 <div class="card__wrapper">
   <figure class="card br p-base bg-white-200 border">
     <div class="card__image-wrapper bg-white-100 br border">
-      <img
-        src={imageSrc}
-      alt={title}
-        class="card__image"
-      />
+      <img src={imageSrc} alt={title} class="card__image" />
     </div>
 
     <figcaption class="card__content p-base bg-white-100 br border">
@@ -44,7 +40,7 @@
 
   .card {
     display: flex;
-    border: 0.625rem solid var(--color-text-400);
+    border: 0.625rem solid var(--gray-trans-md-alt);
     justify-content: between;
     width: fit-content;
     overflow: hidden;
@@ -74,7 +70,7 @@
   }
 
   .border {
-    border: 2px solid #00000008;
+    border: 0.0625rem solid var(--border-trans-light);
   }
 
   .text-gray {

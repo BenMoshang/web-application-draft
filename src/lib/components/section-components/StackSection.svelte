@@ -69,7 +69,7 @@
     grid-template-areas:
       "title"
       "cards";
-    gap: var(--spacing-2xl);
+    gap: var(--dynamic-3xl);
 
     & .stack__title {
       grid-area: title;
@@ -77,9 +77,10 @@
 
     & .content__cards-container {
       grid-area: cards;
+
+      gap: var(--dynamic-md);
     }
   }
-  /* this is 45px */
   @container stack-section (min-width: 24.3125rem) {
     .stack__content {
       grid-template-columns: 1fr 1fr;
@@ -88,7 +89,6 @@
 
     .stack__title {
       position: sticky;
-      top: 2.5rem;
     }
   }
 </style>

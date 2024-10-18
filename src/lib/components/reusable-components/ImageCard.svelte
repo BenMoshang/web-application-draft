@@ -32,7 +32,7 @@
       </p>
     </header>
     {#if label}
-      <div class="header__label">
+      <div class="header__label label">
         <p class="label__text" class:active={isHovered}>{label}</p>
       </div>
     {/if}
@@ -69,11 +69,13 @@
   }
 
   .header__label {
-    background-color: var(--color-black-0);
-    border: 0.0625rem solid var(--border-black-100);
+    background-color: var(--gray-trans-md);
+
+    border: 0.0625rem solid var(--border-light);
+
     border-radius: var(--rounded-border-radius);
-    padding-block: 0.625rem;
-    padding-inline: 1.25rem;
+    padding-block: var(--static-5xs);
+    padding-inline: var(--static-4xs);
     box-shadow: inset var(--shadow-sm);
     overflow: hidden;
     display: flex;
@@ -83,13 +85,17 @@
     & .label__text {
       will-change: transform;
       display: flex;
-      letter-spacing: 0.05em;
       text-transform: capitalize;
       font-family: var(--ff-bold);
-      font-size: var(--fsz-3xs);
+      font-size: var(--fsz-2xs);
+
       font-weight: var(--fw-semibold);
+
       line-height: var(--lh-xs);
-      color: var(--text-black-900);
+
+      letter-spacing: var(--ls-loose);
+      color: var(--text-trans-dark);
+
       position: relative;
     }
   }
@@ -104,7 +110,7 @@
       width: 100%;
       height: 100%;
       transform: translateY(200%);
-      background-color: var(--color-black-0);
+      background-color: var(--color-black);
       animation: replaceAfter 0.3s ease-in-out;
       animation-delay: 0.3s;
       z-index: var(--z-2);
@@ -134,10 +140,10 @@
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    padding: 1.625rem;
+    padding: var(--static-md);
     width: 100%;
     flex-wrap: nowrap;
-    border-color: #0000000a;
+    border-color: var(--border-trans-lightest);
     border-style: solid;
     border-top-width: 0.0625rem;
     z-index: var(--z-2);

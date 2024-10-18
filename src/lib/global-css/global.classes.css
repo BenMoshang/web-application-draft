@@ -123,7 +123,7 @@
 -------------------------------------------------- */
 /* Card Label */
 .label {
-  letter-spacing: 0.05em;
+  letter-spacing: var(--ls-loose);
   text-transform: capitalize;
   font-family: var(--ff-bold);
   font-size: var(--fsz-2xs);

@@ -43,7 +43,7 @@
     grid-template-areas:
       "title"
       "description";
-    gap: var(--spacing-2xl);
+    gap: var(--dynamic-3xl);
 
     & .motivation__title {
       grid-area: title;

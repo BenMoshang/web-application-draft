@@ -37,7 +37,7 @@
   .card {
     display: flex;
     flex-direction: column;
-    border: 0.625rem solid var(--color-text-400);
+    border: 0.625rem solid var(--gray-trans-md-alt);
     justify-content: between;
     width: 100%;
     max-width: 35.625rem;
@@ -61,7 +61,6 @@
   }
 
   .border {
-    border: 2px solid #00000008;
+    border: 0.0625rem solid var(--border-trans-light);
   }
-
 </style>

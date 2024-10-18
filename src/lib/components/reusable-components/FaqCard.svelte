@@ -1,6 +1,6 @@
 <script>
+  import { fade, slide } from "svelte/transition";
   import "../../global-css/utils.css";
-  import { slide, fade } from "svelte/transition";
 
   export let question = "";
   export let answer = "";
@@ -71,12 +71,12 @@
     }
 
     &:hover {
-      background-color: hsl(0, 0%, 92.5%);
+      background-color: var(--bg-gray-lightest);
     }
   }
 
   .card.open {
-    background-color: #fafafa;
+    background-color: var(--bg-gray-lightest);
   }
 
   img.open {
@@ -94,6 +94,6 @@
     height: 1px;
     width: 100%;
     margin-block: 0.5rem 0.8rem;
-    background-color: var(--color-black-100);
+    background-color: var(--bg-gray-dark);
   }
 </style>

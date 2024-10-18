@@ -8,6 +8,7 @@
   title = title.toUpperCase();
   label = label.toUpperCase();
 </script>
+
 <!-- TODO: NEED TO FIX SVG  SIZE SO CROSS NOT FAT-->
 <article class="card br p-xl bg-white-200 shadow-md">
   <div class="icon--wrapper">
@@ -48,27 +49,26 @@
   .card {
     display: flex;
     flex-direction: column;
-    border: 0.625rem solid var(--color-text-400);
+    border: 0.625rem solid var(--border-trans-md);
     justify-content: center;
     width: 100%;
     overflow: hidden;
     /* max-width: 28.125rem; */
 
-    gap: var(--fsz-md);
+    gap: var(--static-sm);
 
     & .card__counter {
-      letter-spacing: 2.4px;
+      letter-spacing: var(--ls-tight);
       line-height: 1;
     }
 
     & .card__title {
-      letter-spacing: -2.3px;
-      margin-top: 1.125rem;
+      margin-top: var(--static-2xs);
       display: flex;
       align-content: center;
       align-items: center;
       width: 100%;
-      gap: var(--spacing-sm);
+      gap: var(--static-5xs);
       letter-spacing: -0.2px;
       text-transform: capitalize;
     }
@@ -85,9 +85,9 @@
     position: relative;
     width: var(--bg-size);
     height: var(--bg-size);
-    background: var(--color-black-500);
+    background: var(--bg-gray);
     border-radius: 50%;
-    border: 0.0625rem solid var(--color-black-200);
+    border: 0.0625rem solid var(--border-dark);
     box-shadow:
       var(--shadow-sm),
       inset var(--shadow-sm);

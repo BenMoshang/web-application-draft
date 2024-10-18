@@ -55,7 +55,6 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-2xl);
 
     & .projects__title {
       text-transform: capitalize;
@@ -74,7 +73,7 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       place-items: center;
 
-      gap: var(--fsz-md);
+      gap: var(--static-sm);
     }
   }
 </style>

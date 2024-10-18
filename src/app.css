@@ -20,22 +20,22 @@
    gaps: are normally these xl, 2xl, 3xl or static-md, static-sm
   -------------------------------------------------- */
   /* dynamic spacing */
-  --dynamic-xl: clamp(2rem, 1.6rem + 0.8vw, 3rem); /* 32px to 48px */
+  --dynamic-xl: clamp(1.875rem, 1.716rem + 0.65vw, 2.5rem); /* 30px to 40px */
   --dynamic-2xl: clamp(2.5rem, 2.036rem + 1.9vw, 3.75rem); /* 40px to 60px */
   --dynamic-3xl: clamp(3.125rem, 2.257rem + 3.05vw, 5rem); /* 50px to 80px */
 
   /* static spacing */
-  --static-6xs: 0.25rem;
-  --static-5xs: 0.5rem;
-  --static-4xs: 0.75rem;
-  --static-3xs: 1rem;
-  --static-2xs: 1.125rem;
-  --static-xs: 1.25rem;
-  --static-sm: 1.5rem;
-  --static-md: 1.75rem;
-  --static-lg: 1.75rem;
-  --static-xl: 1.875rem;
-  --static-2xl: 2.5rem;
+  --static-7xs: 0.25rem; /* 4px */
+  --static-6xs: 0.5rem; /* 8px */
+  --static-5xs: 0.625rem; /* 10px */
+  --static-4xs: 0.75rem; /* 12px */
+  --static-3xs: 1rem; /* 16px */
+  --static-2xs: 1.125rem; /* 18px */
+  --static-xs: 1.25rem; /* 20px */
+  --static-sm: 1.5rem; /* 24px */
+  --static-md: 1.75rem; /* 28px */
+  --static-lg: 1.875rem; /* 30px */
+  --static-xl: 2.5rem; /* 40px */
 
   /* --------------------------------------------------
      Font Sizes
@@ -85,7 +85,10 @@
   -------------------------------------------------- */
   --border-radius: 0.75rem; /* 12px */
   --rounded-border-radius: 5.625rem; /* 90px */
-
+  /* --------------------------------------------------
+     p-inline
+  -------------------------------------------------- */
+  --pinline-section: var(--dynamic-xl); /*30px to 40px */
   /* --------------------------------------------------
      Base Colors
   -------------------------------------------------- */
@@ -100,6 +103,7 @@
   --gray-light: hsl(240, 5%, 92%); /* #eaeaec */
   --gray-md: hsl(0, 0%, 32%); /* #525252 */
   --gray-dark: hsl(240, 3%, 21%); /* #333336 */
+  --gray-dark-alt: hsl(0, 0%, 22%); /* #383838 */
   --gray-darker: hsl(240, 3%, 12%); /* #1d1d1f */
   --gray-darkest: hsl(0, 0%, 15%); /* #262626 */
 
@@ -110,6 +114,8 @@
   --gray-trans-lighter: hsla(0, 0%, 0%, 0.07); /* #00000012 */
   --gray-trans-light: hsla(0, 0%, 0%, 0.16); /* #00000029 */
   --gray-trans-md: hsla(240, 3%, 12%, 0.7); /* #1d1d1fb3 */
+  --gray-trans-md-alt: hsl(0, 0%, 18%); /* #2e2e2e */
+
   --gray-trans-dark: hsla(0, 0%, 0%, 0.6); /* #00000099 */
   --gray-trans-darker: hsla(0, 0%, 0%, 0.078); /* #00000014 */
   --gray-trans-darkest: hsla(0, 0%, 0%, 0.071); /* #00000012 */
@@ -126,6 +132,12 @@
   --text-disabled: var(--gray-trans-dark); /* #00000099 */
 
   /* --------------------------------------------------
+     Background Colors
+  -------------------------------------------------- */
+  --bg-gray-lightest: var(--gray-lightest); /* #fafafa */
+  --bg-gray: var(--gray-dark-alt); /* #2e2e2e */
+  --bg-gray-dark: var(--gray-trans-light); /* #00000029 */
+  /* --------------------------------------------------
      Border Colors
   -------------------------------------------------- */
   --border-lightest: var(--gray-light); /* #eaeaec */
@@ -134,6 +146,9 @@
   --border-md: var(--gray-dark); /* #333336 */
   --border-dark: var(--gray-darker); /* #1d1d1f */
 
+  --border-trans-lightest: hsla(0, 0%, 0%, 0.04); /* #0000000a */
+  --border-trans-light: hsla(0, 0%, 0%, 0.031); /* #00000008 */
+  --border-trans-md: var(--gray-trans-md-alt); /* #2e2e2e */
   /* --------------------------------------------------
      Fill Colors
   -------------------------------------------------- */

@@ -63,7 +63,7 @@
     padding-top: 1.875rem;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-2xl);
+    gap: var(--dynamic-3xl);
 
     & .services__title {
       text-transform: capitalize;
@@ -74,7 +74,7 @@
     & .services__container {
       display: flex;
       flex-flow: row wrap;
-      gap: var(--spacing-lg);
+      gap: var(--static-sm);
 
       width: 100%;
 
