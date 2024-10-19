@@ -1,6 +1,5 @@
 <script>
   import { fade, slide } from "svelte/transition";
-  import "../../global-css/utils.css";
 
   export let question = "";
   export let answer = "";

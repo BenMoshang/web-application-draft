@@ -1,5 +1,4 @@
 <script>
-  import "../../global-css/utils.css";
 
   export let imageSrc = "";
   export let title = "";
