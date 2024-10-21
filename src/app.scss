@@ -55,10 +55,9 @@ $font-sizes: (
 /* Line Heights */
 $line-heights: (
   xs: 1.6,
-  /* For font sizes 3xs to md */ md: 1.5,
-  /* For font size lg */ lg: 1.2,
-  /* For font sizes xl to 3xl */ xl: 1.1,
-  /* For font size 4xl */
+  md: 1.5,
+  lg: 1.2,
+  xl: 1.1,
 );
 
 /* Letter Spacing */
@@ -147,6 +146,7 @@ $text-primary: map-get(map-get($colors, primary), 900);
 $text-secondary: map-get(map-get($colors, primary), 800);
 // letter-spacing
 $ls-tight: map-get($letter-spacing, tight);
+$ls-normal: map-get($letter-spacing, normal);
 $ls-loose: map-get($letter-spacing, loose);
 // font-weights
 $fw-bold: map-get($font-weights, bold);
@@ -304,7 +304,7 @@ $color-white: map-get($colors, white);
   font-family: $ff-regular;
   font-weight: $fw-medium;
   font-size: $fsz-sm;
-  line-height: $lh-sm;
+  line-height: $lh-md;
   letter-spacing: $ls-loose;
   color: color-with-opacity(900, 0.7);
 }
