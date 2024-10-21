@@ -1,0 +1,25 @@
+@use "./_variables.scss" as *;
+
+/* ===============================================
+ Functions
+=============================================== */
+@function color-with-opacity($color-key, $opacity) {
+  $color: map-get(map-get($colors, primary), $color-key);
+
+  @if type-of($color) == "color" {
+    // Extract hue, saturation, and lightness from HSL color
+    $h: hue($color);
+    $s: saturation($color);
+    $l: lightness($color);
+    @return hsla($h, $s, $l, $opacity);
+  } @else {
+    @warn "Color not found or invalid format";
+    @return null;
+  }
+}
+
+/* !Example usage */
+// background-color: color-with-opacity([color-key], [opacity]); // outputs hsla(240, 2%, 73%, 0.5)
+// .my-class {
+//   background-color: color-with-opacity(500, 0.5); // outputs hsla(240, 2%, 73%, 0.5)
+// }

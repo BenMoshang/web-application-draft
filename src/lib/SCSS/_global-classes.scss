@@ -1,0 +1,196 @@
+/*===================================================
+     Global Class Styles
+=================================================== */
+@use "./_functions.scss" as *;
+@use "./_variables.scss" as *;
+@use "./_mixins.scss" as *;
+
+/* --------------------------------------------------
+   Global Title Styles
+-------------------------------------------------- */
+
+.global__title {
+  font-family: $ff-bold;
+  font-weight: $fw-bold;
+  color: $text-primary; /* #1d1d1f */
+  letter-spacing: $ls-tight;
+  text-transform: capitalize;
+  text-wrap: balance;
+
+  &--xl {
+    font-size: $fsz-4xl;
+    line-height: $lh-xl;
+  }
+  &--lg {
+    font-size: $fsz-3xl;
+    line-height: $lh-xl;
+  }
+  &--md {
+    font-size: $fsz-2xl;
+    line-height: $lh-lg;
+  }
+  &--sm {
+    font-size: $fsz-xl;
+    line-height: $lh-lg;
+  }
+}
+
+/* --------------------------------------------------
+     Global Paragraph Styles
+  -------------------------------------------------- */
+
+.global__paragraph {
+  color: $text-primary; /* #1d1d1f */
+  line-height: $lh-md;
+  letter-spacing: $ls-normal;
+  text-wrap: pretty;
+
+  &--lg {
+    font-family: $ff-bold;
+    font-weight: $fw-bold;
+    font-size: $fsz-lg;
+  }
+
+  &--md {
+    font-family: $ff-regular;
+    font-weight: $fw-medium;
+    font-size: $fsz-md;
+  }
+
+  &--sm {
+    font-family: $ff-bold;
+    font-weight: $fw-medium;
+    font-size: $fsz-xs;
+  }
+}
+/* --------------------------------------------------
+    Card Styles
+  -------------------------------------------------- */
+
+.global__card-title {
+  font-family: $ff-bold;
+  color: $text-primary; /* #1d1d1f */
+  text-wrap: balance;
+
+  &--lg {
+    font-weight: $fw-bold;
+    line-height: $lh-lg;
+    font-size: $fsz-mdlg;
+  }
+
+  &--md {
+    font-weight: $fw-semibold;
+    font-size: $fsz-sm;
+    line-height: $lh-md;
+  }
+
+  &--sm {
+    font-weight: $fw-bold;
+    font-size: $fsz-xs;
+    line-height: $lh-xs;
+    letter-spacing: $ls-loose;
+  }
+}
+.global__card--subtitle {
+  text-wrap: balance;
+
+  font-family: $ff-bold;
+  font-weight: $fw-medium;
+  font-size: $fsz-xs;
+  letter-spacing: $ls-loose;
+  color: $text-secondary;
+  line-height: $lh-xs;
+}
+
+.global__card-description {
+  text-wrap: pretty;
+  font-family: $ff-regular;
+  font-weight: $fw-medium;
+  font-size: $fsz-sm;
+  line-height: $lh-md;
+  letter-spacing: $ls-loose;
+  color: color-with-opacity(900, 0.7);
+}
+
+.global__card-label {
+  font-family: $ff-bold;
+  font-weight: $fw-semibold;
+  font-size: $fsz-2xs;
+  line-height: $lh-lg;
+  letter-spacing: $ls-loose;
+  text-transform: capitalize;
+  color: color-with-opacity(900, 0.6);
+  // TODO: YOU HAVE TO DO THE COLORS
+  // background-color: $gray-trans-md;
+  // border: 0.0625rem solid $border-light;
+  border-radius: $br-rounded;
+  padding-block: 0.625rem;
+  padding-inline: 1.25rem;
+  box-shadow: $shadow-sm-inset;
+}
+
+/* --------------------------------------------------
+     Button Styling
+  -------------------------------------------------- */
+
+.global__button--solid {
+  position: relative;
+  border-radius: $br-rounded;
+  border: 0.0625rem solid $text-white;
+  padding-block: 0.75rem;
+  padding-inline: clamp(0.875rem, 0.69rem + 0.62vw, 1.25rem);
+
+  font-family: $ff-regular;
+  font-weight: $fw-bold;
+  font-size: $fsz-xs;
+  line-height: 1rem;
+  color: $text-white;
+  background: linear-gradient(135deg, #000000, #434343);
+  box-shadow: $shadow-sm, $shadow-sm-inset;
+
+  text-transform: capitalize;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  will-change: transform, box-shadow, background-color;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.2) 0%,
+      transparent 80%
+    );
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.6s ease;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #333333, #666666);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5), 0 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    transform: scale(0.95);
+    background-color: #1a1a1a;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.3);
+
+    &::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+}
