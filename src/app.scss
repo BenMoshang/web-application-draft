@@ -44,6 +44,7 @@ $font-sizes: (
   /* 18px */ xs: map-get($static-spacing, 2xs),
   /* 20px */ sm: map-get($static-spacing, xs),
   /* 24px */ md: map-get($static-spacing, sm),
+  /* 30px */ mdlg: map-get($static-spacing, lg),
   /* 24px to 30px */ lg: clamp(1.5rem, 1.315rem + 0.62vw, 1.875rem),
   /* 40px to 50px */ xl: clamp(2.5rem, 1.38rem + 2.75vw, 3.125rem),
   /* 40px to 90px */ 2xl: clamp(2.5rem, 0.453rem + 6.9vw, 5.625rem),
@@ -87,25 +88,16 @@ $border-radius: (/* 12px */ default: 0.75rem, /* 90px */ rounded: 5.625rem);
 $colors: (
   white: #ffffff,
   black: #000000,
-  gray: (
-    /* #fafafa */ lightest: hsl(0, 0%, 98%),
-    /* #f5f5f7 */ lighter: hsl(240, 11%, 96%),
-    /* #eaeaec */ light: hsl(240, 5%, 92%),
-    /* #525252 */ medium: hsl(0, 0%, 32%),
-    /* #333336 */ dark: hsl(240, 3%, 21%),
-    /* #383838 */ dark-alt: hsl(0, 0%, 22%),
-    /* #1d1d1f */ darker: hsl(240, 3%, 12%),
-    /* #262626 */ darkest: hsl(0, 0%, 15%),
-  ),
-  transparent-gray: (
-    /* #0000000a */ lightest: hsla(0, 0%, 0%, 0.04),
-    /* #00000012 */ lighter: hsla(0, 0%, 0%, 0.07),
-    /* #00000029 */ light: hsla(0, 0%, 0%, 0.16),
-    /* #1d1d1fb3 */ medium: hsla(240, 3%, 12%, 0.7),
-    /* #2e2e2e */ medium-alt: hsl(0, 0%, 18%),
-    /* #00000099 */ dark: hsla(0, 0%, 0%, 0.6),
-    /* #00000014 */ darker: hsla(0, 0%, 0%, 0.078),
-    /* #00000012 */ darkest: hsla(0, 0%, 0%, 0.071),
+  primary: (
+    /*#1d1d1f,*/ 900: rgb(29, 29, 31),
+    /*#3e3e40*/ 800: hsl(240, 2%, 25%),
+    /* #707072,*/ 700: hsl(240, 1%, 44%),
+    /*#99999b*/ 600: hsl(240, 1%, 60%),
+    /*#b8b8bb*/ 500: hsl(240, 2%, 73%),
+    /*#dcdcde*/ 400: hsl(240, 3%, 87%),
+    /*#ebebed*/ 300: hsl(240, 5%, 93%),
+    /*#f3f3f6*/ 200: hsl(240, 14%, 96%),
+    /*#f9f9fc*/ 100: hsl(240, 33%, 98%),
   ),
 );
 
@@ -143,33 +135,36 @@ $shadows: (
     1.5625rem 3.125rem 3.275rem -0.2313rem hsl(0deg 0% 63% / 0.16),
   ),
 );
-
+// shadows
 $shadow-sm-inset: inset 0 0.0625rem 0 hsla(0, 0%, 100%, 0.2);
+$shadow-sm: map-get($shadows, sm);
+$shadow-md: map-get($shadows, md);
+$shadow-lg: map-get($shadows, lg);
 
-/* Additional Variables */
-$text-primary: map-get(map-get($colors, gray), darker);
-$text-trans-md: map-get(map-get($colors, transparent-gray), medium);
-$text-trans-dark: map-get(map-get($colors, transparent-gray), dark);
-$gray-trans-md: map-get(map-get($colors, transparent-gray), medium);
-$border-light: map-get(map-get($colors, transparent-gray), lighter);
-
+//text-colors
+$text-white: map-get($colors, white);
+$text-primary: map-get(map-get($colors, primary), 900);
+$text-secondary: map-get(map-get($colors, primary), 800);
+// letter-spacing
 $ls-tight: map-get($letter-spacing, tight);
 $ls-loose: map-get($letter-spacing, loose);
-
+// font-weights
 $fw-bold: map-get($font-weights, bold);
 $fw-medium: map-get($font-weights, medium);
 $fw-semibold: map-get($font-weights, semibold);
-
+// font-families
 $ff-bold: map-get($font-families, bold);
 $ff-regular: map-get($font-families, regular);
-
-$rounded-border-radius: map-get($border-radius, rounded);
-
+// border-radius
+$br-default: map-get($border-radius, default);
+$br-rounded: map-get($border-radius, rounded);
+// font-sizes
 $fsz-4xl: map-get($font-sizes, 4xl);
 $fsz-3xl: map-get($font-sizes, 3xl);
 $fsz-2xl: map-get($font-sizes, 2xl);
 $fsz-xl: map-get($font-sizes, xl);
 $fsz-lg: map-get($font-sizes, lg);
+$fsz-mdlg: map-get($font-sizes, mdlg);
 $fsz-md: map-get($font-sizes, md);
 $fsz-sm: map-get($font-sizes, sm);
 $fsz-xs: map-get($font-sizes, xs);
@@ -183,42 +178,57 @@ $lh-xs: map-get($line-heights, xs);
 $color-white: map-get($colors, white);
 
 /* --------------------------------------------------
+ Functions
+-------------------------------------------------- */
+
+@function color-with-opacity($color-key, $opacity) {
+  $color: map-get(map-get($colors, primary), $color-key);
+
+  @if type-of($color) == "color" {
+    // Extract hue, saturation, and lightness from HSL color
+    $h: hue($color);
+    $s: saturation($color);
+    $l: lightness($color);
+    @return hsla($h, $s, $l, $opacity);
+  } @else {
+    @warn "Color not found or invalid format";
+    @return null;
+  }
+}
+
+/* !Example usage */
+// background-color: color-with-opacity([color-key], [opacity]); // outputs hsla(240, 2%, 73%, 0.5)
+// .my-class {
+//   background-color: color-with-opacity(500, 0.5); // outputs hsla(240, 2%, 73%, 0.5)
+// }
+
+/* --------------------------------------------------
    Global Title Styles
 -------------------------------------------------- */
 
 .global__title {
   font-family: $ff-bold;
   font-weight: $fw-bold;
-  color: $text-primary;
+  color: $text-primary; /* #1d1d1f */
   letter-spacing: $ls-tight;
   text-transform: capitalize;
-  /* 'text-wrap' is not a standard CSS property */
+  text-wrap: balance;
 
-  &--4xl {
+  &--xl {
     font-size: $fsz-4xl;
     line-height: $lh-xl;
-    text-align: center;
-    white-space: nowrap;
   }
-
-  &--3xl {
+  &--lg {
     font-size: $fsz-3xl;
     line-height: $lh-xl;
   }
-
-  &--2xl {
+  &--md {
     font-size: $fsz-2xl;
     line-height: $lh-lg;
   }
-
-  &--md {
+  &--sm {
     font-size: $fsz-xl;
     line-height: $lh-lg;
-    text-transform: capitalize;
-  }
-
-  &--sm {
-    text-transform: capitalize;
   }
 }
 
@@ -227,114 +237,122 @@ $color-white: map-get($colors, white);
 -------------------------------------------------- */
 
 .global__paragraph {
+  color: $text-primary; /* #1d1d1f */
+  line-height: $lh-md;
+  letter-spacing: $ls-normal;
+  text-wrap: pretty;
+
   &--lg {
     font-family: $ff-bold;
     font-weight: $fw-bold;
     font-size: $fsz-lg;
-    line-height: $lh-lg;
-    color: $text-primary;
-    letter-spacing: $ls-tight;
-    /* Consider using 'overflow-wrap' or 'word-break' for text wrapping */
   }
 
-  &--md,
-  &--sm,
-  &--xs,
-  &--xs-semibold,
-  &--2xs {
+  &--md {
     font-family: $ff-regular;
-    letter-spacing: $ls-loose;
-    /* Consider using 'overflow-wrap' or 'word-break' for text wrapping */
-  }
-
-  &--md,
-  &--sm,
-  &--xs-semibold,
-  &--2xs {
-    color: $text-primary;
-  }
-
-  &--xs,
-  &--xs-semibold,
-  &--2xs {
-    line-height: $lh-xs;
-  }
-
-  &--md,
-  &--sm {
-    line-height: $lh-md;
     font-weight: $fw-medium;
     font-size: $fsz-md;
   }
 
-  &--xs {
-    font-weight: $fw-medium;
-    font-size: $fsz-sm;
-    color: $text-trans-md;
-  }
-
-  &--xs-semibold {
+  &--sm {
     font-family: $ff-bold;
-    font-weight: $fw-semibold;
-    font-size: $fsz-sm;
-  }
-
-  &--2xs {
-    font-family: $ff-regular;
-    font-weight: $fw-bold;
+    font-weight: $fw-medium;
     font-size: $fsz-xs;
   }
 }
-
 /* --------------------------------------------------
-   Global Class Styles
+  Card Styles
 -------------------------------------------------- */
 
-/* Card Label */
-.label {
+.global__card-title {
+  font-family: $ff-bold;
+  color: $text-primary; /* #1d1d1f */
+  text-wrap: balance;
+
+  &--lg {
+    font-weight: $fw-bold;
+    line-height: $lh-lg;
+    font-size: $fsz-mdlg;
+  }
+
+  &--md {
+    font-weight: $fw-semibold;
+    font-size: $fsz-sm;
+    line-height: $lh-md;
+  }
+
+  &--sm {
+    font-weight: $fw-bold;
+    font-size: $fsz-xs;
+    line-height: $lh-xs;
+    letter-spacing: $ls-loose;
+  }
+}
+.global__card--subtitle {
+  text-wrap: balance;
+
+  font-family: $ff-bold;
+  font-weight: $fw-medium;
+  font-size: $fsz-xs;
+  letter-spacing: $ls-loose;
+  color: $text-secondary;
+  line-height: $lh-xs;
+}
+
+.global__card-description {
+  text-wrap: pretty;
+  font-family: $ff-regular;
+  font-weight: $fw-medium;
+  font-size: $fsz-sm;
+  line-height: $lh-sm;
+  letter-spacing: $ls-loose;
+  color: color-with-opacity(900, 0.7);
+}
+
+.global__card-label {
+  font-family: $ff-bold;
+  font-weight: $fw-semibold;
+  font-size: $fsz-2xs;
+  line-height: $lh-lg;
   letter-spacing: $ls-loose;
   text-transform: capitalize;
-  font-family: $ff-bold;
-  font-size: $fsz-2xs;
-  font-weight: $fw-semibold;
-  line-height: $lh-xs;
-  color: $text-trans-dark;
-  background-color: $gray-trans-md;
-  border: 0.0625rem solid $border-light;
-  border-radius: $rounded-border-radius;
+  color: color-with-opacity(900, 0.6);
+  // TODO: YOU HAVE TO DO THE COLORS
+  // background-color: $gray-trans-md;
+  // border: 0.0625rem solid $border-light;
+  border-radius: $br-rounded;
   padding-block: 0.625rem;
   padding-inline: 1.25rem;
   box-shadow: $shadow-sm-inset;
 }
-
-.border-gray {
-  border: 2px solid rgba(0, 0, 0, 0.03); /* Converted #00000008 to rgba */
-}
+/* --------------------------------------------------
+   Global Class Styles
+-------------------------------------------------- */
 
 /* --------------------------------------------------
    Button Styling
 -------------------------------------------------- */
 
 .global__button--solid {
-  text-transform: capitalize;
-  will-change: transform, box-shadow, background-color;
-  cursor: pointer;
-  overflow: hidden;
-  white-space: nowrap;
+  position: relative;
+  border-radius: $br-rounded;
+  border: 0.0625rem solid $text-white;
+  padding-block: 0.75rem;
+  padding-inline: clamp(0.875rem, 0.69rem + 0.62vw, 1.25rem);
 
   font-family: $ff-regular;
   font-weight: $fw-bold;
-  font-size: clamp(0.75rem, 0.688rem + 0.21vw, 0.875rem);
+  font-size: $fsz-xs;
   line-height: 1rem;
-  color: $color-white;
-
-  border: 0.0625rem solid $color-white;
-  border-radius: $rounded-border-radius;
-  padding-block: 0.75rem;
-  padding-inline: clamp(0.875rem, 0.69rem + 0.62vw, 1.25rem);
+  color: $text-white;
   background: linear-gradient(135deg, #000000, #434343);
-  box-shadow: map-get($shadows, sm), $shadow-sm-inset;
-  position: relative;
+  box-shadow: $shadow-sm, $shadow-sm-inset;
+
+  text-transform: capitalize;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  will-change: transform, box-shadow, background-color;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
