@@ -23,7 +23,6 @@
   },
   "type": "module",
   "dependencies": {
-    "sass": "^1.80.3",
     "animejs": "^3.2.2",
     "gsap": "^3.12.5"
   }

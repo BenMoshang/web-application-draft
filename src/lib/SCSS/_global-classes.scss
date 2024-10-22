@@ -1,14 +1,13 @@
+@use "./_variables.scss" as *; // This imports all variables from _variables.scss
+@use "./_functions.scss" as *;
+
 /*===================================================
      Global Class Styles
 =================================================== */
-@use "./_functions.scss" as *;
-@use "./_variables.scss" as *;
-@use "./_mixins.scss" as *;
 
 /* --------------------------------------------------
    Global Title Styles
 -------------------------------------------------- */
-
 .global__title {
   font-family: $ff-bold;
   font-weight: $fw-bold;
@@ -37,8 +36,7 @@
 
 /* --------------------------------------------------
      Global Paragraph Styles
-  -------------------------------------------------- */
-
+-------------------------------------------------- */
 .global__paragraph {
   color: $text-primary; /* #1d1d1f */
   line-height: $lh-md;
@@ -63,10 +61,10 @@
     font-size: $fsz-xs;
   }
 }
+
 /* --------------------------------------------------
     Card Styles
-  -------------------------------------------------- */
-
+-------------------------------------------------- */
 .global__card-title {
   font-family: $ff-bold;
   color: $text-primary; /* #1d1d1f */
@@ -91,9 +89,9 @@
     letter-spacing: $ls-loose;
   }
 }
+
 .global__card--subtitle {
   text-wrap: balance;
-
   font-family: $ff-bold;
   font-weight: $fw-medium;
   font-size: $fsz-xs;
@@ -120,19 +118,18 @@
   letter-spacing: $ls-loose;
   text-transform: capitalize;
   color: color-with-opacity(900, 0.6);
-  // TODO: YOU HAVE TO DO THE COLORS
-  // background-color: $gray-trans-md;
-  // border: 0.0625rem solid $border-light;
   border-radius: $br-rounded;
   padding-block: 0.625rem;
   padding-inline: 1.25rem;
   box-shadow: $shadow-sm-inset;
+  // TODO: Implement background and border colors as needed
+  // background-color: $gray-trans-md;
+  // border: 0.0625rem solid $border-light;
 }
 
 /* --------------------------------------------------
      Button Styling
-  -------------------------------------------------- */
-
+-------------------------------------------------- */
 .global__button--solid {
   position: relative;
   border-radius: $br-rounded;

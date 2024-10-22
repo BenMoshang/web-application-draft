@@ -1,6 +1,3 @@
-
-
-
 /* ===============================================
                     SCSS Variables
 =============================================== */
@@ -43,9 +40,9 @@ $static-spacing: (
 
 /* Font Sizes */
 $font-sizes: (
-  /* 16px */ 2xs: 1rem,
-  /* 18px */ xs: map-get($static-spacing, 2xs),
-  /* 20px */ sm: map-get($static-spacing, xs),
+  /* 16px */ 2xs: map-get($static-spacing, 2xs),
+  /* 18px */ xs: map-get($static-spacing, xs),
+  /* 20px */ sm: map-get($static-spacing, sm),
   /* 24px */ md: map-get($static-spacing, sm),
   /* 30px */ mdlg: map-get($static-spacing, lg),
   /* 24px to 30px */ lg: clamp(1.5rem, 1.315rem + 0.62vw, 1.875rem),
@@ -91,26 +88,25 @@ $colors: (
   white: #ffffff,
   black: #000000,
   primary: (
-    /*#1d1d1f,*/ 900: rgb(29, 29, 31),
-    /*#3e3e40*/ 800: hsl(240, 2%, 25%),
-    /* #707072,*/ 700: hsl(240, 1%, 44%),
-    /*#99999b*/ 600: hsl(240, 1%, 60%),
-    /*#b8b8bb*/ 500: hsl(240, 2%, 73%),
-    /*#dcdcde*/ 400: hsl(240, 3%, 87%),
-    /*#ebebed*/ 300: hsl(240, 5%, 93%),
-    /*#f3f3f6*/ 200: hsl(240, 14%, 96%),
-    /*#f9f9fc*/ 100: hsl(240, 33%, 98%),
+    900: rgb(29, 29, 31),
+    800: hsl(240, 2%, 25%),
+    700: hsl(240, 1%, 44%),
+    600: hsl(240, 1%, 60%),
+    500: hsl(240, 2%, 73%),
+    400: hsl(240, 3%, 87%),
+    300: hsl(240, 5%, 93%),
+    200: hsl(240, 14%, 96%),
+    100: hsl(240, 33%, 98%),
   ),
 );
 
 /* Font Families */
 $font-families: (
-  regular: "Inter Tight",
-  bold: "Instrument Sans",
+  bold-font: "Instrument Sans",
+  regular-font: "Inter Tight",
 );
 
 /* Shadows */
-
 $shadows: (
   sm: (
     0.0187rem 0.0313rem 0.0313rem hsl(0deg 0% 63% / 0.52),
@@ -137,31 +133,37 @@ $shadows: (
     1.5625rem 3.125rem 3.275rem -0.2313rem hsl(0deg 0% 63% / 0.16),
   ),
 );
-// shadows
+
+/* Shadows Access */
 $shadow-sm-inset: inset 0 0.0625rem 0 hsla(0, 0%, 100%, 0.2);
 $shadow-sm: map-get($shadows, sm);
 $shadow-md: map-get($shadows, md);
 $shadow-lg: map-get($shadows, lg);
 
-//text-colors
+/* Text Colors */
 $text-white: map-get($colors, white);
 $text-primary: map-get(map-get($colors, primary), 900);
 $text-secondary: map-get(map-get($colors, primary), 800);
-// letter-spacing
+
+/* Letter Spacing */
 $ls-tight: map-get($letter-spacing, tight);
 $ls-normal: map-get($letter-spacing, normal);
 $ls-loose: map-get($letter-spacing, loose);
-// font-weights
+
+/* Font Weights */
 $fw-bold: map-get($font-weights, bold);
 $fw-medium: map-get($font-weights, medium);
 $fw-semibold: map-get($font-weights, semibold);
-// font-families
-$ff-bold: map-get($font-families, bold);
-$ff-regular: map-get($font-families, regular);
-// border-radius
+
+/* Font Families */
+$ff-bold: map-get($font-families, bold-font);
+$ff-regular: map-get($font-families, regular-font);
+
+/* Border Radius */
 $br-default: map-get($border-radius, default);
 $br-rounded: map-get($border-radius, rounded);
-// font-sizes
+
+/* Font Sizes */
 $fsz-4xl: map-get($font-sizes, 4xl);
 $fsz-3xl: map-get($font-sizes, 3xl);
 $fsz-2xl: map-get($font-sizes, 2xl);
@@ -173,24 +175,10 @@ $fsz-sm: map-get($font-sizes, sm);
 $fsz-xs: map-get($font-sizes, xs);
 $fsz-2xs: map-get($font-sizes, 2xs);
 
+/* Line Heights */
 $lh-xl: map-get($line-heights, xl);
 $lh-lg: map-get($line-heights, lg);
 $lh-md: map-get($line-heights, md);
 $lh-xs: map-get($line-heights, xs);
 
 $color-white: map-get($colors, white);
-
-/* --------------------------------------------------
-   Font Face Definitions
--------------------------------------------------- */
-@font-face {
-  font-family: "Instrument Sans";
-  src: url("../fonts/InstrumentSans-VariableFont.ttf") format("truetype");
-  font-weight: 100 900;
-}
-
-@font-face {
-  font-family: "Inter Tight";
-  src: url("../fonts/InterTight-VariableFont.ttf") format("truetype");
-  font-weight: 100 900;
-}
