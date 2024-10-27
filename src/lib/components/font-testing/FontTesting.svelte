@@ -28,12 +28,16 @@
   *::before,
   *::after {
     box-sizing: border-box;
-    margin: 0;
   }
 
   .font-testing {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+
+    & > * {
+      border: 1px solid red;
+      margin: 0;
+    }
   }
 </style>

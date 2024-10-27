@@ -55,6 +55,23 @@ $ff-regular: "Inter Tight", sans-serif;
   letter-spacing: $ls-loose;
   text-transform: capitalize;
 }
+
+// button mixin
+@mixin global__button {
+  cursor: pointer;
+  text-transform: capitalize;
+  white-space: nowrap;
+  inline-size: fit-content;
+
+  will-change: transform, box-shadow, background-color;
+  position: relative;
+  font-family: $ff-regular;
+  font-weight: $fw-bold;
+  font-size: $fsz-3xs;
+  line-height: $lh-xs;
+  border-radius: $br-rounded;
+}
+
 @font-face {
   font-family: "Inter Tight";
   src: url("./lib/fonts/InterTight-VariableFont.ttf") format("truetype");

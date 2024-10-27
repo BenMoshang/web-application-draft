@@ -40,6 +40,7 @@ $static-spacing: (
 
 /* Font Sizes */
 $font-sizes: (
+  /* 12px */ 3xs: 0.875rem,
   /* 16px */ 2xs: map-get($static-spacing, 2xs),
   /* 18px */ xs: map-get($static-spacing, xs),
   /* 20px */ sm: map-get($static-spacing, sm),
@@ -57,14 +58,14 @@ $line-heights: (
   xs: 1.6,
   md: 1.5,
   lg: 1.2,
-  xl: 1.1,
+  xl: 0.9,
 );
 
 /* Letter Spacing */
 $letter-spacing: (
-  tight: -0.02em,
+  tight: -0.03em,
   normal: normal,
-  loose: 0.02em,
+  loose: 0.03em,
 );
 
 /* Font Weights */
@@ -166,7 +167,7 @@ $fsz-md: map-get($font-sizes, md);
 $fsz-sm: map-get($font-sizes, sm);
 $fsz-xs: map-get($font-sizes, xs);
 $fsz-2xs: map-get($font-sizes, 2xs);
-
+$fsz-3xs: map-get($font-sizes, 3xs);
 /* Line Heights */
 $lh-xl: map-get($line-heights, xl);
 $lh-lg: map-get($line-heights, lg);
@@ -174,3 +175,5 @@ $lh-md: map-get($line-heights, md);
 $lh-xs: map-get($line-heights, xs);
 
 $color-white: map-get($colors, white);
+$color-primary: map-get(map-get($colors, primary), 900);
+$color-secondary: map-get(map-get($colors, primary), 800);

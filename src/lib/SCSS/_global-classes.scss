@@ -138,25 +138,15 @@
      Button Styling
 -------------------------------------------------- */
 .global__button--solid {
-  position: relative;
-  border-radius: $br-rounded;
-  border: 0.0625rem solid $text-white;
-  padding-block: 0.75rem;
-  padding-inline: clamp(0.875rem, 0.69rem + 0.62vw, 1.25rem);
-
-  font-family: $ff-regular;
-  font-weight: $fw-bold;
-  font-size: $fsz-xs;
-  line-height: 1rem;
+  @include global__button;
   color: $text-white;
-  background: linear-gradient(135deg, #000000, #434343);
-  box-shadow: $shadow-sm, $shadow-sm-inset;
+  border: 0.125rem solid $text-white;
+  padding-block: 0.75rem;
+  padding-inline: 1.25rem;
 
-  text-transform: capitalize;
-  cursor: pointer;
-  overflow: hidden;
-  white-space: nowrap;
-  will-change: transform, box-shadow, background-color;
+  background: linear-gradient(135deg, #000000, $color-primary);
+  box-shadow: $shadow-sm-inset;
+
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -179,8 +169,8 @@
 
   &:hover {
     transform: scale(1.05);
-    box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.5);
-    background: linear-gradient(135deg, #333333, #666666);
+    box-shadow: $shadow-md;
+    background: linear-gradient(135deg, $color-primary, $color-secondary);
   }
 
   &:focus-visible {
@@ -190,7 +180,7 @@
 
   &:active {
     transform: scale(0.95);
-    background-color: #1a1a1a;
+    background-color: $color-primary;
     box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.3);
 
     &::before {

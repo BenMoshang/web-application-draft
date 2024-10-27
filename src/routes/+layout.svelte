@@ -16,7 +16,7 @@
 
 <Footer />
 
-<style>
+<style global lang="scss">
+  @use "../lib/SCSS/index.scss" as *;
 
- 
 </style>

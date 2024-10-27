@@ -18,9 +18,9 @@
   />
 </svelte:head>
 <main class="layout__main">
-  <FontTesting />
+  <!-- <FontTesting /> -->
 
-  <!-- <HeroSection /> -->
+  <HeroSection />
   <!-- <MotivationSection /> -->
 
   <!-- <ProjectsSection /> -->
