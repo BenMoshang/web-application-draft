@@ -20,6 +20,7 @@
 
   <p class="global__card-body">CARD BODY</p>
   <p class="global__card-label">CARD LABEL</p>
+  <p class="global__card-label--bg">2024</p>
 </div>
 
 <style lang="scss">
@@ -28,7 +29,6 @@
   *::after {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
   }
 
   .font-testing {

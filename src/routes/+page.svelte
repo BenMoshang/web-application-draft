@@ -30,7 +30,7 @@
   <!-- <FaqSection /> -->
 </main>
 
-<style>
+<style lang="scss">
   .layout__main {
     display: flex;
     flex-direction: column;

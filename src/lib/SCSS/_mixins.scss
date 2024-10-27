@@ -8,6 +8,7 @@
      - think that mixins are a type of shorthand of a collection of properties. instead.
 =================================================== */
 @use "./_variables.scss" as *;
+@use "./_functions.scss" as *;
 /* Font Families */
 $ff-bold: "Instrument Sans", sans-serif;
 $ff-regular: "Inter Tight", sans-serif;
@@ -44,6 +45,15 @@ $ff-regular: "Inter Tight", sans-serif;
   font-family: $ff-bold;
   color: $text-primary; /* #1d1d1f */
   text-wrap: balance;
+}
+
+@mixin global__card-label {
+  font-family: $ff-regular;
+  font-weight: $fw-semibold;
+  font-size: $fsz-2xs;
+  line-height: $lh-lg;
+  letter-spacing: $ls-loose;
+  text-transform: capitalize;
 }
 @font-face {
   font-family: "Inter Tight";

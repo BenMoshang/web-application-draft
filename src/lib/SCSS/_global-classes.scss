@@ -112,24 +112,26 @@
   font-size: $fsz-sm;
   line-height: $lh-md;
   letter-spacing: $ls-loose;
-  color: color-with-opacity(900, 0.7);
+  color: color-with-opacity(900, 0.8);
 }
 
-.global__card-label {
-  font-family: $ff-bold;
-  font-weight: $fw-semibold;
-  font-size: $fsz-2xs;
-  line-height: $lh-lg;
-  letter-spacing: $ls-loose;
-  text-transform: capitalize;
-  color: color-with-opacity(900, 0.6);
+.global__card-label,
+.global__card-label--bg {
+  @include global__card-label;
+  color: color-with-opacity(900, 0.7);
+  max-inline-size: 10ch;
+}
+
+.global__card-label--bg {
+  width: fit-content;
+  text-align: center;
   border-radius: $br-rounded;
   padding-block: 0.625rem;
   padding-inline: 1.25rem;
   box-shadow: $shadow-sm-inset;
   // TODO: Implement background and border colors as needed
-  // background-color: $gray-trans-md;
-  // border: 0.0625rem solid $border-light;
+  background: color-with-opacity(900, 0.05);
+  border: 0.0625rem solid color-with-opacity(900, 0.06);
 }
 
 /* --------------------------------------------------
