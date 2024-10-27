@@ -1,22 +1,33 @@
 <script>
 
-  export let title = "";
-  export let description = "";
-  export let imageSrc = "";
-  export let label = "";
+  /**
+   * @typedef {Object} Props
+   * @property {string} [title]
+   * @property {string} [description]
+   * @property {string} [imageSrc]
+   * @property {string} [label]
+   */
+
+  /** @type {Props} */
+  let {
+    title = $bindable(""),
+    description = "",
+    imageSrc = "",
+    label = $bindable("")
+  } = $props();
   title = title.toUpperCase();
   label = label.toUpperCase();
 
-  let isHovered = false;
+  let isHovered = $state(false);
 </script>
 
 <figure class="card shadow-md br bg-white-200 border-black-100">
   {#if imageSrc}
     <img
-      on:focus={() => (isHovered = true)}
-      on:mouseover={() => (isHovered = true)}
-      on:mouseout={() => (isHovered = false)}
-      on:blur={() => (isHovered = false)}
+      onfocus={() => (isHovered = true)}
+      onmouseover={() => (isHovered = true)}
+      onmouseout={() => (isHovered = false)}
+      onblur={() => (isHovered = false)}
       src={imageSrc}
       alt={title}
       class="card__image"

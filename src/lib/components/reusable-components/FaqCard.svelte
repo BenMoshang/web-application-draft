@@ -1,11 +1,17 @@
 <script>
   import { fade, slide } from "svelte/transition";
 
-  export let question = "";
-  export let answer = "";
+  /**
+   * @typedef {Object} Props
+   * @property {string} [question]
+   * @property {string} [answer]
+   */
+
+  /** @type {Props} */
+  let { question = $bindable(""), answer = "" } = $props();
   question = question.toUpperCase();
 
-  let isOpen = false;
+  let isOpen = $state(false);
 
   function toggle() {
     isOpen = !isOpen;
@@ -25,7 +31,7 @@
 
 <section
   class="card bg-white-100 br p-base border-gray"
-  on:click={toggle}
+  onclick={toggle}
   class:open={isOpen}
 >
   <section class="card__header">

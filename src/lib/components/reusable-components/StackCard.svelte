@@ -1,9 +1,20 @@
 <script>
 
-  export let imageSrc = "";
-  export let title = "";
-  export let useCase = "";
-  export let description = "";
+  /**
+   * @typedef {Object} Props
+   * @property {string} [imageSrc]
+   * @property {string} [title]
+   * @property {string} [useCase]
+   * @property {string} [description]
+   */
+
+  /** @type {Props} */
+  let {
+    imageSrc = "",
+    title = $bindable(""),
+    useCase = $bindable(""),
+    description = ""
+  } = $props();
   title = title.toUpperCase();
   useCase = useCase.toUpperCase();
 </script>

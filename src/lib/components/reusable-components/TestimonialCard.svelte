@@ -1,10 +1,22 @@
 <script>
 
-  export let name = "";
-  export let position = "";
-  export let pfpSrc = "";
-  export let companySrc = "";
-  export let description = "";
+  /**
+   * @typedef {Object} Props
+   * @property {string} [name]
+   * @property {string} [position]
+   * @property {string} [pfpSrc]
+   * @property {string} [companySrc]
+   * @property {string} [description]
+   */
+
+  /** @type {Props} */
+  let {
+    name = $bindable(""),
+    position = "",
+    pfpSrc = "",
+    companySrc = "",
+    description = ""
+  } = $props();
   name = name.toUpperCase();
 </script>
 

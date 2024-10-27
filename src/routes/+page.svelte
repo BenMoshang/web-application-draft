@@ -1,4 +1,5 @@
 <script>
+  import FontTesting from "../lib/components/font-testing/fonts.svelte";
   import ImageCard from "../lib/components/reusable-components/ImageCard.svelte";
   import FaqSection from "../lib/components/section-components/FaqSection.svelte";
   import HeroSection from "../lib/components/section-components/HeroSection.svelte";
@@ -17,14 +18,16 @@
   />
 </svelte:head>
 <main class="layout__main">
-  <HeroSection />
-  <MotivationSection />
+  <FontTesting />
 
-  <ProjectsSection />
-  <ServicesSection />
-  <StackSection />
-  <TestimonialSection />
-  <FaqSection />
+  <!-- <HeroSection /> -->
+  <!-- <MotivationSection /> -->
+
+  <!-- <ProjectsSection /> -->
+  <!-- <ServicesSection /> -->
+  <!-- <StackSection /> -->
+  <!-- <TestimonialSection /> -->
+  <!-- <FaqSection /> -->
 </main>
 
 <style>
@@ -32,15 +35,14 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100dvh;
-    max-width: 120rem;
+    height: 100%;
     box-sizing: border-box;
-    padding: 0 0.5rem;
+    padding-inline: 0.5rem;
     margin: 0 auto;
     gap: 1.875rem;
 
-    & > *:not(:first-child) {
+    /* & > *:not(:first-child) {
       flex: 1;
-    }
+    } */
   }
 </style>

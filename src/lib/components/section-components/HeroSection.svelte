@@ -1,5 +1,5 @@
 <script>
-  let title = "Modernized <br /> Web Presence";
+  let title = $state("Modernized <br /> Web Presence");
   title = title.toUpperCase();
 </script>
 

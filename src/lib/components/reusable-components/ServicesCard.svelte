@@ -1,9 +1,20 @@
 <script>
 
-  export let title = "";
-  export let description = "";
-  export let counter = "";
-  export let label = "";
+  /**
+   * @typedef {Object} Props
+   * @property {string} [title]
+   * @property {string} [description]
+   * @property {string} [counter]
+   * @property {string} [label]
+   */
+
+  /** @type {Props} */
+  let {
+    title = $bindable(""),
+    description = "",
+    counter = "",
+    label = $bindable("")
+  } = $props();
   title = title.toUpperCase();
   label = label.toUpperCase();
 </script>

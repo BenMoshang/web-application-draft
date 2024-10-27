@@ -1,6 +1,6 @@
 <!-- TODO: MAKE TITLE POSITION STICKY ON DESKTOP -->
 <script>
-  let title = `motivation`;
+  let title = $state(`motivation`);
   let description = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, vitae
   consequatur est eligendi repellat ducimus quod at eaque. Fugit voluptates
   recusandae veniam autem quia molestiae quidem nobis similique dolores

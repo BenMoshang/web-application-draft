@@ -1,7 +1,7 @@
 <script>
   import StackCard from "../reusable-components/StackCard.svelte";
 
-  let title = `Favorite Stack`;
+  let title = $state(`Favorite Stack`);
   title = title.toUpperCase();
 
   const stackData = [
