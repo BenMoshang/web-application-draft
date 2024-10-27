@@ -100,12 +100,6 @@ $colors: (
   ),
 );
 
-/* Font Families */
-$font-families: (
-  bold-font: "Instrument Sans",
-  regular-font: "Inter Tight",
-);
-
 /* Shadows */
 $shadows: (
   sm: (
@@ -155,9 +149,7 @@ $fw-bold: map-get($font-weights, bold);
 $fw-medium: map-get($font-weights, medium);
 $fw-semibold: map-get($font-weights, semibold);
 
-/* Font Families */
-$ff-bold: map-get($font-families, bold-font);
-$ff-regular: map-get($font-families, regular-font);
+// Example Font Map
 
 /* Border Radius */
 $br-default: map-get($border-radius, default);

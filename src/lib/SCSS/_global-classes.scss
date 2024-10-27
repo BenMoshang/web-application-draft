@@ -1,96 +1,101 @@
 @use "./_variables.scss" as *; // This imports all variables from _variables.scss
 @use "./_functions.scss" as *;
-
+@use "./_mixins.scss" as *;
 /*===================================================
      Global Class Styles
 =================================================== */
+/* --------------------------------------------------
+   Global Display Styles
+-------------------------------------------------- */
+.global__display--xl,
+.global__display--lg {
+  @include global__display;
+}
+
+.global__display--xl {
+  font-size: $fsz-4xl;
+}
+.global__display--lg {
+  font-size: $fsz-3xl;
+}
 
 /* --------------------------------------------------
    Global Title Styles
 -------------------------------------------------- */
-.global__title {
-  font-family: $ff-bold;
-  font-weight: $fw-bold;
-  color: $text-primary; /* #1d1d1f */
-  letter-spacing: $ls-tight;
-  text-transform: capitalize;
-  text-wrap: balance;
 
-  &--xl {
-    font-size: $fsz-4xl;
-    line-height: $lh-xl;
-  }
-  &--lg {
-    font-size: $fsz-3xl;
-    line-height: $lh-xl;
-  }
-  &--md {
-    font-size: $fsz-2xl;
-    line-height: $lh-lg;
-  }
-  &--sm {
-    font-size: $fsz-xl;
-    line-height: $lh-lg;
-  }
+.global__heading--md,
+.global__heading--sm {
+  @include global__heading;
+}
+
+.global__heading--md {
+  font-size: $fsz-2xl;
+}
+
+.global__heading--sm {
+  font-size: $fsz-xl;
 }
 
 /* --------------------------------------------------
      Global Paragraph Styles
 -------------------------------------------------- */
-.global__paragraph {
-  color: $text-primary; /* #1d1d1f */
-  line-height: $lh-md;
-  letter-spacing: $ls-normal;
-  text-wrap: pretty;
+.global__body--lg,
+.global__body--md,
+.global__body--sm {
+  @include global__body;
+}
 
-  &--lg {
-    font-family: $ff-bold;
-    font-weight: $fw-bold;
-    font-size: $fsz-lg;
-  }
+.global__body--lg {
+  font-family: $ff-bold;
+  font-weight: $fw-bold;
+  font-size: $fsz-lg;
+}
 
-  &--md {
-    font-family: $ff-regular;
-    font-weight: $fw-medium;
-    font-size: $fsz-md;
-  }
+.global__body--md {
+  font-family: $ff-regular;
+  font-weight: $fw-medium;
+  font-size: $fsz-md;
+}
 
-  &--sm {
-    font-family: $ff-bold;
-    font-weight: $fw-medium;
-    font-size: $fsz-xs;
-  }
+.global__body--sm {
+  font-family: $ff-bold;
+  font-weight: $fw-medium;
+  font-size: $fsz-xs;
 }
 
 /* --------------------------------------------------
-    Card Styles
+    Card heading Styles
 -------------------------------------------------- */
-.global__card-title {
-  font-family: $ff-bold;
-  color: $text-primary; /* #1d1d1f */
-  text-wrap: balance;
 
-  &--lg {
-    font-weight: $fw-bold;
-    line-height: $lh-lg;
-    font-size: $fsz-mdlg;
-  }
-
-  &--md {
-    font-weight: $fw-semibold;
-    font-size: $fsz-sm;
-    line-height: $lh-md;
-  }
-
-  &--sm {
-    font-weight: $fw-bold;
-    font-size: $fsz-xs;
-    line-height: $lh-xs;
-    letter-spacing: $ls-loose;
-  }
+.global__card-heading--lg,
+.global__card-heading--md,
+.global__card-heading--sm {
+  @include global__card-heading;
 }
 
-.global__card--subtitle {
+.global__card-heading--lg {
+  font-weight: $fw-bold;
+  line-height: $lh-lg;
+  font-size: $fsz-mdlg;
+}
+
+.global__card-heading--md {
+  font-weight: $fw-semibold;
+  font-size: $fsz-sm;
+  line-height: $lh-md;
+}
+
+.global__card-heading--sm {
+  font-weight: $fw-bold;
+  font-size: $fsz-xs;
+  line-height: $lh-xs;
+  letter-spacing: $ls-loose;
+}
+
+/* --------------------------------------------------
+     Card Subheading Styles
+-------------------------------------------------- */
+.global__card-subheading {
   text-wrap: balance;
   font-family: $ff-bold;
   font-weight: $fw-medium;
@@ -100,7 +105,7 @@
   line-height: $lh-xs;
 }
 
-.global__card-description {
+.global__card-body {
   text-wrap: pretty;
   font-family: $ff-regular;
   font-weight: $fw-medium;

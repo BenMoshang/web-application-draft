@@ -1,5 +1,5 @@
 <script>
-  import FontTesting from "../lib/components/font-testing/fonts.svelte";
+  import FontTesting from "../lib/components/font-testing/FontTesting.svelte";
   import ImageCard from "../lib/components/reusable-components/ImageCard.svelte";
   import FaqSection from "../lib/components/section-components/FaqSection.svelte";
   import HeroSection from "../lib/components/section-components/HeroSection.svelte";

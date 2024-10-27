@@ -1,4 +1,3 @@
-
 /*===================================================
      Mixins
 
@@ -8,3 +7,51 @@
      
      - think that mixins are a type of shorthand of a collection of properties. instead.
 =================================================== */
+@use "./_variables.scss" as *;
+/* Font Families */
+$ff-bold: "Instrument Sans", sans-serif;
+$ff-regular: "Inter Tight", sans-serif;
+
+/* Global Display style Mixin */
+@mixin global__display {
+  font-family: $ff-bold;
+  font-weight: $fw-bold;
+  color: $text-primary; /* #1d1d1f */
+  letter-spacing: $ls-tight;
+  text-transform: capitalize;
+  text-wrap: balance;
+  line-height: $lh-xl;
+}
+
+/* Global Heading style Mixin */
+@mixin global__heading {
+  font-family: $ff-bold;
+  font-weight: $fw-bold;
+  color: $text-primary; /* #1d1d1f */
+  letter-spacing: $ls-tight;
+  text-transform: capitalize;
+  line-height: $lh-lg;
+  text-wrap: balance;
+}
+@mixin global__body {
+  color: $text-primary; /* #1d1d1f */
+  line-height: $lh-md;
+  letter-spacing: $ls-normal;
+  text-wrap: pretty;
+}
+
+@mixin global__card-heading {
+  font-family: $ff-bold;
+  color: $text-primary; /* #1d1d1f */
+  text-wrap: balance;
+}
+@font-face {
+  font-family: "Inter Tight";
+  src: url("./lib/fonts/InterTight-VariableFont.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap");
+  font-display: swap;
+}
