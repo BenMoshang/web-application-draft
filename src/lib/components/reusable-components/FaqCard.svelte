@@ -1,41 +1,13 @@
 <script>
+  // @ts-nocheck
   import { fade, slide } from "svelte/transition";
-
-  /**
-   * @typedef {Object} Props
-   * @property {string} [question]
-   * @property {string} [answer]
-   */
-
-  /** @type {Props} */
-  let { question = $bindable(""), answer = "" } = $props();
-  question = question.toUpperCase();
-
+  let { question, answer } = $props();
   let isOpen = $state(false);
-
-  function toggle() {
-    isOpen = !isOpen;
-  }
-
-  function slideFade(node, { duration }) {
-    return {
-      duration,
-      css: (t) => {
-        const slideStyle = slide(node, { duration }).css(t);
-        const fadeStyle = fade(node, { duration }).css(t);
-        return `${slideStyle} ${fadeStyle}`;
-      },
-    };
-  }
 </script>
 
-<section
-  class="card bg-white-100 br p-base border-gray"
-  onclick={toggle}
-  class:open={isOpen}
->
+<button class="card" onclick={() => (isOpen = !isOpen)} class:open={isOpen}>
   <section class="card__header">
-    <h2 class="question global__paragraph--xsb">{question}</h2>
+    <h2 class="card__question">{question.toUpperCase()}</h2>
     <img
       src="/chevron-arrow.svg"
       alt="Chevron Arrow"
@@ -46,56 +18,77 @@
   </section>
 
   {#if isOpen}
-    <section class="card__content" transition:slideFade={{ duration: 150 }}>
-      <hr />
-      <p class="global__paragraph--xs">{answer}</p>
-    </section>
+    <span transition:fade={{ duration: 200 }}>
+      <section class="card__content" transition:slide={{ duration: 300 }}>
+        <hr />
+        <p class="card__answer">{answer}</p>
+      </section>
+    </span>
   {/if}
-</section>
+</button>
 
-<style>
+<style lang="scss">
+  @use "../../SCSS/mixins.scss" as *;
+  $border-color: #cececf;
+  $transition-speed: 0.3s;
+  $background-color: #f5f5f5;
+  $background-color-dark: #e8e8e8;
+  $answer-color: #1d1d1fb3;
+
   * {
-    transition: all 0.3s ease-out;
+    transition: $transition-speed ease-out;
   }
-
+  
   .card {
     display: flex;
     flex-direction: column;
     width: 100%;
     max-width: 75rem;
+    border: 1px solid $border-color;
+    padding: 0rem 1.5rem;
+    border-radius: 1rem;
     user-select: none;
-    overflow: hidden;
 
-    & .card__header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    &__header {
+      @include flex-center-between;
+      width: 100%;
+    }
+
+    &__content {
+      width: 100%;
+    }
+
+    &__question {
+      @include global__button;
+      font-size: 1.25rem;
+    }
+
+    &__answer {
+      @include global__body;
+      color: $answer-color;
+      font-size: 1.25rem;
+      text-align: left;
     }
 
     &:hover {
-      background-color: var(--bg-gray-lightest);
+      background-color: $background-color-dark;
     }
-  }
 
-  .card.open {
-    background-color: var(--bg-gray-lightest);
-  }
+    img.open {
+      transform: rotate(45deg) scale(1.1);
+      filter: brightness(0);
+    }
 
-  img.open {
-    transform: rotate(45deg) scale(1.1);
-    filter: brightness(0);
-  }
+    &.open {
+      background-color: $background-color;
+    }
 
-  .card__content {
-    text-align: left;
-    overflow: hidden;
-  }
-
-  hr {
-    border: none;
-    height: 1px;
-    width: 100%;
-    margin-block: 0.5rem 0.8rem;
-    background-color: var(--bg-gray-dark);
+    hr {
+      border: none;
+      height: 1px;
+      width: 100%;
+      margin-top: 0.25rem;
+      background-color: $border-color;
+    }
   }
 </style>

@@ -9,11 +9,10 @@
   />
 </section>
 
-<style>
+<style lang="scss">
+  @use '../../SCSS/mixins.scss' as *;
 
   .faqs {
-    display: flex;
-    flex-direction: column;
-    gap: var(--static-sm);
+    @include flex-column-center;
   }
 </style>

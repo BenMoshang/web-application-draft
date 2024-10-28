@@ -72,7 +72,7 @@
         font-size: $fsz-xs;
         color: $text-tertiary;
         letter-spacing: $ls-normal;
-        margin-bottom: $dynamic-spacing-xs;
+        margin-bottom: $spacing-less-related;
       }
     }
 

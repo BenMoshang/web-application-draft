@@ -9,14 +9,14 @@
   import TestimonialSection from "../lib/components/section-components/TestimonialSection.svelte";
 
   // Define visibility of sections with $state for reactivity
-  let showFontTesting = $state(false);
-  let showHero = $state(true);
+  let showFontTesting = $state(true);
+  let showHero = $state(false);
   let showMotivation = $state(false);
   let showProjects = $state(false);
   let showServices = $state(false);
   let showStack = $state(false);
   let showTestimonials = $state(false);
-  let showFaq = $state(false);
+  let showFaq = $state(true);
 </script>
 
 <svelte:head>
