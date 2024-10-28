@@ -56,6 +56,7 @@
 
     &__content {
       width: 100%;
+      overflow: hidden;
     }
 
     &__question {
