@@ -54,10 +54,7 @@
 </section>
 
 <style>
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
+  * {
     transition: all 0.3s ease-out;
   }
 
