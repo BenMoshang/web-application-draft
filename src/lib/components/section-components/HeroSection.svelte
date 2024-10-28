@@ -16,13 +16,15 @@
       <span>{@html titleFirst}</span><br />
       <span>{@html titleSecond}</span>
     </h1>
+    <button
+      class="hero-section__button global__button--solid"
+      aria-label="Get Started"
+    >
+      {buttonText}
+    </button>
   </header>
-  <button
-    class="hero-section__button global__button--solid"
-    aria-label="Get Started"
-  >
-    {buttonText}
-  </button>
+  <!-- TODO: MOVE SECTION BELOW TO HEADER -->
+  <!-- TODO: FOR HEADER [LOCATION] [BURGER] [WHAT WEDO] -->
   <footer class="hero-section__content-container">
     <small>
       <span class="hero-section__content-container__location global__label"
@@ -56,11 +58,11 @@
     width: 100%;
     height: 90vh;
     @include flex-column-center;
+    align-items: unset;
 
     &__header {
       grid-area: header;
-      margin-bottom: 1rem;
-      place-self: center;
+      @include flex-column-center;
 
       & > * {
         flex: 1;
@@ -72,13 +74,15 @@
         font-size: $fsz-xs;
         color: $text-tertiary;
         letter-spacing: $ls-normal;
-        margin-bottom: $dynamic-spacing-xs;
+        margin-bottom: $spacing-semi-related;
+      }
+
+      & h1:nth-child(2) {
+        margin-bottom: $spacing-less-related;
       }
     }
 
     &__button {
-      place-self: center;
-      grid-area: button;
       cursor: pointer;
     }
 
