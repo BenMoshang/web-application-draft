@@ -115,11 +115,10 @@
   color: color-with-opacity(900, 0.8);
 }
 
-.global__card-label,
+.global__label,
 .global__card-label--bg {
   @include global__card-label;
   color: color-with-opacity(900, 0.7);
-  max-inline-size: 10ch;
 }
 
 .global__card-label--bg {

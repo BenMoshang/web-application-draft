@@ -9,16 +9,32 @@
 =================================================== */
 @use "./_variables.scss" as *;
 @use "./_functions.scss" as *;
-/* Font Families */
-$ff-bold: "Instrument Sans", sans-serif;
-$ff-regular: "Inter Tight", sans-serif;
 
+/*===================================================
+     Structured Mixins
+=================================================== */
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*===================================================
+     Typography
+=================================================== */
 /* Global Display style Mixin */
 @mixin global__display {
   font-family: $ff-bold;
   font-weight: $fw-bold;
   color: $text-primary; /* #1d1d1f */
-  letter-spacing: $ls-tight;
+  letter-spacing: -0.05em;
   text-transform: capitalize;
   text-wrap: balance;
   line-height: $lh-xl;
@@ -70,15 +86,4 @@ $ff-regular: "Inter Tight", sans-serif;
   font-size: $fsz-3xs;
   line-height: $lh-xs;
   border-radius: $br-rounded;
-}
-
-@font-face {
-  font-family: "Inter Tight";
-  src: url("./lib/fonts/InterTight-VariableFont.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Instrument Sans";
-  src: url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap");
-  font-display: swap;
 }

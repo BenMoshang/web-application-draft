@@ -41,11 +41,11 @@ $static-spacing: (
 /* Font Sizes */
 $font-sizes: (
   /* 12px */ 3xs: 0.875rem,
-  /* 16px */ 2xs: map-get($static-spacing, 2xs),
-  /* 18px */ xs: map-get($static-spacing, xs),
-  /* 20px */ sm: map-get($static-spacing, sm),
-  /* 24px */ md: map-get($static-spacing, sm),
-  /* 30px */ mdlg: map-get($static-spacing, lg),
+  /* 16px */ 2xs: 1rem,
+  /* 18px */ xs: 1.125rem,
+  /* 20px */ sm: 1.25rem,
+  /* 24px */ md: 1.5rem,
+  /* 30px */ mdlg: 1.875rem,
   /* 24px to 30px */ lg: clamp(1.5rem, 1.315rem + 0.62vw, 1.875rem),
   /* 40px to 50px */ xl: clamp(2.5rem, 1.38rem + 2.75vw, 3.125rem),
   /* 40px to 90px */ 2xl: clamp(2.5rem, 0.453rem + 6.9vw, 5.625rem),
@@ -177,3 +177,15 @@ $lh-xs: map-get($line-heights, xs);
 $color-white: map-get($colors, white);
 $color-primary: map-get(map-get($colors, primary), 900);
 $color-secondary: map-get(map-get($colors, primary), 800);
+$ff-bold: "Instrument Sans", sans-serif;
+$ff-regular: "Inter Tight", sans-serif;
+@font-face {
+  font-family: "Inter Tight";
+  src: url("./lib/fonts/InterTight-VariableFont.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap");
+  font-display: swap;
+}
