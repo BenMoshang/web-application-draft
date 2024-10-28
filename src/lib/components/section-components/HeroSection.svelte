@@ -2,18 +2,25 @@
   let label = $state("establish your".toUpperCase());
   let title = $state("Modernized <br /> Web Presence".toUpperCase());
   let buttonText = $state("Get Started");
-  let footerText = $state("Guaranteed");
+  let footerLocation = $state("New York, NY");
+
+  let description = $state(`Web Development `);
+  let subdescription = $state(`& Design`);
 </script>
 
 <section class="hero-section">
-  <header class="hero-section__header">
+  <header>
     <h2 class="global__label">{label}</h2>
     <h1 class="global__display--xl">{@html title}</h1>
   </header>
   <button class="global__button--solid">{buttonText}</button>
   <footer class="hero-section__content">
     <small>
-      <span>{footerText}</span>
+      <span>{footerLocation}</span>
+    </small>
+    <small>
+      <span>{description}</span>
+      <span>{subdescription}</span>
     </small>
   </footer>
 </section>
@@ -30,12 +37,18 @@
     width: 100%;
     height: 90dvh;
     display: grid;
-    grid-template-rows: 1fr auto;
-    grid-template-areas: "header" "button" "";
+    grid-template-rows: 1fr auto auto;
+    grid-template-areas: "header" "button" "footer";
 
-    &__header {
+    & header {
+      grid-area: header;
       @include flex-column-center;
       text-align: center;
+    }
+
+    & footer {
+      grid-area: footer;
+      @include flex-column-center;
     }
   }
 </style>
