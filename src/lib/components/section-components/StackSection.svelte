@@ -1,9 +1,6 @@
 <script>
   import StackCard from "../reusable-components/StackCard.svelte";
 
-  let title = $state(`Favorite Stack`);
-  title = title.toUpperCase();
-
   const stackData = [
     {
       imageSrc: "https://placehold.co/56x56",
@@ -38,9 +35,7 @@
 
 <section class="stack__container">
   <article class="stack__content">
-    <h2 class="stack__title global__title--md">
-      {title}
-    </h2>
+    <h2 class="stack__title global__title--md">FAVORITE STACK</h2>
     <div class="content__cards-container">
       {#each stackData as { imageSrc, title, useCase, description }}
         <StackCard {imageSrc} {title} {useCase} {description} />
@@ -49,12 +44,7 @@
   </article>
 </section>
 
-<style>
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
+<style lang="scss">
 
   .stack__container {
     width: 100%;
