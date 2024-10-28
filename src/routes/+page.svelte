@@ -28,10 +28,6 @@
 </svelte:head>
 
 <main class="layout__main">
-  <!-- Render sections conditionally using $state visibility flags -->
-  {#if showFontTesting}
-    <FontTesting />
-  {/if}
   {#if showHero}
     <HeroSection />
   {/if}
@@ -59,6 +55,11 @@
   {#if showFaq}
     <FaqSection />
   {/if}
+
+  <!-- Render sections conditionally using $state visibility flags -->
+  {#if showFontTesting}
+    <FontTesting />
+  {/if}
 </main>
 
 <style lang="scss">
@@ -68,8 +69,12 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    padding-inline: 0.5rem;
+
     margin: 0 auto;
     gap: 1.875rem;
+
+    & > *:not(:first-child) {
+      padding-inline: 0.5rem;
+    }
   }
 </style>

@@ -1,17 +1,21 @@
 <script>
   let label = $state("establish your".toUpperCase());
-  let title = $state("Modernized <br /> Web Presence".toUpperCase());
-  let buttonText = $state("Get Started");
-  let footerLocation = $state("New York, NY");
+  let titleFirst = $state("Modernized".toUpperCase());
+  let titleSecond = $state("Web Presence".toUpperCase());
+  let buttonText = $state("Get Started".toUpperCase());
+  let footerLocation = $state("New York, NY".toUpperCase());
 
-  let description = $state(`Web Development`);
-  let subdescription = $state(`& Design`);
+  let description = $state(`Web Development`.toUpperCase());
+  let subdescription = $state(`& Design`.toUpperCase());
 </script>
 
 <section class="hero-section">
   <header class="hero-section__header">
-    <h2 class="global__label">{label}</h2>
-    <h1 class="global__display--xl">{@html title}</h1>
+    <h2 class="hero-section__header__label global__label">{label}</h2>
+    <h1 class="global__display--xl">
+      <span>{@html titleFirst}</span><br />
+      <span>{@html titleSecond}</span>
+    </h1>
   </header>
   <button
     class="hero-section__button global__button--solid"
@@ -51,17 +55,29 @@
   .hero-section {
     width: 100%;
     height: 90vh;
-    display: grid;
-    grid-template-rows: 1fr auto auto;
-    grid-template-areas: "header" "button" "footer";
+    @include flex-column-center;
 
     &__header {
       grid-area: header;
-      @include flex-column-center;
-      text-align: center;
+      margin-bottom: 1rem;
+      place-self: center;
+
+      & > * {
+        flex: 1;
+        text-align: center;
+        text-wrap: nowrap;
+      }
+      &__label {
+        font-family: $ff-bold;
+        font-size: $fsz-xs;
+        color: $text-tertiary;
+        letter-spacing: $ls-normal;
+        margin-bottom: $dynamic-spacing-xs;
+      }
     }
 
     &__button {
+      place-self: center;
       grid-area: button;
       cursor: pointer;
     }
@@ -73,7 +89,15 @@
   }
 
   .hero-section__content-container {
-    @extend .global__label;
-    color: red;
+    &__location,
+    &__description {
+      color: $color-tertiary;
+
+      font-weight: $fw-medium;
+    }
+
+    &__sub-description {
+      font-weight: $fw-medium;
+    }
   }
 </style>
