@@ -3,10 +3,10 @@
 // @use "./_mixins.scss" as *;
 // @use "./_global-classes.scss" as *;
 // _index.scss
-@forward "./_variables.scss";
-@forward "./_functions.scss";
-@forward "./_mixins.scss";
-@forward "./_global-classes.scss";
+@forward "./variables.scss";
+@forward "./functions.scss";
+@forward "./mixins.scss";
+@forward "./global-classes.scss";
 /* --------------------------------------------------
    Font Face Definitions
 -------------------------------------------------- */
@@ -16,4 +16,14 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+@font-face {
+  font-family: "Inter Tight";
+  src: url("./lib/fonts/InterTight-VariableFont.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap");
+  font-display: swap;
 }

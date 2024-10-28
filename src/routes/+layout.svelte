@@ -1,22 +1,17 @@
 <script>
   import Footer from "../lib/layout/Footer.svelte";
   import Header from "../lib/layout/Header.svelte";
-  /**
-   * @typedef {Object} Props
-   * @property {import('svelte').Snippet} [children]
-   */
 
-  /** @type {Props} */
-  let { children } = $props();
+  // Using $props to manage children as a snippet
+  let { children: childContent } = $props();
 </script>
 
 <Header />
 
-{@render children?.()}
+{@render childContent()}
 
 <Footer />
 
 <style global lang="scss">
-  @use "../lib/SCSS/index.scss" as *;
-
+  
 </style>
