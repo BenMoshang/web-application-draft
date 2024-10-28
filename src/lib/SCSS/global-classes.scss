@@ -1,6 +1,6 @@
-@use "./_variables.scss" as *; // This imports all variables from _variables.scss
-@use "./_functions.scss" as *;
-@use "./_mixins.scss" as *;
+@use "./variables.scss" as *; // This imports all variables from _variables.scss
+@use "./functions.scss" as *;
+@use "./mixins.scss" as *;
 /*===================================================
      Global Class Styles
 =================================================== */
@@ -118,7 +118,6 @@
 .global__label,
 .global__card-label--bg {
   @include global__card-label;
-  color: color-with-opacity(900, 0.7);
 }
 
 .global__card-label--bg {

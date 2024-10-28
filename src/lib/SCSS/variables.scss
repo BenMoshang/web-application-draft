@@ -178,13 +178,3 @@ $color-primary: map-get(map-get($colors, primary), 900);
 $color-secondary: map-get(map-get($colors, primary), 800);
 $ff-bold: "Instrument Sans", sans-serif;
 $ff-regular: "Inter Tight", sans-serif;
-@font-face {
-  font-family: "Inter Tight";
-  src: url("./lib/fonts/InterTight-VariableFont.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Instrument Sans";
-  src: url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap");
-  font-display: swap;
-}

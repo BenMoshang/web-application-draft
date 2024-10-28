@@ -7,8 +7,8 @@
      
      - think that mixins are a type of shorthand of a collection of properties. instead.
 =================================================== */
-@use "./_variables.scss" as *;
-@use "./_functions.scss" as *;
+@use "./variables.scss" as *;
+@use "./functions.scss" as *;
 
 /*===================================================
      Structured Mixins
@@ -18,7 +18,11 @@
   justify-content: center;
   align-items: center;
 }
-
+@mixin flex-center-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 @mixin flex-column-center {
   display: flex;
   flex-direction: column;
@@ -70,6 +74,7 @@
   line-height: $lh-lg;
   letter-spacing: $ls-loose;
   text-transform: capitalize;
+  color: color-with-opacity(900, 0.7);
 }
 
 // button mixin
