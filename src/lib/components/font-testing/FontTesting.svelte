@@ -19,7 +19,7 @@
   <h6 class="global__card-subheading">CARD SUBHEADING</h6>
 
   <p class="global__card-body">CARD BODY</p>
-  <p class="global__card-label">CARD LABEL</p>
+  <p class="global__label">CARD LABEL</p>
   <p class="global__card-label--bg">2024</p>
 </div>
 
