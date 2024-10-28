@@ -55,6 +55,7 @@
   text-wrap: balance;
 }
 @mixin global__body {
+  font-family: $ff-regular;
   color: $text-primary; /* #1d1d1f */
   line-height: $lh-md;
   letter-spacing: $ls-normal;

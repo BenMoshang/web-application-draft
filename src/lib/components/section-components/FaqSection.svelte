@@ -1,12 +1,41 @@
 <script>
   import FaqCard from "../reusable-components/FaqCard.svelte";
+
+  let faqCards = [
+    {
+      question: "What industries do you specialize in?",
+      answer: "I have experience working across various industries including but not limited to technology, healthcare, fashion, hospitality, and non-profit organizations.",
+    },
+    {
+      question: "What industries do you specialize in?",
+      answer: "I have experience working across various industries including but not limited to technology, healthcare, fashion, hospitality, and non-profit organizations.",
+    },
+    {
+      question: "What industries do you specialize in?",
+      answer: "I have experience working across various industries including but not limited to technology, healthcare, fashion, hospitality, and non-profit organizations.",
+    },
+    {
+      question: "What industries do you specialize in?",
+      answer: "I have experience working across various industries including but not limited to technology, healthcare, fashion, hospitality, and non-profit organizations.",
+    },
+    {
+      question: "What industries do you specialize in?",
+      answer: "I have experience working across various industries including but not limited to technology, healthcare, fashion, hospitality, and non-profit organizations.",
+    },
+    {
+      question: "What industries do you specialize in?",
+      answer: "I have experience working across various industries including but not limited to technology, healthcare, fashion, hospitality, and non-profit organizations.",
+    },
+  ];
 </script>
 
 <section class="faqs">
-  <FaqCard
-    question="What industries do you specialize in?"
-    answer="I have experience working across various industries including but not limited to technology, healthcare, fashion, hospitality, and non-profit organizations."
-  />
+  {#each faqCards as faqCard}
+    <FaqCard
+      question={faqCard.question}
+      answer={faqCard.answer}
+    />
+  {/each}
 </section>
 
 <style lang="scss">
@@ -14,5 +43,6 @@
 
   .faqs {
     @include flex-column-center;
+    gap: 1.5rem;
   }
 </style>

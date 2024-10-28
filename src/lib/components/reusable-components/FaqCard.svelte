@@ -29,12 +29,13 @@
 
 <style lang="scss">
   @use "../../SCSS/mixins.scss" as *;
-  $border-color: #cececf;
   $transition-speed: 0.3s;
+  $border-color: #cececf;
   $background-color: #f5f5f5;
   $background-color-dark: #e8e8e8;
+  $text-size: clamp(1rem, 0.877rem + 0.41vw, 1.25rem);
   $answer-color: #1d1d1fb3;
-
+  $question-color: #1d1d1ff5;
   * {
     transition: $transition-speed ease-out;
   }
@@ -60,14 +61,15 @@
     }
 
     &__question {
-      @include global__button;
-      font-size: 1.25rem;
+      @include global__card-heading;
+      color: $question-color;
+      font-size: $text-size;
     }
 
     &__answer {
       @include global__body;
       color: $answer-color;
-      font-size: 1.25rem;
+      font-size: $text-size;
       text-align: left;
     }
 
