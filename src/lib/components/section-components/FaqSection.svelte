@@ -10,11 +10,6 @@
 </section>
 
 <style>
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
 
   .faqs {
     display: flex;
