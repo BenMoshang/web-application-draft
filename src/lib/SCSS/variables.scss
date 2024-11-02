@@ -40,6 +40,10 @@ $static-spacing: (
   /* 40px */ 4xl: 2.5rem
 );
 
+$spacing-xs: map-get($spacing, xs);
+$spacing-md: map-get($spacing, md);
+
+// inside component spacing
 $spacing-most-related: map-get($static-spacing, 3xs); /* 4px */
 $spacing-closely-related: map-get($static-spacing, 2xs); /* 8px to 12px */
 $spacing-semi-related: map-get($spacing, xs); /* 12px to 16px */
@@ -102,6 +106,17 @@ $letter-spacing: (
   normal: normal,
   loose: 0.02em,
 );
+/* Letter Spacing */
+$ls-tight: map-get($letter-spacing, tight);
+$ls-normal: map-get($letter-spacing, normal);
+$ls-loose: map-get($letter-spacing, loose);
+
+/* ===============================================
+                    Font Families
+=============================================== */
+
+$ff-bold: "Instrument Sans", sans-serif;
+$ff-regular: "Inter Tight", sans-serif;
 
 /* ===============================================
                     Font Weights
@@ -119,12 +134,18 @@ $font-weights: (
   extrabold: 800,
   black: 900,
 );
+/* Font Weights */
+$fw-bold: map-get($font-weights, bold);
+$fw-medium: map-get($font-weights, medium);
+$fw-semibold: map-get($font-weights, semibold);
 
 /* ===============================================
                     Border Radius
 =============================================== */
-/* Border Radius */
 $border-radius: (/* 12px */ default: 0.75rem, /* 90px */ rounded: 5.625rem);
+/* Border Radius */
+$br-default: map-get($border-radius, default);
+$br-rounded: map-get($border-radius, rounded);
 
 /* ===============================================
                     Colors
@@ -151,13 +172,18 @@ $color-secondary: map-get(map-get($colors, primary), 800);
 $color-tertiary: map-get(map-get($colors, primary), 700);
 $color-quaternary: map-get(map-get($colors, primary), 600);
 
+$color-border: map-get(map-get($colors, primary), 300);
 /* Text Colors */
 $text-white: map-get($colors, white);
 $text-primary: map-get(map-get($colors, primary), 900);
 $text-secondary: map-get(map-get($colors, primary), 800);
 $text-tertiary: map-get(map-get($colors, primary), 700);
 $text-quaternary: map-get(map-get($colors, primary), 600);
-/* Shadows */
+
+/*  ===============================================
+                 Shadows
+=============================================== */
+
 $shadows: (
   sm: (
     0.0187rem 0.0313rem 0.0313rem hsl(0deg 0% 63% / 0.52),
@@ -190,22 +216,3 @@ $shadow-sm: map-get($shadows, sm);
 $shadow-md: map-get($shadows, md);
 $shadow-lg: map-get($shadows, lg);
 $shadow-sm-inset: inset $shadow-sm, $shadow-sm;
-
-/* Letter Spacing */
-$ls-tight: map-get($letter-spacing, tight);
-$ls-normal: map-get($letter-spacing, normal);
-$ls-loose: map-get($letter-spacing, loose);
-
-/* Font Weights */
-$fw-bold: map-get($font-weights, bold);
-$fw-medium: map-get($font-weights, medium);
-$fw-semibold: map-get($font-weights, semibold);
-
-// Example Font Map
-
-/* Border Radius */
-$br-default: map-get($border-radius, default);
-$br-rounded: map-get($border-radius, rounded);
-
-$ff-bold: "Instrument Sans", sans-serif;
-$ff-regular: "Inter Tight", sans-serif;

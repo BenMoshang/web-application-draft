@@ -18,6 +18,17 @@
   justify-content: center;
   align-items: center;
 }
+@mixin pseudo-element {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+@mixin flex-space-evenly {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
 @mixin flex-center-between {
   display: flex;
   justify-content: space-between;
