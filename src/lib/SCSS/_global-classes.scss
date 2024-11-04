@@ -144,8 +144,6 @@
   gap: $spacing-closely-related;
   color: $text-white;
   border: 0.125rem solid $text-white;
-  padding-block: 0.75rem;
-  padding-inline: 1.25rem;
 
   background: linear-gradient(135deg, #000000, $color-primary);
   box-shadow: $shadow-sm-inset;
@@ -157,7 +155,10 @@
     background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   // for icons
 
-  &:has(svg, img) {
+  & svg,
+  & img {
+    width: $fsz-2xs;
+    height: $fsz-2xs;
     object-fit: contain;
   }
   // for shine
@@ -186,6 +187,11 @@
     transform: scale(1.05);
     box-shadow: $shadow-md;
     background: linear-gradient(135deg, $color-primary, $color-secondary);
+
+    & svg,
+    & img {
+      animation: icon-float-and-replace 0.5s ease-in-out forwards;
+    }
   }
 
   &:focus-visible {
@@ -212,5 +218,23 @@
       opacity: 0;
       transform: translateX(200%) skewX(-15deg);
     }
+  }
+}
+@keyframes icon-float-and-replace {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  45% {
+    transform: translateY(-0.5rem);
+    opacity: 0;
+  }
+  55% {
+    transform: translateY(0.5rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
