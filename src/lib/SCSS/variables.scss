@@ -80,6 +80,7 @@ $fsz-xs: map-get($font-sizes, xs);
 $fsz-2xs: map-get($font-sizes, 2xs);
 $fsz-3xs: map-get($font-sizes, 3xs);
 
+$fsz-button-lg: clamp(1.125rem, 1.05rem + 0.38vw, 1.5rem);
 /* ===============================================
                     Line Heights
 =============================================== */

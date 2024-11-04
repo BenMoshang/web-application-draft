@@ -93,14 +93,18 @@
 @mixin global__button {
   cursor: pointer;
   text-transform: capitalize;
-  white-space: nowrap;
-  inline-size: fit-content;
-
-  will-change: transform, box-shadow, background-color;
-  position: relative;
   font-family: $ff-regular;
   font-weight: $fw-bold;
-  font-size: $fsz-3xs;
+  font-size: $fsz-button-lg;
   line-height: $lh-xs;
+  letter-spacing: $ls-loose;
+  padding-block: 0.5em;
+  padding-inline: 0.75em;
+
+  inline-size: fit-content;
   border-radius: $br-rounded;
+
+  position: relative;
+
+  will-change: transform, box-shadow, background-color;
 }
