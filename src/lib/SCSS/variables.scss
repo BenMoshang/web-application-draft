@@ -80,7 +80,9 @@ $fsz-xs: map-get($font-sizes, xs);
 $fsz-2xs: map-get($font-sizes, 2xs);
 $fsz-3xs: map-get($font-sizes, 3xs);
 
-$fsz-button-lg: clamp(1.125rem, 1.05rem + 0.38vw, 1.5rem);
+$fsz-hero-label: clamp(16px, 0.938rem + 0.21vw, 18px);
+$fsz-button-lg: clamp(1rem, 0.754rem + 0.83vw, 1.5rem);
+
 /* ===============================================
                     Line Heights
 =============================================== */
@@ -89,7 +91,7 @@ $line-heights: (
   xs: 1.6,
   md: 1.5,
   lg: 1.2,
-  xl: 0.9,
+  xl: 0.85,
 );
 /* Line Heights */
 $lh-xl: map-get($line-heights, xl);
