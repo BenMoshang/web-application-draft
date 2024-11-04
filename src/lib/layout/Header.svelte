@@ -1,13 +1,7 @@
 <script>
-  let location = $state("Baltimore, MD".toUpperCase());
-  let description = $state(`Web Development`.toUpperCase());
-  let subdescription = $state(`& Design`.toUpperCase());
 </script>
 
 <header>
-  <small class="location-wrapper">
-    <span class="location global__label">{location}</span>
-  </small>
   <div class="burger">
     <span></span>
     <span></span>
@@ -21,10 +15,6 @@
     <a href="/">Services</a>
     <a href="/">Contact</a>
   </nav>
-  <small class="description-wrapper">
-    <span class="description global__label">{description}</span>
-    <span class="sub-description global__label">{subdescription}</span>
-  </small>
 </header>
 
 <style lang="scss">
@@ -48,46 +38,13 @@ Header
     backdrop-filter: blur(12px);
 
     border-bottom: 0.0625rem solid $color-border;
-    /* ----------------------------------------
-    Location, Sub-description, Description styling
-    ---------------------------------------- */
-    & .location,
-    & .sub-description,
-    & .description {
-      display: none; //turns on in tablet and desktop
-      font-weight: $fw-medium;
-      font-size: $fsz-3xs;
-    }
 
-    & .location,
-    & .description {
-      color: $color-tertiary;
-    }
-
-    & .sub-description {
-      color: $color-quaternary;
-    }
-    /* ----------------------------------------
-   Positioning
-    ---------------------------------------- */
-    & .description-wrapper,
-    & .burger,
-    & .location-wrapper {
+    & .burger {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-    }
-    & .burger {
       left: 50%;
       transform: translateY(-50%) translateX(-50%);
-    }
-
-    & .description-wrapper {
-      right: $spacing-xs;
-    }
-
-    & .location-wrapper {
-      left: $spacing-xs;
     }
   }
   @media (min-width: 48rem) {
