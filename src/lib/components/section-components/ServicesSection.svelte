@@ -42,7 +42,7 @@
   ];
 </script>
 
-<section class="services pinline-lg">
+<main class="services pinline-lg">
   <h1 class="services__title ff-bold fw-bold fsz-2xl lh-3xs text-800">
     {@html title}
   </h1>
@@ -51,7 +51,7 @@
       <ServicesCard {counter} {title} {description} {label} />
     {/each}
   </section>
-</section>
+</main>
 
 <style>
   *,

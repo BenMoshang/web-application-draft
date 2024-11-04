@@ -1,5 +1,4 @@
 <script>
-
   /**
    * @typedef {Object} Props
    * @property {string} [title]
@@ -13,43 +12,56 @@
     title = $bindable(""),
     description = "",
     counter = "",
-    label = $bindable("")
+    label = $bindable(""),
   } = $props();
   title = title.toUpperCase();
   label = label.toUpperCase();
 </script>
 
 <!-- TODO: NEED TO FIX SVG  SIZE SO CROSS NOT FAT-->
-<article class="card br p-xl bg-white-200 shadow-md">
-  <div class="icon--wrapper">
+<article class="card">
+  <button
+    class="card__button"
+    type="button"
+    aria-label="Expand service details"
+  >
     <svg
       class="card__icon"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 448 512"
+      aria-hidden="true"
+      focusable="false"
       ><path
-        fill="#d6d6d7"
         d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
       /></svg
     >
-  </div>
-  <div>
+  </button>
+
+  <div class="card__content">
     {#if counter}
-      <p class="card__counter ff-bold fw-bold fsz-3xs text-800 lh-3xs">
+      <p
+        class="card__counter global__card-heading--sm"
+        aria-label="Service count"
+      >
         ({counter})
       </p>
     {/if}
-    <h4 class="card__title ff-bold fw-bold fsz-lg text-black-800 lh-lg">
+    <h3 class="card__heading global__card-heading--lg">
       {title}
       {#if label}
-        <span class="label">{label}</span>{/if}
-    </h4>
+        <span class="global__card-label--bg">{label}</span>
+      {/if}
+    </h3>
   </div>
-  <p class="card__description ff-bold fw-medium fsz-xs text-600 lh-md">
+
+  <p class="card__body global__card-body">
     {description}
   </p>
 </article>
 
-<style>
+<style lang="scss">
+  @use "./src/lib/SCSS/index.scss" as *;
+
   *,
   *::before,
   *::after {
@@ -57,62 +69,61 @@
   }
 
   .card {
-    display: flex;
-    flex-direction: column;
-    border: 0.625rem solid var(--border-trans-md);
-    justify-content: center;
+    @include card-border;
+    @include flex-column-center;
+    align-items: unset;
     width: 100%;
+    padding: $card-padding;
+    border-radius: $br-default;
+
+    background: $color-card-bg;
+    box-shadow: $shadow-md;
     overflow: hidden;
     /* max-width: 28.125rem; */
 
     gap: var(--static-sm);
 
-    & .card__counter {
-      letter-spacing: var(--ls-tight);
-      line-height: 1;
-    }
-
-    & .card__title {
-      margin-top: var(--static-2xs);
+    &__heading {
+      margin-top: $spacing-semi-related;
       display: flex;
       align-content: center;
       align-items: center;
       width: 100%;
-      gap: var(--static-5xs);
-      letter-spacing: -0.2px;
+      gap: $spacing-closely-related;
       text-transform: capitalize;
     }
-  }
-
-  .icon--wrapper {
-    margin-left: auto;
-    cursor: pointer;
-    --size: 2.25rem;
-    --bg-size: 3.125rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: var(--bg-size);
-    height: var(--bg-size);
-    background: var(--bg-gray);
-    border-radius: 50%;
-    border: 0.0625rem solid var(--border-dark);
-    box-shadow:
-      var(--shadow-sm),
-      inset var(--shadow-sm);
-
-    &:hover {
-      & svg {
-        transform: rotate(90deg);
-      }
+    &__body {
+      margin-top: $spacing-closely-related;
     }
+    &__button {
+      @include flex-center;
+      $icon-size: 2.25rem;
+      $bg-size: 3.125rem;
+      border: none;
+      margin-left: auto;
+      width: $bg-size;
+      height: $bg-size;
+      border-radius: $br-rounded;
+      cursor: pointer;
+      background: $color-secondary;
+      box-shadow:
+        inset $shadow-sm,
+        $shadow-sm;
+      &:hover {
+        & svg {
+          transform: rotate(90deg);
+        }
+      }
 
-    & svg {
-      transition: transform 0.2s ease-in-out;
-      width: var(--size);
-      height: var(--size);
-      position: relative;
+      & svg {
+        transition: transform 0.2s ease-in-out;
+        width: $icon-size;
+        height: $icon-size;
+
+        & path {
+          fill: $color-gray-md;
+        }
+      }
     }
   }
 </style>

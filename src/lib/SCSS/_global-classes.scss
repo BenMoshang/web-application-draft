@@ -1,6 +1,9 @@
 @use "./variables.scss" as *; // This imports all variables from _variables.scss
 @use "./functions.scss" as *;
 @use "./mixins.scss" as *;
+// using color-with-opacity function to get the color-card-body variable
+$color-card-body: color-with-opacity(800, 0.8);
+
 /*===================================================
      Global Class Styles
 =================================================== */
@@ -20,7 +23,7 @@
 }
 
 /* --------------------------------------------------
-   Global Title Styles
+   Global heading Styles
 -------------------------------------------------- */
 
 .global__heading--md,
@@ -37,7 +40,7 @@
 }
 
 /* --------------------------------------------------
-     Global Paragraph Styles
+     Global bodyStyles
 -------------------------------------------------- */
 .global__body--lg,
 .global__body--md,
@@ -77,12 +80,14 @@
   font-weight: $fw-bold;
   line-height: $lh-lg;
   font-size: $fsz-mdlg;
+  letter-spacing: $ls-tight;
 }
 
 .global__card-heading--md {
   font-weight: $fw-semibold;
   font-size: $fsz-sm;
   line-height: $lh-md;
+  letter-spacing: $ls-tight;
 }
 
 .global__card-heading--sm {
@@ -112,7 +117,7 @@
   font-size: $fsz-sm;
   line-height: $lh-md;
   letter-spacing: $ls-loose;
-  color: color-with-opacity(900, 0.8);
+  color: $color-card-body;
 }
 
 .global__label,
@@ -124,12 +129,13 @@
   width: fit-content;
   text-align: center;
   border-radius: $br-rounded;
-  padding-block: 0.625rem;
-  padding-inline: 1.25rem;
+  padding-block: 0.5em;
+  padding-inline: 0.875em;
   box-shadow: $shadow-sm-inset;
   // TODO: Implement background and border colors as needed
   background: color-with-opacity(900, 0.05);
-  border: 0.0625rem solid color-with-opacity(900, 0.06);
+  border: 0.0625rem solid $color-border;
+  vertical-align: baseline;
 }
 
 /* --------------------------------------------------

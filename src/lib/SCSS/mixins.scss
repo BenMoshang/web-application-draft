@@ -107,3 +107,10 @@
 
   will-change: transform, box-shadow, background-color;
 }
+
+/*===================================================
+     Border
+=================================================== */
+@mixin card-border {
+  border: 0.0625rem solid $color-border;
+}
