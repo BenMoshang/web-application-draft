@@ -9,6 +9,47 @@
 =================================================== */
 @use "./variables.scss" as *;
 @use "./functions.scss" as *;
+/* ===============================================
+                    Gradient Text
+=============================================== */
+@mixin gradient-text-light {
+  background: linear-gradient(135deg, $color-standout-200, $color-standout-100);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===============================================
+                    Animations
+=============================================== */
+@mixin animation-bw-to-color {
+  animation: filter-bw-to-color 2s ease-in-out forwards;
+}
+
+@mixin shine-animation {
+  position: relative;
+  // for shine
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+    transform: skewX(-15deg);
+    pointer-events: none;
+    z-index: 2;
+    animation: button-shine 6s ease-in-out infinite;
+  }
+}
 
 /*===================================================
      Structured Mixins

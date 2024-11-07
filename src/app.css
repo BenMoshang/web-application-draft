@@ -1,118 +1,121 @@
+@layer reset, base, components, utilities, sections;
+
 /* --------------------------------------------------
    Global RESET
 -------------------------------------------------- */
+@layer reset {
+  /* Reset and Base Styles */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    hyphens: auto;
+  }
 
-/* Reset and Base Styles */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  hyphens: auto;
-}
+  html,
+  body {
+    width: 100%;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+  }
 
-html,
-body {
-  width: 100%;
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  box-sizing: border-box;
-}
+  body {
+    font-family: system-ui;
+    color: #1d1d1f;
+  }
 
-body {
-  font-family: system-ui;
-  color: #1d1d1f;
-}
+  /* Typography */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
 
-/* Typography */
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
+  p {
+    /* Consider using 'word-break' or 'hyphens' for text wrapping */
+  }
 
-p {
-  /* Consider using 'word-break' or 'hyphens' for text wrapping */
-}
+  /* Media Elements */
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
 
-/* Media Elements */
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
+  /* Lists */
+  ol,
+  ul {
+    list-style: none;
+  }
 
-/* Lists */
-ol,
-ul {
-  list-style: none;
-}
+  /* Interactive Elements */
+  button,
+  [role="button"],
+  select {
+    cursor: pointer;
+  }
 
-/* Interactive Elements */
-button,
-[role="button"],
-select {
-  cursor: pointer;
-}
+  /* Form Elements */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
 
-/* Form Elements */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
+  /* Tables */
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
 
-/* Tables */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
+  /* Blockquotes */
+  blockquote,
+  q {
+    quotes: none;
+  }
 
-/* Blockquotes */
-blockquote,
-q {
-  quotes: none;
-}
+  blockquote::before,
+  blockquote::after,
+  q::before,
+  q::after {
+    content: "";
+  }
 
-blockquote::before,
-blockquote::after,
-q::before,
-q::after {
-  content: "";
-}
+  /* Scrollbar Styles */
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+  }
 
-/* Scrollbar Styles */
-::-webkit-scrollbar {
-  width: 0.5rem;
-}
+  ::-webkit-scrollbar-track {
+    background: white;
+  }
 
-::-webkit-scrollbar-track {
-  background: white;
-}
+  ::-webkit-scrollbar-thumb {
+    background-color: hsl(0, 0%, 53%);
+    border-radius: 0.625rem;
+    border: 0.125rem solid white;
+  }
 
-::-webkit-scrollbar-thumb {
-  background-color: hsl(0, 0%, 53%);
-  border-radius: 0.625rem;
-  border: 0.125rem solid white;
-}
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(0, 0%, 33%);
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  background-color: hsl(0, 0%, 33%);
-}
-
-::-webkit-scrollbar-button {
-  display: none;
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
 }
