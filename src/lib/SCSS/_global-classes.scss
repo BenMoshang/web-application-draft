@@ -120,35 +120,23 @@ $color-card-body: color-with-opacity(800, 0.8);
   color: $color-card-body;
 }
 
-.global__label {
+.global__label,
+.global__card-label--bg {
   @include global__card-label;
 }
 
 .global__card-label--bg {
-  @include global__card-label;
-
+  text-align: baseline;
+  color: $color-tertiary;
   width: fit-content;
   text-align: center;
   border-radius: $br-rounded;
-  padding-block: 0.5em;
-  padding-inline: 0.875em;
+  padding-block: 0.5rem;
+  padding-inline: 0.875rem;
   box-shadow: $shadow-sm-inset;
   // TODO: Implement background and border colors as needed
-
+  background: color-with-opacity(900, 0.05);
   border: 0.0625rem solid $color-border;
-  vertical-align: baseline;
-  position: relative;
-  &::after {
-    content: "";
-    position: absolute;
-    border-radius: $br-rounded;
-
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: color-with-opacity(900, 0.05);
-  }
 }
 
 /* --------------------------------------------------
@@ -164,23 +152,48 @@ $color-card-body: color-with-opacity(800, 0.8);
   color: $text-white;
   border: 0.125rem solid $text-white;
 
+  background: linear-gradient(135deg, #000000, $color-primary);
   box-shadow: $shadow-sm-inset;
+  position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, $color-standout-500, $color-standout-600);
-  @include animation-bw-to-color;
-  @include shine-animation;
 
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   // for icons
+
   & svg,
   & img {
     width: $fsz-2xs;
     height: $fsz-2xs;
     object-fit: contain;
   }
+  // for shine
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+    transform: skewX(-15deg);
+    pointer-events: none;
+    z-index: 5;
+    animation: button-shine 6s ease-in-out infinite;
+  }
 
   &:hover {
     transform: scale(1.05);
     box-shadow: $shadow-md;
+    background: linear-gradient(135deg, $color-primary, $color-secondary);
 
     & svg,
     & img {
@@ -195,12 +208,9 @@ $color-card-body: color-with-opacity(800, 0.8);
 
   &:active {
     transform: scale(0.95);
+    background-color: $color-primary;
     box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.3);
   }
-
-  /* --------------------------------------------------
-   Animations
--------------------------------------------------- */
 
   /* Base button shine animation */
   @keyframes button-shine {
@@ -233,13 +243,5 @@ $color-card-body: color-with-opacity(800, 0.8);
   100% {
     transform: translateY(0);
     opacity: 1;
-  }
-}
-@keyframes filter-bw-to-color {
-  0% {
-    filter: grayscale(100%);
-  }
-  100% {
-    filter: grayscale(0%);
   }
 }

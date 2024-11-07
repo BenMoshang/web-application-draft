@@ -53,6 +53,7 @@
 
 @mixin shine-animation {
   position: relative;
+
   // for shine
   &::before {
     content: "";
@@ -73,6 +74,34 @@
     pointer-events: none;
     z-index: 2;
     animation: button-shine 6s ease-in-out infinite;
+  }
+}
+@mixin shine-animation-text {
+  position: relative;
+  background: $text-primary;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  // for shine
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+    transform: skewX(-15deg);
+    pointer-events: none;
+    z-index: 2;
+    animation: button-shine 4s ease-in-out infinite;
   }
 }
 

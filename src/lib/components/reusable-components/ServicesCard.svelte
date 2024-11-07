@@ -46,17 +46,19 @@
         ({counter})
       </p>
     {/if}
-    <h3 class="card__heading global__card-heading--lg">
-      {title}
+    <div class="card__heading">
+      <h3 class="global__card-heading--lg">
+        {title}
+      </h3>
       {#if label}
         <span class="global__card-label--bg">{label}</span>
       {/if}
-    </h3>
-  </div>
+    </div>
 
-  <p class="card__body global__card-body">
-    {description}
-  </p>
+    <p class="card__body global__card-body">
+      {description}
+    </p>
+  </div>
 </article>
 
 <style lang="scss">
@@ -67,12 +69,15 @@
   *::after {
     box-sizing: border-box;
   }
+  h3 {
+    @include shine-animation-text;
+  }
 
   .card {
     @include card-border;
     @include flex-column-jus-center;
 
-    flex: 1 1 calc(33.33% - $section-inner-gap);// to account for that ghap in the container
+    flex: 1 1 calc(33.33% - $section-inner-gap); // to account for that ghap in the container
 
     height: 100%;
     width: 100%;

@@ -42,6 +42,7 @@
   ];
 </script>
 
+<!-- TODO: MAYBE FIND A WAY TO INCORPORATE THE GRADIENT TEXT INTO THE HEADING -->
 <section class="services-section">
   <h3 class="global__display--lg services-section__heading">
     {@html title}
@@ -71,6 +72,7 @@
     @include section-padding-inline;
     @include flex-column-jus-center;
     @include section-heading-content-gap;
+
     &__container {
       @include section-inner-gap;
       display: flex;
