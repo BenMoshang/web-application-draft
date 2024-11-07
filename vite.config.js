@@ -8,8 +8,8 @@ export default defineConfig({
       // Restrict file access outside the project root for better security
       allow: [".."],
     },
-    host: "10.0.0.85",
-    port: 5173,
+    // host: "10.0.0.85",
+    // port: 5173,
   },
   build: {
     // To improve performance by reducing the size of the built files

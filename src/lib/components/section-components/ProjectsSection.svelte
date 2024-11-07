@@ -44,7 +44,10 @@
   </section>
 </section>
 
-<style>
+<style lang="scss">
+  @use "./src/lib/SCSS/index.scss" as *;
+  $header-padding-top: clamp(60px, 0.323rem + 11.54vw, 140px);
+
   *,
   *::before,
   *::after {
@@ -52,6 +55,7 @@
   }
 
   .projects {
+    padding-top: $header-padding-top;
     width: 100%;
     display: flex;
     flex-direction: column;

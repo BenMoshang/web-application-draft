@@ -70,18 +70,21 @@
 
   .card {
     @include card-border;
-    @include flex-column-center;
-    align-items: unset;
+    @include flex-column-jus-center;
+
+    flex: 1 1 calc(33.33% - $section-inner-gap);// to account for that ghap in the container
+
+    height: 100%;
     width: 100%;
+    max-height: 18.375rem;
+
+    min-width: 17.5rem; //for mobile responsiveness
+
     padding: $card-padding;
     border-radius: $br-default;
-
     background: $color-card-bg;
     box-shadow: $shadow-md;
     overflow: hidden;
-    /* max-width: 28.125rem; */
-
-    gap: var(--static-sm);
 
     &__heading {
       margin-top: $spacing-semi-related;
@@ -90,7 +93,6 @@
       align-items: center;
       width: 100%;
       gap: $spacing-closely-related;
-      text-transform: capitalize;
     }
     &__body {
       margin-top: $spacing-closely-related;

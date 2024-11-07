@@ -42,50 +42,43 @@
   ];
 </script>
 
-<main class="services-section pinline-lg">
-  <h1 class="services-section__title ff-bold fw-bold fsz-2xl lh-3xs text-800">
+<section class="services-section">
+  <h3 class="global__display--lg services-section__heading">
     {@html title}
-  </h1>
+  </h3>
   <section class="services-section__container">
     {#each servicesData as { counter, title, description, label }}
       <ServicesCard {counter} {title} {description} {label} />
     {/each}
   </section>
-</main>
+</section>
 
 <style lang="scss">
   @use "./src/lib/SCSS/index.scss" as *;
-
-  .services-section {
-    padding-top: 1.875rem;
-    display: flex;
-    flex-direction: column;
-    gap: $section-heading-content-gap;
-
-    &__title {
-      text-transform: capitalize;
-
-      letter-spacing: -2.3px;
-    }
-
-    &__container {
-      display: flex;
-      flex-flow: row wrap;
-      gap: var(--static-sm);
-
-      width: 100%;
-
-      & > * {
-        flex: 1;
-        flex-basis: 28.125rem;
-      }
-    }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
 
-  /* .services {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
-  padding: 1rem;
-} */
+  /* ===============================================
+ Section Component Styles
+=============================================== */
+  $header-padding-top: 1.875rem;
+  .services-section {
+    padding-top: $header-padding-top;
+
+    @include section-padding-inline;
+    @include flex-column-jus-center;
+    @include section-heading-content-gap;
+    &__container {
+      @include section-inner-gap;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      width: 100%;
+      height: 80%;
+      // max-width: 1200px;
+    }
+  }
 </style>

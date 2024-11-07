@@ -70,7 +70,7 @@
     width: 100%;
     height: 90vh;
     @include flex-column-center;
-    gap: $section-gap;
+    gap: $section-inner-gap;
     align-items: unset;
 
     &__header {

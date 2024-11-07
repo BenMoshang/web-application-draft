@@ -19,6 +19,31 @@
   -webkit-text-fill-color: transparent;
 }
 
+@mixin gradient-text {
+  color: transparent;
+  background: linear-gradient(135deg, $color-standout-500, $color-standout-600);
+
+  background-clip: text;
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===============================================
+                    Section Mixins
+=============================================== */
+
+@mixin section-heading-content-gap {
+  gap: $section-heading-content-gap;
+}
+@mixin section-inner-gap {
+  gap: $section-inner-gap; /*24 px*/
+}
+
+@mixin section-padding-inline {
+  padding-inline: $section-padding-inline;
+}
 /* ===============================================
                     Animations
 =============================================== */
@@ -80,6 +105,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+@mixin flex-column-jus-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /*===================================================
