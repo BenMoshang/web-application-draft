@@ -3,7 +3,7 @@
   let description = $state(`Web Development`.toUpperCase());
   let subdescription = $state(`& Design`.toUpperCase());
 
-  let label = $state("BUILD A BRAND THAT".toUpperCase());
+  let label = $state("ESTABLISH A wEB DESIGN THAT".toUpperCase());
   let title = $state("CAPTIVATES <br> & CONVERTS".toUpperCase());
   let buttonText = $state("Transform my brand".toUpperCase());
 </script>
@@ -70,8 +70,7 @@
     width: 100%;
     height: 90vh;
     @include flex-column-center;
-    gap: $spacing-less-related;
-
+    gap: $section-gap;
     align-items: unset;
 
     &__header {
@@ -79,7 +78,6 @@
 
       & > * {
         text-align: center;
-        text-wrap: nowrap;
       }
       &__label {
         font-family: $ff-bold;
@@ -88,7 +86,8 @@
         margin-bottom: $spacing-closely-related;
       }
       &__title {
-        margin-bottom: $spacing-semi-related;
+        margin-bottom: $spacing-less-related;
+        @include shine-animation;
       }
     }
 
@@ -102,7 +101,7 @@
       &__description,
       &__sub-description {
         font-weight: $fw-medium;
-        font-size: $fsz-3xs;
+        font-size: $fsz-hero-label;
       }
       /* ----------------------------------------
       Color changes
