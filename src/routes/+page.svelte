@@ -10,10 +10,10 @@
 
   // Define visibility of sections with $state for reactivity
   let showFontTesting = $state(false);
-  let showHero = $state(true);
+  let showHero = $state(false);
   let showMotivation = $state(false);
   let showProjects = $state(false);
-  let showServices = $state(false);
+  let showServices = $state(true);
   let showStack = $state(false);
   let showTestimonials = $state(false);
   let showFaq = $state(false);
@@ -26,7 +26,7 @@
     content="Refresh your web presence with our expert web development services tailored for B2B enterprises. Our agency specializes in creating modern, scalable, and innovative digital solutions to drive your business forward. Partner with us for expert web design, development, and digital marketing strategies that deliver measurable results."
   />
 </svelte:head>
-
+<!-- TODO: WE NEED A COMPOENT TO EXPLAIN THE PROBLEM AND WHY THEY WOULD USE US AS A SERVICE-->
 <main class="layout__main">
   {#if showHero}
     <HeroSection />

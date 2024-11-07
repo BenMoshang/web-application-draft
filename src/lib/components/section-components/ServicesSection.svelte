@@ -42,36 +42,33 @@
   ];
 </script>
 
-<main class="services pinline-lg">
-  <h1 class="services__title ff-bold fw-bold fsz-2xl lh-3xs text-800">
+<main class="services-section pinline-lg">
+  <h1 class="services-section__title ff-bold fw-bold fsz-2xl lh-3xs text-800">
     {@html title}
   </h1>
-  <section class="services__container">
+  <section class="services-section__container">
     {#each servicesData as { counter, title, description, label }}
       <ServicesCard {counter} {title} {description} {label} />
     {/each}
   </section>
 </main>
 
-<style>
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-  .services {
+<style lang="scss">
+  @use "./src/lib/SCSS/index.scss" as *;
+
+  .services-section {
     padding-top: 1.875rem;
     display: flex;
     flex-direction: column;
-    gap: var(--dynamic-3xl);
+    gap: $section-heading-content-gap;
 
-    & .services__title {
+    &__title {
       text-transform: capitalize;
 
       letter-spacing: -2.3px;
     }
 
-    & .services__container {
+    &__container {
       display: flex;
       flex-flow: row wrap;
       gap: var(--static-sm);
@@ -80,7 +77,7 @@
 
       & > * {
         flex: 1;
-        flex-basis: 450px;
+        flex-basis: 28.125rem;
       }
     }
   }

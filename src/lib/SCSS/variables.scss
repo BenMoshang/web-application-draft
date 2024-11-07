@@ -23,7 +23,7 @@ $spacing: (
   /* 24px to 32px */ lg: clamp(1.5rem, 1.2rem + 0.6vw, 2rem),
   /* 30px to 40px */ xl: clamp(1.875rem, 1.716rem + 0.65vw, 2.5rem),
   /* 40px to 60px */ 2xl: clamp(2.5rem, 2.036rem + 1.9vw, 3.75rem),
-  /* 50px to 80px */ 3xl: clamp(3.125rem, 2.75rem + 1.88vw, 5rem)
+  /* 50px to 70px */ 3xl: clamp(3.125rem, 2.51rem + 2.07vw, 4.375rem)
 );
 
 /* Static Spacing */
@@ -43,6 +43,13 @@ $static-spacing: (
 $spacing-xs: map-get($spacing, xs);
 $spacing-md: map-get($spacing, md);
 
+/* ===============================================
+                    Section Spacing
+=============================================== */
+$section-heading-content-gap: map-get($spacing, 3xl);
+/* ===============================================
+                    Component Spacing
+=============================================== */
 // inside component spacing
 $spacing-most-related: map-get($static-spacing, 3xs); /* 4px */
 $spacing-closely-related: map-get($static-spacing, 2xs); /* 8px to 12px */
