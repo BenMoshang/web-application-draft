@@ -92,14 +92,14 @@
       @include section-inner-gap;
     }
   }
-  @media (min-width: 475px) {
+  @media (min-width: $tablet-breakpoint) {
     .projects {
       &__container {
         grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
       }
     }
   }
-  @media (min-width: 1440px) {
+  @media (min-width: $desktop-breakpoint) {
     .projects {
       &__heading {
         text-align: left;

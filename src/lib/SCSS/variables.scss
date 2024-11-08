@@ -1,11 +1,12 @@
 /*
  !min-width: 475px
  !max-width: 1168px
+ Todo: switch all clamps to 475 min and 1440 max
 */
 /* ===============================================
                   Widths
 =============================================== */
-$content-max-width: 90rem; /*1168px*/
+$content-max-width: 90rem; /*1440*/
 /* ===============================================
              Breakpoints
 =============================================== */
@@ -27,7 +28,6 @@ $z-indices: (
 /* ===============================================
                     Spacing Variables 
 =============================================== */
-// TODO: CHANGE THE SCALING TO MIN WIDTH 475px AND MAX WIDTH 1168px FOR SPACING
 /* Spacing */
 $spacing: (
   /* 8px to 12px */ 2xs: clamp(0.5rem, 0.4rem + 0.3vw, 0.75rem),

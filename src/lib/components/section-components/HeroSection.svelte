@@ -116,7 +116,7 @@
     }
   }
 
-  @media (min-width: 48rem) {
+  @media (min-width: $tablet-breakpoint) {
     .hero-section__details {
       display: flex;
     }

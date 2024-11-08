@@ -47,7 +47,7 @@ Header
       transform: translateY(-50%) translateX(-50%);
     }
   }
-  @media (min-width: 48rem) {
+  @media (min-width: $tablet-breakpoint) {
     header {
       display: grid;
       grid-template-columns: repeat(3, auto);
