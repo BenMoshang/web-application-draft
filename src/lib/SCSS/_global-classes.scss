@@ -31,6 +31,7 @@ $color-card-body: color-with-opacity(800, 0.8);
 .global__heading--sm {
   @include global__heading;
 }
+/* 40px to 50px, h4 */
 
 .global__heading--md {
   font-size: $fsz-2xl;

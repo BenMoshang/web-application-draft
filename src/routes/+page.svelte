@@ -7,12 +7,11 @@
   import ServicesSection from "../lib/components/section-components/ServicesSection.svelte";
   import StackSection from "../lib/components/section-components/StackSection.svelte";
   import TestimonialSection from "../lib/components/section-components/TestimonialSection.svelte";
-
   // Define visibility of sections with $state for reactivity
   let showFontTesting = $state(false);
   let showHero = $state(false);
-  let showMotivation = $state(false);
-  let showProjects = $state(false);
+  let showMotivation = $state(true);
+  let showProjects = $state(true);
   let showServices = $state(true);
   let showStack = $state(false);
   let showTestimonials = $state(false);
@@ -27,55 +26,55 @@
   />
 </svelte:head>
 <!-- TODO: WE NEED A COMPOENT TO EXPLAIN THE PROBLEM AND WHY THEY WOULD USE US AS A SERVICE-->
-<main class="layout__main">
-  {#if showHero}
-    <HeroSection />
-  {/if}
 
-  {#if showMotivation}
-    <MotivationSection />
-  {/if}
+{#if showHero}
+  <HeroSection />
+{/if}
 
-  {#if showProjects}
-    <ProjectsSection />
-  {/if}
+{#if showMotivation}
+  <MotivationSection />
+{/if}
 
-  {#if showServices}
-    <ServicesSection />
-  {/if}
+{#if showProjects}
+  <ProjectsSection />
+{/if}
 
-  {#if showStack}
-    <StackSection />
-  {/if}
+{#if showServices}
+  <ServicesSection />
+{/if}
 
-  {#if showTestimonials}
-    <TestimonialSection />
-  {/if}
+{#if showStack}
+  <StackSection />
+{/if}
 
-  {#if showFaq}
-    <FaqSection />
-  {/if}
+{#if showTestimonials}
+  <TestimonialSection />
+{/if}
 
-  <!-- Render sections conditionally using $state visibility flags -->
-  {#if showFontTesting}
-    <FontTesting />
-  {/if}
-</main>
+{#if showFaq}
+  <FaqSection />
+{/if}
 
-<style lang="scss">
+<!-- Render sections conditionally using $state visibility flags -->
+{#if showFontTesting}
+  <FontTesting />
+{/if}
+
+<style global lang="scss">
   @use "./src/lib/SCSS/index.scss" as *;
+
   .layout__main {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     max-width: $content-max-width;
     box-sizing: border-box;
     margin: 0 auto;
     gap: 1.875rem;
-
-    & > *:not(:first-child) {
-      padding-inline: 0.5rem;
-    }
+    overflow: visible;
+    // & > *:not(:first-child) {
+    //   padding-inline: 0.5rem;
+    // }
   }
 </style>

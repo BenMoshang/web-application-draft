@@ -93,7 +93,7 @@ $font-sizes: (
   /* 24px */ md: 1.5rem,
   /* 30px */ mdlg: 1.875rem,
   /* 24px to 30px */ lg: clamp(1.5rem, 1.243rem + 0.87vw, 1.875rem),
-  /* 40px to 50px */ xl: clamp(2.5rem, 2.072rem + 1.44vw, 3.125rem),
+  /* 40px to 50px, h4 */ xl: clamp(2.5rem, 2.072rem + 1.44vw, 3.125rem),
   /* 40px to 90px, h3 */ 2xl: clamp(2.5rem, 0.358rem + 7.22vw, 5.625rem),
   /* 40px to 110px, h2*/ 3xl: clamp(2.5rem, -0.499rem + 10.1vw, 6.875rem),
   /* 50px to 180px, h1 */ 4xl: clamp(60px, 1.285rem + 8.3vw, 180px)

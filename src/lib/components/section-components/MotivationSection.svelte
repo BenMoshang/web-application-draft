@@ -1,6 +1,6 @@
 <!-- TODO: MAKE TITLE POSITION STICKY ON DESKTOP -->
 <script>
-  let title = $state(`motivation`);
+  let title = $state(`motivation`.toUpperCase());
   let description = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, vitae
   consequatur est eligendi repellat ducimus quod at eaque. Fugit voluptates
   recusandae veniam autem quia molestiae quidem nobis similique dolores
@@ -9,21 +9,22 @@
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, vitae consequatur
       est eligendi repellat ducimus quod at eaque. Fugit voluptates recusandae veniam
       autem quia molestiae quidem nobis similique dolores laborum.`;
-  title = title.toUpperCase();
 </script>
 
+<!-- TODO: ADD SIGNATURES -->
 <section class="motivation__container">
-  <article class="motivation__content">
-    <h2 class="motivation__title global__title--md">
-      {title}
-    </h2>
-    <p class="motivation__description global__paragraph--sm">
-      {@html description}
-    </p>
-  </article>
+  <h3 class="motivation__container-heading global__heading--sm">
+    {title}
+  </h3>
+
+  <p class="global__body--md">
+    {@html description}
+  </p>
 </section>
 
-<style>
+<style lang="scss">
+  @use "./src/lib/SCSS/index.scss" as *;
+
   *,
   *::before,
   *::after {
@@ -31,38 +32,32 @@
   }
 
   .motivation__container {
-    width: 100%;
-    padding-inline: var(--pinline-section);
-    container: motivation-section / inline-size;
-  }
-  .motivation__content {
+    @include section-padding-inline;
+    @include flex-column-jus-center;
+    @include section-heading-content-gap;
+    padding-top: clamp(80px, 3.769rem + 4.15vw, 120px);
+    position: relative;
+    overflow-y: visible;
+    inline-size: 100%;
     height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "title"
-      "description";
-    gap: var(--dynamic-3xl);
-
-    & .motivation__title {
-      grid-area: title;
-    }
-
-    & .motivation__description {
-      grid-area: description;
+    & p {
+      max-inline-size: 50ch;
     }
   }
-  /* this is 45px */
-  @container motivation-section (min-width: 24.3125rem) {
-    .motivation__content {
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas: "title description ";
-    }
 
-    .motivation__title {
-      position: sticky;
-      top: 2.5rem;
+  .motivation__container-heading {
+    position: sticky;
+    top: 0; // Adjust as needed for larger offset
+    height: min-content;
+  }
+
+  /* this is 45px */
+  @media (min-width: $tablet-breakpoint) {
+    .motivation__container {
+      gap: unset;
+      justify-content: unset;
+      flex-direction: row;
+      justify-content: space-between;
     }
   }
 </style>

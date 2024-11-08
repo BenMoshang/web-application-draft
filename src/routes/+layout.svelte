@@ -7,11 +7,26 @@
 </script>
 
 <Header />
-
+<main class="layout__main">
 {@render childContent()}
-
+</main>
 <Footer />
 
 <style global lang="scss">
-  
+    @use "./src/lib/SCSS/index.scss" as *;
+
+  .layout__main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    max-width: $content-max-width;
+    box-sizing: border-box;
+    margin: 0 auto;
+    gap: 1.875rem;
+    overflow: visible;
+    // & > *:not(:first-child) {
+    //   padding-inline: 0.5rem;
+    // }
+  }
 </style>
