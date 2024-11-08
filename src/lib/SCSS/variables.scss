@@ -98,6 +98,7 @@ $font-sizes: (
   /* 40px to 110px, h2*/ 3xl: clamp(2.5rem, -0.499rem + 10.1vw, 6.875rem),
   /* 50px to 180px, h1 */ 4xl: clamp(60px, 1.285rem + 8.3vw, 180px)
 );
+
 /* Font Sizes */
 
 $fsz-4xl: map-get($font-sizes, 4xl);
@@ -123,7 +124,7 @@ $fsz-button-lg: clamp(1rem, 0.754rem + 0.83vw, 1.5rem);
 $line-heights: (
   xs: 1.6,
   md: 1.5,
-  lg: 1.2,
+  lg: 1,
   xl: 0.85,
 );
 /* Line Heights */

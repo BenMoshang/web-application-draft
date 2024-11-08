@@ -1,10 +1,9 @@
 /*===================================================
-     Mixins
-
+     Mixins:
      Note: Mixins are reusable blocks of code that can be used to apply styles to elements.
 
      however they are different than global classes. Global classes are written once and compiled once.
-     
+
      - think that mixins are a type of shorthand of a collection of properties. instead.
 =================================================== */
 @use "./variables.scss" as *;
@@ -22,12 +21,25 @@
 @mixin gradient-text {
   color: transparent;
   background: linear-gradient(135deg, $color-standout-500, $color-standout-600);
-
   background-clip: text;
-
   -webkit-background-clip: text;
-
   -webkit-text-fill-color: transparent;
+}
+
+/* ===============================================
+                    Card Mixins
+=============================================== */
+@mixin card-styling {
+  padding: $card-padding;
+  border-radius: $br-default;
+  background: $color-card-bg;
+  box-shadow: $shadow-md;
+  border: 0.0625rem solid $color-border;
+  overflow: hidden;
+}
+
+@mixin card-border {
+  border: 0.0625rem solid $color-border;
 }
 
 /* ===============================================
@@ -51,6 +63,9 @@
   animation: filter-bw-to-color 2s ease-in-out forwards;
 }
 
+@mixin animation-float-and-replace {
+  animation: icon-float-and-replace 0.5s ease-in-out forwards;
+}
 @mixin shine-animation {
   position: relative;
 
@@ -163,6 +178,7 @@
   letter-spacing: $ls-tight;
   text-transform: capitalize;
   line-height: $lh-lg;
+
   text-wrap: balance;
 }
 @mixin global__body {
@@ -206,11 +222,4 @@
   position: relative;
 
   will-change: transform, box-shadow, background-color;
-}
-
-/*===================================================
-     Border
-=================================================== */
-@mixin card-border {
-  border: 0.0625rem solid $color-border;
 }

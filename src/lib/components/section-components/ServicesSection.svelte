@@ -80,7 +80,6 @@
       justify-content: center;
       width: 100%;
       height: 80%;
-      // max-width: 1200px;
     }
   }
 </style>

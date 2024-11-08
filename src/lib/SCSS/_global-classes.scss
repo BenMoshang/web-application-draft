@@ -18,6 +18,7 @@ $color-card-body: color-with-opacity(800, 0.8);
 .global__display--xl {
   font-size: $fsz-4xl;
 }
+// h3
 .global__display--lg {
   font-size: $fsz-3xl;
 }
@@ -94,7 +95,7 @@ $color-card-body: color-with-opacity(800, 0.8);
   font-weight: $fw-bold;
   font-size: $fsz-xs;
   line-height: $lh-xs;
-  letter-spacing: $ls-loose;
+  letter-spacing: $ls-tight;
 }
 
 /* --------------------------------------------------
@@ -105,7 +106,8 @@ $color-card-body: color-with-opacity(800, 0.8);
   font-family: $ff-bold;
   font-weight: $fw-medium;
   font-size: $fsz-xs;
-  letter-spacing: $ls-loose;
+  letter-spacing: $ls-tight;
+
   color: $text-secondary;
   line-height: $lh-xs;
 }

@@ -18,7 +18,7 @@
   label = label.toUpperCase();
 </script>
 
-<!-- TODO: NEED TO FIX SVG  SIZE SO CROSS NOT FAT-->
+<!-- TODO: NEED TO FIX SVG SIZE SO CROSS NOT FAT-->
 <article class="card">
   <button
     class="card__button"
@@ -69,27 +69,19 @@
   *::after {
     box-sizing: border-box;
   }
+
   h3 {
     @include shine-animation-text;
   }
 
   .card {
-    @include card-border;
     @include flex-column-jus-center;
-
+    @include card-styling;
     flex: 1 1 calc(33.33% - $section-inner-gap); // to account for that ghap in the container
-
-    height: 100%;
-    width: 100%;
     max-height: 18.375rem;
-
+    height: 100%;
     min-width: 17.5rem; //for mobile responsiveness
-
-    padding: $card-padding;
-    border-radius: $br-default;
-    background: $color-card-bg;
-    box-shadow: $shadow-md;
-    overflow: hidden;
+    width: 100%;
 
     &__heading {
       margin-top: $spacing-semi-related;
