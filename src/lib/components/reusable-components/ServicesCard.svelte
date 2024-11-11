@@ -93,6 +93,7 @@
     }
     &__body {
       margin-top: $spacing-closely-related;
+      max-inline-size: 50ch;
     }
     &__button {
       @include flex-center;

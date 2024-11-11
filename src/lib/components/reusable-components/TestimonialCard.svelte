@@ -50,7 +50,6 @@
     @include card-styling;
     @include card-border;
     min-inline-size: 17.5rem; //for mobile responsiveness
-    max-block-size: 18.375rem;
     block-size: 100%;
     inline-size: 100%;
 
