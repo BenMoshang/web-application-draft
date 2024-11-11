@@ -1,9 +1,11 @@
-<script>import "../app.css";
-import Footer from "../lib/layout/Footer.svelte";
-import Header from "../lib/layout/Header.svelte";
+<script>
+  import "../app.css";
+  import Footer from "../lib/layout/Footer.svelte";
+  import Header from "../lib/layout/Header.svelte";
 
-// Using $props to manage children as a snippet
-let { children: childContent } = $props();</script>
+  // Using $props to manage children as a snippet
+  let { children: childContent } = $props();
+</script>
 
 <!-- <Header /> -->
 <main class="layout__main">
@@ -11,15 +13,15 @@ let { children: childContent } = $props();</script>
 </main>
 <Footer></Footer>
 
-<!-- <style lang="scss">
+<style lang="scss">
   @use "./src/lib/SCSS/index.scss" as *;
 
   .layout__main {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    min-height: 100vh;
-    max-width: $content-max-width;
+    inline-size: 100%;
+    min-block-size: 100vh;
+    max-inline-size: $content-max-width;
     box-sizing: border-box;
     margin: 0 auto;
     gap: 1.875rem;
@@ -28,4 +30,4 @@ let { children: childContent } = $props();</script>
     //   padding-inline: 0.5rem;
     // }
   }
-</style> -->
+</style>
