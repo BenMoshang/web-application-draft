@@ -59,13 +59,13 @@ $color-card-body: color-with-opacity(800, 0.8);
 .global__body--md {
   font-family: $ff-regular;
   font-weight: $fw-medium;
-  font-size: $fsz-md;
+  font-size: $fsz-md; /* 24px */
 }
 
 .global__body--sm {
   font-family: $ff-bold;
   font-weight: $fw-medium;
-  font-size: $fsz-xs;
+  font-size: $fsz-xs; /* 18px */
 }
 
 /* --------------------------------------------------
@@ -108,19 +108,22 @@ $color-card-body: color-with-opacity(800, 0.8);
   font-weight: $fw-medium;
   font-size: $fsz-xs;
   letter-spacing: $ls-tight;
-
   color: $text-secondary;
   line-height: $lh-xs;
 }
-
-.global__card-body {
-  text-wrap: pretty;
-  font-family: $ff-regular;
-  font-weight: $fw-medium;
+/* --------------------------------------------------
+     Card Body Styles
+-------------------------------------------------- */
+.global__card-body--sm,
+.global__card-body--xs {
+  @include global__card-body;
+}
+.global__card-body--sm {
   font-size: $fsz-sm;
-  line-height: $lh-md;
-  letter-spacing: $ls-loose;
-  color: $color-card-body;
+}
+
+.global__card-body--xs {
+  font-size: $fsz-xs;
 }
 
 .global__label,

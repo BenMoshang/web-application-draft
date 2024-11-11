@@ -223,3 +223,11 @@
 
   will-change: transform, box-shadow, background-color;
 }
+
+@mixin global__card-body {
+  text-wrap: pretty;
+  font-family: $ff-regular;
+  font-weight: $fw-medium;
+  line-height: $lh-md;
+  letter-spacing: $ls-loose;
+}

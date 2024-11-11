@@ -17,22 +17,21 @@
     description = "",
   } = $props();
   name = name.toUpperCase();
+  position = position.toUpperCase();
 </script>
 
 <article class="card">
   <header class="card__header">
     <img src={pfpSrc} alt={name} class="card__pfp" />
-    <div class="card__title">
-      <h4 class="ff-bold fw-medium fsz-sm text-800 lh-sm">{name}</h4>
-      <h5 class="ff-regular fw-medium fsz-xs text-800 lh-sm">
-        {position}
-      </h5>
+    <div class="card__title-wrapper">
+      <h4 class="global__card-heading--sm">{name}</h4>
+      <h5 class="card__position global__card-subheading">{position}</h5>
     </div>
-    <img src={companySrc} alt={position} class="card__company" />
+    {#if companySrc}
+      <img src={companySrc} alt={position} class="card__company" />
+    {/if}
   </header>
-  <p
-    class="card__description ff-regular fw-medium fsz-xs text-800 lh-2xl p-base bg-white-100 border br"
-  >
+  <p class="card__body global__card-body--xs">
     "{description}"
   </p>
 </article>
@@ -49,20 +48,58 @@
   .card {
     @include flex-column-jus-center;
     @include card-styling;
-    min-width: 17.5rem; //for mobile responsiveness
+    @include card-border;
+    min-inline-size: 17.5rem; //for mobile responsiveness
+    max-block-size: 18.375rem;
+    block-size: 100%;
+    inline-size: 100%;
 
-    max-height: 18.375rem;
-    height: 100%;
-    width: 100%;
-
-    &__ & .card__title {
-      display: flex;
-      align-self: center;
-      flex-direction: column;
+    &__header {
+      @include flex-center;
+      margin-bottom: $spacing-less-related;
     }
 
-    & .card__company {
+    /* --------------------------------------------------
+       image styles
+-------------------------------------------------- */
+
+    &__company,
+    &__pfp {
+      border-radius: $br-default;
+    }
+
+    &__pfp {
+      $size: 3.75rem;
+
+      inline-size: $size;
+      block-size: $size;
+      margin-right: $spacing-semi-related;
+    }
+    // makes it to the right
+    &__company {
+      $size: 3.125rem;
+      inline-size: $size;
+      block-size: $size;
       margin-left: auto;
+    }
+
+    /* --------------------------------------------------
+       body styles
+-------------------------------------------------- */
+
+    &__position {
+      font-size: $fsz-4xs;
+      color: $text-tertiary;
+      letter-spacing: 0.04em;
+      line-height: $lh-lg;
+    }
+    &__body {
+      box-shadow: $shadow-sm-inset;
+      padding: $card-inner-padding;
+      border-radius: $br-default;
+      background: $color-card-bg-secondary;
+      font-weight: $fw-regular;
+      color: $text-secondary;
     }
   }
 </style>

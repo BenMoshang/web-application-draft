@@ -70,13 +70,13 @@ $section-padding-inline: clamp(20px, 0.393rem + 2.89vw, 40px);
 // inside component spacing
 $spacing-most-related: map-get($static-spacing, 3xs); /* 4px */
 $spacing-closely-related: map-get($static-spacing, 2xs); /* 8px  */
-$spacing-semi-related: map-get($static-spacing, xs); /* 12px */
-$spacing-less-related: map-get($static-spacing, sm); /* 16px */
+$spacing-semi-related: map-get($static-spacing, sm); /* 16px */
+$spacing-less-related: map-get($static-spacing, xl); /* 24px */
 
 /* ===============================================
                     card padding
 =============================================== */
-
+$card-inner-padding: map-get($static-spacing, xs); /* 12px */
 $card-padding: map-get($static-spacing, 3xl); /* 30px */
 
 /* ===============================================
@@ -112,7 +112,7 @@ $fsz-sm: map-get($font-sizes, sm);
 $fsz-xs: map-get($font-sizes, xs);
 $fsz-2xs: map-get($font-sizes, 2xs);
 $fsz-3xs: map-get($font-sizes, 3xs);
-$fsz-1xs: map-get($font-sizes, 1xs);
+$fsz-4xs: map-get($font-sizes, 4xs);
 
 $fsz-hero-label: clamp(0.625rem, 0.789rem + 0.29vw, 1rem);
 $fsz-button-lg: clamp(1rem, 0.754rem + 0.83vw, 1.5rem);
@@ -175,6 +175,7 @@ $font-weights: (
 $fw-bold: map-get($font-weights, bold);
 $fw-medium: map-get($font-weights, medium);
 $fw-semibold: map-get($font-weights, semibold);
+$fw-regular: map-get($font-weights, regular);
 
 /* ===============================================
                     Border Radius
@@ -231,6 +232,8 @@ $color-quaternary: map-get(map-get($colors, primary), 600);
 $color-gray-md: map-get(map-get($colors, primary), 500);
 $color-border: map-get(map-get($colors, primary), 300);
 $color-card-bg: map-get(map-get($colors, primary), 200);
+$color-card-bg-secondary: map-get(map-get($colors, primary), 100);
+
 /* Text Colors */
 $text-white: map-get($colors, white);
 $text-primary: map-get(map-get($colors, primary), 900);
