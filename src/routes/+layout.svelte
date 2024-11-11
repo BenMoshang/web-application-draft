@@ -12,7 +12,7 @@
 </main>
 <Footer />
 
-<style lang="scss">
+<!-- <style lang="scss">
   @use "./src/lib/SCSS/index.scss" as *;
 
   .layout__main {
@@ -29,4 +29,4 @@
     //   padding-inline: 0.5rem;
     // }
   }
-</style>
+</style> -->
