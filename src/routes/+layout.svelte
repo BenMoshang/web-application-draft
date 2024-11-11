@@ -8,12 +8,12 @@
 
 <!-- <Header /> -->
 <main class="layout__main">
-{@render childContent()}
+  {@render childContent()}
 </main>
 <Footer />
 
-<style global lang="scss">
-    @use "./src/lib/SCSS/index.scss" as *;
+<style lang="scss">
+  @use "./src/lib/SCSS/index.scss" as *;
 
   .layout__main {
     display: flex;
