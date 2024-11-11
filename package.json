@@ -27,6 +27,9 @@
   "type": "module",
   "dependencies": {
     "animejs": "^3.2.2",
-    "gsap": "^3.12.5"
+    "clsx": "^2.1.1",
+    "gsap": "^3.12.5",
+    "svelte-motion": "^0.12.2",
+    "tailwind-merge": "^2.5.4"
   }
 }
