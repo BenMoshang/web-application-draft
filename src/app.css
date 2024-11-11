@@ -12,6 +12,21 @@
   hyphens: auto;
 }
 
+/* kevin powell image reset */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-inline-size: 100%;
+  block-size: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 1rem;
+}
 html,
 body {
   width: 100%;
@@ -39,21 +54,6 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
-}
-
-p {
-  /* Consider using 'word-break' or 'hyphens' for text wrapping */
-}
-
-/* Media Elements */
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
 
 /* Lists */

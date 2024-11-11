@@ -1,5 +1,4 @@
 <script>
-
   /**
    * @typedef {Object} Props
    * @property {string} [name]
@@ -15,14 +14,14 @@
     position = "",
     pfpSrc = "",
     companySrc = "",
-    description = ""
+    description = "",
   } = $props();
   name = name.toUpperCase();
 </script>
 
-<article class="card br p-base bg-white-200 border">
-  <div class="card__header">
-    <img src={pfpSrc} alt={name} class="card__pfp br" />
+<article class="card">
+  <header class="card__header">
+    <img src={pfpSrc} alt={name} class="card__pfp" />
     <div class="card__title">
       <h4 class="ff-bold fw-medium fsz-sm text-800 lh-sm">{name}</h4>
       <h5 class="ff-regular fw-medium fsz-xs text-800 lh-sm">
@@ -30,7 +29,7 @@
       </h5>
     </div>
     <img src={companySrc} alt={position} class="card__company" />
-  </div>
+  </header>
   <p
     class="card__description ff-regular fw-medium fsz-xs text-800 lh-2xl p-base bg-white-100 border br"
   >
@@ -38,7 +37,9 @@
   </p>
 </article>
 
-<style>
+<style lang="scss">
+  @use "./src/lib/SCSS/index.scss" as *;
+
   *,
   *::before,
   *::after {
@@ -46,21 +47,15 @@
   }
 
   .card {
-    display: flex;
-    flex-direction: column;
-    border: 0.625rem solid var(--gray-trans-md-alt);
-    justify-content: between;
+    @include flex-column-jus-center;
+    @include card-styling;
+    min-width: 17.5rem; //for mobile responsiveness
+
+    max-height: 18.375rem;
+    height: 100%;
     width: 100%;
-    max-width: 35.625rem;
-    overflow: hidden;
-    gap: var(--fsz-md);
 
-    & .card__header {
-      display: flex;
-      gap: 1.375rem;
-    }
-
-    & .card__title {
+    &__ & .card__title {
       display: flex;
       align-self: center;
       flex-direction: column;
@@ -69,9 +64,5 @@
     & .card__company {
       margin-left: auto;
     }
-  }
-
-  .border {
-    border: 0.0625rem solid var(--border-trans-light);
   }
 </style>

@@ -10,11 +10,11 @@
   // Define visibility of sections with $state for reactivity
   let showFontTesting = $state(false);
   let showHero = $state(false);
-  let showMotivation = $state(true);
-  let showProjects = $state(true);
-  let showServices = $state(true);
+  let showMotivation = $state(false);
+  let showProjects = $state(false);
+  let showServices = $state(false);
   let showStack = $state(false);
-  let showTestimonials = $state(false);
+  let showTestimonials = $state(true);
   let showFaq = $state(false);
 </script>
 

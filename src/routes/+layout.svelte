@@ -6,7 +6,7 @@
   let { children: childContent } = $props();
 </script>
 
-<Header />
+<!-- <Header /> -->
 <main class="layout__main">
 {@render childContent()}
 </main>
