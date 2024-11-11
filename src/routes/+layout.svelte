@@ -1,16 +1,15 @@
-<script>
-  import Footer from "../lib/layout/Footer.svelte";
-  import Header from "../lib/layout/Header.svelte";
+<script>import "../app.css";
+import Footer from "../lib/layout/Footer.svelte";
+import Header from "../lib/layout/Header.svelte";
 
-  // Using $props to manage children as a snippet
-  let { children: childContent } = $props();
-</script>
+// Using $props to manage children as a snippet
+let { children: childContent } = $props();</script>
 
 <!-- <Header /> -->
 <main class="layout__main">
   {@render childContent()}
 </main>
-<Footer />
+<Footer></Footer>
 
 <!-- <style lang="scss">
   @use "./src/lib/SCSS/index.scss" as *;
