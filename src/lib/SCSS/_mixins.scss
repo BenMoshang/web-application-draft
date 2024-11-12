@@ -6,8 +6,8 @@
 
      - think that mixins are a type of shorthand of a collection of properties. instead.
 =================================================== */
-@use "./variables.scss" as *;
-@use "./functions.scss" as *;
+@use "./_variables.scss" as *;
+@use "./_functions.scss" as *;
 
 @mixin paragraph-ch-inline {
   max-inline-size: 50ch;
@@ -164,6 +164,159 @@
   position: absolute;
   inset: 0;
   margin: auto;
+}
+
+/*===================================================
+Vertigo Mixin
+=================================================== */
+/* Define the scroll timeline */
+@scroll-timeline scroll-vertigo {
+  source: auto;
+  orientation: block;
+  scroll-offsets: 0% 100%;
+}
+
+/* Mixin for vertigo effect bound to scroll */
+@mixin vertigo-scroll(
+  $perspective: 500px,
+  $translateZ-start: 0,
+  $translateZ-end: -200px,
+  $scale-start: 1,
+  $scale-end: 2
+) {
+  perspective: $perspective;
+  transform-style: preserve-3d;
+
+  animation-name: vertigo-animation;
+  animation-duration: 1s; // Arbitrary duration; actual control via scroll
+  animation-fill-mode: both;
+  animation-timeline: scroll-vertigo;
+  animation-timing-function: linear;
+
+  @keyframes vertigo-animation {
+    from {
+      transform: translateZ(#{$translateZ-start}) scale(#{$scale-start});
+    }
+    to {
+      transform: translateZ(#{$translateZ-end}) scale(#{$scale-end});
+    }
+  }
+}
+/*===================================================
+fade under mixin
+=================================================== */
+
+@mixin scroll-fade-under(
+  $fade-start: 0px,
+  $fade-end: 200px,
+  $translate-distance: 50px,
+  $fade-color: #fff
+) {
+  position: relative;
+  z-index: 1;
+  background: inherit;
+
+  /* Set up the scroll-linked animation */
+  @property --scroll {
+    syntax: "<number>";
+    initial-value: 0;
+    inherits: false;
+  }
+  --scroll: 0;
+
+  /* Update --scroll based on scroll position */
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 1px;
+    transform: translateY(calc(var(--scroll) * 1px));
+    pointer-events: none;
+  }
+
+  /* Apply fade and translate effect */
+  opacity: calc(
+    1 - (var(--scroll) - #{$fade-start}) / (#{$fade-end} - #{$fade-start})
+  );
+  transform: translateY(
+    calc(
+      (var(--scroll) - #{$fade-start}) / (#{$fade-end} - #{$fade-start}) * -#{$translate-distance}
+    )
+  );
+
+  /* Prevent values from exceeding bounds */
+  @media (max-height: #{$fade-start}) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (min-height: #{$fade-end}) {
+    opacity: 0;
+    transform: translateY(-#{$translate-distance});
+  }
+
+  /* Optional: Mask to create the underlapping effect */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: $translate-distance;
+    background: linear-gradient(to top, $fade-color, transparent);
+    pointer-events: none;
+  }
+}
+/*===================================================
+Parallax Mixins
+=================================================== */
+
+// Mixin 1: Simple Parallax Background
+// Applies a fixed background image to create a parallax effect.
+@mixin parallax-background($image, $height: 500px) {
+  background: {
+    image: url($image);
+    repeat: no-repeat;
+    position: center center;
+    attachment: fixed;
+    size: cover;
+  }
+  height: $height;
+}
+
+// Mixin 2: Parallax Section with Content Overlay
+// Sets up a parallax background with content overlay.
+@mixin parallax-section($image, $height: 500px) {
+  position: relative;
+  overflow: hidden;
+  height: $height;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: {
+      image: url($image);
+      repeat: no-repeat;
+      position: center center;
+      size: cover;
+      attachment: fixed;
+    }
+  }
+}
+
+// Usage Examples:
+
+// Example 1: Applying a Simple Parallax Background
+.parallax-section {
+  @include parallax-background("path/to/your/image.jpg", 600px);
+}
+
+// Example 2: Parallax Section with Content Overlay
+.parallax-content {
+  @include parallax-section("path/to/your/image.jpg", 700px);
 }
 
 /*===================================================

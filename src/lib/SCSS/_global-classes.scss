@@ -1,6 +1,6 @@
-@use "./variables.scss" as *; // This imports all variables from _variables.scss
-@use "./functions.scss" as *;
-@use "./mixins.scss" as *;
+@use "./_variables.scss" as *; // This imports all variables from _variables.scss
+@use "./_functions.scss" as *;
+@use "./_mixins.scss" as *;
 // using color-with-opacity function to get the color-card-body variable
 $color-card-body: color-with-opacity(800, 0.8);
 

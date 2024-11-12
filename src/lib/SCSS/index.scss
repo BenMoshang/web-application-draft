@@ -3,9 +3,9 @@
 // @use "./_mixins.scss" as *;
 // @use "./_global-classes.scss" as *;
 // _index.scss
-@forward "./variables.scss";
-@forward "./functions.scss";
-@forward "./mixins.scss";
+@forward "./_variables.scss";
+@forward "./_functions.scss";
+@forward "./_mixins.scss";
 @forward "./_global-classes.scss";
 /* --------------------------------------------------
    Font Face Definitions
