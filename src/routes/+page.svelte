@@ -9,14 +9,14 @@
   import StackSection from "../lib/components/section-components/StackSection.svelte";
   import TestimonialSection from "../lib/components/section-components/TestimonialSection.svelte";
   // Define visibility of sections with $state for reactivity
-  let showFontTesting = $state(false);
-  let showHero = $state(false);
+  let showFontTesting = $state(true);
+  let showHero = $state(true);
   let showAbout = $state(true);
-  let showMotivation = $state(false);
-  let showProjects = $state(false);
-  let showServices = $state(false);
-  let showStack = $state(false);
-  let showTestimonials = $state(false);
+  let showMotivation = $state(true);
+  let showProjects = $state(true);
+  let showServices = $state(true);
+  let showStack = $state(true);
+  let showTestimonials = $state(true);
   let showFaq = $state(false);
 </script>
 
