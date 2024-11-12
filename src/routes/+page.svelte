@@ -1,5 +1,6 @@
 <script>
   import FontTesting from "../lib/components/font-testing/FontTesting.svelte";
+  import AboutSection from "../lib/components/section-components/AboutSection.svelte";
   import FaqSection from "../lib/components/section-components/FaqSection.svelte";
   import HeroSection from "../lib/components/section-components/HeroSection.svelte";
   import MotivationSection from "../lib/components/section-components/MotivationSection.svelte";
@@ -10,11 +11,12 @@
   // Define visibility of sections with $state for reactivity
   let showFontTesting = $state(false);
   let showHero = $state(false);
+  let showAbout = $state(true);
   let showMotivation = $state(false);
   let showProjects = $state(false);
   let showServices = $state(false);
   let showStack = $state(false);
-  let showTestimonials = $state(true);
+  let showTestimonials = $state(false);
   let showFaq = $state(false);
 </script>
 
@@ -25,10 +27,14 @@
     content="Refresh your web presence with our expert web development services tailored for B2B enterprises. Our agency specializes in creating modern, scalable, and innovative digital solutions to drive your business forward. Partner with us for expert web design, development, and digital marketing strategies that deliver measurable results."
   />
 </svelte:head>
-<!-- TODO: WE NEED A COMPOENT TO EXPLAIN THE PROBLEM AND WHY THEY WOULD USE US AS A SERVICE-->
+<!-- TODO: WE NEED A COMPOENT TO EXPLAIN THE PROBLEM AND WHY THEY WOULD USE US AS A SERVICE w a stepper-->
 
 {#if showHero}
   <HeroSection />
+{/if}
+
+{#if showAbout}
+  <AboutSection />
 {/if}
 
 {#if showMotivation}

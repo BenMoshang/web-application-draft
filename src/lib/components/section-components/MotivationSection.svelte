@@ -12,12 +12,12 @@
 </script>
 
 <!-- TODO: ADD SIGNATURES -->
-<section class="motivation__container">
-  <h3 class="motivation__container-heading global__heading--sm">
+<section class="motivation">
+  <h3 class="motivation__heading global__heading--sm">
     {title}
   </h3>
 
-  <p class="global__body--md">
+  <p class=" motivation__body global__body--md">
     {@html description}
   </p>
 </section>
@@ -31,7 +31,7 @@
     box-sizing: border-box;
   }
 
-  .motivation__container {
+  .motivation {
     @include section-padding-inline;
     @include flex-column-jus-center;
     @include section-heading-content-gap;
@@ -40,24 +40,28 @@
     overflow-y: visible;
     inline-size: 100%;
     height: 100%;
-    & p {
-      max-inline-size: 50ch;
-    }
-  }
 
-  .motivation__container-heading {
-    position: sticky;
-    top: 0; // Adjust as needed for larger offset
-    height: min-content;
+    &__heading {
+      position: sticky;
+      top: 0; // Adjust as needed for larger offset
+      height: min-content;
+    }
+
+    &__body {
+      @include paragraph-ch-inline;
+    }
   }
 
   /* this is 45px */
   @media (min-width: $tablet-breakpoint) {
-    .motivation__container {
+    .motivation {
       gap: unset;
       justify-content: unset;
       flex-direction: row;
       justify-content: space-between;
+      &__heading {
+        padding-right: $spacing-less-related;
+      }
     }
   }
 </style>

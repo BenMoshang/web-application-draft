@@ -113,6 +113,7 @@
 
       &__body {
         display: inline-flex;
+        @include paragraph-ch-inline;
       }
 
       &__container {
