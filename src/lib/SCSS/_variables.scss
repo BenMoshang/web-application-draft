@@ -1,15 +1,13 @@
 /*
  !min-width: 475px
- !max-width: 1168px
+ !max-width: 1440px
  Todo: switch all clamps to 475 min and 1440 max
 */
+
 /* ===============================================
-                  Widths
+             Breakpoints/    Widths
 =============================================== */
 $content-max-width: 90rem; /*1440*/
-/* ===============================================
-             Breakpoints
-=============================================== */
 $desktop-breakpoint: $content-max-width;
 $tablet-breakpoint: 29.6875rem; /*475px*/
 /* ===============================================
@@ -63,6 +61,8 @@ $spacing-md: map-get($spacing, md); /* 18px */
 
 $section-heading-content-gap: map-get($spacing, 3xl);
 $section-inner-gap: map-get($static-spacing, xl); /* 24px */
+$section-inner-gap-lg: map-get($spacing, 2xl); /* 40-60px */
+
 $section-padding-inline: clamp(20px, 0.393rem + 2.89vw, 40px);
 /* ===============================================
                     Component Spacing
@@ -236,6 +236,7 @@ $color-card-bg-secondary: map-get(map-get($colors, primary), 100);
 
 /* Text Colors */
 $text-white: map-get($colors, white);
+$text-off-white: map-get(map-get($colors, primary), 200);
 $text-primary: map-get(map-get($colors, primary), 900);
 $text-secondary: map-get(map-get($colors, primary), 800);
 $text-tertiary: map-get(map-get($colors, primary), 700);
@@ -277,3 +278,6 @@ $shadow-sm: map-get($shadows, sm);
 $shadow-md: map-get($shadows, md);
 $shadow-lg: map-get($shadows, lg);
 $shadow-sm-inset: inset $shadow-sm, $shadow-sm;
+
+//custom variables
+$header-height: 3.25rem;

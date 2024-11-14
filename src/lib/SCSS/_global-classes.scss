@@ -93,12 +93,13 @@ $color-card-body: color-with-opacity(800, 0.8);
   line-height: $lh-md;
   letter-spacing: $ls-tight;
 }
-
+//used in counter
 .global__card-heading--sm {
   font-weight: $fw-bold;
   font-size: $fsz-xs;
   line-height: $lh-xs;
   letter-spacing: $ls-tight;
+  color: $text-tertiary;
 }
 
 /* --------------------------------------------------
@@ -121,7 +122,8 @@ $color-card-body: color-with-opacity(800, 0.8);
   @include global__card-body;
 }
 .global__card-body--sm {
-  font-size: $fsz-sm;
+  color: $text-secondary;
+  font-size: $fsz-sm; //20px
 }
 
 .global__card-body--xs {
@@ -148,14 +150,15 @@ $color-card-body: color-with-opacity(800, 0.8);
 }
 
 /* --------------------------------------------------
-     Button Styling
+     Button Styling/links
 -------------------------------------------------- */
+.global__links {
+  @include global__links;
+}
 
 .global__button--solid {
   @include global__button;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   gap: $spacing-closely-related;
   color: $text-white;
   border: 0.125rem solid $text-white;
@@ -205,6 +208,7 @@ $color-card-body: color-with-opacity(800, 0.8);
 
     & svg,
     & img {
+      filter: drop-shadow($shadow-sm);
       animation: icon-float-and-replace 0.5s ease-in-out forwards;
     }
   }
@@ -219,22 +223,92 @@ $color-card-body: color-with-opacity(800, 0.8);
     background-color: $color-primary;
     box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.3);
   }
+}
 
-  /* Base button shine animation */
-  @keyframes button-shine {
-    0% {
-      opacity: 0;
-      transform: translateX(-50%) skewX(-15deg);
-    }
-    50% {
-      opacity: 0.3;
-    }
-    100% {
-      opacity: 0;
-      transform: translateX(200%) skewX(-15deg);
+.global__button--outline {
+  @include global__button;
+  @include flex-center;
+  gap: $spacing-closely-related;
+  color: black;
+  border: 0.125rem solid black;
+
+  background: linear-gradient(135deg, #ffffff, $text-off-white);
+  box-shadow: $shadow-sm-inset;
+  position: relative;
+  overflow: hidden;
+
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  // for icons
+
+  & svg,
+  & img {
+    width: $fsz-2xs;
+    height: $fsz-2xs;
+    object-fit: contain;
+  }
+  // for shine
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+    transform: skewX(-15deg);
+    pointer-events: none;
+    z-index: 5;
+    animation: button-shine 6s ease-in-out infinite;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: $shadow-lg;
+    background: linear-gradient(135deg, $text-off-white #ffffff);
+
+    & svg,
+    & img {
+      filter: drop-shadow($shadow-sm);
+      animation: icon-float-and-replace 0.5s ease-in-out forwards;
     }
   }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5), 0 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    transform: scale(0.95);
+    background-color: $color-primary;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.3);
+  }
 }
+
+/* Base button shine animation */
+@keyframes button-shine {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) skewX(-15deg);
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
 @keyframes icon-float-and-replace {
   0% {
     transform: translateY(0);

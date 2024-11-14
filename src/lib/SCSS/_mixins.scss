@@ -351,7 +351,14 @@ Parallax Mixins
   letter-spacing: $ls-normal;
   text-wrap: pretty;
 }
-
+@mixin global__links {
+  font-family: $ff-regular;
+  color: $text-tertiary; /* #1d1d1f */
+  line-height: $lh-md;
+  letter-spacing: $ls-loose;
+  text-wrap: pretty;
+  font-size: $fsz-xs; /* 18px */
+}
 @mixin global__card-heading {
   font-family: $ff-bold;
   color: $text-primary; /* #1d1d1f */
@@ -381,9 +388,7 @@ Parallax Mixins
   padding-inline: 1.25em;
   inline-size: fit-content;
   border-radius: $br-rounded;
-
   position: relative;
-
   will-change: transform, box-shadow, background-color;
 }
 
