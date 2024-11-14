@@ -5,8 +5,12 @@
 // _index.scss
 @forward "./_variables.scss";
 @forward "./_functions.scss";
-@forward "./_mixins.scss";
 @forward "./_global-classes.scss";
+@forward "./_typography.mixins.scss";
+@forward "./_animations.mixins.scss";
+@forward "./_style.mixins.scss";
+@forward "./_structure.mixins.scss";
+
 /* --------------------------------------------------
    Font Face Definitions
 -------------------------------------------------- */

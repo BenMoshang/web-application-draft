@@ -28,7 +28,8 @@
 </button>
 
 <style lang="scss">
-  @use "../../SCSS/mixins.scss" as *;
+  @use "./src/lib/SCSS/index.scss" as *;
+
   $transition-speed: 0.3s;
   $border-color: #cececf;
   $background-color: #f5f5f5;
@@ -39,7 +40,7 @@
   * {
     transition: $transition-speed ease-out;
   }
-  
+
   .card {
     display: flex;
     flex-direction: column;

@@ -1,0 +1,38 @@
+@use "./_variables.scss" as *;
+@use "./_functions.scss" as *;
+@mixin paragraph-ch-inline {
+  max-inline-size: 50ch;
+}
+/* ===============================================
+                    Gradient Text
+=============================================== */
+@mixin gradient-text-light {
+  background: linear-gradient(135deg, $color-standout-200, $color-standout-100);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin gradient-text {
+  color: transparent;
+  background: linear-gradient(135deg, $color-standout-500, $color-standout-600);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===============================================
+                    Card Mixins
+=============================================== */
+@mixin card-styling {
+  padding: $card-padding;
+  border-radius: $br-default;
+  background: $color-card-bg;
+  box-shadow: $shadow-md;
+  border: 0.0625rem solid $color-border;
+  overflow: hidden;
+}
+
+@mixin card-border {
+  border: 0.0625rem solid $color-border;
+}
