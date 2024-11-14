@@ -1,6 +1,7 @@
 <script>
   import FontTesting from "../lib/components/font-testing/FontTesting.svelte";
   import AboutSection from "../lib/components/section-components/AboutSection.svelte";
+  import ContactSection from "../lib/components/section-components/ContactSection.svelte";
   import FaqSection from "../lib/components/section-components/FaqSection.svelte";
   import HeroSection from "../lib/components/section-components/HeroSection.svelte";
   import MotivationSection from "../lib/components/section-components/MotivationSection.svelte";
@@ -18,6 +19,7 @@
   let showStack = $state(true);
   let showTestimonials = $state(true);
   let showFaq = $state(false);
+  let showContact = $state(true);
 </script>
 
 <svelte:head>
@@ -59,6 +61,10 @@
 
 {#if showFaq}
   <FaqSection />
+{/if}
+
+{#if showContact}
+  <ContactSection />
 {/if}
 
 <!-- Render sections conditionally using $state visibility flags -->

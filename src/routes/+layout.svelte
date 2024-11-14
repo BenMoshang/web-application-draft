@@ -1,5 +1,4 @@
 <script>
-  import "../app.css";
   import Footer from "../lib/layout/Footer.svelte";
   import Header from "../lib/layout/Header.svelte";
 
@@ -7,7 +6,7 @@
   let { children: childContent } = $props();
 </script>
 
-<!-- <Header /> -->
+<Header />
 <main class="layout__main">
   {@render childContent()}
 </main>
@@ -20,7 +19,7 @@
     display: flex;
     flex-direction: column;
     inline-size: 100%;
-    min-block-size: 100vh;
+    min-block-size: calc(100vh - $header-height);
     max-inline-size: $content-max-width;
     box-sizing: border-box;
     margin: 0 auto;

@@ -78,7 +78,6 @@
   *::before,
   *::after {
     box-sizing: border-box;
-    outline: 1px solid red;
   }
   $header-padding-top: clamp(60px, 0.323rem + 11.54vw, 140px);
 

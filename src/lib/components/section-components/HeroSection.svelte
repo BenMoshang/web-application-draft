@@ -3,8 +3,8 @@
   let description = $state(`Web Development`.toUpperCase());
   let subdescription = $state(`& Design`.toUpperCase());
 
-  let label = $state("ESTABLISH A wEB DESIGN THAT".toUpperCase());
-  let title = $state("CAPTIVATES <br> & CONVERTS".toUpperCase());
+  let label = $state("PROFESSIONAL WEB APPLICATIONS THAT".toUpperCase());
+  let title = $state("CAPTIVATE <br> & CONVERT".toUpperCase());
   let buttonText = $state("Transform my brand".toUpperCase());
 </script>
 
@@ -74,6 +74,7 @@
     align-items: unset;
 
     &__header {
+      margin-block: auto;
       @include flex-column-center;
 
       & > * {
@@ -92,6 +93,8 @@
     }
 
     &__details {
+      margin-block: auto;
+      height: fit-content;
       @include flex-center-between;
       display: none;
 

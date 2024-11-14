@@ -1,9 +1,11 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+//!TODO: UNCOMMENT BODY
 
 @layer reset, base, components, utilities, sections;
 
+body {
+  /* font-family: system-ui;
+  color: #1d1d1f; */
+}
 /* --------------------------------------------------
    Global RESET
 -------------------------------------------------- */
@@ -14,6 +16,7 @@
 *::after {
   box-sizing: border-box;
   hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 /* kevin powell image reset */
@@ -44,11 +47,6 @@ body {
   padding: 0;
   border: 0;
   box-sizing: border-box;
-}
-
-body {
-  font-family: system-ui;
-  color: #1d1d1f;
 }
 
 /* Typography */

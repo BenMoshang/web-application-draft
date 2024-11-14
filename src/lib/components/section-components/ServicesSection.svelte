@@ -5,35 +5,35 @@
 
   const servicesData = [
     {
-      counter: "01",
+      counter: " 01 ",
       title: "Business",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
       label: "",
     },
     {
-      counter: "02",
+      counter: " 02 ",
       title: "Technology",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
       label: "",
     },
     {
-      counter: "03",
+      counter: " 03 ",
       title: "Marketing",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
       label: "",
     },
     {
-      counter: "04",
+      counter: " 04 ",
       title: "Design",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
       label: "PRO",
     },
     {
-      counter: "05",
+      counter: " 05 ",
       title: "Consulting",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",

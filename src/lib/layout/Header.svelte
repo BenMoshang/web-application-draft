@@ -34,7 +34,7 @@ Header
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 3.25rem;
+    height: $header-height;
     backdrop-filter: blur(12px);
 
     border-bottom: 0.0625rem solid $color-border;

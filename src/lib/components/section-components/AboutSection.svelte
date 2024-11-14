@@ -2,6 +2,7 @@
   let title = "More <br> ABOUT US".toUpperCase();
   let body =
     "We are committed to delivering the best services to our clients, ensuring excellence in every project we undertake.";
+  let buttonText = $state("Download Resume".toUpperCase());
 </script>
 
 <section class="about">
@@ -12,6 +13,18 @@
   <p class="about__body global__body--lg">
     {@html body}
   </p>
+  <button
+    class="hero-section__button global__button--outline"
+    aria-label="Transform my brand - Get Started"
+    tabindex="0"
+  >
+    <span class="button-text">{buttonText}</span>
+    <img
+      src="../../static/assets/icons/resume-icon.svg"
+      alt="download our resume"
+      class="icon"
+    />
+  </button>
 </section>
 
 <style lang="scss">

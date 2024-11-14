@@ -55,7 +55,7 @@
       {/if}
     </div>
 
-    <p class="card__body global__card-body">
+    <p class="card__body global__card-body--sm">
       {description}
     </p>
   </div>
