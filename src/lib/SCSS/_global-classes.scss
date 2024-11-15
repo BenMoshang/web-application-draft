@@ -203,11 +203,30 @@ $color-card-body: color-with-opacity(800, 0.8);
     z-index: 5;
     animation: button-shine 6s ease-in-out infinite;
   }
-
+  &::after {
+    content: "";
+    @include absolute-center;
+    width: 0%;
+    height: 0%;
+    filter: invert(1);
+    mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 3;
+  }
   &:hover {
+    border: 0.125rem solid black;
+
     transform: scale(1.05);
     box-shadow: $shadow-md;
-    background: linear-gradient(135deg, $color-primary, $color-secondary);
+
+    &::after {
+      width: 100%;
+      height: 100%;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: scale(1);
+      border-radius: inherit;
+      background-color: #000;
+    }
 
     & svg,
     & img {
@@ -243,6 +262,19 @@ $color-card-body: color-with-opacity(800, 0.8);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  // for hover animation
+  &::before {
+    content: "";
+    @include absolute-center;
+    width: 0%;
+    height: 0%;
+    filter: invert(1);
+    mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 3;
+  }
+
   // for icons
 
   & svg,
@@ -251,32 +283,21 @@ $color-card-body: color-with-opacity(800, 0.8);
     height: $fsz-2xs;
     object-fit: contain;
   }
-  // for shine
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 30%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.75),
-      rgba(255, 255, 255, 0.5),
-      transparent
-    );
-    transform: skewX(-15deg);
-    pointer-events: none;
-    z-index: 5;
-    animation: button-shine 6s ease-in-out infinite;
-  }
 
   &:hover {
     transform: scale(1.05);
     box-shadow: $shadow-lg;
     background: linear-gradient(135deg, $text-off-white #ffffff);
+    border: 0.125rem solid white;
+
+    &::before {
+      width: 100%;
+      height: 100%;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: scale(1);
+      border-radius: inherit;
+      background-color: #000;
+    }
 
     & svg,
     & img {
