@@ -10,7 +10,7 @@
 <main class="layout__main">
   {@render childContent()}
 </main>
-<Footer></Footer>
+<Footer />
 
 <style lang="scss">
   @use "./src/lib/SCSS/index.scss" as *;

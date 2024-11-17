@@ -9,13 +9,17 @@
   import ServicesSection from "../lib/components/section-components/ServicesSection.svelte";
   import StackSection from "../lib/components/section-components/StackSection.svelte";
   import TestimonialSection from "../lib/components/section-components/TestimonialSection.svelte";
-  // Define visibility of sections with $state for reactivity
+  import UITransformSection from "../lib/components/section-components/UITransformSection.svelte";
+  // Font testing
   let showFontTesting = $state(true);
+  // Sections
   let showHero = $state(true);
+  let showUITransform = $state(true);
+  let showServices = $state(true);
+  let showProjects = $state(true);
+
   let showAbout = $state(true);
   let showMotivation = $state(true);
-  let showProjects = $state(true);
-  let showServices = $state(true);
   let showStack = $state(true);
   let showTestimonials = $state(true);
   let showFaq = $state(false);
@@ -34,7 +38,9 @@
 {#if showHero}
   <HeroSection />
 {/if}
-
+{#if showUITransform}
+  <UITransformSection />
+{/if}
 {#if showAbout}
   <AboutSection />
 {/if}

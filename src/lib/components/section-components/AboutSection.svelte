@@ -14,13 +14,13 @@
     {@html body}
   </p>
   <button
-    class="hero-section__button global__button--outline"
+    class="about__button global__button--outline"
     aria-label="Transform my brand - Get Started"
     tabindex="0"
   >
     <span class="button-text">{buttonText}</span>
     <img
-      src="../../static/assets/icons/resume-icon.svg"
+      src="/assets/icons/resume-icon.svg"
       alt="download our resume"
       class="icon"
     />

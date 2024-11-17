@@ -141,7 +141,7 @@ $lh-xs: map-get($line-heights, xs);
 $letter-spacing: (
   tight: -0.03em,
   normal: normal,
-  loose: 0.02em,
+  loose: 0.03em,
 );
 /* Letter Spacing */
 $ls-tight: map-get($letter-spacing, tight);
@@ -154,6 +154,7 @@ $ls-loose: map-get($letter-spacing, loose);
 
 $ff-bold: "Instrument Sans", sans-serif;
 $ff-regular: "Inter Tight", sans-serif;
+$ff-old: "Times New Roman", serif;
 
 /* ===============================================
                     Font Weights

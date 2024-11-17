@@ -25,7 +25,7 @@
     <footer class="content__footer">
       <h4 class="header__title global__card-heading--sm">{title}</h4>
 
-      <p class=" global__card-subheading">
+      <p class="global__card-subheading">
         {description}
       </p>
     </footer>
@@ -52,7 +52,9 @@
     padding: unset;
     height: 100%;
     width: 100%;
-
+    &__title {
+      color: $text-primary;
+    }
     &__image {
       width: 100%;
       height: 100%;
