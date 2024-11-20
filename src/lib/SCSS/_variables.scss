@@ -52,8 +52,17 @@ $static-spacing: (
   /* 40px */ 4xl: 2.5rem
 );
 
-$spacing-xs: map-get($spacing, xs);
+$spacing-2xs: map-get($spacing, 2xs); /* 8px */
+$spacing-xs: map-get($spacing, xs); /* 12px */
+$spacing-sm: map-get($spacing, sm); /* 16px */
 $spacing-md: map-get($spacing, md); /* 18px */
+/* ===============================================
+                   General Component Padding
+=============================================== */
+$component-padding-2xs: map-get($static-spacing, 2xs); /* 18px */ /* 8px */
+$component-padding-xs: map-get($static-spacing, xs); /* 18px */ /* 12px */
+$component-padding-sm: map-get($static-spacing, sm); /* 16px */
+$component-padding-md: map-get($static-spacing, md); /* 18px */
 
 /* ===============================================
                     Section Spacing

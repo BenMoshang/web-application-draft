@@ -1,12 +1,14 @@
 <script>
-  let isHovered = false;
+  let isHovered = true;
 </script>
 
+<!-- false mouse out 
+ false blur -->
 <main
   on:focus={() => (isHovered = true)}
   on:mouseover={() => (isHovered = true)}
-  on:mouseout={() => (isHovered = false)}
-  on:blur={() => (isHovered = false)}
+  on:mouseout={() => (isHovered = true)}
+  on:blur={() => (isHovered = true)}
   class:is-hovered={isHovered}
   class="main-container"
 >
@@ -16,7 +18,7 @@
       <div class="min"></div>
       <div class="max"></div>
     </section>
-    <h2 class="page-name">HOVER ME</h2>
+    <h2 class:is-hovered={isHovered} class="page-name">HOVER ME</h2>
   </header>
   <aside class="sidebar">
     <h2>User Menu</h2>
@@ -26,13 +28,11 @@
   </aside>
   <section class="container">
     <header class="header" class:is-hovered={isHovered}>
-      <h2 class="header__title" class:global__heading--sm={isHovered}>
-        Your Website
-      </h2>
-      <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
+      <h2 class="header__title">Your Website</h2>
+      <nav class="header__nav">
+        <a class="header__nav-link" href="HeroSection.svelte">Home</a>
+        <a class="header__nav-link" href="ServicesSection.svelte">Services</a>
+        <a class="header__nav-link" href="ContactSection.svelte">Contact</a>
       </nav>
     </header>
 
@@ -121,6 +121,7 @@
 </main>
 
 <style lang="scss" scoped>
+  @use "./src/lib/SCSS/index.scss" as *;
   *,
   *::after,
   *::before {
@@ -137,18 +138,21 @@
   /*===========================================
     NEW UI VARIABLES 
 =========================================== */
-  $hovered-header-background: blue;
+  $header-first-icon: url("../../../static/assets/icons/page/home-icon.svg");
+  $header-second-icon: url("../../../static/assets/icons/page/services-icon.svg");
+  $header-third-icon: url("../../../static/assets/icons/page/contact-icon.svg");
+  $hovered-header-background: color-with-opacity(800, 0.03);
   /*===========================================
     Windows Bar
 =========================================== */
   .winhead {
     grid-area: winhead;
     width: 100%;
-    height: 2.1875rem;
+    height: 2.25rem;
     background: rgb(244, 244, 244);
     border-bottom: 0.5px solid rgba(162, 163, 164, 0.4);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
     display: flex;
     align-items: center;
     position: relative;
@@ -157,7 +161,7 @@
       height: 0.75rem;
       margin-left: $spacing-closely-related;
       background: rgb(199, 199, 199);
-      border: 0.5px solid rgb(169, 169, 169);
+      border: 0.025rem solid rgb(169, 169, 169);
       border-radius: 50%;
       &:hover {
         filter: brightness(0.8);
@@ -183,6 +187,7 @@
       }
     }
   }
+  // tab name
   .page-name {
     align-self: center;
     position: absolute;
@@ -190,10 +195,17 @@
     margin-inline: auto;
     width: fit-content;
     font-family: $ff-old;
+
     &.is-hovered {
-      color: $hovered-header-background;
+      @include global__heading;
+
+      font-size: $fsz-2xs;
     }
   }
+
+  /*===========================================
+    Windows Bar
+=========================================== */
   .main-container {
     @include card-border;
     border-radius: $br-default;
@@ -207,7 +219,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 1fr auto;
 
-    height: calc(80vh - $header-height);
+    height: calc(100% - $header-height);
     width: 100%;
     position: relative;
 
@@ -244,6 +256,7 @@
 
   .container {
     grid-area: container;
+
     width: 100%;
     height: 100%;
     font-family: $ff-old;
@@ -255,30 +268,62 @@
   .header {
     @include flex(row, space-between);
     grid-area: header;
+    overflow: hidden;
     width: 100%;
     height: $header-height;
-    padding: $spacing-md;
-    background-color: $header-background;
-    &.is-hovered {
-      background-color: $hovered-header-background;
+    padding-block: $component-padding-2xs;
+    padding-inline: $component-padding-md;
+    background: $header-background;
+    &__nav {
+      @include flex;
+      gap: $spacing-less-related;
     }
-    /* --------------------------------------------------
-    header title styles
--------------------------------------------------- */
-    &__title {
-      /* !new ui style for heading h2 */
+    // new ui styling
+    &.is-hovered {
+      align-self: center;
+      width: 90%;
 
-      &.global__heading--sm {
-        font-size: $fsz-sm;
+      margin-top: $spacing-less-related;
+
+      background: $hovered-header-background;
+      backdrop-filter: blur(0.75rem);
+      border-radius: $br-rounded;
+      border: 0.0625rem solid $color-border;
+      box-shadow: $shadow-md;
+
+      & .header__title {
+        @include global__heading;
+        font-size: $fsz-2xs;
+      }
+
+      & .header__nav {
+        &-link {
+          width: 0.75rem;
+          height: 0.75rem;
+          text-decoration: none;
+          color: transparent;
+          // background icon
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+
+          &:nth-child(1) {
+            background-image: $header-first-icon;
+          }
+
+          &:nth-child(2) {
+            background-image: $header-second-icon;
+          }
+          &:nth-child(3) {
+            background-image: $header-third-icon;
+          }
+        }
       }
     }
   }
-
-  .nav {
-    @include flex;
-    gap: $spacing-closely-related;
-  }
-
+  /*===========================================
+    card container styles
+=========================================== */
   .card-container {
     flex: 1;
     @include flex(column, flex-start, stretch);
