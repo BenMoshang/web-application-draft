@@ -79,7 +79,7 @@
 {/if}
 
 <style global lang="scss">
-  @use "./src/lib/SCSS/index.scss" as *;
+  @import "./src/lib/SCSS/index.scss";
 
   .layout__main {
     display: flex;

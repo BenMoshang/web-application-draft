@@ -9,7 +9,7 @@ export default defineConfig({
       allow: [".."],
     },
     // host: "10.0.0.85",
-    // port: 5173,
+    port: 3000,
   },
   build: {
     // To improve performance by reducing the size of the built files
