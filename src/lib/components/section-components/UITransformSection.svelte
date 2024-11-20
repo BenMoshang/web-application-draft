@@ -1,5 +1,6 @@
 <script>
-  let isHovered = true;
+  let isHovered = false;
+  let linkText = "Continue Reading".toUpperCase();
 </script>
 
 <!-- false mouse out 
@@ -7,8 +8,8 @@
 <main
   on:focus={() => (isHovered = true)}
   on:mouseover={() => (isHovered = true)}
-  on:mouseout={() => (isHovered = true)}
-  on:blur={() => (isHovered = true)}
+  on:mouseout={() => (isHovered = false)}
+  on:blur={() => (isHovered = false)}
   class:is-hovered={isHovered}
   class="main-container"
 >
@@ -20,14 +21,14 @@
     </section>
     <h2 class:is-hovered={isHovered} class="page-name">HOVER ME</h2>
   </header>
-  <aside class="sidebar">
+  <aside class:is-hovered={isHovered} class="sidebar">
     <h2>User Menu</h2>
     <button>Dashboard</button>
     <button>Settings</button>
     <button>Logout</button>
   </aside>
-  <section class="container">
-    <header class="header" class:is-hovered={isHovered}>
+  <section class:is-hovered={isHovered} class="content-container">
+    <header class="content-container__header" class:is-hovered={isHovered}>
       <h2 class="header__title">Your Website</h2>
       <nav class="header__nav">
         <a class="header__nav-link" href="HeroSection.svelte">Home</a>
@@ -36,8 +37,9 @@
       </nav>
     </header>
 
-    <section class="card-container">
-      <article class="card">
+    <section class:is-hovered={isHovered} class="card-container">
+      <h1>The One Web Design Secret That Generates Revenue!</h1>
+      <article class="card-container__card">
         <h2>Your Presence is Defined by Your Website</h2>
         <p>
           With the growth of the internet, "1.09 billion websites are on the
@@ -48,6 +50,33 @@
           <em><strong>HIGHLY</strong> optimized</em> for search engines to reach
           your target audience.
         </p>
+
+        <a
+          href="https://www.forbes.com/advisor/business/software/website-statistics/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Forbes Website Statistics"
+        >
+          {linkText}
+          <svg
+            stroke-width="2"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            fill="none"
+            class="h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20px"
+          >
+            <path
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+            ></path>
+          </svg>
+        </a>
+      </article>
+      <article class="card-container__card">
+        <h2>Your Presence is Defined by Your Website</h2>
         <p>
           A well-designed and optimized website serves as the digital storefront
           of your brand. Every click, scroll, and interaction reflects how your
@@ -75,11 +104,25 @@
           rel="noopener noreferrer"
           aria-label="Forbes Website Statistics"
         >
-          Explore more website statistics on Forbes.
+          {linkText}
+          <svg
+            stroke-width="2"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            fill="none"
+            class="h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20px"
+          >
+            <path
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+            ></path>
+          </svg>
         </a>
       </article>
-
-      <article class="card">
+      <article class="card-container__card">
         <h2>Accessibility is Key</h2>
         <p>
           Did you know that only <strong
@@ -109,8 +152,22 @@
           rel="noopener noreferrer"
           aria-label="AudioEye Accessibility Statistics"
         >
-          Learn more about the importance of accessibility with AudioEye's
-          latest statistics.
+          {linkText}
+          <svg
+            stroke-width="2"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            fill="none"
+            class="h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20px"
+          >
+            <path
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+            ></path>
+          </svg>
         </a>
       </article>
     </section>
@@ -213,7 +270,6 @@
     display: grid;
     grid-template-areas:
       "winhead"
-      "header"
       "container"
       "footer";
     grid-template-columns: 1fr;
@@ -235,10 +291,9 @@
     @media (min-width: $desktop-breakpoint) {
       grid-template-areas:
         "winhead winhead"
-        "sidebar header"
         "sidebar container"
         "sidebar footer";
-      grid-template-columns: 1fr;
+      grid-template-columns: auto 1fr;
       grid-template-rows: auto auto 1fr auto;
     }
   }
@@ -248,24 +303,46 @@
     display: none;
 
     @media (min-width: $desktop-breakpoint) {
+      // shows on breakpoint
       @include section-padding-inline;
+
       @include flex(column, flex-start, stretch);
       gap: $spacing-closely-related;
+      inline-size: 100%;
+
+      & h2 {
+        text-wrap: nowrap;
+      }
+
+      // new ui styling
+      &.is-hovered {
+        padding: unset; // TODO: MAKE THIS THE SIZE OF THE ICONS THAT YOU WANT TO SHOW SO ON HOVER IT EXPANDS ETC
+        overflow-x: hidden;
+        inline-size: 0%;
+        max-inline-size: fit-content;
+
+        &:hover {
+          @include section-padding-inline;
+          inline-size: 100%;
+        }
+      }
     }
   }
 
-  .container {
+  .content-container {
+    @include flex(column, flex-start, stretch);
     grid-area: container;
-
     width: 100%;
     height: 100%;
     font-family: $ff-old;
-    @include flex(column, flex-start, stretch);
+    &.is-hovered {
+      @include flex-column-center;
+    }
   }
   /*===========================================
     header styles
 =========================================== */
-  .header {
+  .content-container__header {
     @include flex(row, space-between);
     grid-area: header;
     overflow: hidden;
@@ -276,7 +353,7 @@
     background: $header-background;
     &__nav {
       @include flex;
-      gap: $spacing-less-related;
+      gap: $spacing-closely-related;
     }
     // new ui styling
     &.is-hovered {
@@ -297,9 +374,12 @@
       }
 
       & .header__nav {
+        gap: $spacing-less-related;
         &-link {
-          width: 0.75rem;
-          height: 0.75rem;
+          $icon-size: 0.625rem;
+          inline-size: $icon-size;
+          block-size: $icon-size;
+          font-size: $icon-size;
           text-decoration: none;
           color: transparent;
           // background icon
@@ -332,28 +412,100 @@
     width: 100%;
     height: 100%;
 
-    h1 {
-      @include section-padding-inline;
-      font-size: $fsz-lg;
-    }
-  }
+    &__card {
+      padding: $card-padding;
+      font-family: $ff-old;
 
-  .card {
-    padding: $card-padding;
+      h2 {
+        margin-bottom: $spacing-semi-related;
+      }
 
-    h2 {
-      margin-bottom: $spacing-semi-related;
-    }
+      p {
+        margin-bottom: $spacing-less-related;
+      }
 
-    p {
-      margin-bottom: $spacing-less-related;
-    }
-
-    a {
-      &:hover {
-        text-decoration: underline;
+      a {
+        & svg {
+          display: none;
+        }
       }
     }
+    // new ui styles
+    &.is-hovered {
+      padding-top: 2rem;
+
+      h1,
+      h2 {
+        @include global__heading;
+        max-inline-size: $title-max-width; //ch width
+      }
+      h1 {
+        font-size: $fsz-xl;
+        text-align: center;
+        font-weight: 800;
+        color: black;
+      }
+      h2 {
+        line-height: 1.2;
+        font-size: $fsz-mdlg;
+      }
+
+      p {
+        @include global__body;
+        max-inline-size: $paragraph-max-width; //ch width
+
+        font-family: $ff-regular;
+        font-weight: $fw-medium;
+        font-size: $fsz-sm;
+        color: $text-secondary;
+      }
+
+      a {
+        //this is for icon sizing too
+        $link-font-size: $fsz-3xs;
+        $link-color: $color-primary;
+        @include global__links;
+        font-size: $link-font-size;
+        text-underline-offset: 0.125rem; //lowers underline
+        margin-right: $spacing-closely-related;
+        &:hover {
+          color: $link-color;
+          brightness: 0.8;
+          & svg {
+            @include animation-float-and-replace--rotated-icon;
+
+            & path {
+              fill: $link-color;
+            }
+          }
+        }
+
+        & svg {
+          inline-size: $link-font-size;
+          height: $link-font-size;
+          transform: rotate(-45deg);
+          display: inline;
+        }
+      }
+
+      & .card-container__card {
+        max-inline-size: fit-content;
+        // select second card
+        &:nth-child(3) {
+          @include card-styling;
+
+          p {
+            color: $text-primary;
+            // select third and fourth paragraphs
+            &:nth-child(3),
+            &:nth-child(4) {
+              font-size: $fsz-xs;
+            }
+          }
+        }
+      }
+    }
+    // select all cards
   }
 
   .footer {

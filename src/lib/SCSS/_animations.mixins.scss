@@ -10,6 +10,49 @@
 @mixin animation-float-and-replace {
   animation: icon-float-and-replace 0.5s ease-in-out forwards;
 }
+
+@mixin animation-float-and-replace--rotated-icon {
+  animation: icon-float-and-replace-rotated-icon 0.5s ease-in-out forwards;
+}
+@keyframes icon-float-and-replace {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  45% {
+    transform: translateY(-0.5rem);
+    opacity: 0;
+  }
+  55% {
+    transform: translateY(0.5rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes icon-float-and-replace-rotated-icon {
+  0% {
+    transform: rotate(-45deg) translateX(0);
+    opacity: 1;
+  }
+  45% {
+    transform: rotate(-45deg) translateX(0.5rem);
+
+    opacity: 0;
+  }
+  55% {
+    transform: rotate(-45deg) translateX(-0.5rem);
+
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(-45deg) translateX(0);
+    opacity: 1;
+  }
+}
+
 @mixin shine-animation {
   position: relative;
 
@@ -215,4 +258,18 @@ Parallax Mixins
 // Example 2: Parallax Section with Content Overlay
 .parallax-content {
   @include parallax-section("path/to/your/image.jpg", 700px);
+}
+/* Base button shine animation */
+@keyframes button-shine {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) skewX(-15deg);
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(200%) skewX(-15deg);
+  }
 }

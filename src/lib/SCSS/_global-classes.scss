@@ -318,36 +318,3 @@ $color-card-body: color-with-opacity(800, 0.8);
   }
 }
 
-/* Base button shine animation */
-@keyframes button-shine {
-  0% {
-    opacity: 0;
-    transform: translateX(-50%) skewX(-15deg);
-  }
-  50% {
-    opacity: 0.3;
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(200%) skewX(-15deg);
-  }
-}
-
-@keyframes icon-float-and-replace {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  45% {
-    transform: translateY(-0.5rem);
-    opacity: 0;
-  }
-  55% {
-    transform: translateY(0.5rem);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
