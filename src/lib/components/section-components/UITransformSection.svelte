@@ -8,8 +8,8 @@
 <main
   on:focus={() => (isHovered = true)}
   on:mouseover={() => (isHovered = true)}
-  on:mouseout={() => (isHovered = false)}
-  on:blur={() => (isHovered = false)}
+  on:mouseout={() => (isHovered = true)}
+  on:blur={() => (isHovered = true)}
   class:is-hovered={isHovered}
   class="main-container"
 >
@@ -235,6 +235,7 @@
     padding: 0;
     will-change: all;
     outline: 1px dashed red;
+    transition: all 0.5s ease-in-out;
   }
   /*===========================================
     Old UI VARIABLES 
