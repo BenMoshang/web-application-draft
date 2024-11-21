@@ -170,6 +170,7 @@ $color-card-body: color-with-opacity(800, 0.8);
   box-shadow: $shadow-sm-inset;
   position: relative;
   overflow: hidden;
+  will-change: transform, box-shadow, background-color;
 
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
@@ -253,6 +254,7 @@ $color-card-body: color-with-opacity(800, 0.8);
   gap: $spacing-closely-related;
   color: black;
   border: 0.125rem solid black;
+  will-change: transform, box-shadow, background-color;
 
   background: linear-gradient(135deg, #ffffff, $text-off-white);
   box-shadow: $shadow-sm-inset;
@@ -317,4 +319,3 @@ $color-card-body: color-with-opacity(800, 0.8);
     box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.3);
   }
 }
-

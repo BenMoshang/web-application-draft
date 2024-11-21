@@ -73,7 +73,6 @@ $component-padding-md: map-get($static-spacing, md); /* 18px */
 $section-heading-content-gap: map-get($spacing, 3xl);
 $section-inner-gap: map-get($static-spacing, xl); /* 24px */
 $section-inner-gap-lg: map-get($spacing, 2xl); /* 40-60px */
-
 $section-padding-inline: clamp(20px, 0.393rem + 2.89vw, 40px);
 /* ===============================================
                     Component Spacing

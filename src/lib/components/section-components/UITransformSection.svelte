@@ -31,144 +31,192 @@
     <header class="content-container__header" class:is-hovered={isHovered}>
       <h2 class="header__title">Your Website</h2>
       <nav class="header__nav">
-        <a class="header__nav-link" href="HeroSection.svelte">Home</a>
-        <a class="header__nav-link" href="ServicesSection.svelte">Services</a>
-        <a class="header__nav-link" href="ContactSection.svelte">Contact</a>
+        <a class="header__nav-link" href="#">Home</a>
+        <a class="header__nav-link" href="#">Services</a>
+        <a class="header__nav-link" href="#">Contact</a>
       </nav>
     </header>
 
     <section class:is-hovered={isHovered} class="card-container">
       <h1>The One Web Design Secret That Generates Revenue!</h1>
       <article class="card-container__card">
-        <h2>Your Presence is Defined by Your Website</h2>
-        <p>
-          With the growth of the internet, "1.09 billion websites are on the
-          internet." It is <strong>crucial</strong> to ensure that your digital
-          presence is not a needle in a haystack. Not only does it need to be
-          <em>visually appealing and viewable on all devices...</em>
-          but it is also essential to be
-          <em><strong>HIGHLY</strong> optimized</em> for search engines to reach
-          your target audience.
-        </p>
+        <div>
+          <h2>Your Presence is Defined by Your Website</h2>
+          <p>
+            With the growth of the internet, "1.09 billion websites are on the
+            internet." It is <strong>crucial</strong> to ensure that your
+            digital presence is not a needle in a haystack. Not only does it
+            need to be
+            <em>visually appealing and viewable on all devices...</em>
+            but it is also essential to be
+            <em><strong>HIGHLY</strong> optimized</em> for search engines to reach
+            your target audience.
+          </p>
+          <a
+            href="https://www.forbes.com/advisor/business/software/website-statistics/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Forbes Website Statistics"
+          >
+            {linkText}
+            <svg
+              stroke-width="2"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              fill="none"
+              class="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20px"
+            >
+              <path
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+                stroke-linejoin="round"
+                stroke-linecap="round"
+              ></path>
+            </svg>
+          </a>
+        </div>
+        <figure>
+          <img
+            src="../../../static/assets/UITransformSection/UI-image.webp"
+            alt="A Representative of how your website is lossed in the internet"
+            class="card__image"
+            loading="lazy"
+            role="presentation"
+            width="100%"
+            height="auto"
+          />
+        </figure>
+      </article>
+      <article class="card-container__card">
+        <figure>
+          <img
+            src="../../../static/assets/UITransformSection/UI-image.webp"
+            alt="A Representative of how your website is lossed in the internet"
+            class="card__image"
+            loading="lazy"
+            role="presentation"
+            width="100%"
+            height="100%"
+          />
+        </figure>
+        <div>
+          <h2>A website is a Business's Digital Storefront</h2>
+          <p>
+            A <em>well-designed and optimized website</em> serves
+            <strong> as the digital storefront of your brand. </strong>
 
-        <a
-          href="https://www.forbes.com/advisor/business/software/website-statistics/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Forbes Website Statistics"
-        >
-          {linkText}
-          <svg
-            stroke-width="2"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            fill="none"
-            class="h-6 w-6"
-            xmlns="http://www.w3.org/2000/svg"
-            width="20px"
+            Every click, scroll, and interaction reflects how your audience
+            perceives your business. If your website is
+            <em>slow, unresponsive, or outdated</em>, it can tarnish your
+            reputation and drive potential customers away.
+          </p>
+          <!-- TODO: PROPERLY USE STRONG AND EM TAGS IN THIS PARAGRAPH
+           TODO: USE THE @INJECTABLE FOR BETTER MANAGEMENT OF THE TEXT -->
+          <p>
+            <em>Remember the reach you have is endless... </em>
+            <strong>
+              However, to stand out among the billions of websites, it's vital
+              to implement robust SEO strategies, maintain mobile-friendly
+              design, and prioritize user experience (UX)</strong
+            >. These factors not only boost your visibility on search engines
+            like Google but also build trust with your audience, encouraging
+            repeat visits and conversions.
+          </p>
+          <!-- <p>
+            Remember, your website is often the first impression a customer has
+            of your business. Make it count by investing in its design, speed,
+            content quality, and functionality. A strong digital presence can
+            turn visitors into loyal customers and set you apart in a crowded
+            online marketplace.
+          </p> -->
+          <a
+            href="https://www.forbes.com/advisor/business/software/website-statistics/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Forbes Website Statistics"
           >
-            <path
-              d="M14 5l7 7m0 0l-7 7m7-7H3"
-              stroke-linejoin="round"
-              stroke-linecap="round"
-            ></path>
-          </svg>
-        </a>
+            {linkText}
+            <svg
+              stroke-width="2"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              fill="none"
+              class="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20px"
+            >
+              <path
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+                stroke-linejoin="round"
+                stroke-linecap="round"
+              ></path>
+            </svg>
+          </a>
+        </div>
       </article>
       <article class="card-container__card">
-        <h2>Your Presence is Defined by Your Website</h2>
-        <p>
-          A well-designed and optimized website serves as the digital storefront
-          of your brand. Every click, scroll, and interaction reflects how your
-          audience perceives your business. If your website is slow,
-          unresponsive, or outdated, it can tarnish your reputation and drive
-          potential customers away.
-        </p>
-        <p>
-          To stand out among the billions of websites, it's vital to implement
-          robust SEO strategies, maintain mobile-friendly design, and prioritize
-          user experience (UX). These factors not only boost your visibility on
-          search engines like Google but also build trust with your audience,
-          encouraging repeat visits and conversions.
-        </p>
-        <p>
-          Remember, your website is often the first impression a customer has of
-          your business. Make it count by investing in its design, speed,
-          content quality, and functionality. A strong digital presence can turn
-          visitors into loyal customers and set you apart in a crowded online
-          marketplace.
-        </p>
-        <a
-          href="https://www.forbes.com/advisor/business/software/website-statistics/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Forbes Website Statistics"
-        >
-          {linkText}
-          <svg
-            stroke-width="2"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            fill="none"
-            class="h-6 w-6"
-            xmlns="http://www.w3.org/2000/svg"
-            width="20px"
+        <div>
+          <h2>The secret to Maximizing Your Reach</h2>
+          <p>
+            Did you know that only <strong
+              >"3% of websites are accessible."</strong
+            >
+            Being left out of the 97% is detrimental for your business. This is why
+            you must prioritize <strong>web accessibility</strong> as a crucial part
+            of your digital strategy. Accessibility ensures that all users, including
+            those with disabilities, can interact with your website seamlessly. It
+            not only fosters inclusivity but also improves your site's usability
+            for everyone.
+          </p>
+          <p>
+            Making your website accessible isn't just about <em>compliance;</em>
+            it's a business opportunity. Studies show that businesses with accessible
+            websites gain access to a larger audience, enhance user experience, and
+            even improve SEO performance. By addressing accessibility, you're not
+            just accommodating a need; you're unlocking potential.
+          </p>
+          <!-- <p>
+            Additionally, accessibility compliance can help your business avoid
+            costly lawsuits. With increasing legal regulations such as the
+            Americans with Disabilities Act (ADA), ensuring your website meets
+            accessibility standards is more important than ever.
+          </p> -->
+          <a
+            href="https://www.audioeye.com/post/accessibility-statistics/#:~:text=What%20we%20found%20is%20that,but%20for%20businesses%20as%20well."
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="AudioEye Accessibility Statistics"
           >
-            <path
-              d="M14 5l7 7m0 0l-7 7m7-7H3"
-              stroke-linejoin="round"
-              stroke-linecap="round"
-            ></path>
-          </svg>
-        </a>
-      </article>
-      <article class="card-container__card">
-        <h2>Accessibility is Key</h2>
-        <p>
-          Did you know that only <strong
-            >"3% of websites are accessible."</strong
-          > Being left out of the 97% is detrimental for your business. This is why
-          you must prioritize web accessibility as a crucial part of your digital
-          strategy. Accessibility ensures that all users, including those with disabilities,
-          can interact with your website seamlessly. It not only fosters inclusivity
-          but also improves your site's usability for everyone.
-        </p>
-        <p>
-          Making your website accessible isn't just about compliance; it's a
-          business opportunity. Studies show that businesses with accessible
-          websites gain access to a larger audience, enhance user experience,
-          and even improve SEO performance. By addressing accessibility, you're
-          not just accommodating a need; you're unlocking potential.
-        </p>
-        <p>
-          Additionally, accessibility compliance can help your business avoid
-          costly lawsuits. With increasing legal regulations such as the
-          Americans with Disabilities Act (ADA), ensuring your website meets
-          accessibility standards is more important than ever.
-        </p>
-        <a
-          href="https://www.audioeye.com/post/accessibility-statistics/#:~:text=What%20we%20found%20is%20that,but%20for%20businesses%20as%20well."
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="AudioEye Accessibility Statistics"
-        >
-          {linkText}
-          <svg
-            stroke-width="2"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            fill="none"
-            class="h-6 w-6"
-            xmlns="http://www.w3.org/2000/svg"
-            width="20px"
-          >
-            <path
-              d="M14 5l7 7m0 0l-7 7m7-7H3"
-              stroke-linejoin="round"
-              stroke-linecap="round"
-            ></path>
-          </svg>
-        </a>
+            {linkText}
+            <svg
+              stroke-width="2"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              fill="none"
+              class="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20px"
+            >
+              <path
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+                stroke-linejoin="round"
+                stroke-linecap="round"
+              ></path>
+            </svg>
+          </a>
+        </div>
+        <figure>
+          <img
+            src="../../../static/assets/UITransformSection/UI-image.webp"
+            alt="A Representative of how your website is lossed in the internet"
+            class="card__image"
+            role="presentation"
+            loading="lazy"
+            width="100%"
+            height="100%"
+          />
+        </figure>
       </article>
     </section>
     <footer class="footer">
@@ -185,8 +233,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    transition: all 0.5s ease-in-out;
     will-change: all;
+    outline: 1px dashed red;
   }
   /*===========================================
     Old UI VARIABLES 
@@ -196,13 +244,28 @@
   /*===========================================
     NEW UI VARIABLES 
 =========================================== */
+  /*------HEADER -------*/
+  $header-content-gap: 2rem;
+  //this is for the before class in the header if you wanted to use AN ICON next to the title
+  $my-modern-icon: url("../../../static/assets/icons/page/our-logo-icon.png");
   $header-first-icon: url("../../../static/assets/icons/page/home-icon.svg");
   $header-second-icon: url("../../../static/assets/icons/page/services-icon.svg");
   $header-third-icon: url("../../../static/assets/icons/page/contact-icon.svg");
   $hovered-header-background: color-with-opacity(800, 0.03);
+  /*------CARD-------*/
+  $card-image-content-gap: 2rem;
   /*===========================================
     Windows Bar
 =========================================== */
+
+  img {
+    transition: all 0.4s ease-in-out;
+  }
+
+  a,
+  svg {
+    transition: all 0.2s ease-in-out;
+  }
   .winhead {
     grid-area: winhead;
     width: 100%;
@@ -266,6 +329,7 @@
 =========================================== */
   .main-container {
     @include card-border;
+    transition: all 0.5s ease-in-out;
     border-radius: $br-default;
 
     display: grid;
@@ -338,6 +402,7 @@
     font-family: $ff-old;
     &.is-hovered {
       @include flex-column-center;
+      margin: 0 auto;
     }
   }
   /*===========================================
@@ -370,14 +435,31 @@
       box-shadow: $shadow-md;
 
       & .header__title {
+        $title-font-size: $fsz-2xs;
         @include global__heading;
-        font-size: $fsz-2xs;
+        font-size: $title-font-size;
+        // position: relative;
+
+        // &::before {
+        //   content: "";
+        //   align-self: baseline;
+        //   margin-right: $spacing-closely-related;
+        //   display: inline-flex;
+        //   z-index: 999;
+        //   inline-size: $title-font-size;
+        //   block-size: $title-font-size;
+        //   background-image: $my-modern-icon;
+        //   background-size: contain;
+        //   background-repeat: no-repeat;
+        //   background-position: center;
+        // }
       }
 
       & .header__nav {
         gap: $spacing-less-related;
+
         &-link {
-          $icon-size: 0.625rem;
+          $icon-size: 0.75rem;
           inline-size: $icon-size;
           block-size: $icon-size;
           font-size: $icon-size;
@@ -408,7 +490,7 @@
   .card-container {
     flex: 1;
     @include flex(column, flex-start, stretch);
-    @include section-inner-gap;
+    @include section-inner-gap-lg;
     @include section-padding-inline;
     width: 100%;
     height: 100%;
@@ -430,11 +512,13 @@
           display: none;
         }
       }
+
+      img {
+        display: none;
+      }
     }
     // new ui styles
     &.is-hovered {
-      padding-top: 2rem;
-
       h1,
       h2 {
         @include global__heading;
@@ -445,62 +529,112 @@
         text-align: center;
         font-weight: 800;
         color: black;
+        margin-inline: auto;
+        margin-top: $section-inner-gap-lg;
       }
-      h2 {
-        line-height: 1.2;
-        font-size: $fsz-mdlg;
-      }
+      & .card-container__card {
+        max-inline-size: fit-content;
+        @include flex(row, space-between, center);
+        flex-wrap: wrap;
+        gap: $card-image-content-gap;
+        & > * {
+          flex: 1;
+        }
 
-      p {
-        @include global__body;
-        max-inline-size: $paragraph-max-width; //ch width
+        & figure {
+          overflow: hidden;
+          border-radius: $br-default;
+          box-shadow: $shadow-md;
 
-        font-family: $ff-regular;
-        font-weight: $fw-medium;
-        font-size: $fsz-sm;
-        color: $text-secondary;
-      }
+          & img {
+            display: inline-flex;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
 
-      a {
-        //this is for icon sizing too
-        $link-font-size: $fsz-3xs;
-        $link-color: $color-primary;
-        @include global__links;
-        font-size: $link-font-size;
-        text-underline-offset: 0.125rem; //lowers underline
-        margin-right: $spacing-closely-related;
-        &:hover {
-          color: $link-color;
-          brightness: 0.8;
-          & svg {
-            @include animation-float-and-replace--rotated-icon;
-
-            & path {
-              fill: $link-color;
+            &:hover {
+              scale: 1.1;
             }
           }
         }
-
-        & svg {
-          inline-size: $link-font-size;
-          height: $link-font-size;
-          transform: rotate(-45deg);
-          display: inline;
+        h2 {
+          line-height: 1.2;
+          font-size: 2.5rem;
+          margin-bottom: $spacing-less-related;
         }
-      }
 
-      & .card-container__card {
-        max-inline-size: fit-content;
+        p {
+          @include global__body;
+          max-inline-size: $paragraph-max-width; //ch width
+
+          font-family: $ff-regular;
+          font-weight: $fw-medium;
+          font-size: $fsz-sm;
+          color: $text-secondary;
+          margin-bottom: $spacing-semi-related;
+        }
+
+        a {
+          margin-top: $spacing-closely-related;
+          //this is for icon sizing too
+          $link-font-size: $fsz-3xs;
+          $link-color: $color-primary;
+          @include global__links;
+          font-size: $link-font-size;
+          text-underline-offset: 0.125rem; //lowers underline
+          margin-right: $spacing-closely-related;
+          &:hover {
+            color: $link-color;
+            filter: brightness(0.8);
+            & svg {
+              @include animation-float-and-replace--rotated-icon;
+
+              & path {
+                fill: $link-color;
+              }
+            }
+          }
+
+          & svg {
+            inline-size: $link-font-size;
+            height: $link-font-size;
+            transform: rotate(-45deg);
+            display: inline;
+          }
+        }
+
         // select second card
         &:nth-child(3) {
           @include card-styling;
-
+          box-shadow: $shadow-lg;
+          & figure {
+            inline-size: 100%;
+            block-size: 100%;
+          }
           p {
             color: $text-primary;
             // select third and fourth paragraphs
             &:nth-child(3),
             &:nth-child(4) {
               font-size: $fsz-xs;
+              line-height: 1.65;
+            }
+          }
+        }
+        // select second card
+        &:nth-child(4) {
+          & figure {
+            inline-size: 100%;
+            block-size: 100%;
+          }
+          p {
+            color: $text-primary;
+            // select third and fourth paragraphs
+            &:nth-child(3),
+            &:nth-child(4) {
+              font-size: $fsz-xs;
+              line-height: 1.65;
             }
           }
         }

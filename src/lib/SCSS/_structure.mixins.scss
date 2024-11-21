@@ -19,7 +19,9 @@
 @mixin section-inner-gap {
   gap: $section-inner-gap; /*24 px*/
 }
-
+@mixin section-inner-gap-lg {
+  gap: $section-inner-gap-lg; /*40-60px*/
+}
 @mixin section-padding-inline {
   padding-inline: $section-padding-inline;
 }
