@@ -186,6 +186,7 @@
     margin: 0;
     padding: 0;
     transition: all 0.5s ease-in-out;
+    will-change: all;
   }
   /*===========================================
     Old UI VARIABLES 
