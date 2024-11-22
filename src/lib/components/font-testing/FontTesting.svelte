@@ -13,7 +13,7 @@
   <p class="global__body--sm">BODY SM</p>
 
   <h5 class="global__card-heading--lg">CARD HEADING LG</h5>
-  <h5 class="global__card-heading--md">CARD HEADING MD</h5>
+  <h5 class="global__card-heading--sm">CARD HEADING MD</h5>
   <h5 class="global__card-heading--sm">CARD HEADING SM</h5>
 
   <h6 class="global__card-subheading">CARD SUBHEADING</h6>

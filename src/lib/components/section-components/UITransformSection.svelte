@@ -41,7 +41,11 @@
       <h1>The One Web Design Secret That Generates Revenue!</h1>
       <article class="card-container__card">
         <div>
-          <h2>Your Presence is Defined by Your Website</h2>
+          <h2>
+            Your Presence is Defined by <strong class="shine-animation"
+              >Your Website</strong
+            >
+          </h2>
           <p>
             With the growth of the internet, "1.09 billion websites are on the
             internet." It is <strong>crucial</strong> to ensure that your
@@ -101,7 +105,11 @@
           />
         </figure>
         <div>
-          <h2>A website is a Business's Digital Storefront</h2>
+          <h2>
+            A Website is a Business's <strong class="shine-animation"
+              >Digital Storefront</strong
+            >
+          </h2>
           <p>
             A <em>well-designed and optimized website</em> serves
             <strong> as the digital storefront of your brand. </strong>
@@ -157,17 +165,25 @@
       </article>
       <article class="card-container__card">
         <div>
-          <h2>The secret to Maximizing Your Reach</h2>
+          <h2>
+            The secret to <strong class="shine-animation"
+              >Maximizing Your Reach</strong
+            >
+          </h2>
           <p>
             Did you know that only <strong
               >"3% of websites are accessible."</strong
             >
             Being left out of the 97% is detrimental for your business. This is why
             you must prioritize <strong>web accessibility</strong> as a crucial part
-            of your digital strategy. Accessibility ensures that all users, including
-            those with disabilities, can interact with your website seamlessly. It
-            not only fosters inclusivity but also improves your site's usability
-            for everyone.
+            of your digital strategy.
+          </p>
+
+          <!-- <p>
+            Accessibility ensures that all users, including those with
+            disabilities, can interact with your website seamlessly. It not only
+            fosters inclusivity but also improves your site's usability for
+            everyone.
           </p>
           <p>
             Making your website accessible isn't just about <em>compliance;</em>
@@ -175,7 +191,7 @@
             websites gain access to a larger audience, enhance user experience, and
             even improve SEO performance. By addressing accessibility, you're not
             just accommodating a need; you're unlocking potential.
-          </p>
+          </p> -->
           <!-- <p>
             Additionally, accessibility compliance can help your business avoid
             costly lawsuits. With increasing legal regulations such as the
@@ -234,7 +250,6 @@
     margin: 0;
     padding: 0;
     will-change: all;
-    outline: 1px dashed red;
     transition: all 0.5s ease-in-out;
   }
   /*===========================================
@@ -262,10 +277,17 @@
   img {
     transition: all 0.4s ease-in-out;
   }
+  figure {
+    max-inline-size: 500px;
+  }
 
   a,
   svg {
     transition: all 0.2s ease-in-out;
+  }
+
+  .shine-animation {
+    @include shine-animation-text;
   }
   .winhead {
     grid-area: winhead;
@@ -382,7 +404,6 @@
 
       // new ui styling
       &.is-hovered {
-        padding: unset; // TODO: MAKE THIS THE SIZE OF THE ICONS THAT YOU WANT TO SHOW SO ON HOVER IT EXPANDS ETC
         overflow-x: hidden;
         inline-size: 0%;
         max-inline-size: fit-content;
@@ -608,7 +629,7 @@
         // select second card
         &:nth-child(3) {
           @include card-styling;
-          box-shadow: $shadow-lg;
+          box-shadow: $shadow-md;
           & figure {
             inline-size: 100%;
             block-size: 100%;

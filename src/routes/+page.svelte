@@ -38,31 +38,29 @@
 {#if showHero}
   <HeroSection />
 {/if}
+
 {#if showUITransform}
   <UITransformSection />
 {/if}
+{#if showServices}
+  <ServicesSection />
+{/if}
+{#if showProjects}
+  <ProjectsSection />
+{/if}
+{#if showStack}
+  <StackSection />
+{/if}
+{#if showTestimonials}
+  <TestimonialSection />
+{/if}
+
 {#if showAbout}
   <AboutSection />
 {/if}
 
 {#if showMotivation}
   <MotivationSection />
-{/if}
-
-{#if showProjects}
-  <ProjectsSection />
-{/if}
-
-{#if showServices}
-  <ServicesSection />
-{/if}
-
-{#if showStack}
-  <StackSection />
-{/if}
-
-{#if showTestimonials}
-  <TestimonialSection />
 {/if}
 
 {#if showFaq}

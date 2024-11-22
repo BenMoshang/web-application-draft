@@ -1,5 +1,5 @@
 <script>
-
+  import ContactSection from "./../section-components/ContactSection.svelte";
   /**
    * @typedef {Object} Props
    * @property {string} [imageSrc]
@@ -13,91 +13,76 @@
     imageSrc = "",
     title = $bindable(""),
     useCase = $bindable(""),
-    description = ""
+    description = "",
   } = $props();
   title = title.toUpperCase();
   useCase = useCase.toUpperCase();
 </script>
 
-<div class="card__wrapper">
-  <figure class="card br p-base bg-white-200 border">
-    <div class="card__image-wrapper bg-white-100 br border">
-      <img src={imageSrc} alt={title} class="card__image" />
-    </div>
+<article class="card br">
+  <img src={imageSrc} alt={title} class="card__image" />
+  <section class="card__content">
+    <h4 class="card__content-heading global__card-heading--md">
+      {title}
+    </h4>
+    <h5 class="card__content-use-case global__card-heading--sm">
+      {useCase}
+    </h5>
+    <p class="card__content-body global__card-body--sm">
+      {description}
+    </p>
+  </section>
+</article>
 
-    <figcaption class="card__content p-base bg-white-100 br border">
-      <h4 class="card__title ff-bold fw-bold fsz-md text-800 lh-md">{title}</h4>
-      <h5 class="card__useCase ff-bold fw-bold fsz-xs text-800 lh-xs">
-        {useCase}
-      </h5>
-      <p class="card__description ff-regular fw-medium fsz-xs text-gray lh-2xl">
-        {description}
-      </p>
-    </figcaption>
-  </figure>
-</div>
-
-<style>
+<style lang="scss">
+  @use "../../SCSS/index.scss" as *;
   *,
   *::before,
   *::after {
     box-sizing: border-box;
   }
-
-  .card__wrapper {
-    container-type: inline-size;
-  }
+  $card-gap: clamp(1.25rem, 1.127rem + 0.41vw, 1.5rem); //20 - 24px
 
   .card {
-    display: flex;
-    border: 0.625rem solid var(--gray-trans-md-alt);
-    justify-content: between;
+    @include flex-center;
     width: fit-content;
     overflow: hidden;
-    gap: var(--fsz-md);
 
-    & .card__title {
-      display: flex;
-      align-content: center;
-      align-items: center;
+    &__content {
+      @include flex-center;
       width: 100%;
-      gap: var(--spacing-sm);
-      letter-spacing: -0.2px;
-      text-transform: capitalize;
+
+      &-heading {
+      }
+
+      &-body {
+      }
     }
 
-    & .card__content {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
+    & img {
+      //TODO: PUT A BACKGROUND HERE
+      $image-size: 2.875rem;
+      max-inline-size: $image-size;
+      max-block-size: $image-size;
+      object-fit: contain;
+      will-change: transform;
 
-    & .card__image-wrapper {
-      align-self: start;
-      flex-shrink: 0;
-      padding: 0.875rem;
-    }
-  }
-
-  .border {
-    border: 0.0625rem solid var(--border-trans-light);
-  }
-
-  .text-gray {
-    color: #1d1d1fb3;
-  }
-
-  @container (max-width: 475px) {
-    .card {
-      flex-direction: column;
-    }
-
-    .card__image-wrapper {
-      width: 100%;
-    }
-
-    .card__image {
-      margin-inline: auto;
+      &:hover {
+        transform: scale(1.05);
+      }
     }
   }
+  // @container (max-width: 475px) {
+  //   .card {
+  //     flex-direction: column;
+  //   }
+
+  //   .card__image-wrapper {
+  //     width: 100%;
+  //   }
+
+  //   .card__image {
+  //     margin-inline: auto;
+  //   }
+  // }
 </style>
