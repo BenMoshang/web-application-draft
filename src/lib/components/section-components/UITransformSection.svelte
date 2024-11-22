@@ -1,6 +1,9 @@
 <script>
   let isHovered = false;
   let linkText = "Continue Reading".toUpperCase();
+
+  //injectable
+  let companyName = "Your Business";
 </script>
 
 <!-- false mouse out 
@@ -21,15 +24,15 @@
     </section>
     <h2 class:is-hovered={isHovered} class="page-name">HOVER ME</h2>
   </header>
-  <aside class:is-hovered={isHovered} class="sidebar">
+  <!-- <aside class:is-hovered={isHovered} class="sidebar">
     <h2>User Menu</h2>
     <button>Dashboard</button>
     <button>Settings</button>
     <button>Logout</button>
-  </aside>
+  </aside> -->
   <section class:is-hovered={isHovered} class="content-container">
     <header class="content-container__header" class:is-hovered={isHovered}>
-      <h2 class="header__title">Your Website</h2>
+      <h2 class="header__title">{companyName}</h2>
       <nav class="header__nav">
         <a class="header__nav-link" href="#">Home</a>
         <a class="header__nav-link" href="#">Services</a>
@@ -235,8 +238,64 @@
         </figure>
       </article>
     </section>
-    <footer class="footer">
-      <p>&copy; 2024 Your Company. All rights reserved.</p>
+    <footer class:is-hovered={isHovered} class="footer">
+      <div class="footer__shape">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+      <p class="footer__initial-text">
+        &copy; 2024 {companyName}. All rights reserved.
+      </p>
+      <section class="footer__container">
+        <h4 class="footer__company-name">{companyName}</h4>
+        <p class="footer__location">Baltimore, MD</p>
+        <p class="footer__copyright">
+          &copy; 2024 {companyName}. All rights reserved.
+        </p>
+      </section>
+      <ul class="footer__container">
+        <li class="container__column-title">Contact</li>
+        <li class="container__item"
+          ><a href="tel:410-929-4158" class="phone-number">410-929-4158</a></li
+        >
+        <li class="container__item"
+          ><a href="mailto:moshangllc@gmail.com" class="email"
+            >moshangllc@gmail.com</a
+          ></li
+        >
+      </ul>
+      <ul class="footer__container">
+        <li class="container__column-title">Read More</li>
+        <li class="container__item">
+          <a
+            href="https://www.forbes.com/advisor/business/software/website-statistics/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Forbes Website Statistics"
+          >
+            Forbes Statistics
+          </a></li
+        >
+        <li class="container__item">
+          <a
+            href="https://www.audioeye.com/post/accessibility-statistics/#:~:text=What%20we%20found%20is%20that,but%20for%20businesses%20as%20well."
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="AudioEye Accessibility Statistics"
+          >
+            Accessibility Statistics
+          </a></li
+        >
+      </ul>
     </footer>
   </section>
 </main>
@@ -252,28 +311,52 @@
     will-change: all;
     transition: all 0.5s ease-in-out;
   }
+  $footer-shadow-color: hsl(240, 4%, 8%);
+  $footer-shadow:
+    0.4px 0.3px 0.4px
+      hsl(
+        hue($footer-shadow-color),
+        saturation($footer-shadow-color),
+        lightness($footer-shadow-color) / 0.88
+      ),
+    0.5px 0.5px 0.5px -1.2px hsl(hue($footer-shadow-color), saturation($footer-shadow-color), lightness(
+            $footer-shadow-color
+          ) / 0.7),
+    1.4px 1.4px 1.5px -2.5px hsl(hue($footer-shadow-color), saturation($footer-shadow-color), lightness(
+            $footer-shadow-color
+          ) / 0.52),
+    3.9px 3.8px 4.1px -3.7px hsl(hue($footer-shadow-color), saturation($footer-shadow-color), lightness(
+            $footer-shadow-color
+          ) / 0.35),
+    8.8px 8.5px 9.2px -5px hsl(hue($footer-shadow-color), saturation($footer-shadow-color), lightness(
+            $footer-shadow-color
+          ) / 0.17);
+  $footer-shadow-inset:
+    inset $footer-shadow,
+    $footer-shadow;
   /*===========================================
-    Old UI VARIABLES 
+   header
 =========================================== */
-  $header-background: red;
-  $footer-background: darkred;
-  /*===========================================
-    NEW UI VARIABLES 
-=========================================== */
-  /*------HEADER -------*/
   $header-content-gap: 2rem;
   //this is for the before class in the header if you wanted to use AN ICON next to the title
   $my-modern-icon: url("../../../static/assets/icons/page/our-logo-icon.png");
   $header-first-icon: url("../../../static/assets/icons/page/home-icon.svg");
   $header-second-icon: url("../../../static/assets/icons/page/services-icon.svg");
   $header-third-icon: url("../../../static/assets/icons/page/contact-icon.svg");
+  $header-background: red;
   $hovered-header-background: color-with-opacity(800, 0.03);
   /*------CARD-------*/
   $card-image-content-gap: 2rem;
+  $new-p-line-height: 1.65;
   /*===========================================
     Windows Bar
 =========================================== */
-
+  $winhead-header-gap: 2rem;
+  /*===========================================
+   Footer
+=========================================== */
+  $footer-background: darkred;
+  $hovered-footer-background: $color-tertiary;
   img {
     transition: all 0.4s ease-in-out;
   }
@@ -355,13 +438,7 @@
     transition: all 0.5s ease-in-out;
     border-radius: $br-default;
 
-    display: grid;
-    grid-template-areas:
-      "winhead"
-      "container"
-      "footer";
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto 1fr auto;
+    @include flex-column-center;
 
     height: calc(100% - $header-height);
     width: 100%;
@@ -376,45 +453,36 @@
       transform: skew(0deg) scale(1);
       box-shadow: $shadow-lg;
     }
-    @media (min-width: $desktop-breakpoint) {
-      grid-template-areas:
-        "winhead winhead"
-        "sidebar container"
-        "sidebar footer";
-      grid-template-columns: auto 1fr;
-      grid-template-rows: auto auto 1fr auto;
-    }
   }
+  /*-----uncomment if later addition want a sidebar-----------*/
+  // .sidebar {
+  //   display: none;
 
-  .sidebar {
-    grid-area: sidebar;
-    display: none;
+  //   @media (min-width: $desktop-breakpoint) {
+  //     // shows on breakpoint
+  //     @include section-padding-inline;
 
-    @media (min-width: $desktop-breakpoint) {
-      // shows on breakpoint
-      @include section-padding-inline;
+  //     @include flex(column, flex-start, stretch);
+  //     gap: $spacing-closely-related;
+  //     inline-size: 100%;
 
-      @include flex(column, flex-start, stretch);
-      gap: $spacing-closely-related;
-      inline-size: 100%;
+  //     & h2 {
+  //       text-wrap: nowrap;
+  //     }
 
-      & h2 {
-        text-wrap: nowrap;
-      }
+  //     // new ui styling
+  //     &.is-hovered {
+  //       overflow-x: hidden;
+  //       inline-size: 0%;
+  //       max-inline-size: fit-content;
 
-      // new ui styling
-      &.is-hovered {
-        overflow-x: hidden;
-        inline-size: 0%;
-        max-inline-size: fit-content;
-
-        &:hover {
-          @include section-padding-inline;
-          inline-size: 100%;
-        }
-      }
-    }
-  }
+  //       &:hover {
+  //         @include section-padding-inline;
+  //         inline-size: 100%;
+  //       }
+  //     }
+  //   }
+  // }
 
   .content-container {
     @include flex(column, flex-start, stretch);
@@ -448,7 +516,7 @@
       align-self: center;
       width: 90%;
 
-      margin-top: $spacing-less-related;
+      margin-top: $winhead-header-gap;
 
       background: $hovered-header-background;
       backdrop-filter: blur(0.75rem);
@@ -589,8 +657,7 @@
         p {
           @include global__body;
           max-inline-size: $paragraph-max-width; //ch width
-
-          font-family: $ff-regular;
+          line-height: $new-p-line-height;
           font-weight: $fw-medium;
           font-size: $fsz-sm;
           color: $text-secondary;
@@ -605,11 +672,12 @@
           @include global__links;
           font-size: $link-font-size;
           text-underline-offset: 0.125rem; //lowers underline
-          margin-right: $spacing-closely-related;
+
           &:hover {
             color: $link-color;
             filter: brightness(0.8);
             & svg {
+              margin-left: $spacing-closely-related; //spacing from icon and text
               @include animation-float-and-replace--rotated-icon;
 
               & path {
@@ -640,7 +708,6 @@
             &:nth-child(3),
             &:nth-child(4) {
               font-size: $fsz-xs;
-              line-height: 1.65;
             }
           }
         }
@@ -651,12 +718,10 @@
             block-size: 100%;
           }
           p {
-            color: $text-primary;
             // select third and fourth paragraphs
             &:nth-child(3),
             &:nth-child(4) {
               font-size: $fsz-xs;
-              line-height: 1.65;
             }
           }
         }
@@ -666,11 +731,132 @@
   }
 
   .footer {
+    @include flex-center;
     width: 100%;
-    height: 3.25rem;
+    min-height: 3.25rem;
     background-color: $footer-background;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+    &__shape {
+      display: none;
+    }
+    &__container {
+      display: none;
+    }
+
+    /*--------------------------
+    new footer styles
+-------------------------- */
+    &.is-hovered {
+      @include flex(row, flex-start, stretch);
+      $wave-height: 3rem;
+      $border-radius: $br-default;
+      $z-index: 1;
+      $column-title-font-size: $fsz-sm;
+      $title-margin-bottom: $spacing-closely-related;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: stretch;
+      padding: $component-padding-md;
+      position: relative;
+      min-height: 11.25rem;
+      background-color: $hovered-footer-background;
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+
+      & > * {
+        flex: 1;
+      }
+      & .footer__initial-text {
+        display: none;
+      }
+      /*------wavy border------*/
+      & .footer__shape {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        background: $hovered-footer-background;
+        z-index: $z-index;
+
+        & svg {
+          width: 100%;
+          height: $wave-height;
+          & path {
+            fill: white; //fills upper border to match page
+          }
+        }
+      }
+
+      /*------containers------*/
+
+      & .footer__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        z-index: $z-index;
+        gap: $spacing-closely-related;
+        width: 100%;
+        height: 100%;
+        padding-top: $wave-height;
+        & > * {
+          flex: 1;
+        }
+        & .footer__company-name {
+          grid-area: header;
+          @include global__heading;
+          @include flex-center;
+          $title-font-size: $fsz-md;
+          position: relative;
+          font-size: $title-font-size;
+          color: $text-white-primary;
+
+          margin-bottom: $title-margin-bottom;
+
+          &::before {
+            content: "";
+            display: inline-flex;
+            margin-right: $spacing-closely-related;
+            inline-size: $title-font-size;
+            block-size: $title-font-size;
+            line-height: inherit;
+            background: $my-modern-icon center/contain no-repeat;
+          }
+        }
+        & .footer__location {
+          @include global__body;
+          font-size: $fsz-3xs;
+          color: $text-white-tertiary;
+        }
+        & .footer__copyright {
+          grid-area: content;
+          @include global__body;
+          font-size: $fsz-4xs;
+          color: $text-white-tertiary;
+          text-wrap: balance;
+          font-weight: $fw-regular;
+        }
+      }
+
+      /*------footer lists------*/
+      & .container__column-title {
+        @include global__heading;
+        font-size: $column-title-font-size;
+        color: $text-white-secondary;
+        margin-bottom: $title-margin-bottom;
+      }
+      & a {
+        @include global__links;
+        $link-font-size: $fsz-3xs;
+        font-size: $link-font-size;
+        text-underline-offset: 0.125rem; //lowers underline
+        color: $text-white-tertiary;
+        font-weight: $fw-regular;
+      }
+    }
   }
 </style>

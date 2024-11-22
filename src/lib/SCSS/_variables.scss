@@ -252,6 +252,10 @@ $text-primary: map-get(map-get($colors, primary), 900);
 $text-secondary: map-get(map-get($colors, primary), 800);
 $text-tertiary: map-get(map-get($colors, primary), 700);
 $text-quaternary: map-get(map-get($colors, primary), 600);
+/*---white text---*/
+$text-white-primary: map-get(map-get($colors, primary), 100);
+$text-white-secondary: map-get(map-get($colors, primary), 200);
+$text-white-tertiary: map-get(map-get($colors, primary), 300);
 
 /*  ===============================================
                  Shadows
@@ -289,6 +293,7 @@ $shadow-sm: map-get($shadows, sm);
 $shadow-md: map-get($shadows, md);
 $shadow-lg: map-get($shadows, lg);
 $shadow-sm-inset: inset $shadow-sm, $shadow-sm;
+$shadow-md-inset: inset $shadow-md, $shadow-md;
 
 //custom variables
 $header-height: 3.25rem;
