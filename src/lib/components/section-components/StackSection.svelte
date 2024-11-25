@@ -33,52 +33,54 @@
   ];
 </script>
 
-<section class="stack__container">
-  <article class="stack__content">
-    <h2 class="stack__title global__title--md">FAVORITE STACK</h2>
-    <div class="content__cards-container">
-      {#each stackData as { imageSrc, title, useCase, description }}
-        <StackCard {imageSrc} {title} {useCase} {description} />
-      {/each}
-    </div>
-  </article>
+<section class="stack">
+  <h3 class="stack__heading global__heading--md">FAVORITE STACK</h3>
+  <section class="stack__content">
+    {#each stackData as { imageSrc, title, useCase, description }}
+      <StackCard {imageSrc} {title} {useCase} {description} />
+    {/each}
+  </section>
 </section>
 
 <style lang="scss">
+  @use "./src/lib/SCSS/index.scss" as *;
 
-  .stack__container {
-    width: 100%;
-    padding-inline: var(--pinline-section);
-    container: stack-section / inline-size;
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
-  .stack__content {
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "title"
-      "cards";
-    gap: var(--dynamic-3xl);
 
-    & .stack__title {
-      grid-area: title;
-    }
-
-    & .content__cards-container {
-      grid-area: cards;
-
-      gap: var(--dynamic-md);
-    }
-  }
-  @container stack-section (min-width: 24.3125rem) {
-    .stack__content {
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas: "title cards";
-    }
-
-    .stack__title {
+  .stack {
+    @include section-padding-inline;
+    @include flex-column-jus-center;
+    @include section-heading-content-gap;
+    padding-top: clamp(80px, 3.769rem + 4.15vw, 120px);
+    position: relative;
+    overflow-y: visible;
+    inline-size: 100%;
+    block-size: 100%;
+    &__heading {
       position: sticky;
+      top: calc($header-height + 1rem); // Adjust as needed for larger offset
+      height: min-content;
+    }
+    &__content {
+      position: sticky;
+      top: calc($header-height + 1rem); // Adjust as needed for larger offset
+      height: min-content;
+    }
+  }
+
+  /* this is 45px */
+  @media (min-width: $tablet-breakpoint) {
+    .stack {
+      gap: unset;
+      flex-direction: row;
+      justify-content: space-between;
+      &__heading {
+        padding-right: $spacing-less-related;
+      }
     }
   }
 </style>

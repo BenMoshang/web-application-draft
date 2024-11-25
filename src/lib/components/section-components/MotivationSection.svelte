@@ -39,11 +39,11 @@
     position: relative;
     overflow-y: visible;
     inline-size: 100%;
-    height: 100%;
+    block-size: 100%;
 
     &__heading {
       position: sticky;
-      top: 0; // Adjust as needed for larger offset
+      top: calc($header-height + 1rem); // Adjust as needed for larger offset
       height: min-content;
     }
 
@@ -56,7 +56,6 @@
   @media (min-width: $tablet-breakpoint) {
     .motivation {
       gap: unset;
-      justify-content: unset;
       flex-direction: row;
       justify-content: space-between;
       &__heading {

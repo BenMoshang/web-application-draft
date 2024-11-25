@@ -294,6 +294,8 @@ $shadow-md: map-get($shadows, md);
 $shadow-lg: map-get($shadows, lg);
 $shadow-sm-inset: inset $shadow-sm, $shadow-sm;
 $shadow-md-inset: inset $shadow-md, $shadow-md;
+$drop-shadow-sm: drop-shadow($shadow-sm);
 
+$drop-shadow-lg: drop-shadow($shadow-lg);
 //custom variables
 $header-height: 3.25rem;

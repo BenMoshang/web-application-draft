@@ -1,9 +1,10 @@
 <script>
-  let isHovered = false;
-  let linkText = "Continue Reading".toUpperCase();
-
+  import UITransformFooter from "./UITransformFooter.svelte";
+  import UITransformWindowHead from "./UITransformWindowHead.svelte";
   //injectable
-  let companyName = "Your Business";
+  let linkText = "Continue Reading".toUpperCase();
+  export let isHovered = true;
+  export let companyName = "Your Business";
 </script>
 
 <!-- false mouse out 
@@ -16,20 +17,13 @@
   class:is-hovered={isHovered}
   class="main-container"
 >
-  <header class="winhead">
-    <section class="winhead__button-container">
-      <div class="close"></div>
-      <div class="min"></div>
-      <div class="max"></div>
-    </section>
-    <h2 class:is-hovered={isHovered} class="page-name">HOVER ME</h2>
-  </header>
   <!-- <aside class:is-hovered={isHovered} class="sidebar">
     <h2>User Menu</h2>
     <button>Dashboard</button>
     <button>Settings</button>
     <button>Logout</button>
   </aside> -->
+  <UITransformWindowHead />
   <section class:is-hovered={isHovered} class="content-container">
     <header class="content-container__header" class:is-hovered={isHovered}>
       <h2 class="header__title">{companyName}</h2>
@@ -83,6 +77,7 @@
             </svg>
           </a>
         </div>
+
         <figure>
           <img
             src="../../../static/assets/UITransformSection/UI-image.webp"
@@ -96,9 +91,10 @@
         </figure>
       </article>
       <article class="card-container__card">
+        <!-- TODO: PUT DIGITAL STORE FRONT 3D WEB ASSET HERE  -->
         <figure>
           <img
-            src="../../../static/assets/UITransformSection/UI-image.webp"
+            src="../../../static/assets/UITransformSection/digital-storefront.webp"
             alt="A Representative of how your website is lossed in the internet"
             class="card__image"
             loading="lazy"
@@ -238,65 +234,8 @@
         </figure>
       </article>
     </section>
-    <footer class:is-hovered={isHovered} class="footer">
-      <div class="footer__shape">
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            class="shape-fill"
-          ></path>
-        </svg>
-      </div>
-      <p class="footer__initial-text">
-        &copy; 2024 {companyName}. All rights reserved.
-      </p>
-      <section class="footer__container">
-        <h4 class="footer__company-name">{companyName}</h4>
-        <p class="footer__location">Baltimore, MD</p>
-        <p class="footer__copyright">
-          &copy; 2024 {companyName}. All rights reserved.
-        </p>
-      </section>
-      <ul class="footer__container">
-        <li class="container__column-title">Contact</li>
-        <li class="container__item"
-          ><a href="tel:410-929-4158" class="phone-number">410-929-4158</a></li
-        >
-        <li class="container__item"
-          ><a href="mailto:moshangllc@gmail.com" class="email"
-            >moshangllc@gmail.com</a
-          ></li
-        >
-      </ul>
-      <ul class="footer__container">
-        <li class="container__column-title">Read More</li>
-        <li class="container__item">
-          <a
-            href="https://www.forbes.com/advisor/business/software/website-statistics/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Forbes Website Statistics"
-          >
-            Forbes Statistics
-          </a></li
-        >
-        <li class="container__item">
-          <a
-            href="https://www.audioeye.com/post/accessibility-statistics/#:~:text=What%20we%20found%20is%20that,but%20for%20businesses%20as%20well."
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="AudioEye Accessibility Statistics"
-          >
-            Accessibility Statistics
-          </a></li
-        >
-      </ul>
-    </footer>
+
+    <UITransformFooter />
   </section>
 </main>
 
@@ -339,7 +278,6 @@
 =========================================== */
   $header-content-gap: 2rem;
   //this is for the before class in the header if you wanted to use AN ICON next to the title
-  $my-modern-icon: url("../../../static/assets/icons/page/our-logo-icon.png");
   $header-first-icon: url("../../../static/assets/icons/page/home-icon.svg");
   $header-second-icon: url("../../../static/assets/icons/page/services-icon.svg");
   $header-third-icon: url("../../../static/assets/icons/page/contact-icon.svg");
@@ -356,12 +294,9 @@
    Footer
 =========================================== */
   $footer-background: darkred;
-  $hovered-footer-background: $color-tertiary;
+  $hovered-footer-background: #0c2461;
   img {
     transition: all 0.4s ease-in-out;
-  }
-  figure {
-    max-inline-size: 500px;
   }
 
   a,
@@ -371,63 +306,6 @@
 
   .shine-animation {
     @include shine-animation-text;
-  }
-  .winhead {
-    grid-area: winhead;
-    width: 100%;
-    height: 2.25rem;
-    background: rgb(244, 244, 244);
-    border-bottom: 0.5px solid rgba(162, 163, 164, 0.4);
-    border-top-left-radius: 0.25rem;
-    border-top-right-radius: 0.25rem;
-    display: flex;
-    align-items: center;
-    position: relative;
-    & div {
-      width: 0.75rem;
-      height: 0.75rem;
-      margin-left: $spacing-closely-related;
-      background: rgb(199, 199, 199);
-      border: 0.025rem solid rgb(169, 169, 169);
-      border-radius: 50%;
-      &:hover {
-        filter: brightness(0.8);
-        cursor: pointer;
-      }
-    }
-    &__button-container {
-      display: flex;
-      align-items: center;
-      z-index: 9;
-      & .close {
-        background: rgb(231, 69, 70);
-        border: 0.5px solid rgb(208, 67, 67);
-      }
-
-      & .min {
-        background: rgb(246, 180, 39);
-        border: 0.5px solid rgb(212, 154, 58);
-      }
-
-      & .max {
-        background: rgb(86, 202, 53);
-      }
-    }
-  }
-  // tab name
-  .page-name {
-    align-self: center;
-    position: absolute;
-    inset: 0;
-    margin-inline: auto;
-    width: fit-content;
-    font-family: $ff-old;
-
-    &.is-hovered {
-      @include global__heading;
-
-      font-size: $fsz-2xs;
-    }
   }
 
   /*===========================================
@@ -443,14 +321,16 @@
     height: calc(100% - $header-height);
     width: 100%;
     position: relative;
-
-    transform: skew(-5deg) scale(0.9);
+    rotate: x 45deg;
+    perspective: 1000px;
+    // transform: skew(-5deg) scale(0.9);
     transition:
       transform 0.8s cubic-bezier(0.17, 0.55, 0.55, 1),
       opacity 0.6s ease;
 
     &.is-hovered {
-      transform: skew(0deg) scale(1);
+      rotate: x 0deg;
+      // transform: skew(0deg) scale(1);
       box-shadow: $shadow-lg;
     }
   }
@@ -490,6 +370,7 @@
     width: 100%;
     height: 100%;
     font-family: $ff-old;
+
     &.is-hovered {
       @include flex-column-center;
       margin: 0 auto;
@@ -500,7 +381,6 @@
 =========================================== */
   .content-container__header {
     @include flex(row, space-between);
-    grid-area: header;
     overflow: hidden;
     width: 100%;
     height: $header-height;
@@ -582,8 +462,9 @@
     @include flex(column, flex-start, stretch);
     @include section-inner-gap-lg;
     @include section-padding-inline;
-    width: 100%;
-    height: 100%;
+    padding-block: 1.875rem;
+    inline-size: 100%;
+    block-size: 100%;
 
     &__card {
       padding: $card-padding;
@@ -607,7 +488,9 @@
         display: none;
       }
     }
-    // new ui styles
+    /*===========================================
+   NEW UI styles
+=========================================== */
     &.is-hovered {
       h1,
       h2 {
@@ -627,6 +510,7 @@
         @include flex(row, space-between, center);
         flex-wrap: wrap;
         gap: $card-image-content-gap;
+
         & > * {
           flex: 1;
         }
@@ -634,13 +518,11 @@
         & figure {
           overflow: hidden;
           border-radius: $br-default;
-          box-shadow: $shadow-md;
 
           & img {
             display: inline-flex;
             object-fit: cover;
-            width: 100%;
-            height: 100%;
+
             border-radius: inherit;
 
             &:hover {
@@ -648,6 +530,7 @@
             }
           }
         }
+
         h2 {
           line-height: 1.2;
           font-size: 2.5rem;
@@ -690,17 +573,32 @@
             inline-size: $link-font-size;
             height: $link-font-size;
             transform: rotate(-45deg);
-            display: inline;
+            display: inline-flex;
           }
         }
 
-        // select second card
+        /*===========================================
+  SECOND CARD
+=========================================== */
         &:nth-child(3) {
-          @include card-styling;
-          box-shadow: $shadow-md;
+          & div {
+            @include card-styling;
+
+            background: hsl(221, 100%, 86%);
+            box-shadow: $shadow-md;
+          }
           & figure {
             inline-size: 100%;
             block-size: 100%;
+            & img {
+              @include drop-shadow-md;
+              inline-size: 100%;
+              block-size: 100%;
+              object-fit: cover;
+            }
+          }
+          a {
+            color: $text-tertiary;
           }
           p {
             color: $text-primary;
@@ -711,7 +609,7 @@
             }
           }
         }
-        // select second card
+        // select 3rd card
         &:nth-child(4) {
           & figure {
             inline-size: 100%;
@@ -728,135 +626,5 @@
       }
     }
     // select all cards
-  }
-
-  .footer {
-    @include flex-center;
-    width: 100%;
-    min-height: 3.25rem;
-    background-color: $footer-background;
-
-    &__shape {
-      display: none;
-    }
-    &__container {
-      display: none;
-    }
-
-    /*--------------------------
-    new footer styles
--------------------------- */
-    &.is-hovered {
-      @include flex(row, flex-start, stretch);
-      $wave-height: 3rem;
-      $border-radius: $br-default;
-      $z-index: 1;
-      $column-title-font-size: $fsz-sm;
-      $title-margin-bottom: $spacing-closely-related;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: stretch;
-      padding: $component-padding-md;
-      position: relative;
-      min-height: 11.25rem;
-      background-color: $hovered-footer-background;
-      border-bottom-left-radius: $border-radius;
-      border-bottom-right-radius: $border-radius;
-
-      & > * {
-        flex: 1;
-      }
-      & .footer__initial-text {
-        display: none;
-      }
-      /*------wavy border------*/
-      & .footer__shape {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        overflow: hidden;
-        line-height: 0;
-        background: $hovered-footer-background;
-        z-index: $z-index;
-
-        & svg {
-          width: 100%;
-          height: $wave-height;
-          & path {
-            fill: white; //fills upper border to match page
-          }
-        }
-      }
-
-      /*------containers------*/
-
-      & .footer__container {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
-        z-index: $z-index;
-        gap: $spacing-closely-related;
-        width: 100%;
-        height: 100%;
-        padding-top: $wave-height;
-        & > * {
-          flex: 1;
-        }
-        & .footer__company-name {
-          grid-area: header;
-          @include global__heading;
-          @include flex-center;
-          $title-font-size: $fsz-md;
-          position: relative;
-          font-size: $title-font-size;
-          color: $text-white-primary;
-
-          margin-bottom: $title-margin-bottom;
-
-          &::before {
-            content: "";
-            display: inline-flex;
-            margin-right: $spacing-closely-related;
-            inline-size: $title-font-size;
-            block-size: $title-font-size;
-            line-height: inherit;
-            background: $my-modern-icon center/contain no-repeat;
-          }
-        }
-        & .footer__location {
-          @include global__body;
-          font-size: $fsz-3xs;
-          color: $text-white-tertiary;
-        }
-        & .footer__copyright {
-          grid-area: content;
-          @include global__body;
-          font-size: $fsz-4xs;
-          color: $text-white-tertiary;
-          text-wrap: balance;
-          font-weight: $fw-regular;
-        }
-      }
-
-      /*------footer lists------*/
-      & .container__column-title {
-        @include global__heading;
-        font-size: $column-title-font-size;
-        color: $text-white-secondary;
-        margin-bottom: $title-margin-bottom;
-      }
-      & a {
-        @include global__links;
-        $link-font-size: $fsz-3xs;
-        font-size: $link-font-size;
-        text-underline-offset: 0.125rem; //lowers underline
-        color: $text-white-tertiary;
-        font-weight: $fw-regular;
-      }
-    }
   }
 </style>

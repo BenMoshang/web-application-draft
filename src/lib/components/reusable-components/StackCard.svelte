@@ -19,7 +19,7 @@
   useCase = useCase.toUpperCase();
 </script>
 
-<article class="card br">
+<article class="card">
   <img src={imageSrc} alt={title} class="card__image" />
   <section class="card__content">
     <h4 class="card__content-heading global__card-heading--md">
@@ -45,12 +45,12 @@
 
   .card {
     @include flex-center;
-    width: fit-content;
+    inline-size: fit-content;
     overflow: hidden;
 
     &__content {
       @include flex-center;
-      width: 100%;
+      inline-size: 100%;
 
       &-heading {
       }

@@ -89,8 +89,8 @@
     &__position {
       font-size: $fsz-4xs;
       color: $text-tertiary;
-      letter-spacing: 0.04em;
-      line-height: $lh-lg;
+      letter-spacing: 0.05em;
+      line-height: $lh-md;
     }
     &__body {
       box-shadow: $shadow-sm-inset;

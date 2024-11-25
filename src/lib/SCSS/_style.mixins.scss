@@ -36,3 +36,10 @@
 @mixin card-border {
   border: 0.0625rem solid $color-border;
 }
+@mixin drop-shadow-md {
+  filter: drop-shadow(0.0187rem 0.0313rem 0.0313rem hsla(0, 0%, 63%, 0.43))
+    drop-shadow(0.0313rem 0.0625rem 0.0625rem hsla(0, 0%, 63%, 0.38))
+    drop-shadow(0.0688rem 0.1313rem 0.1375rem hsla(0, 0%, 63%, 0.32))
+    drop-shadow(0.15rem 0.3rem 0.3125rem hsla(0, 0%, 63%, 0.26))
+    drop-shadow(0.3125rem 0.625rem 0.6563rem hsla(0, 0%, 63%, 0.2));
+}

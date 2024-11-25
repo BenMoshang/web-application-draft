@@ -9,7 +9,7 @@
   import ServicesSection from "../lib/components/section-components/ServicesSection.svelte";
   import StackSection from "../lib/components/section-components/StackSection.svelte";
   import TestimonialSection from "../lib/components/section-components/TestimonialSection.svelte";
-  import UITransformSection from "../lib/components/section-components/UITransformSection.svelte";
+  import UITransformSection from "../lib/components/ui-transform/UITransformSection.svelte";
   // Font testing
   let showFontTesting = $state(true);
   // Sections
