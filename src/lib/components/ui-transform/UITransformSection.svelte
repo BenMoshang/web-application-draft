@@ -1,14 +1,33 @@
 <script>
+  import UiTransformCard from "../reusable-components/UiTransformCard.svelte";
   import UITransformFooter from "./UITransformFooter.svelte";
+  import UiTransformHeader from "./UITransformHeader.svelte";
   import UITransformWindowHead from "./UITransformWindowHead.svelte";
   //injectable
-  let linkText = "Continue Reading".toUpperCase();
-  export let isHovered = true;
-  export let companyName = "Your Business";
+  let linkText = $state("Continue Reading".toUpperCase());
+  let isHovered = $state(true);
+  let companyName = $state("Your Business");
+
+  let cardContent = [
+    {
+      title: `            Your Presence is Defined by <strong class="shine-animation"
+              >Your Website</strong
+            >`,
+      description: `            With the growth of the internet, "1.09 billion websites are on the
+            internet." It is <strong>crucial</strong> to ensure that your
+            digital presence is not a needle in a haystack. Not only does it
+            need to be
+            <em>visually appealing and viewable on all devices...</em>
+            but it is also essential to be
+            <em><strong>HIGHLY</strong> optimized</em> for search engines to reach
+            your target audience.`,
+    },
+  ];
 </script>
 
 <!-- false mouse out 
  false blur -->
+
 <main
   on:focus={() => (isHovered = true)}
   on:mouseover={() => (isHovered = true)}
@@ -17,42 +36,27 @@
   class:is-hovered={isHovered}
   class="main-container"
 >
+  <UITransformWindowHead />
+  <h1 class="main-container__title"
+    >The One Web Design Secret That Generates Revenue!</h1
+  >
   <!-- <aside class:is-hovered={isHovered} class="sidebar">
     <h2>User Menu</h2>
     <button>Dashboard</button>
     <button>Settings</button>
     <button>Logout</button>
   </aside> -->
-  <UITransformWindowHead />
   <section class:is-hovered={isHovered} class="content-container">
-    <header class="content-container__header" class:is-hovered={isHovered}>
-      <h2 class="header__title">{companyName}</h2>
-      <nav class="header__nav">
-        <a class="header__nav-link" href="#">Home</a>
-        <a class="header__nav-link" href="#">Services</a>
-        <a class="header__nav-link" href="#">Contact</a>
-      </nav>
-    </header>
+    <UiTransformHeader />
 
-    <section class:is-hovered={isHovered} class="card-container">
-      <h1>The One Web Design Secret That Generates Revenue!</h1>
-      <article class="card-container__card">
+    <article class="card-container__card">
+      <UiTransformCard />
+    </article>
+    <!-- <article class="card-container__card">
         <div>
-          <h2>
-            Your Presence is Defined by <strong class="shine-animation"
-              >Your Website</strong
-            >
-          </h2>
-          <p>
-            With the growth of the internet, "1.09 billion websites are on the
-            internet." It is <strong>crucial</strong> to ensure that your
-            digital presence is not a needle in a haystack. Not only does it
-            need to be
-            <em>visually appealing and viewable on all devices...</em>
-            but it is also essential to be
-            <em><strong>HIGHLY</strong> optimized</em> for search engines to reach
-            your target audience.
-          </p>
+          <h2>{@html cardContent[0].title}</h2>
+          <p>{@html cardContent[0].description}</p>
+
           <a
             href="https://www.forbes.com/advisor/business/software/website-statistics/"
             target="_blank"
@@ -89,9 +93,10 @@
             height="auto"
           />
         </figure>
-      </article>
-      <article class="card-container__card">
-        <!-- TODO: PUT DIGITAL STORE FRONT 3D WEB ASSET HERE  -->
+      </article> -->
+    <!-- TODO: PUT DIGITAL STORE FRONT 3D WEB ASSET HERE  -->
+
+    <!-- <article class="card-container__card">
         <figure>
           <img
             src="../../../static/assets/UITransformSection/digital-storefront.webp"
@@ -117,10 +122,10 @@
             perceives your business. If your website is
             <em>slow, unresponsive, or outdated</em>, it can tarnish your
             reputation and drive potential customers away.
-          </p>
-          <!-- TODO: PROPERLY USE STRONG AND EM TAGS IN THIS PARAGRAPH
+          </p> -->
+    <!-- TODO: PROPERLY USE STRONG AND EM TAGS IN THIS PARAGRAPH
            TODO: USE THE @INJECTABLE FOR BETTER MANAGEMENT OF THE TEXT -->
-          <p>
+    <!-- <p>
             <em>Remember the reach you have is endless... </em>
             <strong>
               However, to stand out among the billions of websites, it's vital
@@ -129,15 +134,15 @@
             >. These factors not only boost your visibility on search engines
             like Google but also build trust with your audience, encouraging
             repeat visits and conversions.
-          </p>
-          <!-- <p>
+          </p> -->
+    <!-- <p>
             Remember, your website is often the first impression a customer has
             of your business. Make it count by investing in its design, speed,
             content quality, and functionality. A strong digital presence can
             turn visitors into loyal customers and set you apart in a crowded
             online marketplace.
           </p> -->
-          <a
+    <!-- <a
             href="https://www.forbes.com/advisor/business/software/website-statistics/"
             target="_blank"
             rel="noopener noreferrer"
@@ -176,9 +181,9 @@
             Being left out of the 97% is detrimental for your business. This is why
             you must prioritize <strong>web accessibility</strong> as a crucial part
             of your digital strategy.
-          </p>
+          </p> -->
 
-          <!-- <p>
+    <!-- <p>
             Accessibility ensures that all users, including those with
             disabilities, can interact with your website seamlessly. It not only
             fosters inclusivity but also improves your site's usability for
@@ -191,13 +196,13 @@
             even improve SEO performance. By addressing accessibility, you're not
             just accommodating a need; you're unlocking potential.
           </p> -->
-          <!-- <p>
+    <!-- <p>
             Additionally, accessibility compliance can help your business avoid
             costly lawsuits. With increasing legal regulations such as the
             Americans with Disabilities Act (ADA), ensuring your website meets
             accessibility standards is more important than ever.
           </p> -->
-          <a
+    <!-- <a
             href="https://www.audioeye.com/post/accessibility-statistics/#:~:text=What%20we%20found%20is%20that,but%20for%20businesses%20as%20well."
             target="_blank"
             rel="noopener noreferrer"
@@ -233,7 +238,7 @@
           />
         </figure>
       </article>
-    </section>
+    </section> -->
 
     <UITransformFooter />
   </section>
@@ -284,8 +289,6 @@
   $header-background: red;
   $hovered-header-background: color-with-opacity(800, 0.03);
   /*------CARD-------*/
-  $card-image-content-gap: 2rem;
-  $new-p-line-height: 1.65;
   /*===========================================
     Windows Bar
 =========================================== */

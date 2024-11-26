@@ -1,16 +1,21 @@
 <script>
-  export let title = "Default Title";
-  export let imageSrc = "";
-  export let imageAlt = "Card Image";
-  export let linkHref = "#";
-  export let linkText = "Continue Reading";
-  export let linkAriaLabel = "Continue Reading Link";
+  let {
+    title = $bindable(``),
+    description = $bindable(``),
+    imageSrc = $bindable(""),
+    imageAlt = $bindable("Card Image"),
+    linkHref = $bindable("#"),
+    linkText = $bindable("Continue Reading"),
+    linkAriaLabel = $bindable("Continue Reading Link"),
+  } = $props();
 </script>
 
 <article class="card">
-  <div class="card__content">
-    <h2 class="card__title">{title}</h2>
-    <slot name="content">Default content goes here.</slot>
+  <section class="card__content">
+    <h2 class="card__title">{@html title}</h2>
+    <!-- The slot allows for custom content to be inserted into the card. 
+         If no content is provided, "Default content goes here." will be displayed. -->
+    <p>{@html description}</p>
     <a
       href={linkHref}
       target="_blank"
@@ -35,15 +40,25 @@
         ></path>
       </svg>
     </a>
-  </div>
+  </section>
   {#if imageSrc}
-    <figure class="card__figure">
-      <img src={imageSrc} alt={imageAlt} class="card__image" loading="lazy" />
-    </figure>
+    <img src={imageSrc} alt={imageAlt} class="card__image" loading="lazy" />
   {/if}
 </article>
 
 <style lang="scss" scoped>
+  @use "./src/lib/SCSS/index.scss" as *;
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  $new-p-line-height: 1.65;
+
+  $card-image-content-gap: 2rem;
+
   .card {
     padding: $card-padding;
     font-family: $ff-old;
@@ -69,7 +84,7 @@
   /*===========================================
    NEW UI styles
 =========================================== */
-  &.is-hovered {
+  .is-hovered {
     h1,
     h2 {
       @include global__heading;
@@ -203,5 +218,4 @@
       }
     }
   }
-  // select all cards
 </style>

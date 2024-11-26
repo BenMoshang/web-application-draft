@@ -35,9 +35,9 @@ $spacing: (
   /* 16px to 24px */ sm: clamp(1rem, 0.8rem + 0.5vw, 1.5rem),
   /* 20px to 24px */ md: clamp(1.25rem, 1.157rem + 0.38vw, 1.5rem),
   /* 24px to 32px */ lg: clamp(1.5rem, 1.2rem + 0.6vw, 2rem),
-  /* 30px to 40px */ xl: clamp(1.875rem, 1.716rem + 0.65vw, 2.5rem),
-  /* 40px to 60px */ 2xl: clamp(2.5rem, 2.036rem + 1.9vw, 3.75rem),
-  /* 50px to 70px */ 3xl: clamp(2.5rem, 2.043rem + 2.59vw, 4.375rem)
+  /* 32px to 48px */ xl: clamp(2rem, 1.508rem + 1.66vw, 3rem),
+  /* 48px to 64px */ 2xl: clamp(3rem, 2.508rem + 1.66vw, 4rem),
+  /* 64px to 80px */ 3xl: clamp(4rem, 3.043rem + 2.59vw, 5rem)
 );
 
 /* Static Spacing */
