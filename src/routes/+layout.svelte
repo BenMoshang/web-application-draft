@@ -25,8 +25,5 @@
     margin: 0 auto;
     gap: 1.875rem;
     overflow: visible;
-    // & > *:not(:first-child) {
-    //   padding-inline: 0.5rem;
-    // }
   }
 </style>

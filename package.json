@@ -16,7 +16,7 @@
     "@sveltejs/vite-plugin-svelte": "^4.0.0",
     "@tailwindcss/typography": "^0.5.14",
     "autoprefixer": "^10.4.20",
-    "sass": "^1.80.3",
+    "sass": "^1.81.0",
     "svelte": "^5.0.0",
     "svelte-check": "^4.0.0",
     "svelte-preprocess": "^6.0.3",
@@ -26,9 +26,7 @@
   },
   "type": "module",
   "dependencies": {
-    "animejs": "^3.2.2",
     "clsx": "^2.1.1",
-    "gsap": "^3.12.5",
     "svelte-motion": "^0.12.2",
     "tailwind-merge": "^2.5.4"
   }

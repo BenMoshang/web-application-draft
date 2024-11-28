@@ -10,6 +10,7 @@
   import StackSection from "../lib/components/section-components/StackSection.svelte";
   import TestimonialSection from "../lib/components/section-components/TestimonialSection.svelte";
   import UITransformSection from "../lib/components/ui-transform/UITransformSection.svelte";
+  import UiTransformCard from "./../lib/components/reusable-components/UiTransformCard.svelte";
   // Font testing
   let showFontTesting = $state(true);
   // Sections
@@ -39,9 +40,12 @@
   <HeroSection />
 {/if}
 
-{#if showUITransform}
+<!-- {#if showUITransform}
   <UITransformSection />
-{/if}
+{/if} -->
+
+<UiTransformCard />
+
 {#if showServices}
   <ServicesSection />
 {/if}
@@ -89,8 +93,8 @@
     margin: 0 auto;
     gap: 1.875rem;
     overflow: visible;
-    // & > *:not(:first-child) {
-    //   padding-inline: 0.5rem;
-    // }
+    /* & > *:not(:first-child) {
+      padding-inline: 0.5rem;
+    } */
   }
 </style>

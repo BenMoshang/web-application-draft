@@ -25,9 +25,10 @@
   *::after {
     box-sizing: border-box;
   }
-  /* ===============================================
-Header
-=============================================== */
+
+  /*===========================================
+    Header
+  ===========================================*/
   header {
     z-index: 10000;
     position: fixed;
@@ -59,9 +60,9 @@ Header
     }
   }
 
-  /* ===============================================
-Burger styling
-=============================================== */
+  /*===========================================
+    Burger Styling
+  ===========================================*/
   .burger {
     will-change: transform;
     // structure
@@ -70,14 +71,13 @@ Burger styling
     grid-template-rows: repeat(2, auto);
     gap: 0.5rem;
     transition: transform 0.3s ease-in-out;
-    // styling
+    /*styling*/
     cursor: pointer;
     &:hover {
       transform: translateY(-50%) translateX(-50%) rotate(90deg);
     }
-    // animation
 
-    // dots
+    /*dots*/
     & span {
       width: 0.25rem;
       height: 0.25rem;
@@ -87,9 +87,9 @@ Burger styling
     }
   }
 
-  /* ===============================================
-Navigation Styling
-=============================================== */
+  /*===========================================
+    Navigation Styling
+  ===========================================*/
   nav {
     display: none;
   }
